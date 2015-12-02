@@ -1,0 +1,1164 @@
+{
+  "ID": "1099fee6-de11-402b-8373-b7ac4cb7a0b3",
+  "Version": "2.3.2.3",
+  "Name": "TheWallLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 3,
+        "Children": [
+          {
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 33,
+              "G": 31,
+              "B": 31
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 29,
+            "ActionTag": -1996766928,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_tishi_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 245.4352,
+              "Y": 295.7272
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2557,
+              "Y": 0.4621
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 233.9352,
+            "RightMargin": 703.0648,
+            "TopMargin": 332.7728,
+            "BottomMargin": 284.2272,
+            "Tag": 5,
+            "ActionTag": -977575791,
+            "Size": {
+              "X": 23.0,
+              "Y": 23.0
+            },
+            "Name": "Sprite_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "城墙",
+            "HorizontalAlignmentType": "HT_Center",
+            "VerticalAlignmentType": "VT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 263.2032,
+              "Y": 115.2378
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2742,
+              "Y": 0.1801
+            },
+            "PreSize": {
+              "X": 0.1042,
+              "Y": 0.0469
+            },
+            "LeftMargin": 213.2032,
+            "RightMargin": 646.7968,
+            "TopMargin": 509.7622,
+            "BottomMargin": 100.2378,
+            "Tag": 6,
+            "ActionTag": 806249324,
+            "Size": {
+              "X": 100.0,
+              "Y": 30.0
+            },
+            "Name": "Text_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_tishi_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Width": 23,
+            "Scale9Height": 23,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 294.0,
+              "Y": 37.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3063,
+              "Y": 0.0578
+            },
+            "PreSize": {
+              "X": 0.024,
+              "Y": 0.0359
+            },
+            "LeftMargin": 282.5,
+            "RightMargin": 654.5,
+            "TopMargin": 591.5,
+            "BottomMargin": 25.5,
+            "Tag": 71,
+            "ActionTag": 1677801166,
+            "Size": {
+              "X": 23.0,
+              "Y": 23.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "说明",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 311.6065,
+              "Y": 38.855
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 83,
+              "G": 80,
+              "B": 76
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3246,
+              "Y": 0.0607
+            },
+            "PreSize": {
+              "X": 0.5208,
+              "Y": 0.0313
+            },
+            "LeftMargin": 311.6065,
+            "RightMargin": 148.3934,
+            "TopMargin": 591.145,
+            "BottomMargin": 28.855,
+            "Tag": 8,
+            "ActionTag": 1237839172,
+            "Size": {
+              "X": 500.0,
+              "Y": 20.0
+            },
+            "Name": "Text_2",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "   说明",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 551.8087,
+              "Y": 497.2567
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 83,
+              "G": 80,
+              "B": 76
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5748,
+              "Y": 0.777
+            },
+            "PreSize": {
+              "X": 0.2292,
+              "Y": 0.125
+            },
+            "LeftMargin": 551.8087,
+            "RightMargin": 188.1913,
+            "TopMargin": 142.7433,
+            "BottomMargin": 417.2567,
+            "Tag": 9,
+            "ActionTag": 547356799,
+            "Size": {
+              "X": 220.0,
+              "Y": 80.0
+            },
+            "Name": "Text_2_0",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "TheWall/cq_di.png",
+              "Plist": "TheWall/thewall.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 684.8976,
+              "Y": 324.9563
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7134,
+              "Y": 0.5077
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 495.3976,
+            "RightMargin": 85.6024,
+            "TopMargin": 238.0437,
+            "BottomMargin": 247.9563,
+            "Tag": 10,
+            "ActionTag": 717057000,
+            "Size": {
+              "X": 379.0,
+              "Y": 154.0
+            },
+            "Name": "Sprite_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "当前城防值",
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 673.1252,
+              "Y": 362.9332
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7012,
+              "Y": 0.5671
+            },
+            "PreSize": {
+              "X": 0.2083,
+              "Y": 0.0313
+            },
+            "LeftMargin": 573.1252,
+            "RightMargin": 186.8748,
+            "TopMargin": 267.0668,
+            "BottomMargin": 352.9332,
+            "Tag": 11,
+            "ActionTag": 1722716641,
+            "Size": {
+              "X": 200.0,
+              "Y": 20.0
+            },
+            "Name": "Text_4",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "TheWall/cq_jindutiao_di.png",
+              "Plist": "TheWall/thewall.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 676.3532,
+              "Y": 315.6629
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7045,
+              "Y": 0.4932
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 516.8532,
+            "RightMargin": 124.1468,
+            "TopMargin": 314.3371,
+            "BottomMargin": 305.6629,
+            "Tag": 14,
+            "ActionTag": -1262770064,
+            "Size": {
+              "X": 319.0,
+              "Y": 20.0
+            },
+            "Name": "Sprite_6",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "等级 7",
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 266.0692,
+              "Y": 459.7791
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 220,
+              "B": 80
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2772,
+              "Y": 0.7184
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 216.0692,
+            "RightMargin": 643.9308,
+            "TopMargin": 170.2209,
+            "BottomMargin": 449.7791,
+            "Tag": 15,
+            "ActionTag": 852244243,
+            "Size": {
+              "X": 100.0,
+              "Y": 20.0
+            },
+            "Name": "Text_5",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_anniu_bukean_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "PressedFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_anniu_anxia_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "NormalFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_anniu_meian_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 92,
+            "Scale9Height": 25,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 772.1985,
+              "Y": 87.4617
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8044,
+              "Y": 0.1367
+            },
+            "PreSize": {
+              "X": 0.1271,
+              "Y": 0.0734
+            },
+            "LeftMargin": 711.1985,
+            "RightMargin": 126.8015,
+            "TopMargin": 529.0383,
+            "BottomMargin": 63.9617,
+            "Tag": 16,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "TheWall/cq_weixiu_kean.png",
+                  "Plist": "TheWall/thewall.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 61.0,
+                  "Y": 24.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5106
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 38.0,
+                "RightMargin": 38.0,
+                "BottomMargin": 1.0,
+                "Tag": 17,
+                "ActionTag": -827272522,
+                "Size": {
+                  "X": 58.0,
+                  "Y": 21.0
+                },
+                "Name": "Sprite_7",
+                "ctype": "SpriteObjectData"
+              }
+            ],
+            "ActionTag": -2115072643,
+            "Size": {
+              "X": 122.0,
+              "Y": 47.0
+            },
+            "Name": "Button_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_dengji_di.png",
+              "Plist": "public_plist.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 530.827,
+              "Y": 165.4943
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5529,
+              "Y": 0.2586
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 517.827,
+            "RightMargin": 416.173,
+            "TopMargin": 461.5057,
+            "BottomMargin": 152.4943,
+            "Tag": 18,
+            "ActionTag": -21519302,
+            "Size": {
+              "X": 26.0,
+              "Y": 26.0
+            },
+            "Name": "Sprite_8",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_dengji_di.png",
+              "Plist": "public_plist.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 646.1554,
+              "Y": 163.9207
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6731,
+              "Y": 0.2561
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 633.1554,
+            "RightMargin": 300.8446,
+            "TopMargin": 463.0793,
+            "BottomMargin": 150.9207,
+            "Tag": 19,
+            "ActionTag": 1458581652,
+            "Size": {
+              "X": 26.0,
+              "Y": 26.0
+            },
+            "Name": "Sprite_8_0",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_dengji_di.png",
+              "Plist": "public_plist.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 755.6967,
+              "Y": 166.0274
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7872,
+              "Y": 0.2594
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 742.6967,
+            "RightMargin": 191.3033,
+            "TopMargin": 460.9727,
+            "BottomMargin": 153.0274,
+            "Tag": 20,
+            "ActionTag": 1343270452,
+            "Size": {
+              "X": 26.0,
+              "Y": 26.0
+            },
+            "Name": "Sprite_8_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "20",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 547.2877,
+              "Y": 165.9556
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5701,
+              "Y": 0.2593
+            },
+            "PreSize": {
+              "X": 0.0729,
+              "Y": 0.0313
+            },
+            "LeftMargin": 547.2877,
+            "RightMargin": 342.7123,
+            "TopMargin": 464.0444,
+            "BottomMargin": 155.9556,
+            "Tag": 21,
+            "ActionTag": 209408375,
+            "Size": {
+              "X": 70.0,
+              "Y": 20.0
+            },
+            "Name": "Text_6",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "20",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 657.7006,
+              "Y": 164.3823
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6851,
+              "Y": 0.2568
+            },
+            "PreSize": {
+              "X": 0.0729,
+              "Y": 0.0313
+            },
+            "LeftMargin": 657.7006,
+            "RightMargin": 232.2994,
+            "TopMargin": 465.6177,
+            "BottomMargin": 154.3823,
+            "Tag": 23,
+            "ActionTag": 378114091,
+            "Size": {
+              "X": 70.0,
+              "Y": 20.0
+            },
+            "Name": "Text_6_0",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "20",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 767.6467,
+              "Y": 165.0847
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7996,
+              "Y": 0.2579
+            },
+            "PreSize": {
+              "X": 0.0729,
+              "Y": 0.0313
+            },
+            "LeftMargin": 767.6467,
+            "RightMargin": 122.3533,
+            "TopMargin": 464.9153,
+            "BottomMargin": 155.0847,
+            "Tag": 24,
+            "ActionTag": 2059632327,
+            "Size": {
+              "X": 70.0,
+              "Y": 20.0
+            },
+            "Name": "Text_6_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 18,
+            "LabelText": "维修所需：",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 526.2214,
+              "Y": 208.0878
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5481,
+              "Y": 0.3251
+            },
+            "PreSize": {
+              "X": 0.2083,
+              "Y": 0.0313
+            },
+            "LeftMargin": 526.2214,
+            "RightMargin": 233.7786,
+            "TopMargin": 421.9122,
+            "BottomMargin": 198.0878,
+            "Tag": 25,
+            "ActionTag": 2110235608,
+            "Size": {
+              "X": 200.0,
+              "Y": 20.0
+            },
+            "Name": "Text_9",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "TheWall/cq_shalou.png",
+              "Plist": "TheWall/thewall.plist"
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 734.9158,
+              "Y": 125.9302
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7655,
+              "Y": 0.1968
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 720.4158,
+            "RightMargin": 210.5842,
+            "TopMargin": 498.5698,
+            "BottomMargin": 110.4302,
+            "Tag": 26,
+            "ActionTag": -143003080,
+            "Size": {
+              "X": 29.0,
+              "Y": 31.0
+            },
+            "Name": "cq_shalou_12",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 20,
+            "LabelText": "00",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 750.1686,
+              "Y": 126.4512
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "G": 220,
+              "B": 80
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7814,
+              "Y": 0.1976
+            },
+            "PreSize": {
+              "X": 0.1042,
+              "Y": 0.0313
+            },
+            "LeftMargin": 750.1686,
+            "RightMargin": 109.8314,
+            "TopMargin": 503.5488,
+            "BottomMargin": 116.4512,
+            "Tag": 27,
+            "ActionTag": -1040062120,
+            "Size": {
+              "X": 100.0,
+              "Y": 20.0
+            },
+            "Name": "Text_10",
+            "ctype": "TextObjectData"
+          },
+          {
+            "IsCustomSize": true,
+            "FontSize": 18,
+            "LabelText": "修复",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 525.0306,
+              "Y": 86.5525
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 83,
+              "G": 80,
+              "B": 76
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5469,
+              "Y": 0.1352
+            },
+            "PreSize": {
+              "X": 0.1563,
+              "Y": 0.0313
+            },
+            "LeftMargin": 525.0306,
+            "RightMargin": 284.9694,
+            "TopMargin": 543.4474,
+            "BottomMargin": 76.5525,
+            "Tag": 28,
+            "ActionTag": -172488142,
+            "Size": {
+              "X": 150.0,
+              "Y": 20.0
+            },
+            "Name": "Text_11",
+            "ctype": "TextObjectData"
+          },
+          {
+            "ProgressInfo": 100,
+            "ImageFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "TheWall/cq_jindutiao.png",
+              "Plist": "TheWall/thewall.plist"
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 676.3626,
+              "Y": 315.9632
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7045,
+              "Y": 0.4937
+            },
+            "PreSize": {
+              "X": 0.3187,
+              "Y": 0.0156
+            },
+            "LeftMargin": 523.3626,
+            "RightMargin": 130.6374,
+            "TopMargin": 319.0368,
+            "BottomMargin": 310.9632,
+            "Tag": 31,
+            "ActionTag": -1614046268,
+            "Size": {
+              "X": 306.0,
+              "Y": 10.0
+            },
+            "Name": "LoadingBar_2",
+            "ctype": "LoadingBarObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../public_plist.plist",
+        "../public_plist.png",
+        "thewall.plist",
+        "thewall.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

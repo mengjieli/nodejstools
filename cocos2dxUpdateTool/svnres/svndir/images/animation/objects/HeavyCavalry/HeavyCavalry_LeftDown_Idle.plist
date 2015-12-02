@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>HeavyCavalry_LeftDown_Idle.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{44,62}}</string>
+                <key>offset</key>
+                <string>{-2,24}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{76,45},{44,62}}</string>
+                <key>sourceSize</key>
+                <string>{200,200}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>HeavyCavalry_LeftDown_Idle.png</string>
+            <key>size</key>
+            <string>{64,128}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:f3a6435de5b4c6468989f19f08fff99c:1/1$</string>
+            <key>textureFileName</key>
+            <string>HeavyCavalry_LeftDown_Idle.png</string>
+        </dict>
+    </dict>
+</plist>

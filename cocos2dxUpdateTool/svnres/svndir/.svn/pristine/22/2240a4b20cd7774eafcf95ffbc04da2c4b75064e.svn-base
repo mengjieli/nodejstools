@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>Ranger_LeftUp_Idle.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,2},{32,62}}</string>
+                <key>offset</key>
+                <string>{4,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{88,49},{32,62}}</string>
+                <key>sourceSize</key>
+                <string>{200,200}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+            <key>realTextureFileName</key>
+            <string>Ranger_LeftUp_Idle.png</string>
+            <key>size</key>
+            <string>{64,128}</string>
+            <key>smartupdate</key>
+            <string>$TexturePacker:SmartUpdate:62a1b4ebff21800d5781df4ed5ab42d0:1/1$</string>
+            <key>textureFileName</key>
+            <string>Ranger_LeftUp_Idle.png</string>
+        </dict>
+    </dict>
+</plist>

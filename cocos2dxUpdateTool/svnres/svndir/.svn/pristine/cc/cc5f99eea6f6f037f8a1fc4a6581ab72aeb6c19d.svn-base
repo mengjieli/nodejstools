@@ -1,0 +1,461 @@
+{
+  "ID": "fa106a4f-70ae-44e2-87c5-b5cd6fc28151",
+  "Version": "2.3.3.0",
+  "Name": "item",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 115,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_budui_dikuang.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "Scale9Width": 81,
+            "Scale9Height": 102,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5,
+              "Y": 51.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 116,
+            "ActionTag": -2007832104,
+            "Size": {
+              "X": 81.0,
+              "Y": 102.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_budui_dikuang.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "Scale9Width": 81,
+            "Scale9Height": 102,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5,
+              "Y": 51.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 123,
+            "ActionTag": -17704948,
+            "Size": {
+              "X": 81.0,
+              "Y": 102.0
+            },
+            "Name": "Image_1_0",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_buduinengliangtiao_di.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "Scale9Width": 81,
+            "Scale9Height": 8,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5,
+              "Y": 98.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.9608
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 0.0784
+            },
+            "BottomMargin": 94.0,
+            "Tag": 119,
+            "ActionTag": -112905565,
+            "Size": {
+              "X": 81.0,
+              "Y": 8.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_buduinengliangtiao_di.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "Scale9Width": 81,
+            "Scale9Height": 8,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5001,
+              "Y": 4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0392
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 0.0784
+            },
+            "LeftMargin": 0.0001,
+            "RightMargin": -0.0001,
+            "TopMargin": 94.0,
+            "Tag": 120,
+            "ActionTag": -1214271711,
+            "Size": {
+              "X": 81.0,
+              "Y": 8.0
+            },
+            "Name": "Image_2_0",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "ProgressInfo": 100,
+            "ImageFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_buduinengliangtiao.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5,
+              "Y": 98.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.9608
+            },
+            "PreSize": {
+              "X": 0.9877,
+              "Y": 0.0686
+            },
+            "LeftMargin": 0.5,
+            "RightMargin": 0.5,
+            "TopMargin": 0.5,
+            "BottomMargin": 94.5,
+            "Tag": 121,
+            "ActionTag": 685917842,
+            "Size": {
+              "X": 80.0,
+              "Y": 7.0
+            },
+            "Name": "LoadingBar_1",
+            "ctype": "LoadingBarObjectData"
+          },
+          {
+            "ProgressInfo": 100,
+            "ImageFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_buduixuetiao.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5,
+              "Y": 4.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0392
+            },
+            "PreSize": {
+              "X": 0.9877,
+              "Y": 0.0686
+            },
+            "LeftMargin": 0.5,
+            "RightMargin": 0.5,
+            "TopMargin": 94.5,
+            "BottomMargin": 0.5,
+            "Tag": 122,
+            "ActionTag": -832984185,
+            "Size": {
+              "X": 80.0,
+              "Y": 7.0
+            },
+            "Name": "LoadingBar_1_0",
+            "ctype": "LoadingBarObjectData"
+          },
+          {
+            "FontSize": 18,
+            "LabelText": "枪骑兵",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5479,
+              "Y": 83.8786
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5006,
+              "Y": 0.8223
+            },
+            "PreSize": {
+              "X": 0.6667,
+              "Y": 0.1765
+            },
+            "LeftMargin": 13.5479,
+            "RightMargin": 13.4521,
+            "TopMargin": 9.1214,
+            "BottomMargin": 74.8786,
+            "Tag": 128,
+            "ActionTag": 1130127571,
+            "Size": {
+              "X": 54.0,
+              "Y": 18.0
+            },
+            "Name": "Text_2",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_dengji_di.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "Scale9Width": 24,
+            "Scale9Height": 24,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 68.0831,
+              "Y": 22.2079
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8405,
+              "Y": 0.2177
+            },
+            "PreSize": {
+              "X": 0.2963,
+              "Y": 0.2353
+            },
+            "LeftMargin": 56.0831,
+            "RightMargin": 0.9169,
+            "TopMargin": 67.7921,
+            "BottomMargin": 10.2079,
+            "Tag": 125,
+            "ActionTag": 1885556906,
+            "Size": {
+              "X": 24.0,
+              "Y": 24.0
+            },
+            "Name": "Image_6",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 18,
+            "LabelText": "15",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 68.0,
+              "Y": 22.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8395,
+              "Y": 0.2157
+            },
+            "PreSize": {
+              "X": 0.2222,
+              "Y": 0.1765
+            },
+            "LeftMargin": 59.0,
+            "RightMargin": 4.0,
+            "TopMargin": 71.0,
+            "BottomMargin": 13.0,
+            "Tag": 126,
+            "ActionTag": -1910542409,
+            "Size": {
+              "X": 18.0,
+              "Y": 18.0
+            },
+            "Name": "Text_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "BattleUIModule/zd_xuanzebudui.png",
+              "Plist": "BattleUIModule/battleUI_plist.plist"
+            },
+            "Scale9Width": 86,
+            "Scale9Height": 107,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 40.5,
+              "Y": 51.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0617,
+              "Y": 1.049
+            },
+            "LeftMargin": -2.5,
+            "RightMargin": -2.5,
+            "TopMargin": -2.5,
+            "BottomMargin": -2.5,
+            "Tag": 124,
+            "ActionTag": -974459864,
+            "Size": {
+              "X": 86.0,
+              "Y": 107.0
+            },
+            "Name": "Image_1_1",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 81.0,
+          "Y": 102.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "battleUI_plist.plist",
+        "battleUI_plist.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

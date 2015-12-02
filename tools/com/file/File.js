@@ -1,0 +1,119 @@
+var fs = require("fs");
+var path = require("path");
+
+function File(url) {
+    if (url.charAt(url.length - 1) == "/") {
+        url = url.slice(0, url.length - 1);
+    }
+    this.url = url;
+    try {
+        this.state = fs.statSync(this.url);
+        this.type = this.state.mode;
+        this.end = this.type == global.FileType.FILE ? (this.url.split(".")[this.url.split(".").length ? this.url.split(".").length - 1 : 0]) : "";
+        this.name = this.url.split("/")[this.url.split("/").length ? this.url.split("/").length - 1 : 0];
+        this.name = this.name.split(".")[this.name.split(".").length ? this.name.split(".").length - 2 : 0];
+    } catch (e) {
+        this.state = null;
+        this.type = global.FileType.NONE;
+        this.end = null;
+    }
+}
+
+/**
+ * 保存
+ * @param content
+ * @param format
+ */
+File.prototype.save = function (data, format, url) {
+    url = url || this.url;
+    format = format || "utf-8";
+    if (url.split("/").length > 1) {
+        File.mkdirsSync(url.slice(0, url.length - url.split("/")[url.split("/").length - 1].length));
+    }
+    fs.writeFile(url, data, format, function (err) {
+        if (err) {
+            console.log("保存文件失败！ url = " + url);
+        } else {
+        }
+    })
+}
+
+File.prototype.isExist = function () {
+    return this.state != null ? true : false;
+}
+
+/**
+ * 读取文件内容
+ * @param format
+ * @returns {*}
+ */
+File.prototype.readContent = function (format) {
+    format = format || "utf-8";
+    if (this.type == global.FileType.DIRECTION) {
+        return null;
+    }
+    return fs.readFileSync(this.url, format);
+}
+
+/**
+ * 读取某一个后缀的文件列表
+ * @param end
+ * @returns {Array<File>}
+ */
+File.prototype.readFilesWidthEnd = function (end) {
+    var files = [];
+    if (this.type == global.FileType.FILE) {
+        if (end == "*" || end == this.end) {
+            files.push(this);
+        }
+    } else if (this.type == global.FileType.DIRECTION) {
+        var list = fs.readdirSync(this.url);
+        for (var i = 0; i < list.length; i++) {
+            file = new File(this.url + "/" + list[i]);
+            files = files.concat(file.readFilesWidthEnd(end));
+        }
+    }
+    return files;
+}
+
+/**
+ * 删除文件或文件夹内（包括文件夹和文件夹内的所有东西）
+ */
+File.prototype.delete = function () {
+    if (this.type == global.FileType.FILE) {
+        fs.unlinkSync(this.url);
+    } else if (this.type == global.FileType.DIRECTION) {
+        var list = fs.readdirSync(this.url);
+        for (var i = 0; i < list.length; i++) {
+            file = new File(this.url + "/" + list[i]);
+            file.delete();
+        }
+        fs.rmdirSync(this.url);
+    }
+}
+
+File.prototype.print = function () {
+    console.log(this.name);
+}
+
+File.mkdirsSync = function (dirpath, mode) {
+    if (!fs.existsSync(dirpath)) {
+        var pathtmp;
+        dirpath.split(path.sep).forEach(function (dirname) {
+            if (pathtmp) {
+                pathtmp = path.join(pathtmp, dirname);
+            }
+            else {
+                pathtmp = dirname;
+            }
+            if (!fs.existsSync(pathtmp)) {
+                if (!fs.mkdirSync(pathtmp, mode)) {
+                    return false;
+                }
+            }
+        });
+    }
+    return true;
+}
+
+global.File = File;

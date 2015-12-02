@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>BattleUIModule/zd_budui_dikuang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,110},{81,102}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{81,102}</string>
+			</dict>
+			<key>BattleUIModule/zd_buduinengliangtiao.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,924},{80,7}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{80,7}</string>
+			</dict>
+			<key>BattleUIModule/zd_buduinengliangtiao_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,841},{81,8}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{81,8}</string>
+			</dict>
+			<key>BattleUIModule/zd_buduisiwang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,794},{35,45}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{35,45}</string>
+			</dict>
+			<key>BattleUIModule/zd_buduixuetiao.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1006},{80,7}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{80,7}</string>
+			</dict>
+			<key>BattleUIModule/zd_dengji_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{10,924},{24,24}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{24,24}</string>
+			</dict>
+			<key>BattleUIModule/zd_jundui_kongdi.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,214},{81,93}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{81,93}</string>
+			</dict>
+			<key>BattleUIModule/zd_juntuan_kongdi.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,600},{54,54}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{54,54}</string>
+			</dict>
+			<key>BattleUIModule/zd_qiehuanjuntuan_anxia.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,656},{39,67}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{39,67}</string>
+			</dict>
+			<key>BattleUIModule/zd_qiehuanjuntuan_meian.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,725},{39,67}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{39,67}</string>
+			</dict>
+			<key>BattleUIModule/zd_weixuanzejuntuan_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,539},{59,59}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{59,59}</string>
+			</dict>
+			<key>BattleUIModule/zd_xialeijundui_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1015},{1,123}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{1,123}</string>
+			</dict>
+			<key>BattleUIModule/zd_xuanzebudui.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{86,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{86,107}</string>
+			</dict>
+			<key>BattleUIModule/zd_xuanzejuntuan.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,385},{61,76}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{61,76}</string>
+			</dict>
+			<key>BattleUIModule/zd_xuanzejuntuan_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,463},{59,74}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{59,74}</string>
+			</dict>
+			<key>BattleUIModule/zd_xuanzhejuntuan_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,309},{74,68}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{74,68}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>battleUI_plist.png</string>
+			<key>realTextureFileName</key>
+			<string>battleUI_plist.png</string>
+			<key>size</key>
+			<string>{128,1024}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>128</integer>
+			<key>height</key>
+			<integer>1024</integer>
+		</dict>
+	</dict>
+</plist>

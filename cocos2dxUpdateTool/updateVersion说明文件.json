@@ -1,0 +1,30 @@
+{
+  "desc": "版本更新配置",
+  "list": [
+    { //一个 Object 相当于一个服务器，比如外网单独配一个Object，内网单独配一个Object
+      "name": "out-net",//名称
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/ParkerEmpire/", //svn地址
+        "user": "limengjie", //svn 用户名
+        "password": "lmj111111" //svn 密码
+      },
+      "ftp": {
+        "ip": "121.40.18.57", //上传的 ftp IP
+        "user": "nihaowalk", //ftp 用户名
+        "password": "walkwest-98", //ftp 密码
+        "direction":"ParkerEmpire/" //上传到哪个目录
+      },
+      "src": {
+        "init": 1033, //src 目录的初始化 svn 版本号
+        "last": 1055 //服务器上的最新的版本
+      },
+      "res": {
+        "init": 1033,
+        "last": 1033
+      },
+      "version": { //版本信息
+        "last": "1.0.0" //最新版本号
+      }
+    }
+  ]
+}

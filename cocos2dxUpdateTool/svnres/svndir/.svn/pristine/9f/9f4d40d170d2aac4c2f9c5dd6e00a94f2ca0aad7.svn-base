@@ -1,0 +1,474 @@
+{
+  "ID": "3859c981-0660-4cfb-8685-dcccb2a40816",
+  "Version": "2.3.2.3",
+  "Name": "Layer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 29,
+        "Children": [
+          {
+            "BackColorAlpha": 150,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 0.875
+            },
+            "TopMargin": 80.0,
+            "Tag": 30,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_quxiao_meian.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 57,
+                "Scale9Height": 21,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.0594,
+                  "Y": 0.0375
+                },
+                "RightMargin": 903.0,
+                "TopMargin": 539.0,
+                "Tag": 31,
+                "ActionTag": -1295370006,
+                "Size": {
+                  "X": 57.0,
+                  "Y": 21.0
+                },
+                "VisibleForFrame": false,
+                "Name": "Image_1",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 0.2083,
+                  "Y": 0.3571
+                },
+                "RightMargin": 760.0,
+                "TopMargin": 360.0,
+                "Tag": 37,
+                "Children": [
+                  {
+                    "FontSize": 14,
+                    "ButtonText": "",
+                    "TextColor": {
+                      "R": 65,
+                      "G": 65,
+                      "B": 70
+                    },
+                    "DisabledFileData": {
+                      "Type": "MarkedSubImage",
+                      "Path": "gy_anniu_meian_01.png",
+                      "Plist": "public_plist.plist"
+                    },
+                    "PressedFileData": {
+                      "Type": "MarkedSubImage",
+                      "Path": "gy_anniu_anxia_01.png",
+                      "Plist": "public_plist.plist"
+                    },
+                    "NormalFileData": {
+                      "Type": "MarkedSubImage",
+                      "Path": "gy_anniu_meian_01.png",
+                      "Plist": "public_plist.plist"
+                    },
+                    "Scale9Enable": true,
+                    "Scale9OriginX": 15,
+                    "Scale9OriginY": 6,
+                    "Scale9Width": 92,
+                    "Scale9Height": 35,
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "TouchEnable": true,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 182.9684,
+                      "Y": 59.4918
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.9148,
+                      "Y": 0.2975
+                    },
+                    "PreSize": {
+                      "X": 0.1271,
+                      "Y": 0.0839
+                    },
+                    "LeftMargin": 121.9684,
+                    "RightMargin": -43.9684,
+                    "TopMargin": 117.0082,
+                    "BottomMargin": 35.9918,
+                    "CallBackType": "Touch",
+                    "Tag": 36,
+                    "ActionTag": 2140438313,
+                    "Size": {
+                      "X": 122.0,
+                      "Y": 47.0
+                    },
+                    "Name": "Button_1",
+                    "ctype": "ButtonObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 20,
+                    "LabelText": "Text Label",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {},
+                    "Position": {
+                      "X": 47.3017,
+                      "Y": 102.0712
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.2365,
+                      "Y": 0.5104
+                    },
+                    "PreSize": {
+                      "X": 0.3125,
+                      "Y": 0.1071
+                    },
+                    "LeftMargin": 47.3017,
+                    "RightMargin": -147.3017,
+                    "TopMargin": 37.9288,
+                    "BottomMargin": 102.0712,
+                    "Tag": 35,
+                    "ActionTag": -1970004953,
+                    "Size": {
+                      "X": 300.0,
+                      "Y": 60.0
+                    },
+                    "Name": "Text_3",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 20,
+                    "LabelText": "Text Label",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 178.6066,
+                      "Y": 227.4374
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.893,
+                      "Y": 1.1372
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 128.6066,
+                    "RightMargin": -28.6066,
+                    "TopMargin": -37.4374,
+                    "BottomMargin": 217.4374,
+                    "Tag": 34,
+                    "ActionTag": 1741216596,
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 20.0
+                    },
+                    "Name": "Text_2",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FontSize": 20,
+                    "LabelText": "Text Label",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 178.6066,
+                      "Y": 201.5848
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.893,
+                      "Y": 1.0079
+                    },
+                    "PreSize": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    },
+                    "LeftMargin": 128.6066,
+                    "RightMargin": -28.6066,
+                    "TopMargin": -11.5848,
+                    "BottomMargin": 191.5848,
+                    "Tag": 33,
+                    "ActionTag": 1626734565,
+                    "Size": {
+                      "X": 100.0,
+                      "Y": 20.0
+                    },
+                    "Name": "Text_1",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "FileData": {
+                      "Type": "MarkedSubImage",
+                      "Path": "gy_anniu_anxia_01.png",
+                      "Plist": "public_plist.plist"
+                    },
+                    "Scale9Width": 122,
+                    "Scale9Height": 47,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 194.6293,
+                      "Y": 372.6926
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.9731,
+                      "Y": 1.8635
+                    },
+                    "PreSize": {
+                      "X": 0.61,
+                      "Y": 0.235
+                    },
+                    "LeftMargin": 133.6293,
+                    "RightMargin": -55.6293,
+                    "TopMargin": -196.1926,
+                    "BottomMargin": 349.1926,
+                    "Tag": 32,
+                    "ActionTag": 94137940,
+                    "Size": {
+                      "X": 122.0,
+                      "Y": 47.0
+                    },
+                    "Name": "Image_2",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": -1430879231,
+                "Size": {
+                  "X": 200.0,
+                  "Y": 200.0
+                },
+                "Name": "left",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "Tag": 40,
+                "ActionTag": -1399920380,
+                "Size": {
+                  "X": 960.0,
+                  "Y": 560.0
+                },
+                "Name": "right",
+                "ctype": "PanelObjectData"
+              }
+            ],
+            "ActionTag": 1495165339,
+            "Size": {
+              "X": 960.0,
+              "Y": 560.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../public_plist.plist",
+        "../public_plist.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

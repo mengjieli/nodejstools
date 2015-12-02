@@ -1,0 +1,205 @@
+{
+  "ID": "64c2bd95-a1bd-4404-94f8-7640238a0a7f",
+  "Version": "2.3.3.0",
+  "Name": "ItemBoxLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 34,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_wupingkuang_03.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Width": 86,
+            "Scale9Height": 86,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 43.0,
+              "Y": 43.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 35,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_wupingkuang_03.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 86,
+                "Scale9Height": 86,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 43.0,
+                  "Y": 43.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "Tag": 36,
+                "ActionTag": 408280212,
+                "Size": {
+                  "X": 86.0,
+                  "Y": 86.0
+                },
+                "Name": "Image_5_0",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 20,
+                "LabelText": "5",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 43.0,
+                  "Y": 12.59
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.1464
+                },
+                "PreSize": {
+                  "X": 0.1163,
+                  "Y": 0.2326
+                },
+                "LeftMargin": 38.0,
+                "RightMargin": 38.0,
+                "TopMargin": 63.41,
+                "BottomMargin": 2.59,
+                "Tag": 37,
+                "ActionTag": -1865377708,
+                "Size": {
+                  "X": 10.0,
+                  "Y": 20.0
+                },
+                "Name": "Text_1",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_xuankuang.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 92,
+                "Scale9Height": 92,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 43.0,
+                  "Y": 43.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.5
+                },
+                "PreSize": {
+                  "X": 1.0698,
+                  "Y": 1.0698
+                },
+                "LeftMargin": -3.0,
+                "RightMargin": -3.0,
+                "TopMargin": -3.0,
+                "BottomMargin": -3.0,
+                "Tag": 38,
+                "ActionTag": -329686361,
+                "Size": {
+                  "X": 92.0,
+                  "Y": 92.0
+                },
+                "Name": "Image_5_0_0",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": -2108041119,
+            "Size": {
+              "X": 86.0,
+              "Y": 86.0
+            },
+            "Name": "Image_5",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 86.0,
+          "Y": 86.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../public_plist.plist",
+        "../public_plist.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

@@ -1,0 +1,319 @@
+{
+  "ID": "5d9c3183-bf92-476a-9550-e6004b23c3ad",
+  "Version": "2.2.9.0",
+  "Name": "MainScene",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/bkg.png",
+              "Plist": "Plist.plist"
+            },
+            "Scale9Width": 960,
+            "Scale9Height": 640,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 480.0,
+              "Y": 320.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 8,
+            "ActionTag": 191975167,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 26,
+            "ButtonText": "与微信好友玩",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/greenbtn.png",
+              "Plist": "Plist.plist"
+            },
+            "PressedFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/greenbtnline.png",
+              "Plist": "Plist.plist"
+            },
+            "NormalFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/greenbtn.png",
+              "Plist": "Plist.plist"
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 289,
+            "Scale9Height": 77,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "G": 127,
+              "B": 80
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 162.5114,
+              "Y": 80.0061
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1693,
+              "Y": 0.125
+            },
+            "PreSize": {
+              "X": 0.301,
+              "Y": 0.1203
+            },
+            "LeftMargin": 18.0114,
+            "RightMargin": 652.9886,
+            "TopMargin": 521.4939,
+            "BottomMargin": 41.5061,
+            "Tag": 5,
+            "ActionTag": -349674420,
+            "Size": {
+              "X": 289.0,
+              "Y": 77.0
+            },
+            "Name": "Button_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 26,
+            "ButtonText": "与QQ好友玩",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/bluebtn.png",
+              "Plist": "Plist.plist"
+            },
+            "PressedFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/bluebtnline.png",
+              "Plist": "Plist.plist"
+            },
+            "NormalFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/bluebtn.png",
+              "Plist": "Plist.plist"
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 289,
+            "Scale9Height": 77,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "G": 127,
+              "B": 80
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 478.5057,
+              "Y": 80.0061
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4984,
+              "Y": 0.125
+            },
+            "PreSize": {
+              "X": 0.301,
+              "Y": 0.1203
+            },
+            "VerticalEdge": "TopEdge",
+            "LeftMargin": 334.0057,
+            "RightMargin": 336.9943,
+            "TopMargin": 521.4939,
+            "BottomMargin": 41.5061,
+            "Tag": 6,
+            "ActionTag": 46909997,
+            "Size": {
+              "X": 289.0,
+              "Y": 77.0
+            },
+            "Name": "Button_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 26,
+            "ButtonText": "以来宾身份玩游戏",
+            "TextColor": {},
+            "DisabledFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/redbtn.png",
+              "Plist": "Plist.plist"
+            },
+            "PressedFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/redbtnline.png",
+              "Plist": "Plist.plist"
+            },
+            "NormalFileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/redbtn.png",
+              "Plist": "Plist.plist"
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 289,
+            "Scale9Height": 77,
+            "OutlineSize": 0,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "G": 127,
+              "B": 80
+            },
+            "ShadowOffsetX": 0,
+            "ShadowOffsetY": 0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 1.0
+            },
+            "Position": {
+              "X": 791.5916,
+              "Y": 118.5061
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8246,
+              "Y": 0.1852
+            },
+            "PreSize": {
+              "X": 0.301,
+              "Y": 0.1203
+            },
+            "HorizontalEdge": "RightEdge",
+            "LeftMargin": 647.0916,
+            "RightMargin": 23.9084,
+            "TopMargin": 521.4939,
+            "BottomMargin": 41.5061,
+            "Tag": 7,
+            "ActionTag": -1200927944,
+            "Size": {
+              "X": 289.0,
+              "Y": 77.0
+            },
+            "Name": "Button_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "NewFolder/name.png",
+              "Plist": "Plist.plist"
+            },
+            "Scale9Width": 504,
+            "Scale9Height": 205,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 480.0,
+              "Y": 320.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 2.52,
+              "Y": 1.025
+            },
+            "LeftMargin": 228.0,
+            "RightMargin": 228.0,
+            "TopMargin": 217.5,
+            "BottomMargin": 217.5,
+            "Tag": 10,
+            "ActionTag": -513129978,
+            "Size": {
+              "X": 504.0,
+              "Y": 205.0
+            },
+            "Name": "Image_3",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

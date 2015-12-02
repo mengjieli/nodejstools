@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>accelerate/xljs_nengliangtiao.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{506,1},{1,12}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{1,12}</string>
+			</dict>
+			<key>accelerate/xljs_nengliangtiao_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{476,21}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{476,21}</string>
+			</dict>
+			<key>accelerate/xljs_nengliangtiao_tou.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{164,33},{19,15}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{19,15}</string>
+			</dict>
+			<key>accelerate/xljs_huadonganniu.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{144,33},{18,19}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{18,19}</string>
+			</dict>
+			<key>accelerate/xljs_jia.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{285,24},{20,20}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{20,20}</string>
+			</dict>
+			<key>accelerate/xljs_jian.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{181,33},{21,6}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{21,6}</string>
+			</dict>
+			<key>accelerate/xljs_jindutiao.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{144,24},{139,7}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{139,7}</string>
+			</dict>
+			<key>accelerate/xljs_jindutiao_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,24},{141,9}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{141,9}</string>
+			</dict>
+			<key>accelerate/xljs_shuliang_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{479,1},{57,25}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{57,25}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>accelerate_plist.png</string>
+			<key>realTextureFileName</key>
+			<string>accelerate_plist.png</string>
+			<key>size</key>
+			<string>{512,64}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>512</integer>
+			<key>height</key>
+			<integer>64</integer>
+		</dict>
+	</dict>
+</plist>

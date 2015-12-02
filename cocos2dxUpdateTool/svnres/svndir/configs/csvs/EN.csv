@@ -1,0 +1,243 @@
+key,value
+16010010,Grassland
+16020010,Wasteland
+16030010,Desert
+16040010,Oasis
+16050010,Jungle
+16060010,A mountain country
+16070010,Swamp
+16080010,Lake
+16010011,Broad grassland
+16020011,A bleak plain
+16030011,Stretch as far as eye can see the desert
+16040011,Life in the desert oasis
+16050011,Dense jungle
+16060011,The main terrain of the production of stone
+16070011,The big area of the terrorist's bath will reduce the movement speed of the army.
+16080011,The vast lake makes people look calm.
+15010010,Upgrade
+15010020,Details
+15010030,Attack
+15010040,Buy
+15010050,Sell
+15010060,Chechan
+15010070,Give up
+15010080,Training
+15010090,Collection
+15010100,Mobile
+15020010,Tower view
+15030010,Main city gain
+15030020,Main city view
+15030030,Urban migration
+15040010,Wall maintenance
+15050010,College Research
+15060010,Enter the city
+15070010,(I) territory construction
+15070020,(I) the territory removed
+15070030,(I) territory dispatch
+15080010,(enemy) territory investigation
+11010010,Grain
+11010020,Wood
+11010030,Stone
+11010040,Population
+11020010,Iron ore
+11020020,The horses
+11020030,Red copper
+11020040,Ironwood
+11030010,Gold
+11030020,Spring
+14010010,resource
+14010020,enemy
+14010030,ally
+14010040,other
+19010010,Lord mansion
+19020010,The stable
+19020020,barracks
+19020030,Archer
+19020040,instrument
+19030010,college
+19040010,houses
+19050010,The watchtower
+19060010,warehouse
+19070010,The wall
+19080010,The towers
+19090010,Corps assembled
+19100010,Trading market
+19110010,Building activities
+19120010,Blow to the pub
+19010011,At the heart of the city buildings
+19020011,Trained cavalry camp
+19020021,Infantry training camp
+19020031,The camp training archers
+19020041,The camp of construction equipment
+19030011,Study of science and technology building
+19040011,The output structure of the population
+19050011,Investigation of the situation of the enemy and the investigation of the building
+19060011,The main building storage resources
+19070011,Downtown main defense building
+19080011,Central city defense against buildings
+19090011,Forces to camp and assembled
+19100011,All goods trade structure
+19110011,The structures of all kinds of activities
+19120011,A rally in the blow to their favorite
+13010010,Grain production
+13010020,Logging production
+13010030,Stone production
+13010040,Iron ore
+13010050,The horse
+13010060,Bare copper
+13010070,Iron wood
+13020010,"Each other, deepen"
+13020020,Critical strike chance
+13020030,Critical strike damage
+13020040,The disabled rate
+13020050,Reconnaissance time
+13020060,Dodge chance
+13020070,"Each other, less"
+13030010,The population limit
+13030020,Production speed
+13030030,Construction speed
+13040010,The wall durable
+13040020,The wall defense
+13040030,The towers attack
+13040040,The towers durable
+13040050,The arrow tower defense
+13010011,Increasing food production percentage increased
+13010021,Increase the wood production percentage increased
+13010031,Increase of stone material production percentage increased
+13010041,Increase the output of iron ore percentage increased
+13010051,Increase the yield percentage of the horse
+13010061,Increase the output of red copper percentage increased
+13010071,Increase the production of iron wood percentage increased
+13020011,Refrain from damage to strengthen our forces on enemy forces
+13020021,Critical strike chance to strengthen our forces on enemy forces
+13020031,Our forces strengthen critical strike damage on enemy forces
+13020041,Disabled chance to strengthen our forces on enemy forces
+13020051,Our forces for reconnaissance enemy forces a shorter time
+13020061,Dodge chance to strengthen our forces on enemy forces
+13020071,The enemy troops to our forces to control damage reduced
+13030011,The upper limit of the total population increase
+13030021,Production speed increase of the total population
+13030031,Construction speed increase of the total population
+13040011,The wall of total yugoslav capital value promotion
+13040021,The wall of total defense value promotion
+13040031,The towers always attack value improvement
+13040041,The towers of blood volume value promotion
+13040051,The towers of total defense value promotion
+000000000000000,000000000000000000000000
+Language2,死亡
+Language3,你是猪
+denglu_0,派克帝国 最终用户服务协议
+denglu_1,[首部及导言]
+denglu_2,请输入手机收到新密码
+denglu_3,手机号 : 12345678912
+denglu_4,重新发送短信
+denglu_5,秒后重新发送
+denglu_6,新密码错误
+denglu_7,登 录
+denglu_8,已有账号登录
+denglu_9,确定退出游戏吗?
+denglu_10,获取应用缓存目录失败，请确认安装是否正确
+denglu_11,获取图片目录失败，请确认SD卡是否插入
+denglu_12,请确认该目录是否包含图片文件
+denglu_13,是否选择该图片
+denglu_14,请重启游戏以便更新生效!
+denglu_15,读取游戏配置失败，请稍后再试
+denglu_16,请确认检查网络是否连接
+denglu_17,密码错误，剩余使用次数
+denglu_18,次
+denglu_19,该账号已被冻结，请手动找回
+denglu_20,接收服务器数据错误
+denglu_21,该账号不存在，请尝试手动登陆
+denglu_22,自动登陆有效期失效，请尝试手动登陆
+denglu_23,未知错误，错误代码:
+denglu_24,服务器未知错误，请稍后再试
+denglu_25,服务器正在更新维护，请稍后再来
+denglu_26,重置密码请求已过期，请重新发送
+denglu_27,手机
+denglu_28,秒后重新发送
+denglu_29,手机号码非法
+denglu_30,请输入正常的手机号码，它将是您找回密码的唯一方法
+denglu_31,手机号码重复，点击可以
+denglu_32,获取登陆信息失败，请稍后再试
+denglu_33,账号被锁定
+denglu_34,账号名称太长
+denglu_35,账号被封
+denglu_36,服务器未知错误，请稍后再试
+denglu_37,服务器正在更新维护，请稍后再来
+denglu_38,账号不存在
+denglu_39,请勿短时间内重复找回密码，点击下一步
+denglu_40,请勿短时间内重复找回密码，请稍后再试
+denglu_41,确定退出游戏吗？
+denglu_42,派克帝国，你的帝国
+denglu_43,为策略竞技爱好者极致体验打造
+denglu_44,锻炼思维
+denglu_45,愉快的玩耍
+denglu_46,输入手机号码
+denglu_47,输入密码
+denglu_48,新用户注册
+denglu_49,密码忘记?
+denglu_50,输入昵称
+denglu_51,昵称非法，请正确输了
+denglu_52,保存并进入游戏
+denglu_53, 号码错误
+denglu_54, 密码错误
+denglu_55,请输入手机收到新密码
+denglu_56,手机号 : 12345678912
+denglu_57,短信新密码
+denglu_58,00 秒后重新发送
+denglu_59,重新发送短信
+denglu_60,新密码错误
+denglu_61,已有账号登录
+denglu_62,找回密码
+denglu_63,手机号错误
+denglu_64,下一步
+denglu_65,已有账户登录
+denglu_66,手机号码重复
+denglu_67,输入邀请码
+denglu_68,邀请码错误
+denglu_69,快速注册
+denglu_70,注册或登录游戏表示您同意
+denglu_71,最终用户协议
+denglu_72,更新遇到问题，请稍后再试
+denglu_73,地块名称:
+denglu_74,基础资源产量:
+denglu_75,战略资源产量:
+denglu_76,坐标:
+denglu_77,点击修改名称
+xiangqing_0,拆除
+xiangqing_1,等级
+xiangqing_2,等级
+xiangqing_3,粮食
+xiangqing_4,木材
+xiangqing_5,石头
+xiangqing_6,铁矿
+xiangqing_7,马匹
+xiangqing_8,赤铜
+xiangqing_9,铁木
+xiangqing_10,战斗力
+xiangqing_11,城防值
+xiangqing_12,可解锁技能
+shengji_0,升级
+shengji_1,要求
+shengji_2,下一等级
+chengqiang_1,当前城防值
+chengqiang_2,维修所需：
+chengqiang_3,修复
+chengqiang_4,点城防
+chengqiang_5,目前没有人攻破你的城堡，城墙完好无缺。
+college_1,提高等级可以提高新的科技
+college_2,内政科技
+college_3,战斗科技
+college_4,城市发展
+college_5,城市防御
+college_6,技能升级
+college_7,技能名称：
+college_8,需要消耗资源：
+college_9,升级后的技能属性：
+college_10,确认升级
+college_11,取消升级
+college_12,升级剩余时间：
+college_13,取消研究科技，只能退还
+college_14,放 弃
+college_15,确认取消

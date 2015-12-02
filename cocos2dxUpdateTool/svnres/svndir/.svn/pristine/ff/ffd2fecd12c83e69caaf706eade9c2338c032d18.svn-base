@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>TheWall/cq_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{379,154}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{379,154}</string>
+			</dict>
+			<key>TheWall/cq_jindutiao.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{957,1},{1,12}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{1,12}</string>
+			</dict>
+			<key>TheWall/cq_jindutiao_di.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{382,1},{319,20}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{319,20}</string>
+			</dict>
+			<key>TheWall/cq_shalou.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{924,1},{29,31}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{29,31}</string>
+			</dict>
+			<key>TheWall/cq_weixiu_anxia.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{744,1},{58,21}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{58,21}</string>
+			</dict>
+			<key>TheWall/cq_weixiu_bukean.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{804,1},{58,21}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{58,21}</string>
+			</dict>
+			<key>TheWall/cq_weixiu_kean.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{864,1},{58,21}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{58,21}</string>
+			</dict>
+			<key>TheWall/cq_chengfangzhi.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{703,1},{39,35}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{39,35}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>thewall.png</string>
+			<key>realTextureFileName</key>
+			<string>thewall.png</string>
+			<key>size</key>
+			<string>{1024,256}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>1024</integer>
+			<key>height</key>
+			<integer>256</integer>
+		</dict>
+	</dict>
+</plist>

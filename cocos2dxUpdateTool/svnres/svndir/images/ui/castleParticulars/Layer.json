@@ -1,0 +1,747 @@
+{
+  "ID": "ee60cc7d-6e39-42c5-847c-045aadb913e4",
+  "Version": "2.3.2.3",
+  "Name": "Layer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 34,
+        "Children": [
+          {
+            "IsBounceEnabled": true,
+            "InnerNodeSize": {
+              "Width": 586,
+              "Height": 518
+            },
+            "ScrollDirectionType": "Vertical",
+            "ClipAble": true,
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "G": 150,
+              "B": 100
+            },
+            "FirstColor": {
+              "G": 150,
+              "B": 100
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 355.4552,
+              "Y": 14.0653
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3703,
+              "Y": 0.022
+            },
+            "PreSize": {
+              "X": 0.6104,
+              "Y": 0.8094
+            },
+            "LeftMargin": 355.4552,
+            "RightMargin": 18.5448,
+            "TopMargin": 107.9347,
+            "BottomMargin": 14.0653,
+            "Tag": 39,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_xuanze_01.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 586,
+                "Scale9Height": 35,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 0.1577
+                },
+                "TopMargin": 187.0,
+                "Tag": 70,
+                "ActionTag": 1357115605,
+                "Size": {
+                  "X": 586.0,
+                  "Y": 35.0
+                },
+                "VisibleForFrame": false,
+                "Name": "select",
+                "ctype": "ImageViewObjectData"
+              }
+            ],
+            "ActionTag": -335496147,
+            "Size": {
+              "X": 586.0,
+              "Y": 518.0
+            },
+            "Name": "ScrollView_1",
+            "ctype": "ScrollViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_xiangqing_shanglan_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Width": 605,
+            "Scale9Height": 48,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 645.51,
+              "Y": 553.9719
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6724,
+              "Y": 0.8656
+            },
+            "PreSize": {
+              "X": 0.6302,
+              "Y": 0.075
+            },
+            "LeftMargin": 343.01,
+            "RightMargin": 11.99,
+            "TopMargin": 62.0281,
+            "BottomMargin": 529.9719,
+            "Tag": 36,
+            "ActionTag": -649431199,
+            "Size": {
+              "X": 605.0,
+              "Y": 48.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_xiangqing_xialan_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Width": 604,
+            "Scale9Height": 5,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 645.0455,
+              "Y": 10.4698
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6719,
+              "Y": 0.0164
+            },
+            "PreSize": {
+              "X": 0.6292,
+              "Y": 0.0078
+            },
+            "LeftMargin": 343.0455,
+            "RightMargin": 12.9545,
+            "TopMargin": 627.0302,
+            "BottomMargin": 7.9698,
+            "Tag": 37,
+            "ActionTag": -1432178966,
+            "Size": {
+              "X": 604.0,
+              "Y": 5.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": 353.5497,
+              "Y": 544.4847
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3683,
+              "Y": 0.8508
+            },
+            "PreSize": {
+              "X": 0.6104,
+              "Y": 0.0469
+            },
+            "LeftMargin": 353.5497,
+            "RightMargin": 20.4503,
+            "TopMargin": 65.5153,
+            "BottomMargin": 544.4847,
+            "Tag": 44,
+            "Children": [
+              {
+                "FontSize": 20,
+                "LabelText": "等级",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 130.9516,
+                  "Y": 12.3301
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 250,
+                  "G": 235,
+                  "B": 109
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.2235,
+                  "Y": 0.411
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 110.9516,
+                "RightMargin": 435.0484,
+                "TopMargin": 7.6699,
+                "BottomMargin": 2.3301,
+                "Tag": 45,
+                "ActionTag": -2138549621,
+                "Size": {
+                  "X": 40.0,
+                  "Y": 20.0
+                },
+                "Name": "Text_0",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 20,
+                "LabelText": "可解锁技能",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 314.9238,
+                  "Y": 12.3333
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 250,
+                  "G": 235,
+                  "B": 109
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5374,
+                  "Y": 0.4111
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 284.9238,
+                "RightMargin": 241.0762,
+                "TopMargin": 7.6667,
+                "BottomMargin": 2.3333,
+                "Tag": 46,
+                "ActionTag": -1325873495,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 20.0
+                },
+                "Name": "Text_1",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 20,
+                "LabelText": "战斗力",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 507.1199,
+                  "Y": 12.3333
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "R": 250,
+                  "G": 235,
+                  "B": 109
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8654,
+                  "Y": 0.4111
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 477.1199,
+                "RightMargin": 48.8801,
+                "TopMargin": 7.6667,
+                "BottomMargin": 2.3333,
+                "Tag": 47,
+                "ActionTag": -2063433468,
+                "Size": {
+                  "X": 60.0,
+                  "Y": 20.0
+                },
+                "Name": "Text_2",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -1680549232,
+            "Size": {
+              "X": 586.0,
+              "Y": 30.0
+            },
+            "Name": "Panel0",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "BackColorAlpha": 0,
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "AnchorPoint": {},
+            "Position": {
+              "X": 353.0049,
+              "Y": 381.46
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3677,
+              "Y": 0.596
+            },
+            "PreSize": {
+              "X": 0.6104,
+              "Y": 0.0469
+            },
+            "LeftMargin": 353.0049,
+            "RightMargin": 20.9951,
+            "TopMargin": 228.54,
+            "BottomMargin": 381.46,
+            "Tag": 55,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_xiangqing_shanglan_di_01.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 586,
+                "Scale9Height": 30,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "PreSize": {
+                  "X": 1.0,
+                  "Y": 1.0
+                },
+                "Tag": 62,
+                "ActionTag": -887039453,
+                "Size": {
+                  "X": 586.0,
+                  "Y": 30.0
+                },
+                "Name": "back",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 20,
+                "LabelText": "Text Label",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 115.5958,
+                  "Y": 14.5427
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 165,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1973,
+                  "Y": 0.4848
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 115.5958,
+                "RightMargin": 370.4042,
+                "TopMargin": 5.4573,
+                "BottomMargin": 4.5427,
+                "Tag": 58,
+                "ActionTag": -1735529474,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 20.0
+                },
+                "Name": "txt0",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 20,
+                "LabelText": "Text Label",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 289.382,
+                  "Y": 14.5427
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 165,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4938,
+                  "Y": 0.4848
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 289.382,
+                "RightMargin": 196.618,
+                "TopMargin": 5.4573,
+                "BottomMargin": 4.5427,
+                "Tag": 59,
+                "ActionTag": 51649646,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 20.0
+                },
+                "Name": "txt1",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 20,
+                "LabelText": "Text Label",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 482.0743,
+                  "Y": 14.5427
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {
+                  "G": 165,
+                  "B": 0
+                },
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8227,
+                  "Y": 0.4848
+                },
+                "PreSize": {
+                  "X": 0.0,
+                  "Y": 0.0
+                },
+                "LeftMargin": 482.0743,
+                "RightMargin": 3.9257,
+                "TopMargin": 5.4573,
+                "BottomMargin": 4.5427,
+                "Tag": 60,
+                "ActionTag": -413828453,
+                "Size": {
+                  "X": 100.0,
+                  "Y": 20.0
+                },
+                "Name": "txt2",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -414338862,
+            "Size": {
+              "X": 586.0,
+              "Y": 30.0
+            },
+            "Name": "item0",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_xiala_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Width": 25,
+            "Scale9Height": 17,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 640.9894,
+              "Y": 9.7297
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6677,
+              "Y": 0.0152
+            },
+            "PreSize": {
+              "X": 0.026,
+              "Y": 0.0266
+            },
+            "LeftMargin": 628.4894,
+            "RightMargin": 306.5106,
+            "TopMargin": 621.7703,
+            "BottomMargin": 1.2297,
+            "Tag": 74,
+            "ActionTag": -1720051857,
+            "Size": {
+              "X": 25.0,
+              "Y": 17.0
+            },
+            "Name": "down0",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FlipY": true,
+            "FileData": {
+              "Type": "MarkedSubImage",
+              "Path": "gy_xiala_01.png",
+              "Plist": "public_plist.plist"
+            },
+            "Scale9Width": 25,
+            "Scale9Height": 17,
+            "AnchorPoint": {
+              "ScaleX": 0.4408,
+              "ScaleY": 0.4237
+            },
+            "Position": {
+              "X": 639.5095,
+              "Y": 531.8103
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6662,
+              "Y": 0.831
+            },
+            "PreSize": {
+              "X": 0.026,
+              "Y": 0.0266
+            },
+            "LeftMargin": 628.4895,
+            "RightMargin": 306.5105,
+            "TopMargin": 98.3926,
+            "BottomMargin": 524.6074,
+            "Tag": 75,
+            "ActionTag": 70196281,
+            "Size": {
+              "X": 25.0,
+              "Y": 17.0
+            },
+            "Name": "up0",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../public_plist.plist",
+        "../public_plist.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

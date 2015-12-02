@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>chatModule/lt_wenzikuang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,387},{12,45}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{12,45}</string>
+			</dict>
+			<key>chatModule/lt_yuying_anxia.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,245},{34,34}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{34,34}</string>
+			</dict>
+			<key>chatModule/lt_yuying_meian.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,281},{34,34}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{34,34}</string>
+			</dict>
+			<key>chatModule/lt_touxiangkuang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,71},{60,60}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{60,60}</string>
+			</dict>
+			<key>chatModule/lt_kuang_di_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,1},{68,68}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{68,68}</string>
+			</dict>
+			<key>chatModule/lt_liaotiandikuang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,481},{15,12}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{15,12}</string>
+			</dict>
+			<key>chatModule/lt_qipao.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,317},{33,27}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{33,27}</string>
+			</dict>
+			<key>chatModule/lt_qipao_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,352},{33,27}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{33,27}</string>
+			</dict>
+			<key>chatModule/lt_shurukuang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,191},{52,40}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{52,40}</string>
+			</dict>
+			<key>chatModule/lt_yuyindikuang.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,434},{11,45}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{11,45}</string>
+			</dict>
+			<key>chatModule/lt_fachuyuying.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{1,133},{56,42}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{56,42}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>chat_plist.png</string>
+			<key>realTextureFileName</key>
+			<string>chat_plist.png</string>
+			<key>size</key>
+			<string>{128,512}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>128</integer>
+			<key>height</key>
+			<integer>512</integer>
+		</dict>
+	</dict>
+</plist>

@@ -1,0 +1,6 @@
+[{"iconId":"1","rmb":"5","diamonds":"60"},
+{"iconId":"2","rmb":"30","diamonds":"300"},
+{"iconId":"3","rmb":"60","diamonds":"600"},
+{"iconId":"4","rmb":"120","diamonds":"1280"},
+{"iconId":"5","rmb":"240","diamonds":"2500"},
+{"iconId":"6","rmb":"480","diamonds":"5200"}]

@@ -1,0 +1,223 @@
+{
+  "ID": "5c734592-b09f-4ddb-a2fc-d6cb1a6c54ec",
+  "Version": "2.3.2.3",
+  "Name": "Layer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 120,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "hotUpdate/denglubeijing.png",
+              "Plist": ""
+            },
+            "Scale9Width": 960,
+            "Scale9Height": 640,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 480.0,
+              "Y": 319.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4984
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "TopMargin": 1.0,
+            "BottomMargin": -1.0,
+            "Tag": 121,
+            "ActionTag": -229167459,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "hotUpdate/paike_biaoti.png",
+              "Plist": ""
+            },
+            "Scale9Width": 306,
+            "Scale9Height": 147,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 848.4908,
+              "Y": 82.3177
+            },
+            "Scale": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8838,
+              "Y": 0.1286
+            },
+            "PreSize": {
+              "X": 0.3187,
+              "Y": 0.2297
+            },
+            "HorizontalEdge": "RightEdge",
+            "VerticalEdge": "BottomEdge",
+            "LeftMargin": 695.4908,
+            "RightMargin": -41.4908,
+            "TopMargin": 484.1823,
+            "BottomMargin": 8.8177,
+            "Tag": 122,
+            "ActionTag": 155905873,
+            "Size": {
+              "X": 306.0,
+              "Y": 147.0
+            },
+            "Name": "Image_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "派克帝国,你的帝国",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 479.1025,
+              "Y": 371.0676
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4991,
+              "Y": 0.5798
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 429.1025,
+            "RightMargin": 430.8975,
+            "TopMargin": 258.9324,
+            "BottomMargin": 361.0676,
+            "Tag": 123,
+            "ActionTag": 381364243,
+            "Size": {
+              "X": 340.0,
+              "Y": 40.0
+            },
+            "Name": "Text_1",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 20,
+            "LabelText": "为策略竞技爱好者极致体验打造",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 481.061,
+              "Y": 325.4241
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {
+              "R": 111,
+              "G": 111,
+              "B": 111
+            },
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5011,
+              "Y": 0.5085
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 341.061,
+            "RightMargin": 338.939,
+            "TopMargin": 304.5759,
+            "BottomMargin": 315.4241,
+            "Tag": 124,
+            "ActionTag": 1483202446,
+            "Size": {
+              "X": 280.0,
+              "Y": 20.0
+            },
+            "Name": "Text_1_0",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "denglubeijing.png",
+        "paike_biaoti.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Layer"
+}

@@ -1,0 +1,558 @@
+{
+  "ID": "fd3f81a1-570e-4002-a2d9-ba4a4805b106",
+  "Version": "2.3.2.3",
+  "Name": "announcingUI",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 82,
+        "Children": [
+          {
+            "ClipAble": true,
+            "BackColorAlpha": 102,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "denglubeijing.png",
+              "Plist": ""
+            },
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 960,
+            "Scale9Height": 640,
+            "TouchEnable": true,
+            "StretchWidthEnable": true,
+            "StretchHeightEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "Tag": 83,
+            "ActionTag": -1658903517,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "bkg_panel",
+            "ctype": "PanelObjectData"
+          },
+          {
+            "BackColorAlpha": 0,
+            "FileData": {
+              "Type": "Normal",
+              "Path": "winBg.png",
+              "Plist": ""
+            },
+            "ComboBoxIndex": 1,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 38,
+            "Scale9OriginY": 42,
+            "Scale9Width": 41,
+            "Scale9Height": 46,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 480.0,
+              "Y": 320.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.7812,
+              "Y": 0.8625
+            },
+            "HorizontalEdge": "BothEdge",
+            "VerticalEdge": "BothEdge",
+            "LeftMargin": 105.0,
+            "RightMargin": 105.0,
+            "TopMargin": 44.0,
+            "BottomMargin": 44.0,
+            "Tag": 86,
+            "Children": [
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "Default",
+                  "Path": "Default/Button_Disable.png",
+                  "Plist": ""
+                },
+                "PressedFileData": {
+                  "Type": "Normal",
+                  "Path": "closeDown.png",
+                  "Plist": ""
+                },
+                "NormalFileData": {
+                  "Type": "Normal",
+                  "Path": "closeNormal.png",
+                  "Plist": ""
+                },
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 22,
+                "Scale9Height": 30,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 742.4999,
+                  "Y": 546.48
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.99,
+                  "Y": 0.99
+                },
+                "PreSize": {
+                  "X": 0.0693,
+                  "Y": 0.0942
+                },
+                "HorizontalEdge": "RightEdge",
+                "VerticalEdge": "TopEdge",
+                "LeftMargin": 716.4999,
+                "RightMargin": -18.4999,
+                "TopMargin": -20.48,
+                "BottomMargin": 520.48,
+                "Tag": 88,
+                "ActionTag": 1187456288,
+                "Size": {
+                  "X": 52.0,
+                  "Y": 52.0
+                },
+                "Name": "close_btn",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 28,
+                "LabelText": "派克帝国 最终用户服务协议",
+                "HorizontalAlignmentType": "HT_Center",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 375.0,
+                  "Y": 513.36
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.93
+                },
+                "PreSize": {
+                  "X": 0.4667,
+                  "Y": 0.0507
+                },
+                "HorizontalEdge": "BothEdge",
+                "VerticalEdge": "TopEdge",
+                "LeftMargin": 200.0,
+                "RightMargin": 200.0,
+                "TopMargin": 24.64,
+                "BottomMargin": 499.36,
+                "Tag": 89,
+                "ActionTag": 1101558104,
+                "Size": {
+                  "X": 350.0,
+                  "Y": 28.0
+                },
+                "Name": "title",
+                "ctype": "TextObjectData"
+              },
+              {
+                "IsCustomSize": true,
+                "FontSize": 20,
+                "LabelText": "[首部及导言]",
+                "VerticalAlignmentType": "VT_Center",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 110.0,
+                  "Y": 468.16
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.1467,
+                  "Y": 0.8481
+                },
+                "PreSize": {
+                  "X": 0.1333,
+                  "Y": 0.0362
+                },
+                "HorizontalEdge": "LeftEdge",
+                "VerticalEdge": "TopEdge",
+                "LeftMargin": 50.0,
+                "RightMargin": 580.0,
+                "TopMargin": 73.84,
+                "BottomMargin": 458.16,
+                "Tag": 90,
+                "ActionTag": -1371206062,
+                "Size": {
+                  "X": 120.0,
+                  "Y": 20.0
+                },
+                "Name": "head",
+                "ctype": "TextObjectData"
+              },
+              {
+                "InnerNodeSize": {
+                  "Width": 650,
+                  "Height": 900
+                },
+                "ScrollDirectionType": "Vertical",
+                "ClipAble": true,
+                "BackColorAlpha": 0,
+                "ComboBoxIndex": 1,
+                "SingleColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "FirstColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "TouchEnable": true,
+                "StretchWidthEnable": true,
+                "StretchHeightEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5
+                },
+                "Position": {
+                  "X": 375.0,
+                  "Y": 9.0
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5,
+                  "Y": 0.0163
+                },
+                "PreSize": {
+                  "X": 0.8667,
+                  "Y": 0.779
+                },
+                "HorizontalEdge": "BothEdge",
+                "VerticalEdge": "BothEdge",
+                "LeftMargin": 50.0,
+                "RightMargin": 50.0,
+                "TopMargin": 113.0,
+                "BottomMargin": 9.0,
+                "Tag": 91,
+                "Children": [
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 18,
+                    "LabelText": "发布免责声明",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 325.0,
+                      "Y": 865.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.9611
+                    },
+                    "PreSize": {
+                      "X": 0.1846,
+                      "Y": 0.0465
+                    },
+                    "HorizontalEdge": "BothEdge",
+                    "VerticalEdge": "TopEdge",
+                    "LeftMargin": 271.0,
+                    "RightMargin": 271.0,
+                    "TopMargin": 35.0,
+                    "BottomMargin": 847.0,
+                    "Tag": 92,
+                    "ActionTag": -1122382625,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 18.0
+                    },
+                    "Name": "para_0",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 18,
+                    "LabelText": "发布免责声明",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 325.0,
+                      "Y": 795.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.8833
+                    },
+                    "PreSize": {
+                      "X": 0.1846,
+                      "Y": 0.0465
+                    },
+                    "HorizontalEdge": "BothEdge",
+                    "VerticalEdge": "TopEdge",
+                    "LeftMargin": 271.0,
+                    "RightMargin": 271.0,
+                    "TopMargin": 105.0,
+                    "BottomMargin": 777.0,
+                    "Tag": 93,
+                    "ActionTag": 586195641,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 18.0
+                    },
+                    "Name": "para_1",
+                    "ctype": "TextObjectData"
+                  },
+                  {
+                    "IsCustomSize": true,
+                    "FontSize": 18,
+                    "LabelText": "发布免责声明",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 1.0
+                    },
+                    "Position": {
+                      "X": 325.0,
+                      "Y": 725.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.8056
+                    },
+                    "PreSize": {
+                      "X": 0.1846,
+                      "Y": 0.0465
+                    },
+                    "HorizontalEdge": "BothEdge",
+                    "VerticalEdge": "TopEdge",
+                    "LeftMargin": 271.0,
+                    "RightMargin": 271.0,
+                    "TopMargin": 175.0,
+                    "BottomMargin": 707.0,
+                    "Tag": 94,
+                    "ActionTag": -1353411812,
+                    "Size": {
+                      "X": 108.0,
+                      "Y": 18.0
+                    },
+                    "Name": "para_2",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": 2031602504,
+                "Size": {
+                  "X": 650.0,
+                  "Y": 430.0
+                },
+                "Name": "content_view",
+                "ctype": "ScrollViewObjectData"
+              }
+            ],
+            "ActionTag": 233136647,
+            "Size": {
+              "X": 750.0,
+              "Y": 552.0
+            },
+            "Name": "panel",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "closeDown.png",
+        "closeNormal.png",
+        "Default/Button_Disable.png",
+        "denglubeijing.png",
+        "winBg.png"
+      ],
+      "ctype": "GameProjectData"
+    }
+  },
+  "Type": "Scene"
+}

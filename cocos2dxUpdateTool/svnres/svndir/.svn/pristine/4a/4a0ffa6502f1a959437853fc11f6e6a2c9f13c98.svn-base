@@ -1,0 +1,993 @@
+{
+  "ID": "56908bec-7d44-4776-a35f-623c30d2a35d",
+  "Version": "2.3.3.0",
+  "Name": "addLayer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 57,
+        "Children": [
+          {
+            "BackColorAlpha": 102,
+            "SingleColor": {
+              "R": 150,
+              "G": 200
+            },
+            "FirstColor": {
+              "R": 150,
+              "G": 200
+            },
+            "EndColor": {},
+            "ColorVector": {
+              "ScaleY": 1.0
+            },
+            "Scale9Width": 1,
+            "Scale9Height": 1,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 58,
+            "Children": [
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_tankuang_di_01.png",
+                  "Plist": "public_plist.plist"
+                },
+                "BlendFunc": {
+                  "Src": 770,
+                  "Dst": 771
+                },
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 478.8004,
+                  "Y": 336.8551
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4988,
+                  "Y": 0.5263
+                },
+                "PreSize": {
+                  "X": 0.624,
+                  "Y": 0.4938
+                },
+                "LeftMargin": 179.3004,
+                "RightMargin": 181.6996,
+                "TopMargin": 145.1449,
+                "BottomMargin": 178.8551,
+                "Tag": 82,
+                "ActionTag": 346713697,
+                "Size": {
+                  "X": 599.0,
+                  "Y": 316.0
+                },
+                "Name": "gy_tankuang_di_01_2",
+                "ctype": "SpriteObjectData"
+              },
+              {
+                "FontSize": 18,
+                "LabelText": "添加部队",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 478.5203,
+                  "Y": 477.633
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4985,
+                  "Y": 0.7463
+                },
+                "PreSize": {
+                  "X": 0.075,
+                  "Y": 0.0281
+                },
+                "LeftMargin": 442.5203,
+                "RightMargin": 445.4797,
+                "TopMargin": 153.367,
+                "BottomMargin": 468.633,
+                "Tag": 83,
+                "ActionTag": -1754587374,
+                "Size": {
+                  "X": 72.0,
+                  "Y": 18.0
+                },
+                "Name": "Text_1",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "PressedFileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_guanbi_anxia.png",
+                  "Plist": "public_plist.plist"
+                },
+                "NormalFileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_guanbi_meian.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 13,
+                "Scale9OriginY": 11,
+                "Scale9Width": 14,
+                "Scale9Height": 19,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 770.1713,
+                  "Y": 463.9467
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.8023,
+                  "Y": 0.7249
+                },
+                "PreSize": {
+                  "X": 0.0417,
+                  "Y": 0.0641
+                },
+                "LeftMargin": 750.1713,
+                "RightMargin": 169.8287,
+                "TopMargin": 155.5533,
+                "BottomMargin": 443.4467,
+                "Tag": 84,
+                "ActionTag": 1009382928,
+                "Size": {
+                  "X": 40.0,
+                  "Y": 41.0
+                },
+                "Name": "Button_1",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FontSize": 14,
+                "ButtonText": "",
+                "TextColor": {
+                  "R": 65,
+                  "G": 65,
+                  "B": 70
+                },
+                "DisabledFileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_anniu_bukean_01.png",
+                  "Plist": "public_plist.plist"
+                },
+                "PressedFileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_anniu_anxia_01.png",
+                  "Plist": "public_plist.plist"
+                },
+                "NormalFileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_anniu_meian_01.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 11,
+                "Scale9Width": 92,
+                "Scale9Height": 25,
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 480.6055,
+                  "Y": 226.5864
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5006,
+                  "Y": 0.354
+                },
+                "PreSize": {
+                  "X": 0.1271,
+                  "Y": 0.0734
+                },
+                "LeftMargin": 419.6055,
+                "RightMargin": 418.3945,
+                "TopMargin": 389.9136,
+                "BottomMargin": 203.0864,
+                "Tag": 85,
+                "Children": [
+                  {
+                    "FontSize": 20,
+                    "LabelText": "确 认",
+                    "OutlineColor": {
+                      "G": 0,
+                      "B": 0
+                    },
+                    "ShadowColor": {
+                      "R": 110,
+                      "G": 110,
+                      "B": 110
+                    },
+                    "ShadowOffsetX": 2.0,
+                    "ShadowOffsetY": -2.0,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 61.0,
+                      "Y": 23.0
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.5,
+                      "Y": 0.4894
+                    },
+                    "PreSize": {
+                      "X": 0.4098,
+                      "Y": 0.4255
+                    },
+                    "LeftMargin": 36.0,
+                    "RightMargin": 36.0,
+                    "TopMargin": 14.0,
+                    "BottomMargin": 13.0,
+                    "Tag": 86,
+                    "ActionTag": 520561551,
+                    "Size": {
+                      "X": 50.0,
+                      "Y": 20.0
+                    },
+                    "Name": "Text_2",
+                    "ctype": "TextObjectData"
+                  }
+                ],
+                "ActionTag": 1771664160,
+                "Size": {
+                  "X": 122.0,
+                  "Y": 47.0
+                },
+                "Name": "Button_2",
+                "ctype": "ButtonObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_neirongtoumingdi.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Enable": true,
+                "Scale9OriginX": 15,
+                "Scale9OriginY": 15,
+                "Scale9Width": 17,
+                "Scale9Height": 18,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 478.2111,
+                  "Y": 351.6878
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.4981,
+                  "Y": 0.5495
+                },
+                "PreSize": {
+                  "X": 0.5365,
+                  "Y": 0.2969
+                },
+                "LeftMargin": 220.7111,
+                "RightMargin": 224.2889,
+                "TopMargin": 193.3122,
+                "BottomMargin": 256.6878,
+                "Tag": 87,
+                "ActionTag": 517930467,
+                "Size": {
+                  "X": 515.0,
+                  "Y": 190.0
+                },
+                "Name": "Image_8",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "IsBounceEnabled": true,
+                "InnerNodeSize": {
+                  "Width": 515,
+                  "Height": 105
+                },
+                "ScrollDirectionType": "Horizontal",
+                "ClipAble": true,
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "FirstColor": {
+                  "G": 150,
+                  "B": 100
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "Scale9Width": 1,
+                "Scale9Height": 1,
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 221.7302,
+                  "Y": 258.0129
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.231,
+                  "Y": 0.4031
+                },
+                "PreSize": {
+                  "X": 0.5365,
+                  "Y": 0.1641
+                },
+                "LeftMargin": 221.7302,
+                "RightMargin": 223.2698,
+                "TopMargin": 276.9871,
+                "BottomMargin": 258.0129,
+                "Tag": 94,
+                "Children": [
+                  {
+                    "FileData": {
+                      "Type": "MarkedSubImage",
+                      "Path": "gy_wupingkuang_01.png",
+                      "Plist": "public_plist.plist"
+                    },
+                    "Scale9Width": 68,
+                    "Scale9Height": 68,
+                    "AnchorPoint": {
+                      "ScaleX": 0.5,
+                      "ScaleY": 0.5
+                    },
+                    "Position": {
+                      "X": 85.0742,
+                      "Y": 44.3306
+                    },
+                    "Scale": {
+                      "ScaleX": 1.0,
+                      "ScaleY": 1.0
+                    },
+                    "CColor": {},
+                    "IconVisible": false,
+                    "PrePosition": {
+                      "X": 0.1652,
+                      "Y": 0.4222
+                    },
+                    "PreSize": {
+                      "X": 0.132,
+                      "Y": 0.6476
+                    },
+                    "LeftMargin": 51.0742,
+                    "RightMargin": 395.9258,
+                    "TopMargin": 26.6694,
+                    "BottomMargin": 10.3306,
+                    "Tag": 99,
+                    "Children": [
+                      {
+                        "FileData": {
+                          "Type": "MarkedSubImage",
+                          "Path": "gy_wupingkuang_01.png",
+                          "Plist": "public_plist.plist"
+                        },
+                        "Scale9Width": 68,
+                        "Scale9Height": 68,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 33.6663,
+                          "Y": 34.7298
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4951,
+                          "Y": 0.5107
+                        },
+                        "PreSize": {
+                          "X": 1.0,
+                          "Y": 1.0
+                        },
+                        "LeftMargin": -0.3337,
+                        "RightMargin": 0.3337,
+                        "TopMargin": -0.7298,
+                        "BottomMargin": 0.7298,
+                        "Tag": 100,
+                        "ActionTag": -638112641,
+                        "Size": {
+                          "X": 68.0,
+                          "Y": 68.0
+                        },
+                        "Name": "Image_11_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FileData": {
+                          "Type": "MarkedSubImage",
+                          "Path": "gy_xuanze.png",
+                          "Plist": "public_plist.plist"
+                        },
+                        "Scale9Enable": true,
+                        "Scale9OriginX": 20,
+                        "Scale9OriginY": 20,
+                        "Scale9Width": 23,
+                        "Scale9Height": 23,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 33.6663,
+                          "Y": 34.7299
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4951,
+                          "Y": 0.5107
+                        },
+                        "PreSize": {
+                          "X": 1.0294,
+                          "Y": 1.0294
+                        },
+                        "LeftMargin": -1.3337,
+                        "RightMargin": -0.6663,
+                        "TopMargin": -1.7299,
+                        "BottomMargin": -0.2701,
+                        "Tag": 258,
+                        "ActionTag": -1825737800,
+                        "Size": {
+                          "X": 70.0,
+                          "Y": 70.0
+                        },
+                        "Name": "Image_11_0_0",
+                        "ctype": "ImageViewObjectData"
+                      },
+                      {
+                        "FontSize": 18,
+                        "LabelText": "99",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 33.16,
+                          "Y": 10.8178
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {},
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4876,
+                          "Y": 0.1591
+                        },
+                        "PreSize": {
+                          "X": 0.2647,
+                          "Y": 0.2647
+                        },
+                        "LeftMargin": 24.16,
+                        "RightMargin": 25.84,
+                        "TopMargin": 48.1822,
+                        "BottomMargin": 1.8178,
+                        "Tag": 97,
+                        "ActionTag": -859393118,
+                        "Size": {
+                          "X": 18.0,
+                          "Y": 18.0
+                        },
+                        "Name": "Text_7",
+                        "ctype": "TextObjectData"
+                      },
+                      {
+                        "FontSize": 18,
+                        "LabelText": "弓骑兵",
+                        "OutlineColor": {
+                          "G": 0,
+                          "B": 0
+                        },
+                        "ShadowColor": {
+                          "R": 110,
+                          "G": 110,
+                          "B": 110
+                        },
+                        "ShadowOffsetX": 2.0,
+                        "ShadowOffsetY": -2.0,
+                        "AnchorPoint": {
+                          "ScaleX": 0.5,
+                          "ScaleY": 0.5
+                        },
+                        "Position": {
+                          "X": 33.3731,
+                          "Y": 77.678
+                        },
+                        "Scale": {
+                          "ScaleX": 1.0,
+                          "ScaleY": 1.0
+                        },
+                        "CColor": {
+                          "G": 165,
+                          "B": 0
+                        },
+                        "IconVisible": false,
+                        "PrePosition": {
+                          "X": 0.4908,
+                          "Y": 1.1423
+                        },
+                        "PreSize": {
+                          "X": 0.7941,
+                          "Y": 0.2647
+                        },
+                        "LeftMargin": 6.3731,
+                        "RightMargin": 7.6269,
+                        "TopMargin": -18.678,
+                        "BottomMargin": 68.678,
+                        "CallBackType": "Click",
+                        "Tag": 98,
+                        "ActionTag": 1707639227,
+                        "Size": {
+                          "X": 54.0,
+                          "Y": 18.0
+                        },
+                        "Name": "Text_8",
+                        "ctype": "TextObjectData"
+                      }
+                    ],
+                    "ActionTag": -892066653,
+                    "Size": {
+                      "X": 68.0,
+                      "Y": 68.0
+                    },
+                    "Name": "Image_11",
+                    "ctype": "ImageViewObjectData"
+                  }
+                ],
+                "ActionTag": 127331441,
+                "Size": {
+                  "X": 515.0,
+                  "Y": 105.0
+                },
+                "Name": "ScrollView_1",
+                "ctype": "ScrollViewObjectData"
+              },
+              {
+                "BackGroundData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_jindutiao_di.png",
+                  "Plist": "public_plist.plist"
+                },
+                "ProgressBarData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_jindutiao.png",
+                  "Plist": "public_plist.plist"
+                },
+                "BallNormalData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_huadonganniu.png",
+                  "Plist": "public_plist.plist"
+                },
+                "PercentInfo": 50,
+                "TouchEnable": true,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 486.2306,
+                  "Y": 387.85
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5065,
+                  "Y": 0.606
+                },
+                "PreSize": {
+                  "X": 0.1927,
+                  "Y": 0.0141
+                },
+                "LeftMargin": 393.7306,
+                "RightMargin": 381.2694,
+                "TopMargin": 247.65,
+                "BottomMargin": 383.35,
+                "Tag": 93,
+                "ActionTag": -716163626,
+                "Size": {
+                  "X": 185.0,
+                  "Y": 9.0
+                },
+                "Name": "Slider_1",
+                "ctype": "SliderObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_jia.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 20,
+                "Scale9Height": 20,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 596.1987,
+                  "Y": 386.8899
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.621,
+                  "Y": 0.6045
+                },
+                "PreSize": {
+                  "X": 0.0208,
+                  "Y": 0.0312
+                },
+                "LeftMargin": 586.1987,
+                "RightMargin": 353.8013,
+                "TopMargin": 243.1101,
+                "BottomMargin": 376.8899,
+                "Tag": 92,
+                "ActionTag": 2082373206,
+                "Size": {
+                  "X": 20.0,
+                  "Y": 20.0
+                },
+                "Name": "Image_5_0",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "BackColorAlpha": 102,
+                "SingleColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "FirstColor": {
+                  "R": 150,
+                  "G": 200
+                },
+                "EndColor": {},
+                "ColorVector": {
+                  "ScaleY": 1.0
+                },
+                "TouchEnable": true,
+                "AnchorPoint": {},
+                "Position": {
+                  "X": 366.917,
+                  "Y": 376.3281
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3822,
+                  "Y": 0.588
+                },
+                "PreSize": {
+                  "X": 0.0208,
+                  "Y": 0.0312
+                },
+                "LeftMargin": 366.917,
+                "RightMargin": 573.083,
+                "TopMargin": 243.6719,
+                "BottomMargin": 376.3281,
+                "Tag": 292,
+                "ActionTag": 537745137,
+                "Size": {
+                  "X": 20.0,
+                  "Y": 20.0
+                },
+                "Name": "Panel_2",
+                "ctype": "PanelObjectData"
+              },
+              {
+                "FileData": {
+                  "Type": "MarkedSubImage",
+                  "Path": "gy_jian.png",
+                  "Plist": "public_plist.plist"
+                },
+                "Scale9Width": 21,
+                "Scale9Height": 6,
+                "AnchorPoint": {
+                  "ScaleX": 0.5,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 375.7776,
+                  "Y": 386.2916
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.3914,
+                  "Y": 0.6036
+                },
+                "PreSize": {
+                  "X": 0.0219,
+                  "Y": 0.0094
+                },
+                "LeftMargin": 365.2776,
+                "RightMargin": 573.7224,
+                "TopMargin": 250.7084,
+                "BottomMargin": 383.2916,
+                "Tag": 91,
+                "ActionTag": -2042559905,
+                "Size": {
+                  "X": 21.0,
+                  "Y": 6.0
+                },
+                "Name": "Image_5",
+                "ctype": "ImageViewObjectData"
+              },
+              {
+                "FontSize": 18,
+                "LabelText": "9",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 490.8787,
+                  "Y": 418.3417
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5113,
+                  "Y": 0.6537
+                },
+                "PreSize": {
+                  "X": 0.0094,
+                  "Y": 0.0281
+                },
+                "LeftMargin": 481.8787,
+                "RightMargin": 469.1213,
+                "TopMargin": 212.6583,
+                "BottomMargin": 409.3417,
+                "Tag": 90,
+                "ActionTag": 1499991205,
+                "Size": {
+                  "X": 9.0,
+                  "Y": 18.0
+                },
+                "Name": "Text_10",
+                "ctype": "TextObjectData"
+              },
+              {
+                "FontSize": 16,
+                "LabelText": "部队上限",
+                "OutlineColor": {
+                  "G": 0,
+                  "B": 0
+                },
+                "ShadowColor": {
+                  "R": 110,
+                  "G": 110,
+                  "B": 110
+                },
+                "ShadowOffsetX": 2.0,
+                "ShadowOffsetY": -2.0,
+                "AnchorPoint": {
+                  "ScaleY": 0.5
+                },
+                "Position": {
+                  "X": 494.9144,
+                  "Y": 417.7191
+                },
+                "Scale": {
+                  "ScaleX": 1.0,
+                  "ScaleY": 1.0
+                },
+                "CColor": {},
+                "IconVisible": false,
+                "PrePosition": {
+                  "X": 0.5155,
+                  "Y": 0.6527
+                },
+                "PreSize": {
+                  "X": 0.0667,
+                  "Y": 0.025
+                },
+                "LeftMargin": 494.9144,
+                "RightMargin": 401.0856,
+                "TopMargin": 214.2809,
+                "BottomMargin": 409.7191,
+                "Tag": 89,
+                "ActionTag": 8525197,
+                "Size": {
+                  "X": 64.0,
+                  "Y": 16.0
+                },
+                "Name": "Text_9",
+                "ctype": "TextObjectData"
+              }
+            ],
+            "ActionTag": -1448660034,
+            "Size": {
+              "X": 960.0,
+              "Y": 640.0
+            },
+            "Name": "Panel_1",
+            "ctype": "PanelObjectData"
+          }
+        ],
+        "Size": {
+          "X": 960.0,
+          "Y": 640.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "../public_plist.plist",
+        "../public_plist.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}
