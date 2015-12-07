@@ -1,0 +1,12 @@
+var MainUI = cc.Sprite.extend({
+    ctor: function () {
+        this._super();
+        try{
+            var sp = new cc.Sprite("res/gy_dui_01.png");
+            this.addChild(sp);
+        } catch(e) {
+            console.log("Error:" + e);
+        }
+        sp.setPosition(200,200);
+    }
+});

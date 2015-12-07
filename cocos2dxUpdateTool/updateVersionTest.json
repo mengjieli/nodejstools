@@ -1,0 +1,67 @@
+{
+  "desc": "版本更新配置",
+  "list": [
+    {
+      "name": "out-net",
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/TestUpdate/",
+        "user": "limengjie",
+        "password": "lmj111111"
+      },
+      "ftp": {
+        "ip": "121.40.18.57",
+        "user": "nihaowalk",
+        "password": "walkwest-98",
+        "direction": "ParkerEmpire/out/"
+      },
+      "src": {
+        "init": 1431,
+        "last": 1431
+      },
+      "res": {
+        "init": 1431,
+        "last": 1431
+      },
+      "version": {
+        "max": "0",
+        "last": "1.0.0"
+      },
+      "projectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/out",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/out/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/out/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {
+          "1": "1.0.0"
+        },
+        "engineVersion": "3.6",
+        "assets": {
+        },
+        "searchPaths": []
+      },
+      "versionManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/out",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/out/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/out/version.manifest",
+        "version": "1.0.0",
+        "engineVersion": "3.6",
+        "groupVersions": {
+          "1": "1.0.0"
+        },
+        "searchPaths": []
+      },
+      "resProjectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/out/",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/out/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/out/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {
+          "1": "1.0.0"
+        },
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      }
+    }
+  ]
+}

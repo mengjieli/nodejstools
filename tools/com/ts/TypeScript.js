@@ -8,13 +8,10 @@ global.__define = __define;
 Example get & set
 function File(){
 }
-global.__define(File.prototype, "content"
-    , function () {
-        if (this.type == global.FileType.DIRECTION) {
-            return null;
-        }
+global.__define(File.prototype, "content",
+    function () {
         return fs.readFileSync(this.url, "utf-8");
-    }
-    , function (val) {
+    },
+    function (val) {
     }
 );*/

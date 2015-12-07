@@ -1,0 +1,7 @@
+var MainUI = cc.Sprite.extend({
+    ctor: function () {
+        var sp = new cc.Sprite("res/blue.png");
+        this.addChild(sp);
+        sp.setPosition(200,200);
+    }
+});

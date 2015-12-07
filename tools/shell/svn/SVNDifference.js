@@ -57,6 +57,9 @@ SVNDifference.prototype.modify = function () {
  * @param content
  */
 SVNDifference.changeStringToDifferences = function (content, svn) {
+    //console.log(" ");
+    //console.log(content);
+    //console.log(" ");
     var list = [];
     while (StringDo.findString(content, "Index: ", 0) != -1) {
         //处理 Index: svnsrc/svndir/DDD.txt
@@ -71,45 +74,55 @@ SVNDifference.changeStringToDifferences = function (content, svn) {
         end = StringDo.findString(content, "\n", index);
         content = content.slice(end + 1, content.length);
 
-
-        //分析 --- svnsrc/svndir/DDD.txt       (revision 0)
-        //    +++ svnsrc/svndir/DDD.txt       (revision 1332)
-        start = StringDo.findString(content, "(revision ", index);
-        end = StringDo.findString(content, ")", index);
-        var lastVersion = parseInt(content.slice(start + "(revision ".length, end));
-        //跳过 --- svnsrc/svndir/DDD.txt       (revision 0)
-        end = StringDo.findString(content, "\n", index);
-        content = content.slice(end + 1, content.length);
-
-        start = StringDo.findString(content, "(revision ", index);
-        end = StringDo.findString(content, ")", index);
-        var currentVersion = parseInt(content.slice(start + "(revision ".length, end));
-        //跳过 +++ svnsrc/svndir/DDD.txt       (revision 1332)
-        end = StringDo.findString(content, "\n", index);
-        content = content.slice(end + 1, content.length);
-
-        var diff = new SVNDifference(url, lastVersion, currentVersion,svn);
-        list.push(diff);
-        //分析 @@ -1 +0,0 @@ 删除
-        //分析 @@ -1 +1 @@ 修改
-        //分析 @@ -0,0 +1 @@ 增加
-        start = StringDo.findString(content, "@@ ", index) + "@@ ".length;
-        end = StringDo.findString(content, " @@", start);
-        var linestr = content.slice(start, end);
-        var lastChar = linestr.split(",")[linestr.split(",").length - 1];
-        if (lastChar == "0") { //删除
+        //Cannot display: file marked as a binary type.
+        //svn:mime-type = application/octet-stream
+        if (content.slice(index, index + "---".length) != "---") {
+            var diff = new SVNDifference(url, 0, 0, svn);
             diff.delete();
-            //console.log("删除");
-        } else if (lastVersion == 0) { //添加
-            diff.add();
-            //console.log("添加");
-        } else { //修改
-            diff.modify();
-            //console.log("修改");
+            list.push(diff);
+            //Cannot display: file marked as a binary type.
+            end = StringDo.findString(content, "\n", index);
+            content = content.slice(end + 1, content.length);
+        } else {
+            //分析 --- svnsrc/svndir/DDD.txt       (revision 0)
+            //    +++ svnsrc/svndir/DDD.txt       (revision 1332)
+            start = StringDo.findString(content, "(revision ", index);
+            end = StringDo.findString(content, ")", index);
+            var lastVersion = parseInt(content.slice(start + "(revision ".length, end));
+            //跳过 --- svnsrc/svndir/DDD.txt       (revision 0)
+            end = StringDo.findString(content, "\n", index);
+            content = content.slice(end + 1, content.length);
+
+            start = StringDo.findString(content, "(revision ", index);
+            end = StringDo.findString(content, ")", index);
+            var currentVersion = parseInt(content.slice(start + "(revision ".length, end));
+            //跳过 +++ svnsrc/svndir/DDD.txt       (revision 1332)
+            end = StringDo.findString(content, "\n", index);
+            content = content.slice(end + 1, content.length);
+
+            var diff = new SVNDifference(url, lastVersion, currentVersion, svn);
+            list.push(diff);
+            //分析 @@ -1 +0,0 @@ 删除
+            //分析 @@ -1 +1 @@ 修改
+            //分析 @@ -0,0 +1 @@ 增加
+            start = StringDo.findString(content, "@@ ", index) + "@@ ".length;
+            end = StringDo.findString(content, " @@", start);
+            var linestr = content.slice(start, end);
+            var lastChar = linestr.split(",")[linestr.split(",").length - 1];
+            if (lastChar == "0") { //删除
+                diff.delete();
+                //console.log("删除");
+            } else if (lastVersion == 0) { //添加
+                diff.add();
+                //console.log("添加");
+            } else { //修改
+                diff.modify();
+                //console.log("修改");
+            }
+            //跳过 @@ ... @@
+            end = StringDo.findString(content, "\n", index);
+            content = content.slice(end + 1, content.length);
         }
-        //跳过 @@ ... @@
-        end = StringDo.findString(content, "\n", index);
-        content = content.slice(end + 1, content.length);
     }
     return list;
 }

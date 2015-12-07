@@ -71,6 +71,37 @@ global.FTP.prototype.upload = function (file, ftpurl, complete, thisObj) {
     });
 }
 
+global.FTP.prototype.del = function (ftpurl, complete, thisObj) {
+    if (!this.isconnect) {
+        this.connect(this.upload, this, arguments);
+        return;
+    }
+    var client = this.client;
+    var _this = this;
+    client.delete(ftpurl, function (err) {
+        _this.close();
+        if (err) {
+            console.log(err);
+            throw err;
+        } else {
+            if (complete) {
+                complete.apply(thisObj);
+            }
+        }
+    });
+}
+
+global.FTP.prototype.printAPI = function () {
+    if (!this.isconnect) {
+        this.connect(this.printAPI, this, arguments);
+        return;
+    }
+    var client = this.client;
+    for (key in client) {
+        console.log(key);
+    }
+}
+
 global.FTP.prototype.close = function () {
     this.client.end();
     this.client = null;

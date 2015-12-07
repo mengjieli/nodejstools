@@ -1,7 +1,0 @@
-key,plistPath,frameNum,time,anchorX,anchorY,scale,mode
-castle_upgrade_hammer,res/images/animation/ui/castle/castle_upgrade_hammer.plist,20,1,0.5,0.5,1,0
-castle_upgrade_down,res/images/animation/ui/castle/castle_upgrade_down.plist,20,1,0.5,0.5,1,0
-castle_upgrade_up,res/images/animation/ui/castle/castle_upgrade_up.plist,20,1,0.5,0.5,1,0
-castle_upgrade_complete,res/images/animation/ui/castle/castle_upgrade_complete.plist,16,1,0.5,0.5,1,0
-castle_tech_upgrade,res/images/animation/ui/castle/castle_tech_upgrade.plist,20,1,0.5,0.5,1,0
-castle_tech_upgrade_complete,res/images/animation/ui/castle/castle_tech_upgrade_complete.plist,12,1,0.5,0.5,1,0

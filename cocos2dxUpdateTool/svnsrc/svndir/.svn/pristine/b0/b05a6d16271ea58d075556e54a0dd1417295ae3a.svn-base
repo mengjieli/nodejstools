@@ -1,0 +1,8 @@
+var MainUI = cc.Sprite.extend({
+    ctor: function () {
+        this._super();
+        var sp = new cc.Sprite("res/gy_tishi_01.png");
+        this.addChild(sp);
+        sp.setPosition(200, 200);
+    }
+});

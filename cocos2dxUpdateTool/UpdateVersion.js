@@ -25,6 +25,7 @@ UpdateVersion.prototype.updateVersion = function () {
     var server = this.serverList[this.updateIndex];
     console.log("ready to update server \"" + server.name + "\":");
     this.currentUpdateSrc = true; // src svn 有版本更新
+    this.currentUpdateRes = true; // res svn 有版本更新
     this.updateSrc(server);
 }
 
@@ -44,10 +45,7 @@ UpdateVersion.prototype.updateSrc = function (server) {
             //jsc 工具
             console.log("  2. jsc \"src\"");
             new ShellCommand("cocos", ["jscompile", "-s", svn.localsvndir, "-d", "src/"], function () {
-                ZipShell.compress("src", "tmp/src.zip", function () {
-                    (new File("src")).delete();
-                    _this.updateRes(server);
-                });
+                _this.updateRes(server);
             });
         });
     });
@@ -65,11 +63,6 @@ UpdateVersion.prototype.updateRes = function (server) {
     svn.getReady(function () {
         svn.update(function () {
             svn.checkVersionDifference(server.res.last, svn.lastVersion, function (list) {
-                if (!_this.currentUpdateSrc && server.res.last == svn.lastVersion) {
-                    console.log("  \"src\" and \"res\" is the latest, jump this server update.", server.res.last, svn.lastVersion);
-                    _this.updateVersionComplete();
-                    return;
-                }
                 server.res.last = svn.lastVersion;
                 var hasFile = false;
                 for (var i = 0; i < list.length; i++) {
@@ -80,12 +73,13 @@ UpdateVersion.prototype.updateRes = function (server) {
                         hasFile = true;
                     }
                 }
-                var file = new File("res/project.manifest");
-                file.save(JSON.stringify(server.resProjectManifest));
-                ZipShell.compress("res", "tmp/res.zip", function () {
-                    (new File("res")).delete();
-                    _this.modifyManifest(server);
-                });
+                _this.currentUpdateRes = hasFile;
+                if (!_this.currentUpdateSrc && !_this.currentUpdateRes) {
+                    console.log("  \"src\" and \"res\" is the latest, jump this server update.", server.res.last, svn.lastVersion);
+                    _this.updateVersionComplete();
+                    return;
+                }
+                _this.modifyManifest(server);
             });
         });
     });
@@ -97,59 +91,123 @@ UpdateVersion.prototype.updateRes = function (server) {
  */
 UpdateVersion.prototype.modifyManifest = function (server) {
     console.log("  4. modify manifest files");
-    var lastVersion = server.version.last;
-    var nextVersion = this.addVersion(lastVersion);
-    server.version.last = nextVersion;
+    var srcMax = server.version.src.key;
+    var srcVersion = server.version.src.version;
+    var resLastVersion = "";
+    var resMax = 0;
+    var resNextVersion = "";
+    if (this.currentUpdateSrc) {
+        if (!srcMax) {
+            srcMax = 1000000;
+            srcVersion = "10000.0.0";
+        } else {
+            srcMax++;
+            srcVersion = this.addVersion(srcVersion);
+        }
+        server.version.src.key = srcMax;
+        server.version.src.version = srcVersion;
+    }
+    if (this.currentUpdateRes) {
+        for (var key in server.version.res) {
+            resMax = parseInt(key) > resMax ? parseInt(key) : resMax;
+        }
+        var resLastVersion = server.version.res[resMax + ""];
+        if (!resLastVersion) resLastVersion = "1.0.0";
+        resNextVersion = this.addVersion(resLastVersion);
+        resMax++;
+        server.version.res[resMax + ""] = resNextVersion;
+    }
     this.configString = JSON.stringify(this.config);
+
 
     //保存 project.manifest
     var projectManifest = server.projectManifest;
-    projectManifest.groupVersions["1"] = nextVersion;
-    var list = [];
-    for (var key in projectManifest.assets) {
-        list.push({
-            key: nextVersion + "-" + key.split("-")[1],
-            value: projectManifest.assets[key]
-        });
-        delete projectManifest.assets[key]
+    for (var key in server.version.res) {
+        projectManifest.groupVersions[key] = server.version.res[key];
+        projectManifest.assets["update" + key] = {
+            "path": "update" + key + ".zip",
+            "md5": "",
+            "compressed": true,
+            "group": key
+        }
     }
-    while (list.length) {
-        var info = list.shift();
-        projectManifest.assets[info.key] = info.value;
+    if (this.currentUpdateSrc) {
+        projectManifest.groupVersions[srcMax + ""] = srcVersion;
+        projectManifest.assets["update" + srcMax] = {
+            "path": "update" + srcMax + ".zip",
+            "md5": "",
+            "compressed": true,
+            "group": srcMax + ""
+        }
     }
     var file = new File("tmp/project.manifest");
     file.save(JSON.stringify(projectManifest));
 
     //保存 version.manifest
     var versionManifest = server.versionManifest;
-    versionManifest.groupVersions["1"] = nextVersion;
+    for (var key in server.version.res) {
+        versionManifest.groupVersions[key] = server.version.res[key];
+    }
+    if (this.currentUpdateSrc) {
+        versionManifest.groupVersions[srcMax + ""] = srcVersion;
+    }
     file = new File("tmp/version.manifest");
     file.save(JSON.stringify(versionManifest));
 
-    //上传 ftp
-    this.uploadFtp(server, lastVersion, nextVersion);
+
+    var _this = this;
+    var file = new File("res/project.manifest");
+    file.save(JSON.stringify(server.resProjectManifest));
+    ZipShell.compress(["src"], "tmp/update" + srcMax + ".zip", function () {
+        if (_this.currentUpdateRes) {
+            ZipShell.compress(["res"], "tmp/update" + resMax + ".zip", function () {
+                //上传 ftp
+                _this.uploadFtp(server, resMax, srcMax);
+            });
+        } else {
+            //上传 ftp
+            _this.uploadFtp(server, resMax, srcMax);
+        }
+    });
 }
 
-UpdateVersion.prototype.uploadFtp = function (server, lastVersion, nextVersion) {
+UpdateVersion.prototype.uploadFtp = function (server, resMax, srcMax) {
+    console.log("  5. upload ftp ");
     var _this = this;
-    console.log("  5. upload ftp");
     var ftp = new FTP(server.ftp.ip, server.ftp.user, server.ftp.password);
-    ftp.upload("tmp/src.zip", server.ftp.direction + "src.zip", function () {
-        ftp.upload("tmp/res.zip", server.ftp.direction + "res.zip", function () {
-            ftp.upload("tmp/project.manifest", server.ftp.direction + "project.manifest", function () {
-                ftp.upload("tmp/version.manifest", server.ftp.direction + "version.manifest", function () {
-                    var file = new File("updateVersion.json");
-                    file.save(_this.configString);
-                    console.log("  update success, server \"" + server.name + "\"," + lastVersion + "->" + nextVersion);
-                    _this.updateVersionComplete();
+    var uploadComplete = function () {
+        var file = new File("updateVersion.json");
+        file.save(_this.configString);
+        console.log("  update success, server \"" + server.name);
+        _this.updateVersionComplete();
+    }
+    ftp.upload("tmp/project.manifest", server.ftp.direction + "project.manifest", function () {
+        ftp.upload("tmp/version.manifest", server.ftp.direction + "version.manifest", function () {
+            if (_this.currentUpdateSrc && _this.currentUpdateRes) {
+                ftp.upload("tmp/update" + srcMax + ".zip", server.ftp.direction + "update" + srcMax + ".zip", function () {
+                    ftp.upload("tmp/update" + resMax + ".zip", server.ftp.direction + "update" + resMax + ".zip", function () {
+                        uploadComplete();
+                    })
                 })
-            })
+            }
+            else if (_this.currentUpdateSrc) {
+                ftp.upload("tmp/update" + srcMax + ".zip", server.ftp.direction + "update" + srcMax + ".zip", function () {
+                    uploadComplete();
+                })
+            }
+            else if (_this.currentUpdateRes) {
+                ftp.upload("tmp/update" + resMax + ".zip", server.ftp.direction + "update" + resMax + ".zip", function () {
+                    uploadComplete();
+                })
+            }
         })
-    })
+    });
 }
 
 UpdateVersion.prototype.updateVersionComplete = function () {
-    (new File("tmp")).delete();
+    (new File("src")).delete();
+    (new File("res")).delete();
+    //(new File("tmp")).delete();
     this.updateIndex++;
     if (this.updateIndex < this.serverList.length) {
         this.updateVersion();
@@ -162,15 +220,23 @@ UpdateVersion.prototype.updateVersionComplete = function () {
  */
 UpdateVersion.prototype.addVersion = function (version) {
     var number = 0;
-    var arr = version.split(".");
-    for (var i = arr.length - 1; i >= 0; i--) {
-        number += parseInt(arr[i]) * Math.pow(10, arr.length - 1 - i);
-    }
-    number++;
-    var str = number + "";
     var res = "";
-    for (var i = 0; i < str.length; i++) {
-        res += str.charAt(i) + (i < str.length - 1 ? "." : "");
+    var arr = version.split(".");
+    var addNext = false;
+    for (var i = arr.length - 1; i >= 0; i--) {
+        number = parseInt(arr[i]);
+        if (i == arr.length - 1) {
+            number++;
+        } else if (addNext) {
+            number++;
+        }
+        if (i != 0 && number >= 10) {
+            number = 0;
+            addNext = true;
+        } else {
+            addNext = false;
+        }
+        res = number + (i != arr.length - 1 ? "." : "") + res;
     }
     return res;
 }
