@@ -78,7 +78,11 @@ SVNDifference.changeStringToDifferences = function (content, svn) {
         //svn:mime-type = application/octet-stream
         if (content.slice(index, index + "---".length) != "---") {
             var diff = new SVNDifference(url, 0, 0, svn);
-            diff.delete();
+            if ((new File(url)).isExist()) {
+                diff.modify();
+            } else {
+                diff.delete();
+            }
             list.push(diff);
             //Cannot display: file marked as a binary type.
             end = StringDo.findString(content, "\n", index);

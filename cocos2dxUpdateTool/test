@@ -1,0 +1,629 @@
+ieLideMacBook-Pro:cocos2dxUpdateTool mengjieli$ node UpdateVersion.js
+ready to update server "out-net":
+  1. update "src" from svn
+  2. jsc "src"
+  3. update "res" from svn
+  4. modify manifest files
+  5. upload ftp
+  update success, server "out-net
+MengJieLideMacBook-Pro:cocos2dxUpdateTool mengjieli$ node UpdateVersion.js
+ready to update server "out-net":
+  1. update "src" from svn
+  2. jsc "src"
+  3. update "res" from svn
+差异 content :Index: svnres/svndir/images/ui/chatModule/Layer.json
+===================================================================
+--- svnres/svndir/images/ui/chatModule/Layer.json       (revision 1491)
++++ svnres/svndir/images/ui/chatModule/Layer.json       (revision 1504)
+@@ -1,6 +1,6 @@
+ {
+   "ID": "b5b5c466-b6b9-4251-9497-9c0e012bfd6d",
+-  "Version": "2.3.2.3",
++  "Version": "2.3.3.0",
+   "Name": "Layer",
+   "Content": {
+     "Content": {
+@@ -29,6 +29,8 @@
+             "ColorVector": {
+               "ScaleY": 1.0
+             },
++            "Scale9Width": 1,
++            "Scale9Height": 1,
+             "TouchEnable": true,
+             "StretchWidthEnable": true,
+             "StretchHeightEnable": true,
+@@ -63,7 +65,6 @@
+             "ctype": "PanelObjectData"
+           },
+           {
+-            "ComboBoxIndex": 1,
+             "SingleColor": {
+               "R": 33,
+               "G": 31,
+@@ -77,6 +78,8 @@
+             "ColorVector": {
+               "ScaleY": 1.0
+             },
++            "Scale9Width": 1,
++            "Scale9Height": 1,
+             "AnchorPoint": {},
+             "Position": {
+               "X": 0.0,
+@@ -93,11 +96,12 @@
+               "Y": 0.0
+             },
+             "PreSize": {
+-              "X": 1.0,
++              "X": 0.6042,
+               "Y": 1.0
+             },
+             "HorizontalEdge": "BothEdge",
+             "VerticalEdge": "TopEdge",
++            "RightMargin": 380.0,
+             "Tag": 33,
+             "Children": [
+               {
+@@ -115,6 +119,8 @@
+                 "ColorVector": {
+                   "ScaleY": 1.0
+                 },
++                "Scale9Width": 1,
++                "Scale9Height": 1,
+                 "AnchorPoint": {},
+                 "Position": {
+                   "X": 0.0,
+@@ -131,9 +137,10 @@
+                   "Y": 0.8459
+                 },
+                 "PreSize": {
+-                  "X": 1.0,
++                  "X": 1.6552,
+                   "Y": 0.0938
+                 },
++                "RightMargin": -380.0,
+                 "TopMargin": 38.615,
+                 "BottomMargin": 541.385,
+                 "Tag": 34,
+@@ -212,8 +219,8 @@
+                           "Y": 0.5
+                         },
+                         "PreSize": {
+-                          "X": 0.0,
+-                          "Y": 0.0
++                          "X": 0.3419,
++                          "Y": 0.4762
+                         },
+                         "HorizontalEdge": "BothEdge",
+                         "VerticalEdge": "BothEdge",
+@@ -313,8 +320,8 @@
+                           "Y": 0.5
+                         },
+                         "PreSize": {
+-                          "X": 0.0,
+-                          "Y": 0.0
++                          "X": 0.3419,
++                          "Y": 0.4762
+                         },
+                         "HorizontalEdge": "BothEdge",
+                         "VerticalEdge": "BothEdge",
+@@ -414,8 +421,8 @@
+                           "Y": 0.5
+                         },
+                         "PreSize": {
+-                          "X": 0.0,
+-                          "Y": 0.0
++                          "X": 0.3419,
++                          "Y": 0.4762
+                         },
+                         "HorizontalEdge": "BothEdge",
+                         "VerticalEdge": "BothEdge",
+@@ -515,8 +522,8 @@
+                           "Y": 0.5
+                         },
+                         "PreSize": {
+-                          "X": 0.0,
+-                          "Y": 0.0
++                          "X": 0.3419,
++                          "Y": 0.4762
+                         },
+                         "HorizontalEdge": "BothEdge",
+                         "VerticalEdge": "BothEdge",
+@@ -580,7 +587,6 @@
+                       "X": 550.0,
+                       "Y": 12.0
+                     },
+-                    "VisibleForFrame": false,
+                     "Name": "xiaotiao",
+                     "ctype": "ImageViewObjectData"
+                   }
+@@ -608,6 +614,8 @@
+                 "ColorVector": {
+                   "ScaleY": 1.0
+                 },
++                "Scale9Width": 1,
++                "Scale9Height": 1,
+                 "AnchorPoint": {},
+                 "Position": {
+                   "X": 0.0,
+@@ -657,10 +665,10 @@
+                       "Y": 0.0
+                     },
+                     "PreSize": {
+-                      "X": 0.5781,
++                      "X": 0.9569,
+                       "Y": 1.0056
+                     },
+-                    "RightMargin": 405.0,
++                    "RightMargin": 25.0,
+                     "TopMargin": -3.0,
+                     "Tag": 65,
+                     "ActionTag": 1631679725,
+@@ -697,15 +705,15 @@
+                     "CColor": {},
+                     "IconVisible": false,
+                     "PrePosition": {
+-                      "X": 0.2865,
+-                      "Y": 0.4766
++                      "X": 0.4741,
++                      "Y": 0.568
+                     },
+                     "PreSize": {
+-                      "X": 0.5469,
++                      "X": 0.9052,
+                       "Y": 0.8287
+                     },
+                     "LeftMargin": 12.5,
+-                    "RightMargin": 422.5,
++                    "RightMargin": 42.5,
+                     "TopMargin": 9.5,
+                     "BottomMargin": 82.5,
+                     "Tag": 247,
+@@ -743,16 +751,16 @@
+                     "CColor": {},
+                     "IconVisible": false,
+                     "PrePosition": {
+-                      "X": 0.25,
+-                      "Y": 0.0703
++                      "X": 0.4138,
++                      "Y": 0.0838
+                     },
+                     "PreSize": {
+-                      "X": 0.3187,
+-                      "Y": 0.0703
++                      "X": 0.5276,
++                      "Y": 0.0838
+                     },
+                     "LeftMargin": 87.0,
+-                    "RightMargin": 567.0,
+-                    "TopMargin": 572.5,
++                    "RightMargin": 187.0,
++                    "TopMargin": 469.5,
+                     "BottomMargin": 22.5,
+                     "Tag": 245,
+                     "ActionTag": -790939630,
+@@ -767,7 +775,7 @@
+                     "FontSize": 20,
+                     "IsCustomSize": true,
+                     "LabelText": "",
+-                    "PlaceHolderText": "Text Field",
++                    "PlaceHolderText": "",
+                     "MaxLengthText": 10,
+                     "TouchEnable": true,
+                     "AnchorPoint": {
+@@ -785,15 +793,15 @@
+                     "CColor": {},
+                     "IconVisible": false,
+                     "PrePosition": {
+-                      "X": 0.2479,
++                      "X": 0.4103,
+                       "Y": 0.0838
+                     },
+                     "PreSize": {
+-                      "X": 0.3125,
++                      "X": 0.5172,
+                       "Y": 0.0745
+                     },
+                     "LeftMargin": 88.0,
+-                    "RightMargin": 572.0,
++                    "RightMargin": 192.0,
+                     "TopMargin": 472.0,
+                     "BottomMargin": 25.0,
+                     "Tag": 248,
+@@ -827,6 +835,8 @@
+                     "ColorVector": {
+                       "ScaleY": 1.0
+                     },
++                    "Scale9Width": 1,
++                    "Scale9Height": 1,
+                     "TouchEnable": true,
+                     "AnchorPoint": {},
+                     "Position": {
+@@ -840,16 +850,16 @@
+                     "CColor": {},
+                     "IconVisible": false,
+                     "PrePosition": {
+-                      "X": 0.026,
++                      "X": 0.0431,
+                       "Y": 0.1769
+                     },
+                     "PreSize": {
+-                      "X": 0.5208,
++                      "X": 0.8621,
+                       "Y": 0.8007
+                     },
+                     "VerticalEdge": "BottomEdge",
+                     "LeftMargin": 25.0,
+-                    "RightMargin": 435.0,
++                    "RightMargin": 55.0,
+                     "TopMargin": 12.0,
+                     "BottomMargin": 95.0,
+                     "Tag": 67,
+@@ -877,6 +887,8 @@
+                     "ColorVector": {
+                       "ScaleY": 1.0
+                     },
++                    "Scale9Width": 1,
++                    "Scale9Height": 1,
+                     "TouchEnable": true,
+                     "AnchorPoint": {},
+                     "Position": {
+@@ -890,15 +902,15 @@
+                     "CColor": {},
+                     "IconVisible": false,
+                     "PrePosition": {
+-                      "X": 0.0156,
++                      "X": 0.0259,
+                       "Y": 0.1583
+                     },
+                     "PreSize": {
+-                      "X": 0.0073,
++                      "X": 0.0121,
+                       "Y": 0.8119
+                     },
+                     "LeftMargin": 15.0,
+-                    "RightMargin": 938.0,
++                    "RightMargin": 558.0,
+                     "TopMargin": 16.0,
+                     "BottomMargin": 85.0,
+                     "Tag": 87,
+@@ -972,16 +984,86 @@
+                 ],
+                 "ActionTag": -1948067468,
+                 "Size": {
+-                  "X": 960.0,
++                  "X": 580.0,
+                   "Y": 537.0
+                 },
+                 "Name": "Panel_5",
+                 "ctype": "PanelObjectData"
++              },
++              {
++                "FontSize": 14,
++                "ButtonText": "",
++                "TextColor": {
++                  "G": 0,
++                  "B": 0
++                },
++                "DisabledFileData": {
++                  "Type": "Default",
++                  "Path": "Default/Button_Disable.png",
++                  "Plist": ""
++                },
++                "PressedFileData": {
++                  "Type": "MarkedSubImage",
++                  "Path": "chatModule/chatclose.png",
++                  "Plist": "chatModule/chat_plist.plist"
++                },
++                "NormalFileData": {
++                  "Type": "MarkedSubImage",
++                  "Path": "chatModule/chatclose.png",
++                  "Plist": "chatModule/chat_plist.plist"
++                },
++                "Scale9OriginX": 3,
++                "Scale9OriginY": 11,
++                "Scale9Width": 6,
++                "Scale9Height": 76,
++                "OutlineColor": {
++                  "G": 0,
++                  "B": 0
++                },
++                "ShadowColor": {
++                  "R": 110,
++                  "G": 110,
++                  "B": 110
++                },
++                "ShadowOffsetX": 2.0,
++                "ShadowOffsetY": -2.0,
++                "TouchEnable": true,
++                "AnchorPoint": {},
++                "Position": {
++                  "X": 552.0,
++                  "Y": 240.0
++                },
++                "Scale": {
++                  "ScaleX": 1.0,
++                  "ScaleY": 1.0
++                },
++                "CColor": {},
++                "IconVisible": false,
++                "PrePosition": {
++                  "X": 0.9517,
++                  "Y": 0.375
++                },
++                "PreSize": {
++                  "X": 0.0207,
++                  "Y": 0.1531
++                },
++                "LeftMargin": 552.0,
++                "RightMargin": 16.0,
++                "TopMargin": 302.0,
++                "BottomMargin": 240.0,
++                "Tag": 108,
++                "ActionTag": 1932358570,
++                "Size": {
++                  "X": 12.0,
++                  "Y": 98.0
++                },
++                "Name": "Button_close",
++                "ctype": "ButtonObjectData"
+               }
+             ],
+             "ActionTag": -425032630,
+             "Size": {
+-              "X": 960.0,
++              "X": 580.0,
+               "Y": 640.0
+             },
+             "Name": "Panel_2",
+@@ -1002,6 +1084,8 @@
+             "ColorVector": {
+               "ScaleY": 1.0
+             },
++            "Scale9Width": 1,
++            "Scale9Height": 1,
+             "TouchEnable": true,
+             "AnchorPoint": {},
+             "Position": {
+@@ -1087,7 +1171,7 @@
+             },
+             "PreSize": {
+               "X": 0.1271,
+-              "Y": 0.7833
++              "Y": 0.0734
+             },
+             "LeftMargin": 409.0,
+             "RightMargin": 429.0,
+@@ -1191,6 +1275,8 @@
+             "ColorVector": {
+               "ScaleY": 1.0
+             },
++            "Scale9Width": 1,
++            "Scale9Height": 1,
+             "TouchEnable": true,
+             "AnchorPoint": {
+               "ScaleY": 1.0
+@@ -1309,8 +1395,9 @@
+                 "ctype": "ImageViewObjectData"
+               },
+               {
+-                "FontSize": 20,
++                "FontSize": 16,
+                 "LabelText": "时间：3天前",
++                "HorizontalAlignmentType": "HT_Right",
+                 "OutlineColor": {
+                   "G": 0,
+                   "B": 0
+@@ -1327,37 +1414,37 @@
+                   "ScaleY": 0.5
+                 },
+                 "Position": {
+-                  "X": 420.0,
+-                  "Y": 70.0
++                  "X": 435.0,
++                  "Y": 69.0
+                 },
+                 "Scale": {
+                   "ScaleX": 1.0,
+                   "ScaleY": 1.0
+                 },
+                 "CColor": {
+-                  "R": 234,
+-                  "G": 209,
+-                  "B": 94
++                  "R": 148,
++                  "G": 148,
++                  "B": 148
+                 },
+                 "IconVisible": false,
+                 "PrePosition": {
+-                  "X": 0.84,
+-                  "Y": 0.7
++                  "X": 0.87,
++                  "Y": 0.69
+                 },
+                 "PreSize": {
+-                  "X": 0.0,
+-                  "Y": 0.0
++                  "X": 0.176,
++                  "Y": 0.16
+                 },
+                 "VerticalEdge": "TopEdge",
+-                "LeftMargin": 365.0,
+-                "RightMargin": 25.0,
+-                "TopMargin": 20.0,
+-                "BottomMargin": 60.0,
++                "LeftMargin": 391.0,
++                "RightMargin": 21.0,
++                "TopMargin": 23.0,
++                "BottomMargin": 61.0,
+                 "Tag": 107,
+                 "ActionTag": -609332517,
+                 "Size": {
+-                  "X": 110.0,
+-                  "Y": 20.0
++                  "X": 88.0,
++                  "Y": 16.0
+                 },
+                 "Name": "time",
+                 "ctype": "TextObjectData"
+@@ -1442,9 +1529,9 @@
+                   "ScaleY": 1.0
+                 },
+                 "CColor": {
+-                  "R": 234,
+-                  "G": 209,
+-                  "B": 94
++                  "R": 208,
++                  "G": 149,
++                  "B": 91
+                 },
+                 "IconVisible": false,
+                 "PrePosition": {
+@@ -1452,8 +1539,8 @@
+                   "Y": 0.7
+                 },
+                 "PreSize": {
+-                  "X": 0.0,
+-                  "Y": 0.0
++                  "X": 0.22,
++                  "Y": 0.2
+                 },
+                 "VerticalEdge": "TopEdge",
+                 "LeftMargin": 85.0,
+@@ -1495,7 +1582,7 @@
+         "chat_plist.plist",
+         "chat_plist.png"
+       ],
+-      "ctype": "GameProjectData"
++      "ctype": "GameFileData"
+     }
+   },
+   "Type": "Layer"
+Index: svnres/svndir/images/ui/chatModule/chat_plist.plist
+===================================================================
+--- svnres/svndir/images/ui/chatModule/chat_plist.plist (revision 1491)
++++ svnres/svndir/images/ui/chatModule/chat_plist.plist (revision 1504)
+@@ -7,18 +7,18 @@
+                        <key>chatModule/lt_wenzikuang.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,387},{12,45}}</string>
++                               <string>{{43,226},{12,45}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+-                               <false />
++                               <true />
+                                <key>sourceSize</key>
+                                <string>{12,45}</string>
+                        </dict>
+                        <key>chatModule/lt_yuying_anxia.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,245},{34,34}}</string>
++                               <string>{{1,345},{34,34}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+@@ -29,7 +29,7 @@
+                        <key>chatModule/lt_yuying_meian.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,281},{34,34}}</string>
++                               <string>{{15,245},{34,34}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+@@ -62,7 +62,7 @@
+                        <key>chatModule/lt_liaotiandikuang.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,481},{15,12}}</string>
++                               <string>{{72,181},{15,12}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+@@ -73,7 +73,7 @@
+                        <key>chatModule/lt_qipao.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,317},{33,27}}</string>
++                               <string>{{43,191},{33,27}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+@@ -84,7 +84,7 @@
+                        <key>chatModule/lt_qipao_02.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,352},{33,27}}</string>
++                               <string>{{45,133},{33,27}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+@@ -106,11 +106,11 @@
+                        <key>chatModule/lt_yuyindikuang.png</key>
+                        <dict>
+                                <key>frame</key>
+-                               <string>{{1,434},{11,45}}</string>
++                               <string>{{45,168},{11,45}}</string>
+                                <key>offset</key>
+                                <string>{0,0}</string>
+                                <key>rotated</key>
+-                               <false />
++                               <true />
+                                <key>sourceSize</key>
+                                <string>{11,45}</string>
+                        </dict>
+@@ -125,6 +125,17 @@
+                                <key>sourceSize</key>
+                                <string>{56,42}</string>
+                        </dict>
++                       <key>chatModule/chatclose.png</key>
++                       <dict>
++                               <key>frame</key>
++                               <string>{{1,245},{12,98}}</string>
++                               <key>offset</key>
++                               <string>{0,0}</string>
++                               <key>rotated</key>
++                               <false />
++                               <key>sourceSize</key>
++                               <string>{12,98}</string>
++                       </dict>
+                </dict>
+                <key>metadata</key>
+                <dict>
+Index: svnres/svndir/images/ui/chatModule/chat_plist.png
+===================================================================
+Cannot display: file marked as a binary type.
+svn:mime-type = application/octet-stream
+Index: svnres/svndir/configs/csvs/CN.csv
+===================================================================
+--- svnres/svndir/configs/csvs/CN.csv   (revision 1491)
++++ svnres/svndir/configs/csvs/CN.csv   (revision 1504)
+@@ -284,6 +284,11 @@
+ 71418,科技开放要求其他建筑级别不够
+ 71419,每个建筑只能造一个
+ 71502,消耗道具数量不够
++71801,账号被禁言
++71802,说话太快了
++71803,客户端不能发布该格式消息
++71804,不能向系统频道发送消息
++71805,聊天消息不存在或已过期
+ castle_1,敬请期待！
+ public_year,年
+ public_month,月
+@@ -601,3 +606,12 @@
+ useScroll_3,等级
+ useScroll_4,请选中地块产出
+ useScroll_5,请选中土地使用券
++chat_1,世界
++chat_2,公告
++chat_3,交易
++chat_4,联盟
++chat_5,发送
++chat_6,玩家信息
++chat_7,发起私聊
++chat_8,加为好友
++chat_9,私聊
+\ No newline at end of file

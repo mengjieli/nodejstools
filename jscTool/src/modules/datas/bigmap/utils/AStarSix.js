@@ -1,0 +1,164 @@
+/**
+ * 寻路
+ * @param blocks 格子中 0 代表不可以走，其它代表可以走
+ * @constructor
+ */
+function AStarSix(blocks) {
+    //格子信息
+    this.blocks = blocks;
+    //横向格子个数
+    this.width = blocks[0].length;
+    //纵向格子数
+    this.height = blocks.length;
+    //双数行寻找的点信息
+    this.findEven = [
+        [-1, 0],
+        [1, 0],
+        [-1, 1],
+        [0, 1],
+        [-1, -1],
+        [0, -1]
+    ];
+    //单数行寻找的点信息
+    this.findUneven = [
+        [-1, 0],
+        [1, 0],
+        [0, 1],
+        [1, 1],
+        [0, -1],
+        [1, -1]
+    ];
+    //寻路记录的信息
+    this.startX = 0;
+    this.startY = 0;
+    this.endX = 0;
+    this.endY = 0;
+    this.path = [];
+    //移动的格子数，比如寻路为  (-1,-1) -> (-2,-2) 时，会把格子加上 this.width 和 this.height
+    this.moveX = 0;
+    this.moveY = 0;
+    //寻找列表中最多格子数
+    this.max = 0;
+    //表示哪些格子走过
+    this.finds = [[]];
+    //表示当前可寻找的格子
+    this.list = [];
+}
+
+AStarSix.prototype.findPath = function (startX, startY, endX, endY) {
+    trace("开始寻找路径", startX, startY, "->", endX, endY);
+    //1 转换格子
+    this.moveX = this.moveY = 0;
+    while (startX < 0) {
+        startX += this.width;
+        endX += this.width;
+        this.moveX -= this.width;
+    }
+    while (startX >= this.width) {
+        startX -= this.width;
+        endX -= this.width;
+        this.moveX += this.width;
+    }
+    while (startY < 0) {
+        startY += this.height;
+        endY += this.height;
+        this.moveY -= this.height;
+    }
+    while (startY >= this.height) {
+        startY -= this.height;
+        endY -= this.height;
+        this.moveY += this.height;
+    }
+    trace("转换后寻路点为", startX, startY, "->", endX, endY);
+    if (endX < 0 || endX >= this.width || endY < 0 || endY >= this.height) {
+        trace("寻路失败！格子不在一个服务器内。");
+        return null;
+    }
+    //2 初始化
+    this.startX = startX;
+    this.startY = startY;
+    this.endX = endX;
+    this.endY = endY;
+    this.path = null;
+    this.finds = [];
+    this.list = [];
+    //3 把第一个点放入列表中
+    var start = {
+        x: startX,
+        y: startY,
+        cost: (endX - startX) * (endX - startX) + (endY - endX) * (endY - endX),
+        path: null
+    }
+    start.path = [start];
+    this.list.push(start);
+    //4 寻找路径
+    while (this.path == null) {
+        this.findNextPoint();
+    }
+    for (var i = 0; i < this.path.length; i++) {
+        this.path[i].x += this.moveX;
+        this.path[i].y += this.moveY;
+    }
+    if (this.path) {
+        var str = "";
+        for (var i = 0; i < this.path.length; i++) {
+            str += "(" + this.path[i].x + "," + this.path[i].y + ")" + (i < this.path.length - 1 ? " -> " : "");
+        }
+        this.path.shift();
+        trace("找到路径，最大寻路长度", this.max, str);
+    } else {
+        trace("没有找到路径!");
+    }
+    return this.path;
+}
+
+AStarSix.prototype.findNextPoint = function () {
+    var list = this.list;
+    var point = list.pop();
+    //判断是否为最终寻找的点
+    if (point.x == this.endX && point.y == this.endY) {
+        this.path = point.path;
+        return;
+    }
+    var points = [];
+    var find;
+    if (point.y % 2) {
+        find = this.findUneven;
+    } else {
+        find = this.findEven;
+    }
+    var newX, newY;
+    var newPoint;
+    for (var i = 0; i < find.length; i++) {
+        newX = find[i][0] + point.x;
+        newY = find[i][1] + point.y;
+        if (newX < 0 || newX >= this.width || newY < 0 || newY >= this.height) {
+            continue;
+        }
+        if (this.finds[newY] && this.finds[newY][newX] || !this.blocks[newY][newX]) {
+            if (!this.finds[newY]) {
+                this.finds[newY] = [];
+            }
+            this.finds[newY][newX] = true;
+            continue;
+        } else {
+            if (!this.finds[newY]) {
+                this.finds[newY] = [];
+            }
+            this.finds[newY][newX] = true;
+        }
+        var newPoint = {
+            x: newX,
+            y: newY,
+            cost: (this.endX - newX) * (this.endX - newX) + (this.endY - newY) * (this.endY - newY),
+            path: null
+        }
+        newPoint.path = point.path.concat(newPoint);
+        this.list.push(newPoint);
+    }
+    this.max = this.max < this.list.length ? this.list.length : this.max;
+    this.list.sort(function (pa, pb) {
+            return pa.cost > pb.cost ? -1 : 1;
+        }
+    );
+}

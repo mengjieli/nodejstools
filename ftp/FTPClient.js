@@ -9,8 +9,16 @@ var config = {
     "direction": "ParkerEmpire/out/"
 }
 
-var ftp = new FTP(config.ip,config.user,config.password);
+var ftp = new FTP(config.ip, config.user, config.password);
 
-var url = config.direction + "update1.zip";
-console.log(url);
-ftp.del(url);
+/*var url = config.direction + "update1.zip";
+
+ ftp.del(url);*/
+
+//ftp.upload("安装包.zip",config.direction + "/paik-2015-12-9.zip",function(){
+//    console.log("上传成功!");
+//});
+
+ftp.upload("./安装包.zip", config.direction + "paik-2015-12-9.zip", function () {
+    console.log("上传成功!");
+});
