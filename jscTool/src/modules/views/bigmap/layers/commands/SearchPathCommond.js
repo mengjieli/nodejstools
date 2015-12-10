@@ -1,3 +1,0 @@
-var SearchPathCommand = function () {
-    
-}
