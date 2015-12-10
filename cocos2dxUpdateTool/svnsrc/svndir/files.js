@@ -1,3 +1,0 @@
-var jsFiles = [];
-jsFiles.push("src/app.js");
-jsFiles.push("src/MainUI.js");

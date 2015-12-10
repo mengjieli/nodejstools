@@ -1,8 +1,0 @@
-var MainUI = cc.Sprite.extend({
-    ctor: function () {
-        this._super();
-        var sp = new cc.Sprite("res/gy_tankuang_di_01.png");
-        this.addChild(sp);
-        sp.setPosition(200, 200);
-    }
-});

@@ -1,8 +1,0 @@
-var MainUI = cc.Sprite.extend({
-    ctor: function () {
-        this._super();
-        var sp = new cc.Sprite("gy_chongzhianniu_01.png");
-        this.addChild(sp);
-        sp.setPosition(200, 200);
-    }
-});

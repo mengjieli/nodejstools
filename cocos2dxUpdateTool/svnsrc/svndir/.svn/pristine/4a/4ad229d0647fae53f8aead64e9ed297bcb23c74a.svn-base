@@ -1,8 +1,0 @@
-var MainUI = cc.Sprite.extend({
-    ctor: function () {
-        this._super();
-        var sp = new cc.Sprite("res/132-1-1440x900.jpg");
-        this.addChild(sp);
-        sp.setPosition(200, 200);
-    }
-});
