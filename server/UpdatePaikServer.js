@@ -6,7 +6,7 @@ var isWork = false;
 http.createServer(function (request, response) {
     var query = url.parse(request.url).query;
     console.log("qurey : ", query);
-    if(!isWork) {
+    if (!isWork) {
         isWork = true;
         var update = new UpdateVersion("../cocos2dxUpdateTool/", function () {
             response.writeHead(200, {"Content-Type": "text/plain"});

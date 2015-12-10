@@ -222,7 +222,7 @@ UpdateVersion.prototype.uploadFtp = function (server, resMax, srcMax) {
 UpdateVersion.prototype.updateVersionComplete = function () {
     (new File("src")).delete();
     (new File("res")).delete();
-    //(new File("tmp")).delete();
+    (new File("tmp")).delete();
     this.updateIndex++;
     if (this.updateIndex < this.serverList.length) {
         this.updateVersion();
