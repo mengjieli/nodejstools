@@ -49,4 +49,4 @@ var GameServer = (function (_super) {
 var server = new GameServer();
 server.start(9001);
 
-//trst
+//test
