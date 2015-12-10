@@ -35,6 +35,20 @@ var GameClient = (function (_super) {
                 case 200:
                     this.receiveAnonce(bytes);
                     break;
+                case 105:
+                    if (GameClient.isWorking) {
+                        this.sendAnonce("正在升级版本中...");
+                    } else {
+                        this.sendAllAnonce("正在升级版本中...");
+                        GameClient.isWorking = true;
+                        var _this = this;
+                        var update = new UpdateVersion("../cocos2dxUpdateTool/", function () {
+                            GameClient.isWorking = false;
+                            var back = "update game complete:\n" + update.log;
+                            _this.sendAllAnonce(back);
+                        });
+                    }
+                    break;
             }
         }
     }
@@ -50,17 +64,28 @@ var GameClient = (function (_super) {
 
     p.checkHeart = function (time) {
         if (time > this.checkTime) {
-            console.log(time,this.checkTime);
+            console.log(time, this.checkTime);
             this.close();
         }
     }
 
     p.receiveAnonce = function (data) {
         var msg = data.readUTFV();
+        this.sendAllAnoce(msg);
+    }
+
+    p.sendAllAnonce = function (msg) {
         var bytes = new VByteArray();
         bytes.writeUIntV(201);
         bytes.writeUTFV(msg);
         this.server.sendDataToAll(new Buffer(bytes.data));
+    }
+
+    p.sendAnonce = function (msg) {
+        var bytes = new VByteArray();
+        bytes.writeUIntV(201);
+        bytes.writeUTFV(msg);
+        this.sendData(new Buffer(bytes.data));
     }
 
     p.close = function () {
@@ -70,6 +95,8 @@ var GameClient = (function (_super) {
     p.onClose = function () {
         _super.prototype.onClose.call(this);
     }
+
+    GameClient.isWorking = false;
 
     return GameClient;
 })(WebSocketServerClient);

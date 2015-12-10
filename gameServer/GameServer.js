@@ -2,6 +2,7 @@ require("./../tools/com/requirecom");
 require("./../tools/shell/requireshell");
 require("./../tools/ftp/requireftp");
 require("./../tools/net/requirenet");
+require("./../cocos2dxUpdateTool/UpdateVersion");
 
 require("./GameClient");
 
