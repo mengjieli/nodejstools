@@ -1,1 +1,0 @@
-tsc --target es5 --sourceMap ./src/EnterFrame.ts ./src/tween/supportClasses/IPlugin.ts ./src/tween/BasicPlugin.ts ./src/tween/Ease.ts ./src/tween/EaseFunction.ts ./src/tween/TimeLine.ts ./src/tween/Tween.ts ./src/tween/plugins/TweenCenter.ts ./src/tween/plugins/TweenPath.ts ./src/tween/plugins/TweenPhysicMove.ts --outDir ./out
