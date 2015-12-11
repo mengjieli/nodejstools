@@ -2,6 +2,7 @@ require("./ts/TypeScript");
 
 require("./system/System");
 
+require("./utils/ObjectDo");
 require("./utils/StringDo");
 require("./utils/UTFChange");
 

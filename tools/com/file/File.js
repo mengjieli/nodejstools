@@ -27,8 +27,15 @@ function File(url) {
 File.prototype.save = function (data, format, url) {
     url = url || this.url;
     format = format || "utf-8";
-    if (url.split("/").length > 1) {
-        File.mkdirsSync(url.slice(0, url.length - url.split("/")[url.split("/").length - 1].length));
+    if (url.split("/").length > 1 || url.split(".").length == 1) {
+        if (url.split(".").length == 1) {
+            var dir = new File(url);
+            if (dir.isExist() == false || dir.type != FileType.DIRECTION) {
+                File.mkdirsSync(url);
+            }
+        } else {
+            File.mkdirsSync(url.slice(0, url.length - url.split("/")[url.split("/").length - 1].length));
+        }
     }
     fs.writeFile(url, data, format, function (err) {
         if (err) {
@@ -80,6 +87,9 @@ File.prototype.readFilesWidthEnd = function (end) {
  * 删除文件或文件夹内（包括文件夹和文件夹内的所有东西）
  */
 File.prototype.delete = function () {
+    if (this.isExist() == false) {
+        return;
+    }
     if (this.type == global.FileType.FILE) {
         fs.unlinkSync(this.url);
     } else if (this.type == global.FileType.DIRECTION) {

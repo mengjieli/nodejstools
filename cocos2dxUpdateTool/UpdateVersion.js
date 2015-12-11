@@ -2,7 +2,7 @@ require("./../tools/com/requirecom");
 require("./../tools/shell/requireshell");
 require("./../tools/ftp/requireftp");
 
-var UpdateVersion = function (workFile,updateComplete, thisObj) {
+var UpdateVersion = function (workFile, updateComplete, thisObj) {
 
     this.workFile = workFile;
     this.updateComplete = updateComplete;
@@ -17,7 +17,6 @@ var UpdateVersion = function (workFile,updateComplete, thisObj) {
     var content = file.readContent();
     var config = JSON.parse(content);
     this.config = config;
-    this.configString = "";
     this.serverList = config.list;
 
     this.updateIndex = 0;
@@ -75,7 +74,6 @@ UpdateVersion.prototype.updateRes = function (server) {
                 server.res.last = svn.lastVersion;
                 var hasFile = false;
                 for (var i = 0; i < list.length; i++) {
-                    console.log(list[i].url,list[i].type);
                     if (list[i].type == SVNDifferenceType.ADD || list[i].type == SVNDifferenceType.MODIFY) {
                         var file = new File(list[i].url);
                         var content = file.readContent("binary");
@@ -128,13 +126,12 @@ UpdateVersion.prototype.modifyManifest = function (server) {
         resNextVersion = this.addVersion(resLastVersion);
         resMax++;
         server.version.res[resMax + ""] = resNextVersion;
+        server.version.svn[resMax + ""] = server.res.last;
         this.log += "     res version : " + resNextVersion + " \n";
     }
-    this.configString = JSON.stringify(this.config);
-
 
     //保存 project.manifest
-    var projectManifest = server.projectManifest;
+    var projectManifest = ObjectDo.deepClone(server.projectManifest);
     for (var key in server.version.res) {
         projectManifest.groupVersions[key] = server.version.res[key];
         projectManifest.assets["update" + key] = {
@@ -153,11 +150,9 @@ UpdateVersion.prototype.modifyManifest = function (server) {
             "group": srcMax + ""
         }
     }
-    var file = new File("tmp/project.manifest");
-    file.save(JSON.stringify(projectManifest));
 
     //保存 version.manifest
-    var versionManifest = server.versionManifest;
+    var versionManifest = ObjectDo.deepClone(server.versionManifest);
     for (var key in server.version.res) {
         versionManifest.groupVersions[key] = server.version.res[key];
     }
@@ -165,33 +160,148 @@ UpdateVersion.prototype.modifyManifest = function (server) {
         this.log += "     src version : " + srcVersion + " \n";
         versionManifest.groupVersions[srcMax + ""] = srcVersion;
     }
-    file = new File("tmp/version.manifest");
-    file.save(JSON.stringify(versionManifest));
+
+    if (Object.keys(server.version.res).length == 0) {
+        var file = new File("res/project.manifest");
+        file.save(JSON.stringify(server.resProjectManifest));
+    }
 
     var _this = this;
-    var file = new File("res/project.manifest");
-    file.save(JSON.stringify(server.resProjectManifest));
-    ZipShell.compress(["src"],  "tmp/update" + srcMax + ".zip", function () {
+    ZipShell.compress(["src"], "tmp/update" + srcMax + ".zip", function () {
         if (_this.currentUpdateRes) {
             ZipShell.compress(["res"], "tmp/update" + resMax + ".zip", function () {
-                //上传 ftp
-                _this.uploadFtp(server, resMax, srcMax);
+                ZipShell.compress(["res"], _this.workFile + "history/" + server.name + "/update" + resMax + ".zip", function () {
+                    _this.compareHistory(server, resMax, srcMax, versionManifest, projectManifest);
+                });
             });
         } else {
-            //上传 ftp
-            _this.uploadFtp(server, resMax, srcMax);
+            _this.compareHistory(server, resMax, srcMax, versionManifest, projectManifest);
         }
     });
 }
 
-UpdateVersion.prototype.uploadFtp = function (server, resMax, srcMax) {
-    this.log += "  5. upload ftp \n";
+UpdateVersion.prototype.compareHistory = function (server, resMax, srcMax, versionManifest, projectManifest) {
+    this.log += "  5. compare history files\n";
+    var history = JSON.parse((new File(this.workFile + "history/" + server.name + "/list.json").readContent()));
+    if (this.currentUpdateRes) {
+        var currentList = (new File("res/")).readFilesWidthEnd("*");
+        history[resMax + ""] = [];
+        for (var i = 0; i < currentList.length; i++) {
+            history[resMax + ""].push(currentList[i].url);
+        }
+    }
+
+    var delList = {};
+    var min = null;
+    var check = {};
+    while (true) {
+        var findMin = false;
+        min = null;
+        for (var key in history) {
+            if (!check[parseInt(key)] && (min == null || min > parseInt(key))) {
+                min = parseInt(key);
+                findMin = true;
+            }
+        }
+        if (!findMin) {
+            break;
+        }
+        check[min] = true;
+        delList[min] = {};
+        var list = history[min + ""];
+        for (var key in history) {
+            if (parseInt(key) > min) {
+                var compareList = history[key];
+                for (var i = 0; i < list.length; i++) {
+                    if (delList[min][i]) {
+                        continue;
+                    }
+                    for (var j = 0; j < compareList.length; j++) {
+                        if (list[i] == compareList[j]) {
+                            delList[min][i] = list[i];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    var _this = this;
+
+    var keys = Object.keys(delList);
+    var keyIndex = 0;
+    var subList = null;
+    var ftp = new FTP(server.ftp.ip, server.ftp.user, server.ftp.password);
+
+    var checkDelList = function () {
+        if (keyIndex >= keys.length) {
+            var file = new File("tmp/project.manifest");
+            file.save(JSON.stringify(projectManifest));
+
+            file = new File("tmp/version.manifest");
+            file.save(JSON.stringify(versionManifest));
+
+            (new File(_this.workFile + "history/" + server.name + "/list.json")).save(JSON.stringify(history));
+            _this.uploadFtp(server, resMax, srcMax, ftp);
+            return;
+        }
+        subList = delList[keys[keyIndex]];
+        var historyList = history[keys[keyIndex]];
+        (new File("res/")).delete();
+        var zipFile = new File(_this.workFile + "history/" + server.name + "/update" + keys[keyIndex] + ".zip");
+        if (zipFile.isExist()) {
+            //解压缩 update*.zip 到 res/ 目录
+            ZipShell.uncompress(zipFile.url, function () {
+                for (var subKey in subList) {
+                    (new File(subList[subKey])).delete();
+                    for (var f = 0; f < historyList.length; f++) {
+                        if (historyList[f] == subList[subKey]) {
+                            historyList.splice(f, 1);
+                            break;
+                        }
+                    }
+                }
+                zipFile.delete();
+                if (!historyList.length) {
+                    delete history[keys[keyIndex]];
+                    delete server.version.res[keys[keyIndex]];
+                    delete server.version.res[keys[keyIndex]];
+                    delete versionManifest.groupVersions[keys[keyIndex]];
+                    delete versionManifest.groupVersions[keys[keyIndex]];
+                    delete projectManifest.assets["update" + keys[keyIndex]];
+                    keys.splice(keyIndex, 1);
+                    checkDelList();
+                } else {
+                    keyIndex++;
+                    ZipShell.compress("res/", zipFile.url, function () {
+                        ftp.upload(zipFile.url, server.ftp.direction + "update" + keys[keyIndex] + ".zip", function () {
+                            checkDelList();
+                        });
+                    });
+                }
+            })
+        } else {
+            delete history[keys[keyIndex]];
+            delete server.version.res[keys[keyIndex]];
+            delete server.version.res[keys[keyIndex]];
+            delete versionManifest.groupVersions[keys[keyIndex]];
+            delete versionManifest.groupVersions[keys[keyIndex]];
+            delete projectManifest.assets["update" + keys[keyIndex]];
+            keys.splice(keyIndex, 1);
+            checkDelList();
+        }
+    }
+    checkDelList();
+}
+
+UpdateVersion.prototype.uploadFtp = function (server, resMax, srcMax, ftp) {
+    this.log += "  6. upload ftp \n";
     //console.log("  5. upload ftp ");
     var _this = this;
-    var ftp = new FTP(server.ftp.ip, server.ftp.user, server.ftp.password);
     var uploadComplete = function () {
         var file = new File(_this.workFile + "updateVersion.json");
-        file.save(_this.configString);
+        file.save(JSON.stringify(_this.config));
         _this.log += "  update success, server \"" + server.name + "\n";
         //console.log("  update success, server \"" + server.name);
         _this.updateVersionComplete();
@@ -261,4 +371,3 @@ UpdateVersion.prototype.addVersion = function (version) {
 }
 
 global.UpdateVersion = UpdateVersion;
-//new UpdateVersion();

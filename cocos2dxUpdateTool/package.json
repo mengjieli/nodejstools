@@ -10,7 +10,12 @@
     "4": "1.0.4",
     "5": "1.0.5",
     "6": "1.0.6",
-    "1000001": "10000.0.7"
+    "7": "1.0.7",
+    "8": "1.0.8",
+    "9": "1.0.9",
+    "10": "1.1.0",
+    "11": "1.1.1",
+    "1000032": "10000.3.2"
   },
   "engineVersion": "3.6",
   "assets": {
@@ -50,11 +55,41 @@
       "compressed": true,
       "group": "6"
     },
-    "update1000001": {
-      "path": "update1000001.zip",
+    "update7": {
+      "path": "update7.zip",
       "md5": "",
       "compressed": true,
-      "group": "1000001"
+      "group": "7"
+    },
+    "update8": {
+      "path": "update8.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "8"
+    },
+    "update9": {
+      "path": "update9.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "9"
+    },
+    "update10": {
+      "path": "update10.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "10"
+    },
+    "update11": {
+      "path": "update11.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "11"
+    },
+    "update1000032": {
+      "path": "update1000032.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "1000032"
     }
   },
   "searchPaths": []

@@ -1,6 +1,7 @@
 .idea
 .idea/
 .idea/workspace.xml
+cocos2dxUpdateTool/history/
 cocos2dxUpdateTool/svnsrc/
 cocos2dxUpdateTool/svnres/
 jscTool/

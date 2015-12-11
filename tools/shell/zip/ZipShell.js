@@ -40,4 +40,13 @@ ZipShell.compress = function (files, outzip, complete, thisObj) {
     });
 }
 
+ZipShell.uncompress = function (file, complete, thisObj) {
+    var args = [ file];
+    new ShellCommand("unzip", args, function () {
+        if (complete) {
+            complete.apply(thisObj);
+        }
+    });
+}
+
 global.ZipShell = ZipShell;
