@@ -32,7 +32,8 @@ var game_file_list = [
 	"bin-debug/data/projectData/DataInfo.js",
 	"bin-debug/data/projectData/ImageInfo.js",
 	"bin-debug/data/projectData/ModelInfo.js",
-	"bin-debug/data/projectdata/projectdata.js",
+	"bin-debug/data/projectData/ProjectData.js",
+	"bin-debug/data/projectData/ProjectDirectionData.js",
 	"bin-debug/data/projectData/ViewInfo.js",
 	"bin-debug/data/uiData/MenuData.js",
 	"bin-debug/data/uiData/MenuEvent.js",
@@ -57,7 +58,6 @@ var game_file_list = [
 	"bin-debug/panels/loading/LoadingView.js",
 	"bin-debug/panels/main/MainPanel.js",
 	"bin-debug/panels/menu/Menu.js",
-	"bin-debug/data/projectdata/projectdirectiondata.js",
 	//----auto game_file_list end----
 ];
 
