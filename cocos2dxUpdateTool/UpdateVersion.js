@@ -167,9 +167,9 @@ UpdateVersion.prototype.modifyManifest = function (server) {
     }
 
     var _this = this;
-    ZipShell.compress(["src"], "tmp/update" + srcMax + ".zip", function () {
+    ZipShell.compress(["src/"], "update" + srcMax + ".zip", function () {
         if (_this.currentUpdateRes) {
-            ZipShell.compress(["res"], "tmp/update" + resMax + ".zip", function () {
+            ZipShell.compress(["res"], "update" + resMax + ".zip", function () {
                 ZipShell.compress(["res"], _this.workFile + "history/" + server.name + "/update" + resMax + ".zip", function () {
                     _this.compareHistory(server, resMax, srcMax, versionManifest, projectManifest);
                 });
@@ -309,19 +309,23 @@ UpdateVersion.prototype.uploadFtp = function (server, resMax, srcMax, ftp) {
     ftp.upload("tmp/project.manifest", server.ftp.direction + "project.manifest", function () {
         ftp.upload("tmp/version.manifest", server.ftp.direction + "version.manifest", function () {
             if (_this.currentUpdateSrc && _this.currentUpdateRes) {
-                ftp.upload("tmp/update" + srcMax + ".zip", server.ftp.direction + "update" + srcMax + ".zip", function () {
-                    ftp.upload("tmp/update" + resMax + ".zip", server.ftp.direction + "update" + resMax + ".zip", function () {
+                ftp.upload("update" + srcMax + ".zip", server.ftp.direction + "update" + srcMax + ".zip", function () {
+                    (new File("update" + srcMax + ".zip")).delete();
+                    ftp.upload("update" + resMax + ".zip", server.ftp.direction + "update" + resMax + ".zip", function () {
+                        (new File("update" + resMax + ".zip")).delete();
                         uploadComplete();
                     })
                 })
             }
             else if (_this.currentUpdateSrc) {
-                ftp.upload("tmp/update" + srcMax + ".zip", server.ftp.direction + "update" + srcMax + ".zip", function () {
+                ftp.upload("update" + srcMax + ".zip", server.ftp.direction + "update" + srcMax + ".zip", function () {
+                    (new File("update" + srcMax + ".zip")).delete();
                     uploadComplete();
                 })
             }
             else if (_this.currentUpdateRes) {
-                ftp.upload("tmp/update" + resMax + ".zip", server.ftp.direction + "update" + resMax + ".zip", function () {
+                ftp.upload("update" + resMax + ".zip", server.ftp.direction + "update" + resMax + ".zip", function () {
+                    (new File("update" + resMax + ".zip")).delete();
                     uploadComplete();
                 })
             }

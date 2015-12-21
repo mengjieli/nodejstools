@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Egret</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #888888;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件-->
+    <!--modules_files_start-->
+	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
+	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="libs/modules/socket/socket.js" src-release="libs/modules/socket/socket.min.js"></script>
+	<!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件-->
+    <!--game_files_start-->
+	<script egret="game" src="bin-debug/LoadingUI.js"></script>
+	<script egret="game" src="bin-debug/Main.js"></script>
+	<script egret="game" src="bin-debug/PreLoadingPanel.js"></script>
+	<script egret="game" src="bin-debug/components/ImageButton.js"></script>
+	<script egret="game" src="bin-debug/components/file/FileInfo.js"></script>
+	<script egret="game" src="bin-debug/net/VByteArray.js"></script>
+	<script egret="game" src="bin-debug/components/file/LocalFile.js"></script>
+	<script egret="game" src="bin-debug/components/file/LocalFileFormat.js"></script>
+	<script egret="game" src="bin-debug/components/file/LocalFileInfo.js"></script>
+	<script egret="game" src="bin-debug/components/file/LocalFileType.js"></script>
+	<script egret="game" src="bin-debug/components/ui/AlertPanel.js"></script>
+	<script egret="game" src="bin-debug/components/ui/DirectionView.js"></script>
+	<script egret="game" src="bin-debug/components/ui/DirectionViewItem.js"></script>
+	<script egret="game" src="bin-debug/components/ui/FileSelecteView.js"></script>
+	<script egret="game" src="bin-debug/net/GameNet.js"></script>
+	<script egret="game" src="bin-debug/components/ui/direction/DirectionData.js"></script>
+	<script egret="game" src="bin-debug/components/ui/managers/PopManager.js"></script>
+	<script egret="game" src="bin-debug/data/Config.js"></script>
+	<script egret="game" src="bin-debug/data/EditerData.js"></script>
+	<script egret="game" src="bin-debug/data/contentView/ContentViewData.js"></script>
+	<script egret="game" src="bin-debug/data/contentView/ContentViewEvent.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/AniamationInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/DataInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/ImageInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/ModelInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectdata/projectdata.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/ViewInfo.js"></script>
+	<script egret="game" src="bin-debug/data/uiData/MenuData.js"></script>
+	<script egret="game" src="bin-debug/data/uiData/MenuEvent.js"></script>
+	<script egret="game" src="bin-debug/data/uiData/PanelData.js"></script>
+	<script egret="game" src="bin-debug/data/uiData/UIData.js"></script>
+	<script egret="game" src="bin-debug/data/uiData/UIDataEvent.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/ProjectView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/ContentPanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/ViewContentTabBar.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/aniationEditer/AnimationEditer.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/ConentPanelItemBase.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/ImageView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/JsonView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/TextView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/XmlView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectCommand/SaveProjectCommand.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/AddProjectDirectionPanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/AddProjectFilePanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/ProjectDirectionItem.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/ProjectDirectionView.js"></script>
+	<script egret="game" src="bin-debug/panels/loading/LoadingEvent.js"></script>
+	<script egret="game" src="bin-debug/panels/loading/LoadingView.js"></script>
+	<script egret="game" src="bin-debug/panels/main/MainPanel.js"></script>
+	<script egret="game" src="bin-debug/panels/menu/Menu.js"></script>
+	<script egret="game" src="bin-debug/data/projectdata/projectdirectiondata.js"></script>
+	<!--game_files_end-->
+</head>
+<body>
+
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="auto"
+         data-scale-mode="noScale"
+         data-resolution-mode="retina"
+         data-frame-rate="30"
+         data-content-width="640"
+         data-content-height="960"
+         data-show-paint-rect="false"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
+    </div>
+    <script>
+        egret.runEgret();
+    </script>
+</body>
+</html>

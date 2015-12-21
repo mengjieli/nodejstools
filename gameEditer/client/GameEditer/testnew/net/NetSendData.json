@@ -1,0 +1,24 @@
+{
+  "301":[
+    {
+      "name":"x",
+      "desc":"世界坐标 x",
+      "type":"int"
+    },
+    {
+      "name":"y",
+      "desc":"世界坐标 y",
+      "type":"int"
+    },
+    {
+      "name":"width",
+      "desc":"矩形范围宽 width",
+      "type":"uint"
+    },
+    {
+      "name":"height",
+      "desc":"矩形范围高 height",
+      "type":"uint"
+    }
+  ]
+}

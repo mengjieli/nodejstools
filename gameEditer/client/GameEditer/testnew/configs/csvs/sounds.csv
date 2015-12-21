@@ -1,0 +1,15 @@
+sounds_id,sounds_name
+1,loading.mp3
+2,m_city.mp3
+3,m_field.mp3
+4,ui99.mp3
+5,ui_click.mp3
+6,city_levelup.mp3
+7,city_construction.mp3
+8,ui_open_item.mp3
+9,ui_click_error.mp3
+10,Territory_levelup.mp3
+11,Territory_food.mp3
+12,Territory_wood.mp3
+13,territory_click.mp3
+100000,aaa.mp3

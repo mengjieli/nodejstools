@@ -1,0 +1,3 @@
+<cross-domain-policy>
+    <site-control permitted-cross-domain-policies="by-content-type" />
+</cross-domain-policy>

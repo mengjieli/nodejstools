@@ -1,0 +1,33 @@
+{
+  "name": "NetWaitView",
+  "class": "View",
+  "version": "1.0.0",
+  "property": {
+    "width": "100%",
+    "height": "100%",
+    "background": {
+      "color": 0,
+      "alpha": 0.5
+    }
+  },
+  "children": [
+    {
+      "name": "animation",
+      "class": "Animation",
+      "version": "1.0.0",
+      "horizontalCenter": "0",
+      "verticalCenter": "0",
+      "config": {
+        "plist": "res/effects/JuHua.plist",
+        "name": "juhua_",
+        "addNameZero": false,
+        "format": "png",
+        "start": 1,
+        "end": 12,
+        "frameRate": 12,
+        "x": 0,
+        "y": 0
+      }
+    }
+  ]
+}

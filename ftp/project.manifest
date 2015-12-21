@@ -1,0 +1,26 @@
+{
+  "packageUrl": "http://121.40.18.57/ParkerEmpire/out",
+  "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/out/project.manifest",
+  "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/out/version.manifest",
+  "version": "1.0.0",
+  "groupVersions": {
+    "1": "1.0.1",
+    "1000009": "10000.0.9"
+  },
+  "engineVersion": "3.6",
+  "assets": {
+    "update1": {
+      "path": "update1.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "1"
+    },
+    "update1000009": {
+      "path": "update1000009.zip",
+      "md5": "",
+      "compressed": true,
+      "group": "1000009"
+    }
+  },
+  "searchPaths": []
+}

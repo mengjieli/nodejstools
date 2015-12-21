@@ -1,0 +1,31 @@
+{
+  "name":"NetModel",
+  "desc":"网络模块",
+  "api":[
+    {
+      "name":"sendMessage",
+      "desc":"发送数据",
+      "params":[
+        {
+          "desc":"协议号",
+          "type":"int",
+          "condition":"res/net/NetSendData.json"
+        }
+      ]
+    },
+    {
+      "name":"receiveMessage",
+      "desc":"接收数据",
+      "params":[
+        {
+          "desc":"协议号",
+          "type":"int"
+        },
+        {
+          "desc":"数据内容",
+          "type":"*"
+        }
+      ]
+    }
+  ]
+}

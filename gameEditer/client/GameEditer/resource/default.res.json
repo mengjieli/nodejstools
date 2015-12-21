@@ -1,0 +1,95 @@
+{
+	"groups":[
+		{
+			"name": "preload",
+			"keys": "floderOpen,floderClose,blue,folder_open,folder,json,xml,png,jpg,text,html,unknown,refresh,addFile,delete,addFloder,save"
+		}
+	],
+	"resources":[
+		{
+			"name": "floderOpen",
+			"type": "image",
+			"url": "images/button/floderOpen.png"
+		},
+		{
+			"name": "floderClose",
+			"type": "image",
+			"url": "images/button/floderClose.png"
+		},
+		{
+			"name": "blue",
+			"type": "image",
+			"url": "images/blue.png"
+		},
+		{
+			"name": "folder_open",
+			"type": "image",
+			"url": "images/fileIcon/folder_open.png"
+		},
+		{
+			"name": "folder",
+			"type": "image",
+			"url": "images/fileIcon/folder.png"
+		},
+		{
+			"name": "json",
+			"type": "image",
+			"url": "images/fileIcon/json.png"
+		},
+		{
+			"name": "xml",
+			"type": "image",
+			"url": "images/fileIcon/xml.png"
+		},
+		{
+			"name": "png",
+			"type": "image",
+			"url": "images/fileIcon/png.png"
+		},
+		{
+			"name": "jpg",
+			"type": "image",
+			"url": "images/fileIcon/jpg.png"
+		},
+		{
+			"name": "text",
+			"type": "image",
+			"url": "images/fileIcon/text.png"
+		},
+		{
+			"name": "html",
+			"type": "image",
+			"url": "images/fileIcon/html.png"
+		},
+		{
+			"name": "unknown",
+			"type": "image",
+			"url": "images/fileIcon/unknown.png"
+		},
+		{
+			"name": "refresh",
+			"type": "image",
+			"url": "images/refresh.png"
+		},
+		{
+			"name": "addFile",
+			"type": "image",
+			"url": "images/addFile.png"
+		},
+		{
+			"name": "addFloder",
+			"type": "image",
+			"url": "images/addFloder.png"
+		},
+		{
+			"name": "delete",
+			"type": "image",
+			"url": "images/delete.png"
+		},
+		{
+			"name": "save",
+			"type": "image",
+			"url": "images/menu/save.png"
+		}
+	]
+}

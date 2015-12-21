@@ -8,3 +8,4 @@ jscTool/
 server/tmp/
 gameServer/tmp/
 tsc/
+test/

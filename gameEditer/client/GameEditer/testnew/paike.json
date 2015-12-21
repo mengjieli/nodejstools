@@ -1,0 +1,24 @@
+{
+  "name":"paike",
+  "desc":"派克帝国",
+  "model":[
+    {
+      "name":"NetModel",
+      "src":"res/model/net/NetModel.json"
+    },
+    {
+      "name":"MapModel",
+      "src":"res/model/map/MapModel.json"
+    },
+    {
+      "name":"NetWaitViewModel",
+      "src":"res/model/view/NetWaitViewModel.json"
+    }
+  ],
+  "view":[
+    {
+      "name":"NetWaitView",
+      "src":"res/view/netWait/NetWaitView.json"
+    }
+  ]
+}

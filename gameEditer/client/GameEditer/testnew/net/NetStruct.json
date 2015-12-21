@@ -1,0 +1,12 @@
+{
+  "Attribute": [
+    {
+      "name": "attributeId",
+      "type": "uint"
+    },
+    {
+      "name": "value",
+      "type": "int"
+    }
+  ]
+}

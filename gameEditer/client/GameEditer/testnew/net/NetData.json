@@ -1,0 +1,121 @@
+{
+  "397": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "uint"
+    },
+    {
+      "name": "userAccount",
+      "type": "string"
+    },
+    {
+      "name": "castleId",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "coordX",
+      "type": "int"
+    },
+    {
+      "name": "coordY",
+      "type": "int"
+    }
+  ],
+  "398": [
+    {
+      "name": "coordX",
+      "type": "int"
+    },
+    {
+      "name": "coordY",
+      "type": "int"
+    },
+    {
+      "name": "castle",
+      "type": "string"
+    },
+    {
+      "name": "user",
+      "type": "string"
+    },
+    {
+      "name": "useAccelerationCard",
+      "type": "uint"
+    },
+    {
+      "name": "earthCard",
+      "type": "uint"
+    },
+    {
+      "name": "productionResourceId",
+      "type": "uint"
+    },
+    {
+      "name": "resourceAmount",
+      "type": "uint"
+    },
+    {
+      "name": "attributes",
+      "type": "Array",
+      "typeValue": "Attribute"
+    }
+  ],
+  "393": [
+    {
+      "name": "serverX",
+      "type": "int"
+    },
+    {
+      "name": "serverY",
+      "type": "int"
+    },
+    {
+      "name": "key",
+      "type": "string"
+    },
+    {
+      "name": "resource",
+      "type": "uint"
+    }
+  ],
+  "392": [
+    {
+      "name": "serverX",
+      "type": "int"
+    },
+    {
+      "name": "serverY",
+      "type": "int"
+    },
+    {
+      "name": "key",
+      "type": "string"
+    }
+  ],
+  "391": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "action",
+      "type": "uint"
+    },
+    {
+      "name": "errorCode",
+      "type": "int"
+    },
+    {
+      "name": "errorMessage",
+      "type": "string"
+    }
+  ]
+}

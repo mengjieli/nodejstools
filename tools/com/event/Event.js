@@ -9,6 +9,7 @@ var Event = (function () {
     Event.CONNECT = "connect";
     Event.CLOSE = "close";
     Event.UPDATE = "update";
+    Event.DATA = "data";
 
     return Event;
 })();

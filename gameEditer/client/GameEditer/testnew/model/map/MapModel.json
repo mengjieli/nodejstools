@@ -1,0 +1,23 @@
+{
+  "name": "MapModel",
+  "desc": "地图控制模块",
+  "extendClass":"",
+  "view": [
+    {
+      "name": "view1",
+      "src": "res/view/MapView.json",
+      "extendClass":"MapViewExtend"
+    }
+  ],
+  "api": {
+    "showBuildCastle": {
+      "desc": "显示移民驻城",
+      "params": [
+        {
+          "desc": "移民数据",
+          "type": "MapRolerData"
+        }
+      ]
+    }
+  }
+}

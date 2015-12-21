@@ -1,0 +1,41 @@
+{
+  "name": "NetWaitViewModel",
+  "desc": "网络等待模块",
+  "view": [
+    {
+      "name": "NetWaitView"
+    }
+  ],
+  "api": [
+    {
+      "name": "open",
+      "desc": "打开 View",
+      "params": [
+        {
+          "desc": "View 索引号",
+          "type": "int"
+        }
+      ],
+      "return": {
+        "desc": "返回界面唯一标识",
+        "descMore": "如果错误返回 ModelError.*",
+        "type": "int"
+      }
+    },
+    {
+      "name": "close",
+      "desc": "关闭 View",
+      "params": [
+        {
+          "desc": "界面唯一标识",
+          "type": "int"
+        }
+      ],
+      "return": {
+        "desc": "返回是否成功",
+        "descMore": "0 表示成功，其它返回 ModelError.*",
+        "type": "int"
+      }
+    }
+  ]
+}
