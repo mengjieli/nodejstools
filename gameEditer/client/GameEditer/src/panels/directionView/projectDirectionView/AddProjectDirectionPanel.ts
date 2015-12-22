@@ -8,10 +8,11 @@ class AddProjectDirectionPanel extends eui.Panel {
     private sure: eui.Button;
     private cancle: eui.Button;
     
-	public constructor(project:ProjectData,url:string) {
+	public constructor(project:ProjectData,data:FileInfo) {
+    	
         super();
         
-        this.title = "添加文件夹";
+        this.title = "新建文件夹";
 
         this.width = 400;
         this.height = 300;
@@ -25,7 +26,7 @@ class AddProjectDirectionPanel extends eui.Panel {
         button.bottom = 5;
         this.sure = button;
         this.sure.addEventListener(egret.TouchEvent.TOUCH_TAP,function(e: egret.TouchEvent): void {
-            project.addFloder(url,input.text,input2.text);
+            project.addFloder(data.url,input.text,input2.text);
             this.parent.removeChild(this);
         },this);
         
@@ -47,7 +48,7 @@ class AddProjectDirectionPanel extends eui.Panel {
         label.size = 14;
         label.textColor = 0;
         label.width = 350;
-        label.text = "路径: " + url + "/";
+        label.text = "路径: " + data.url + "/";
         label.x = 20;
         label.y = 50;
         this.addChild(label);

@@ -11,8 +11,7 @@ class Menu extends eui.Component {
         this.width = Config.width;
         this.height = 30;
         
-        var image: eui.Image = new eui.Image();
-        image.source = "resource/images/blue2.png";
+        var image = new WinBgImage();
         this.addChild(image);
         image.percentWidth = 100;
         image.percentHeight = 100;
@@ -20,8 +19,8 @@ class Menu extends eui.Component {
         var btn: ImageButton;
         btn = new ImageButton(RES.getRes("save"),this.clickSave,this);
         this.addChild(btn);
-        btn.x = 5;
-        btn.y = 5;
+        btn.x = 10;
+        btn.y = 8;
 	}
 	
     private clickSave():void {

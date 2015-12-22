@@ -5,6 +5,7 @@
  */
 class DirectionView extends eui.Component {
 
+    private group: eui.Group;
     private list: eui.List;
 
     public constructor(renderer:any=null) {
@@ -12,8 +13,8 @@ class DirectionView extends eui.Component {
         renderer = renderer || DirectionViewItem;
         var exml =
             `<e:Skin xmlns:e="http://ns.egret.com/eui">
-                <e:Image width="100%" height="100%" source="resource/images/depthBlueBg.png"/>
-                <e:Group width="100%" height="100%" xmlns:e="http://ns.egret.com/eui">
+                <e:Image width="100%" height="100%" source="resource/images/depthBlueBg.png" scale9Grid="30,30,18,76"/>
+                <e:Group id="group" width="100%" y="30" xmlns:e="http://ns.egret.com/eui">
                     <e:Scroller width="100%" height="100%">
                         <e:Skin>
                             <e:VScrollBar id="verticalScrollBar" width="20" height="100%" right="0">
@@ -23,14 +24,20 @@ class DirectionView extends eui.Component {
                                 </e:Skin>
                             </e:VScrollBar>
                         </e:Skin>
-                        <e:List id="list" width="100%" height="100%">
+                        <e:List id="list" height="100%">
                         </e:List>
                     </e:Scroller>
                 </e:Group>
             </e:Skin>`;
         this.skinName = exml;
         this.list.itemRenderer = renderer;
-//        this.list.dataProvider = EditerData.getInstance().workDirection.data;
+    }
+    
+    public validateDisplayList():void {
+        super.validateDisplayList();
+        this.group.height = this.height - this.group.y;
+        this.list.x = 5;
+        this.list.width = this.width - 10;
     }
 
     public get selectedItem(): any {

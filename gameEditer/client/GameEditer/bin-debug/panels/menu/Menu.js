@@ -9,16 +9,15 @@ var Menu = (function (_super) {
         _super.call(this);
         this.width = Config.width;
         this.height = 30;
-        var image = new eui.Image();
-        image.source = "resource/images/blue2.png";
+        var image = new WinBgImage();
         this.addChild(image);
         image.percentWidth = 100;
         image.percentHeight = 100;
         var btn;
         btn = new ImageButton(RES.getRes("save"), this.clickSave, this);
         this.addChild(btn);
-        btn.x = 5;
-        btn.y = 5;
+        btn.x = 10;
+        btn.y = 8;
     }
     var d = __define,c=Menu;p=c.prototype;
     p.clickSave = function () {

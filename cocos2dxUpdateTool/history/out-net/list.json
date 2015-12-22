@@ -1,1 +1,7 @@
-{"1":["res/images/ui/login/login.json","res/images/ui/login/mobile.json","res/images/ui/login/register.json"]}
+{
+  "1": [
+    "res/images/ui/login/login.json",
+    "res/images/ui/login/mobile.json",
+    "res/images/ui/login/register.json"
+  ]
+}

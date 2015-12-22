@@ -24,6 +24,7 @@ var game_file_list = [
 	"bin-debug/net/GameNet.js",
 	"bin-debug/components/ui/direction/DirectionData.js",
 	"bin-debug/components/ui/managers/PopManager.js",
+	"bin-debug/components/ui/win/WinBgImage.js",
 	"bin-debug/data/Config.js",
 	"bin-debug/data/EditerData.js",
 	"bin-debug/data/contentView/ContentViewData.js",
@@ -34,6 +35,7 @@ var game_file_list = [
 	"bin-debug/data/projectData/ModelInfo.js",
 	"bin-debug/data/projectData/ProjectData.js",
 	"bin-debug/data/projectData/ProjectDirectionData.js",
+	"bin-debug/data/projectdata/spritessheetinfo.js",
 	"bin-debug/data/projectData/ViewInfo.js",
 	"bin-debug/data/uiData/MenuData.js",
 	"bin-debug/data/uiData/MenuEvent.js",
@@ -58,6 +60,7 @@ var game_file_list = [
 	"bin-debug/panels/loading/LoadingView.js",
 	"bin-debug/panels/main/MainPanel.js",
 	"bin-debug/panels/menu/Menu.js",
+	"bin-debug/data/projectdata/fileinfobase.js",
 	//----auto game_file_list end----
 ];
 

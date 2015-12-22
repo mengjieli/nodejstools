@@ -18,8 +18,8 @@ class DirectionViewItem extends eui.Component implements eui.IItemRenderer {
     private _itemIndex: number;
     
     private container: egret.Sprite;
-    private btnOpen: eui.Image;
-    private btnClose: eui.Image;
+    private btnOpen: egret.Sprite;
+    private btnClose: egret.Sprite;
     private label: eui.Label;
     private icon: eui.Image;
     private bg: eui.Image;
@@ -42,12 +42,26 @@ class DirectionViewItem extends eui.Component implements eui.IItemRenderer {
         
         this.addChild(this.container = new egret.Sprite());
         
-        this.btnOpen = new eui.Image(RES.getRes("floderOpen"));
+        this.btnOpen = new egret.Sprite();
+        var shape = new egret.Shape();
+        shape.graphics.beginFill(0xff0000,0);
+        shape.graphics.drawRect(-5,-7,20,this.height);
+        shape.graphics.endFill();
+        shape.touchEnabled = true;
+        this.btnOpen.addChild(shape);
+        this.btnOpen.addChild(new eui.Image(RES.getRes("floderOpen")));
         this.addChild(this.btnOpen);
         this.btnOpen.y = 7;
         this.btnOpen.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onTouchOpen,this);
 
-        this.btnClose = new eui.Image(RES.getRes("floderClose"));
+        this.btnClose = new egret.Sprite();
+        shape = new egret.Shape();
+        shape.graphics.beginFill(0xff0000,0);
+        shape.graphics.drawRect(-5,-7,20,this.height);
+        shape.graphics.endFill();
+        shape.touchEnabled = true;
+        this.btnClose.addChild(shape);
+        this.btnClose.addChild(new eui.Image(RES.getRes("floderClose")));
         this.btnClose.y = 7;
         this.addChild(this.btnClose);
         this.btnClose.addEventListener(egret.TouchEvent.TOUCH_BEGIN,this.onTouchClose,this);
@@ -75,11 +89,15 @@ class DirectionViewItem extends eui.Component implements eui.IItemRenderer {
     }
 	
 	public set data(val:any){
+        this.setData(val);
+	}
+	
+	protected setData(val:any) {
         this._data = val;
         if(val == null) return;
-        this.container.x = val.depth*20 + 3;
-        this.btnClose.x = this.btnOpen.x = val.depth * 20 + 5;
-        
+        this.container.x = val.depth * 20 + 3;
+        this.btnClose.x = this.btnOpen.x = val.depth * 20 + 5 + 5;
+
         var openThis = true;
         var node = this._data.parent;
         while(node) {

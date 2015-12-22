@@ -5,9 +5,9 @@
  */
 var AddProjectDirectionPanel = (function (_super) {
     __extends(AddProjectDirectionPanel, _super);
-    function AddProjectDirectionPanel(project, url) {
+    function AddProjectDirectionPanel(project, data) {
         _super.call(this);
-        this.title = "添加文件夹";
+        this.title = "新建文件夹";
         this.width = 400;
         this.height = 300;
         var button;
@@ -19,7 +19,7 @@ var AddProjectDirectionPanel = (function (_super) {
         button.bottom = 5;
         this.sure = button;
         this.sure.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
-            project.addFloder(url, input.text, input2.text);
+            project.addFloder(data.url, input.text, input2.text);
             this.parent.removeChild(this);
         }, this);
         button = new eui.Button();
@@ -38,7 +38,7 @@ var AddProjectDirectionPanel = (function (_super) {
         label.size = 14;
         label.textColor = 0;
         label.width = 350;
-        label.text = "路径: " + url + "/";
+        label.text = "路径: " + data.url + "/";
         label.x = 20;
         label.y = 50;
         this.addChild(label);

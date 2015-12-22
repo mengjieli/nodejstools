@@ -18,11 +18,25 @@ var DirectionViewItem = (function (_super) {
         this.bg.percentWidth = 100;
         this.bg.percentHeight = 100;
         this.addChild(this.container = new egret.Sprite());
-        this.btnOpen = new eui.Image(RES.getRes("floderOpen"));
+        this.btnOpen = new egret.Sprite();
+        var shape = new egret.Shape();
+        shape.graphics.beginFill(0xff0000, 0);
+        shape.graphics.drawRect(-5, -7, 20, this.height);
+        shape.graphics.endFill();
+        shape.touchEnabled = true;
+        this.btnOpen.addChild(shape);
+        this.btnOpen.addChild(new eui.Image(RES.getRes("floderOpen")));
         this.addChild(this.btnOpen);
         this.btnOpen.y = 7;
         this.btnOpen.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchOpen, this);
-        this.btnClose = new eui.Image(RES.getRes("floderClose"));
+        this.btnClose = new egret.Sprite();
+        shape = new egret.Shape();
+        shape.graphics.beginFill(0xff0000, 0);
+        shape.graphics.drawRect(-5, -7, 20, this.height);
+        shape.graphics.endFill();
+        shape.touchEnabled = true;
+        this.btnClose.addChild(shape);
+        this.btnClose.addChild(new eui.Image(RES.getRes("floderClose")));
         this.btnClose.y = 7;
         this.addChild(this.btnClose);
         this.btnClose.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchClose, this);
@@ -50,61 +64,64 @@ var DirectionViewItem = (function (_super) {
             return this._data;
         }
         ,function (val) {
-            this._data = val;
-            if (val == null)
-                return;
-            this.container.x = val.depth * 20 + 3;
-            this.btnClose.x = this.btnOpen.x = val.depth * 20 + 5;
-            var openThis = true;
-            var node = this._data.parent;
-            while (node) {
-                if (node.status == "close") {
-                    openThis = false;
-                    break;
-                }
-                node = node.parent;
-            }
-            if (openThis) {
-                this.visible = true;
-                this.height = 25;
-                if (val.type == LocalFileType.DIRECTION) {
-                    if (val.status == "open") {
-                        this.icon.bitmapData = RES.getRes("folder_open");
-                        this.btnClose.visible = false;
-                        this.btnOpen.visible = true;
-                    }
-                    else if (val.status == "close") {
-                        this.icon.bitmapData = RES.getRes("folder");
-                        this.btnClose.visible = true;
-                        this.btnOpen.visible = false;
-                    }
-                    this.container.x += 20;
-                }
-                else if (val.type == LocalFileType.FILE) {
-                    if (val.hasFloder) {
-                        this.container.x += 20;
-                    }
-                    this.btnClose.visible = this.btnOpen.visible = false;
-                    var end = this.data.format;
-                    if (end == LocalFileFormat.Image) {
-                        end = this.data.end;
-                    }
-                    var endImage = DirectionViewItem.EndImage[end];
-                    if (endImage) {
-                        this.icon.source = RES.getRes(endImage);
-                    }
-                    else {
-                        this.icon.source = RES.getRes("unknown");
-                    }
-                }
-                this.label.text = val.name;
-            }
-            else {
-                this.visible = false;
-                this.height = 0;
-            }
+            this.setData(val);
         }
     );
+    p.setData = function (val) {
+        this._data = val;
+        if (val == null)
+            return;
+        this.container.x = val.depth * 20 + 3;
+        this.btnClose.x = this.btnOpen.x = val.depth * 20 + 5 + 5;
+        var openThis = true;
+        var node = this._data.parent;
+        while (node) {
+            if (node.status == "close") {
+                openThis = false;
+                break;
+            }
+            node = node.parent;
+        }
+        if (openThis) {
+            this.visible = true;
+            this.height = 25;
+            if (val.type == LocalFileType.DIRECTION) {
+                if (val.status == "open") {
+                    this.icon.bitmapData = RES.getRes("folder_open");
+                    this.btnClose.visible = false;
+                    this.btnOpen.visible = true;
+                }
+                else if (val.status == "close") {
+                    this.icon.bitmapData = RES.getRes("folder");
+                    this.btnClose.visible = true;
+                    this.btnOpen.visible = false;
+                }
+                this.container.x += 20;
+            }
+            else if (val.type == LocalFileType.FILE) {
+                if (val.hasFloder) {
+                    this.container.x += 20;
+                }
+                this.btnClose.visible = this.btnOpen.visible = false;
+                var end = this.data.format;
+                if (end == LocalFileFormat.Image) {
+                    end = this.data.end;
+                }
+                var endImage = DirectionViewItem.EndImage[end];
+                if (endImage) {
+                    this.icon.source = RES.getRes(endImage);
+                }
+                else {
+                    this.icon.source = RES.getRes("unknown");
+                }
+            }
+            this.label.text = val.name;
+        }
+        else {
+            this.visible = false;
+            this.height = 0;
+        }
+    };
     d(p, "selected"
         ,function () {
             return this._selected;

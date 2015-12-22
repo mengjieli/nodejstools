@@ -182,7 +182,11 @@ UpdateVersion.prototype.modifyManifest = function (server) {
 
 UpdateVersion.prototype.compareHistory = function (server, resMax, srcMax, versionManifest, projectManifest) {
     this.log += "  5. compare history files\n";
-    var history = JSON.parse((new File(this.workFile + "history/" + server.name + "/list.json").readContent()));
+    var historyFile = new File(this.workFile + "history/" + server.name + "/list.json");
+    if(historyFile.isExist() == false) {
+        historyFile.save("{}");
+    }
+    var history = JSON.parse(historyFile.readContent());
     if (this.currentUpdateRes) {
         var currentList = (new File("res/")).readFilesWidthEnd("*");
         history[resMax + ""] = [];

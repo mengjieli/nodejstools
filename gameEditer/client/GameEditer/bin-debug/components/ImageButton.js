@@ -12,6 +12,7 @@ var ImageButton = (function (_super) {
         this.source = source;
         if (touchBack) {
             this.addEventListener(egret.TouchEvent.TOUCH_TAP, touchBack, touchThis);
+            this.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, touchBack, touchThis);
         }
         this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, function (e) {
             this.scaleX = 0.9;

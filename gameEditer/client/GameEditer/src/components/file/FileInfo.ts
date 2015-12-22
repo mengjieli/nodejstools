@@ -16,6 +16,7 @@ class FileInfo {
     public hasFloder: boolean;
     public dataList: ICollection;
     public more: any;
+    public more2: any;
     
 	public constructor(url,name,format,end,type,status,depth) {
         this.url = url;

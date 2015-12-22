@@ -50,6 +50,7 @@ class ProjectData extends egret.EventDispatcher {
                 new FileInfo(list[i].src,list[i].desc,null,null,LocalFileType.DIRECTION,"close",list[i].depth); 
             direction.dataList = this.direction;
             direction.more = this;
+            direction.more2 = list[i]["more2" + ""];
             if(list[i].parent) {
                 direction.parent = this[list[i].parent + "Direction"];
             }
@@ -109,6 +110,27 @@ class ProjectData extends egret.EventDispatcher {
         return max;
     }
     
+    private hasFloderInThePath(url:string):boolean {
+        for(var i = 0;i < this.direction.length; i++) {
+            var file: FileInfo;
+            file = this.direction.getItemAt(i);
+            if(file.parent && file.parent.url == url && file.type == LocalFileType.DIRECTION) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private addFloderToTheSameFloderFile(url: string):void {
+        for(var i = 0;i < this.direction.length;i++) {
+            var file: FileInfo;
+            file = this.direction.getItemAt(i);
+            if(file.parent && file.parent.url == url) {
+                file.hasFloder = true;
+            }
+        }
+    }
+    
     public addFloder(url:string,name:string,desc:string,complete:Function=null,thisObj:any=null):void {
         var file = new LocalFile(Config.workFile +  url + "/" + name + "/");
         file.addEventListener(egret.Event.COMPLETE,function(e:egret.Event):void{
@@ -120,14 +142,46 @@ class ProjectData extends egret.EventDispatcher {
             }
             var floder = new FileInfo(url + "/" + name,dirName,null,null,LocalFileType.DIRECTION,"close",url.split("/").length);
             floder.parent = this.getDirection("url",url);
+            floder.hasFloder = true;
+            this.addFloderToTheSameFloderFile(url);
             floder.dataList = this.direction;
             floder.more = this;
             this.direction.addItemAt(floder,this.getDirectionNewIndex(url));
+            this.addFloderToTheSameFloderFile(url);
+            this.direction.dispatchEvent(new egret.Event(eui.CollectionEventKind.UPDATE));
             if(complete) {
                 complete.call(thisObj);
             }
         },this);
         file.makeDirection();
+    }
+    
+    public addFile(fileType:string,url: string,name: string,desc: string,complete: Function = null,thisObj: any = null): void {
+        var data:FileInfoBase;
+        if(fileType == "data") {
+            data = new DataInfo(url,name,desc);
+        } else if(fileType == "spritesSheet") {
+            data = new SpritesSheetInfo(url,name,desc);
+        }
+        var file = new LocalFile(Config.workFile + data.url);
+        file.addEventListener(egret.Event.COMPLETE,function(e: egret.Event): void {
+            file.dispose();
+            var dirName = name;
+            if(desc != "") {
+                this.pathDesc[data.url] = desc;
+                dirName = desc;
+            }
+            var newFile = new FileInfo(data.url,dirName,"data","json",LocalFileType.FILE,"close",data.url.split("/").length-1);
+            newFile.parent = this.getDirection("url",url);
+            newFile.hasFloder = this.hasFloderInThePath(url);
+            newFile.dataList = this.direction;
+            newFile.more = this;
+            this.direction.addItemAt(newFile,this.getDirectionNewIndex(url));
+            if(complete) {
+                complete.call(thisObj);
+            }
+        },this);
+        file.saveFile(data.fileContent);
     }
 
     public encodeConfig(): Object {

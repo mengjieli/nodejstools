@@ -18,7 +18,7 @@ class ProjectView extends eui.Component {
         this.directionView.percentHeight = 100;
         
         this.contentPanel = new ContentPanel();
-        this.contentPanel.x = 300;
+        this.contentPanel.x = 298;
         this.contentPanel.width = this.width - this.contentPanel.x;
         this.contentPanel.percentHeight = 100;
         this.addChild(this.contentPanel);

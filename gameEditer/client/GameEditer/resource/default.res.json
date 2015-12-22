@@ -2,10 +2,20 @@
 	"groups":[
 		{
 			"name": "preload",
-			"keys": "floderOpen,floderClose,blue,folder_open,folder,json,xml,png,jpg,text,html,unknown,refresh,addFile,delete,addFloder,save"
+			"keys": "depthBlueBg,blue2,floderOpen,floderClose,blue,folder_open,folder,json,xml,png,jpg,text,html,unknown,refresh,addFile,delete,addFloder,save"
 		}
 	],
 	"resources":[
+		{
+			"name": "depthBlueBg",
+			"type": "image",
+			"url": "images/depthBlueBg.png"
+		},
+		{
+			"name": "blue2",
+			"type": "image",
+			"url": "images/blue2.png"
+		},
 		{
 			"name": "floderOpen",
 			"type": "image",

@@ -13,7 +13,7 @@ class ContentPanel extends eui.Component {
         super();
         var exml =
             `<e:Skin xmlns:e = "http://ns.egret.com/eui" >
-                <e:Image width="100%" height="100%" source="resource/images/depthBlueBg.png"/>
+                <e:Image width="100%" height="100%" source="resource/images/depthBlueBg.png" scale9Grid="30,30,18,76"/>
                 <e:TabBar id="tabBar" dataProvider="{viewStack}">
                 </e:TabBar>
                 <e:ViewStack y="30" id="viewStack" width="100%" height="100%">
