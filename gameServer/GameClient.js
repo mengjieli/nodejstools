@@ -28,9 +28,13 @@ var GameClient = (function (_super) {
             var bytes = new VByteArray();
             bytes.readFromArray(data);
             var cmd = bytes.readUIntV();
+            //console.log("receive cmd :",cmd);
             switch (cmd) {
                 case 0:
                     this.receiveHeart(bytes);
+                    break;
+                case 100:
+                    this.close();
                     break;
                 case 200:
                     this.receiveAnonce(bytes);
@@ -42,9 +46,10 @@ var GameClient = (function (_super) {
                         this.sendAllAnonce("正在升级版本中...");
                         GameClient.isWorking = true;
                         var _this = this;
-                        var update = new UpdateVersion("../cocos2dxUpdateTool/", function () {
+                        var updateVersion = new UpdateVersion("../cocos2dxUpdateTool/", function () {
                             GameClient.isWorking = false;
-                            var back = "update game complete:\n" + update.log;
+                            console.log("updateVersion", updateVersion);
+                            var back = "update game complete:\n" + updateVersion.log;
                             _this.sendAllAnonce(back);
                         });
                     }

@@ -10,9 +10,12 @@ class ProjectDirectionView extends DirectionView {
 	public constructor(direction:string) {
         super(ProjectDirectionItem);
         this.data = new ProjectData();
-        new LoadingView(this.data);
-        
-        this.data.loadConfig(direction);
         this.dataProvider = this.data.direction;
+        (new LoadProjectCommand(this.data,direction)).addEventListener(LoadingEvent.COMPLETE,function(){
+            var file = this.data.getFile("model/GameLoading.json");
+            if(file) {
+                EditerData.getInstance().conteView.viewFile(file);
+            }
+        },this);
 	}
 }

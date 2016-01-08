@@ -5,6 +5,8 @@
  */
 class GameNet extends egret.EventDispatcher {
     private sock: egret.WebSocket;
+    private ip:string;
+    private port:number;
     
 	public constructor() {
         super();
@@ -17,6 +19,8 @@ class GameNet extends egret.EventDispatcher {
 	}
 	
     public connect(ip:string,port:number): void {
+        this.ip = ip;
+        this.port = port;
         this.sock.connect(ip,port);
 	}
 	
@@ -26,7 +30,7 @@ class GameNet extends egret.EventDispatcher {
 	}
 	
 	private onIOError(e:egret.IOErrorEvent):void {
-        alert("无法连上服务器");
+        alert("无法连上服务器 " + this.ip + ":" + this.port);
 	}
 	
     private connectFlag: boolean = false;
@@ -71,13 +75,27 @@ class GameNet extends egret.EventDispatcher {
         vbytes.readFromByteArray(bytes);
         var cmd = vbytes.readUIntV();
         console.log("收到消息 cmd : " + cmd);
-        //console.log("收到消息 cmd : " + cmd + " ,内容 ：" + vbytes.toString());
+        console.log("收到消息 cmd : " + cmd + " ,内容 ：" + vbytes.toString());
         if(cmd == 0) {
             var requestCmd = vbytes.readUIntV();
-            var code = vbytes.readIntV();
-            if(code > 10000) {
-                alert("未解析的错误");//Language.getErrorTip(code));
-                return;
+            var code = vbytes.readUIntV();
+            if(code == 0) {
+                if(this.successBack[requestCmd]) {
+                    var list = this.successBack[requestCmd];
+                    for(var i = 0;i < list.length;i++) {
+                        (<Function>list[i].back).apply(list[i].thisObj,[requestCmd,vbytes]);
+                        bool = true;
+                    }
+                }
+            } else {
+                if(this.failBack[requestCmd]) {
+                    var list = this.failBack[requestCmd];
+                    for(var i = 0;i < list.length;i++) {
+                        (<Function>list[i].back).apply(list[i].thisObj,[requestCmd,vbytes]);
+                        bool = true;
+                    }
+                }
+                PopManager.pop(new ScrollTip("错误码: "  + code));
             }
         }
         var bool = false;
@@ -88,7 +106,7 @@ class GameNet extends egret.EventDispatcher {
                 bool = true;
             }
         }
-        if(!bool) {
+        if(cmd != 0 && !bool) {
             console.log("未解析的协议：" + cmd);
         }
     }
@@ -112,6 +130,22 @@ class GameNet extends egret.EventDispatcher {
                 i--;
             }
         }
+    }
+    
+    private successBack = {};
+    public registerSuccessBack(cmd: number,back: Function,thisObj: any): void {
+        if(!this.successBack[cmd]) {
+            this.successBack[cmd] = [];
+        }
+        this.successBack[cmd].push({ back: back,thisObj: thisObj });
+    }
+    
+    private failBack = {};
+    public registerFailBack(cmd: number,back: Function,thisObj: any): void {
+        if(!this.failBack[cmd]) {
+            this.failBack[cmd] = [];
+        }
+        this.failBack[cmd].push({ back: back,thisObj: thisObj });
     }
     
     private static ist: GameNet;
@@ -142,6 +176,20 @@ class GameNet extends egret.EventDispatcher {
             GameNet.ist = new GameNet();
         }
         GameNet.ist.registerBack(cmd,back,thisObj);
+    }
+    
+    public static registerSuccessBack(cmd: number,back: Function,thisObj: any): void {
+        if(!GameNet.ist) {
+            GameNet.ist = new GameNet();
+        }
+        GameNet.ist.registerSuccessBack(cmd,back,thisObj);
+    }
+    
+    public static registerFailBack(cmd: number,back: Function,thisObj: any): void {
+        if(!GameNet.ist) {
+            GameNet.ist = new GameNet();
+        }
+        GameNet.ist.registerFailBack(cmd,back,thisObj);
     }
 
     public static removeBack(cmd: number,back: Function,thisObj: any): void {

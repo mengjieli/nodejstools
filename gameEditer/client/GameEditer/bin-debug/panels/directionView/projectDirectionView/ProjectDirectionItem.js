@@ -16,7 +16,7 @@ var ProjectDirectionItem = (function (_super) {
         this.addChild(this.addFileBtn);
         this.addFileBtn.right = 59;
         this.addFileBtn.y = 5;
-        this.freshBtn = new ImageButton(RES.getRes("refresh"));
+        this.freshBtn = new ImageButton(RES.getRes("refresh"), this.fresh, this);
         this.addChild(this.freshBtn);
         this.freshBtn.right = 32;
         this.freshBtn.y = 5;
@@ -27,6 +27,11 @@ var ProjectDirectionItem = (function (_super) {
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
     }
     var d = __define,c=ProjectDirectionItem;p=c.prototype;
+    /**
+     * val 类型为 FileInfo
+     * 其中 more 为 ProjectData
+     * 其中 more2 为 ProjectDirectionData.data[key].more2 中的一项
+     */
     p.setData = function (val) {
         _super.prototype.setData.call(this, val);
         if (this.data) {
@@ -37,6 +42,7 @@ var ProjectDirectionItem = (function (_super) {
         var now = (new Date()).getTime();
         if (now - this.lastClickTime < 1000) {
             if (this.data.type == LocalFileType.FILE) {
+                EditerData.getInstance().conteView.viewFile(this.data);
             }
         }
         this.lastClickTime = now;
@@ -83,6 +89,29 @@ var ProjectDirectionItem = (function (_super) {
     p.addFile = function () {
         PopManager.pop(new AddProjectFilePanel(this.data.more, this.data), true, true);
     };
+    /**
+     * 刷新文件夹
+     */
+    p.fresh = function () {
+        var project = this.data.more;
+        if (this.data.type == LocalFileType.DIRECTION) {
+            (new ProjectDirectionCommand(project)).freshFloder(this.data.url, this.more2.type);
+        }
+        else if (this.data.type == LocalFileType.FILE) {
+            (new ProjectDirectionCommand(project)).freshFile(this.data.url, this.more2.type);
+        }
+    };
+    d(p, "more2"
+        ,function () {
+            var parent = this.data;
+            var more2 = parent.more2;
+            while (!more2) {
+                parent = parent.parent;
+                more2 = parent.more2;
+            }
+            return more2;
+        }
+    );
     return ProjectDirectionItem;
 })(DirectionViewItem);
 egret.registerClass(ProjectDirectionItem,"ProjectDirectionItem");

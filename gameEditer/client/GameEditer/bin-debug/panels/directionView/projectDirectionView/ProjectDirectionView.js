@@ -8,9 +8,13 @@ var ProjectDirectionView = (function (_super) {
     function ProjectDirectionView(direction) {
         _super.call(this, ProjectDirectionItem);
         this.data = new ProjectData();
-        new LoadingView(this.data);
-        this.data.loadConfig(direction);
         this.dataProvider = this.data.direction;
+        (new LoadProjectCommand(this.data, direction)).addEventListener(LoadingEvent.COMPLETE, function () {
+            var file = this.data.getFile("model/GameLoading.json");
+            if (file) {
+                EditerData.getInstance().conteView.viewFile(file);
+            }
+        }, this);
     }
     var d = __define,c=ProjectDirectionView;p=c.prototype;
     return ProjectDirectionView;

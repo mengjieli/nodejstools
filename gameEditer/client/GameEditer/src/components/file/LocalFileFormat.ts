@@ -9,6 +9,10 @@ class LocalFileFormat {
     public static Xml = "xml";
     public static Text = "text";
     public static Html = "html";
+
+    public static MODEL = "model";
+    public static VIEW = "view";
+    public static DATA = "data";
     
     public static SubType = {
         "png":"png",

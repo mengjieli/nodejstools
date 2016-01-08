@@ -2,6 +2,7 @@ class Main extends eui.UILayer {
 
     private txt: eui.Label;
     private loading: LoadingUI;
+    private content:egret.Sprite;
     
     protected createChildren(): void {
         super.createChildren();
@@ -24,6 +25,9 @@ class Main extends eui.UILayer {
     
     private start(): void {
         this.loading.parent.removeChild(this.loading);
+
+        this.addChild(this.content = new egret.Sprite());
+        this.addChild(new PopManager());
         
         this.txt = new eui.Label();
         this.txt.text = "链接中服务器中...";
@@ -32,24 +36,36 @@ class Main extends eui.UILayer {
 
         GameNet.getInstance().addEventListener("connect",function(e: egret.Event): void {
             this.txt.text = "已连上服务器，启动资源服务器中...";
+            
+            //登录
             var bytes = new VByteArray();
-            bytes.writeUIntV(2);
-            bytes.writeUIntV(Config.localResourceServerPort);
-            bytes.writeUTFV(Config.workFile);
+            bytes.writeUIntV(1);
+            bytes.writeUTFV("editer");
+            bytes.writeUTFV("limengjie");
+            bytes.writeUTFV("limengjie");
+            bytes.writeUTFV("*");
             GameNet.sendMessage(bytes);
         },this);
-        GameNet.registerBack(3,function(cmd: number,data: VByteArray) {
-            var flag = data.readByte();
+        
+        GameNet.registerSuccessBack(1,function():void{
+            var bytes = new VByteArray();
+            bytes.writeUIntV(601);
+            bytes.writeUIntV(Config.localResourceServerPort);
+            GameNet.sendMessage(bytes);
+        },this);
+        
+        GameNet.registerBack(602,function(cmd: number,data: VByteArray) {
+            var flag = data.readBoolean();
             var port = data.readUIntV();
             Config.localResourceServer += port;
-            var dir = data.readUTFV();
-            if(dir == Config.workFile) {
-                if(flag == 0) {
-                    this.txt.parent.removeChild(this.txt);
-                    this.allReady();
-                } else {
-                    this.txt.text = "启动资源服务器失败";
-;                }
+            if(flag) {
+                this.txt.parent.removeChild(this.txt);
+                RES.getResByUrl(Config.localResourceServer + "/editerProject.json",function(data):void{
+                    console.log(data);
+                },this,RES.ResourceItem.TYPE_JSON);
+                //this.allReady();
+            } else {
+                this.txt.text = "启动资源服务器失败";
             }
         },this);
         GameNet.connect("localhost",9500);
@@ -57,8 +73,7 @@ class Main extends eui.UILayer {
     
     private allReady():void {
         var main = new MainPanel();
-        this.addChild(main);
-        this.addChild(new PopManager());
+        this.content.addChild(main);
         main.start();
     }
 }

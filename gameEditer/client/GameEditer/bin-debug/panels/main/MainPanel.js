@@ -13,6 +13,7 @@ var MainPanel = (function (_super) {
         EditerData.getInstance();
         this.addChild(new Menu());
         this.addChild(new ProjectView());
+        //        PopManager.pop(new ModelAddLogicPanel(null));
     };
     p.onSaveToServer = function (e) {
         var file = new LocalFile(Config.workFile + "a.json");

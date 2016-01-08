@@ -7,6 +7,7 @@ var LoadingView = (function (_super) {
     __extends(LoadingView, _super);
     function LoadingView(dispatcher) {
         _super.call(this);
+        this.completeFlag = false;
         this.dispatcher = dispatcher;
         this.addChild(this.titleLabel = new eui.Label());
         this.titleLabel.text = "";
@@ -28,13 +29,23 @@ var LoadingView = (function (_super) {
         dispatcher.addEventListener(LoadingEvent.START, this.onStart, this);
         dispatcher.addEventListener(LoadingEvent.PROGRESS, this.onProgress, this);
         dispatcher.addEventListener(LoadingEvent.COMPLETE, this.onComplete, this);
-        PopManager.pop(this, true, true);
+        PopManager.pop(this, true, true, 0);
+        this.alpha = 0;
+        var _this = this;
+        setTimeout(function () {
+            if (_this.completeFlag == false) {
+                _this.alpha = 1;
+            }
+        }, 500);
     }
     var d = __define,c=LoadingView;p=c.prototype;
     p.onStart = function (e) {
         this.titleLabel.text = e.title;
         this.tipLabel.text = e.tip;
         this.progress.value = 0;
+        if (e.max) {
+            this.progress.maximum = e.max;
+        }
     };
     p.onProgress = function (e) {
         this.progress.value = e.progress * this.progress.maximum;
@@ -43,10 +54,11 @@ var LoadingView = (function (_super) {
     p.onComplete = function (e) {
         this.progress.value = this.progress.maximum;
         var dispatcher = this.dispatcher;
-        dispatcher.addEventListener(LoadingEvent.START, this.onStart, this);
-        dispatcher.addEventListener(LoadingEvent.PROGRESS, this.onProgress, this);
-        dispatcher.addEventListener(LoadingEvent.COMPLETE, this.onComplete, this);
+        dispatcher.removeEventListener(LoadingEvent.START, this.onStart, this);
+        dispatcher.removeEventListener(LoadingEvent.PROGRESS, this.onProgress, this);
+        dispatcher.removeEventListener(LoadingEvent.COMPLETE, this.onComplete, this);
         this.parent.removeChild(this);
+        this.completeFlag = true;
     };
     return LoadingView;
 })(eui.Component);

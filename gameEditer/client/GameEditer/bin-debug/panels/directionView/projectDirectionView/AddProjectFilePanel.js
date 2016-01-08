@@ -26,7 +26,7 @@ var AddProjectFilePanel = (function (_super) {
         button.bottom = 5;
         this.sure = button;
         this.sure.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
-            project.addFile(fileType, data.url, input.text, input2.text);
+            (new ProjectDirectionCommand(project)).addFile(fileType, data.url, input.text, input2.text);
             this.parent.removeChild(this);
         }, this);
         button = new eui.Button();

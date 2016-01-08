@@ -12,11 +12,14 @@ class FileInfo {
     public type: string;
     public status: string;
     public depth: number;
+    public data: any;
     public parent: FileInfo;
     public hasFloder: boolean;
     public dataList: ICollection;
     public more: any;
     public more2: any;
+    public hasLoad: boolean = false;
+    public virtual: boolean = false;
     
 	public constructor(url,name,format,end,type,status,depth) {
         this.url = url;

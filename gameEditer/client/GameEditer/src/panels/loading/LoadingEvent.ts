@@ -15,6 +15,7 @@ class LoadingEvent extends egret.Event{
      * 进度 0 - 1
      */ 
     public progress: number = 0;
+    public max: number = 0;
     
 	public constructor(type:string) {
         super(type);

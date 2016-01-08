@@ -5,6 +5,8 @@
  */
 var FileInfo = (function () {
     function FileInfo(url, name, format, end, type, status, depth) {
+        this.hasLoad = false;
+        this.virtual = false;
         this.url = url;
         this.name = name;
         this.format = format;

@@ -10,7 +10,7 @@ var ProjectDirectionData = (function () {
     ProjectDirectionData.data = [
         {
             "name": "model",
-            "desc": "模块",
+            "desc": "游戏逻辑",
             "src": "model",
             "parent": null,
             "depth": 0,
@@ -24,14 +24,29 @@ var ProjectDirectionData = (function () {
             }
         },
         {
+            "name": "data",
+            "desc": "数据结构",
+            "src": "data",
+            "parent": null,
+            "depth": 0,
+            "more2": {
+                "type": "data",
+                "desc": "数据结构",
+                "addFloder": true,
+                "addFile": true,
+                "fresh": true,
+                "delete": true
+            }
+        },
+        {
             "name": "view",
-            "desc": "视图",
+            "desc": "界面",
             "src": "view",
             "parent": null,
             "depth": 0,
             "more2": {
                 "type": "view",
-                "desc": "视图",
+                "desc": "界面",
                 "addFloder": true,
                 "addFile": true,
                 "fresh": true,
@@ -69,14 +84,14 @@ var ProjectDirectionData = (function () {
             }
         },
         {
-            "name": "data",
-            "desc": "数据结构",
-            "src": "data",
+            "name": "config",
+            "desc": "配置文件",
+            "src": "config",
             "parent": null,
             "depth": 0,
             "more2": {
-                "type": "data",
-                "desc": "数据结构",
+                "type": "config",
+                "desc": "配置文件",
                 "addFloder": true,
                 "addFile": true,
                 "fresh": true,
@@ -85,7 +100,7 @@ var ProjectDirectionData = (function () {
         },
         {
             "name": "resource",
-            "desc": "资源",
+            "desc": "萌萌哒美术",
             "src": "resource",
             "parent": null,
             "depth": 0,
@@ -94,7 +109,7 @@ var ProjectDirectionData = (function () {
                 "desc": "资源",
                 "addFloder": false,
                 "addFile": false,
-                "fresh": false,
+                "fresh": true,
                 "delete": false
             }
         },
@@ -107,7 +122,7 @@ var ProjectDirectionData = (function () {
             "depth": 1,
             "more2": {
                 "type": "animtion",
-                "desc": "逐帧动画",
+                "desc": "动画",
                 "addFloder": true,
                 "addFile": true,
                 "fresh": true,

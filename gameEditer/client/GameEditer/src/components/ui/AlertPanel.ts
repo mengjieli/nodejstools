@@ -27,10 +27,10 @@ class AlertPanel extends eui.Panel {
             button.bottom = 5;
             this.sure = button;
             this.sure.addEventListener(egret.TouchEvent.TOUCH_TAP,function(e: egret.TouchEvent): void {
-                this.parent.removeChild(this);
                 if(sureBack) {
                     sureBack.apply(sureThis);
                 }
+                this.parent.removeChild(this);
             },this);
         }
 
@@ -43,10 +43,10 @@ class AlertPanel extends eui.Panel {
             button.bottom = 5;
             this.cancle = button;
             this.cancle.addEventListener(egret.TouchEvent.TOUCH_TAP,function(e: egret.TouchEvent): void {
-                this.parent.removeChild(this);
                 if(cancleBack) {
                     cancleBack.apply(cancleThis);
                 }
+                this.parent.removeChild(this);
             },this);
         }
         

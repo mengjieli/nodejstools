@@ -7,22 +7,25 @@ class LocalFile extends egret.EventDispatcher {
     
     private url: string;
     private rootPath: string;
+    private _exist: boolean;
     public list: Array<LocalFileInfo> = [];
     
     public constructor(rootPath) {
         super();
         this.rootPath = rootPath;
         this.url = "";
-        
+
         GameNet.registerBack(11,this.recvDirectionList,this);
         GameNet.registerBack(21,this.recvSaveComplete,this);
         GameNet.registerBack(23,this.recvMakeDirComplete,this);
+        GameNet.registerBack(25,this.recvExistComplete,this);
 	}
 	
 	public dispose():void {
         GameNet.removeBack(11,this.recvDirectionList,this);
         GameNet.removeBack(21,this.recvSaveComplete,this);
         GameNet.removeBack(23,this.recvMakeDirComplete,this);
+        GameNet.removeBack(24,this.recvExistComplete,this);
 	}
 	
 	/**
@@ -92,5 +95,25 @@ class LocalFile extends egret.EventDispatcher {
             this.list.push(new LocalFileInfo(url,type));
         }
         this.dispatchEventWith(egret.Event.COMPLETE);
+    }
+    
+    public isExist(): void {
+        var bytes = new VByteArray();
+        bytes.writeUIntV(24);
+        bytes.writeUTFV(this.rootPath);
+        GameNet.sendMessage(bytes);
+    }
+    
+    private recvExistComplete(cmd: number,data: VByteArray): void {
+        data.position = 0;
+        data.readUIntV();
+        var url = data.readUTFV();
+        if(url != this.rootPath) return;
+        this._exist = data.readBoolean();
+        this.dispatchEventWith(egret.Event.COMPLETE);
+    }
+    
+    public get exist():boolean {
+        return this._exist;
     }
 }

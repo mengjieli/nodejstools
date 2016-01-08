@@ -9,6 +9,8 @@ var GameNet = (function (_super) {
         _super.call(this);
         this.connectFlag = false;
         this.backs = {};
+        this.successBack = {};
+        this.failBack = {};
         var sock = new egret.WebSocket();
         this.sock = sock;
         sock.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
@@ -18,6 +20,8 @@ var GameNet = (function (_super) {
     }
     var d = __define,c=GameNet;p=c.prototype;
     p.connect = function (ip, port) {
+        this.ip = ip;
+        this.port = port;
         this.sock.connect(ip, port);
     };
     p.onClose = function (e) {
@@ -25,7 +29,7 @@ var GameNet = (function (_super) {
         //alert("与游戏服务器断开链接，请刷新页面");
     };
     p.onIOError = function (e) {
-        alert("无法连上服务器");
+        alert("无法连上服务器 " + this.ip + ":" + this.port);
     };
     p.onSocketOpen = function () {
         this.connectFlag = true;
@@ -67,13 +71,28 @@ var GameNet = (function (_super) {
         vbytes.readFromByteArray(bytes);
         var cmd = vbytes.readUIntV();
         console.log("收到消息 cmd : " + cmd);
-        //console.log("收到消息 cmd : " + cmd + " ,内容 ：" + vbytes.toString());
+        console.log("收到消息 cmd : " + cmd + " ,内容 ：" + vbytes.toString());
         if (cmd == 0) {
             var requestCmd = vbytes.readUIntV();
-            var code = vbytes.readIntV();
-            if (code > 10000) {
-                alert("未解析的错误"); //Language.getErrorTip(code));
-                return;
+            var code = vbytes.readUIntV();
+            if (code == 0) {
+                if (this.successBack[requestCmd]) {
+                    var list = this.successBack[requestCmd];
+                    for (var i = 0; i < list.length; i++) {
+                        list[i].back.apply(list[i].thisObj, [requestCmd, vbytes]);
+                        bool = true;
+                    }
+                }
+            }
+            else {
+                if (this.failBack[requestCmd]) {
+                    var list = this.failBack[requestCmd];
+                    for (var i = 0; i < list.length; i++) {
+                        list[i].back.apply(list[i].thisObj, [requestCmd, vbytes]);
+                        bool = true;
+                    }
+                }
+                PopManager.pop(new ScrollTip("错误码: " + code));
             }
         }
         var bool = false;
@@ -84,7 +103,7 @@ var GameNet = (function (_super) {
                 bool = true;
             }
         }
-        if (!bool) {
+        if (cmd != 0 && !bool) {
             console.log("未解析的协议：" + cmd);
         }
     };
@@ -105,6 +124,18 @@ var GameNet = (function (_super) {
                 i--;
             }
         }
+    };
+    p.registerSuccessBack = function (cmd, back, thisObj) {
+        if (!this.successBack[cmd]) {
+            this.successBack[cmd] = [];
+        }
+        this.successBack[cmd].push({ back: back, thisObj: thisObj });
+    };
+    p.registerFailBack = function (cmd, back, thisObj) {
+        if (!this.failBack[cmd]) {
+            this.failBack[cmd] = [];
+        }
+        this.failBack[cmd].push({ back: back, thisObj: thisObj });
     };
     GameNet.getInstance = function () {
         if (!GameNet.ist) {
@@ -129,6 +160,18 @@ var GameNet = (function (_super) {
             GameNet.ist = new GameNet();
         }
         GameNet.ist.registerBack(cmd, back, thisObj);
+    };
+    GameNet.registerSuccessBack = function (cmd, back, thisObj) {
+        if (!GameNet.ist) {
+            GameNet.ist = new GameNet();
+        }
+        GameNet.ist.registerSuccessBack(cmd, back, thisObj);
+    };
+    GameNet.registerFailBack = function (cmd, back, thisObj) {
+        if (!GameNet.ist) {
+            GameNet.ist = new GameNet();
+        }
+        GameNet.ist.registerFailBack(cmd, back, thisObj);
     };
     GameNet.removeBack = function (cmd, back, thisObj) {
         if (!GameNet.ist) {

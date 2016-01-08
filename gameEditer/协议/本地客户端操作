@@ -1,0 +1,39 @@
+消息号从 100 - 500 任意选择
+
+
+读取文件夹列表 100
+    string url
+转发给 LocalClient 501
+    uint 任务id
+    uint cmd 100
+    string url
+返回给服务器 502
+    uint 任务id
+    string url
+    Array 文件/文件夹信息数组
+        byte 0表示文件夹,1表示文件
+        string 文件/文件夹路径
+返回 101
+    string url
+    Array 文件/文件夹信息数组
+        byte 0表示文件夹,1表示文件
+        string 文件/文件夹路径
+
+
+读取文件内容 102
+    string url
+    byte format 0 表示二进制  1 表示字符串
+转发给 LocalClient 501
+    uint 任务id
+    uint cmd 102
+    string url
+    byte format
+返回给服务器 502
+    uint 任务id
+    string url
+    string 字符串内容
+    ByteArray 二进制内容
+返回 103
+    string url
+    string 字符串内容
+    ByteArray 二进制内容

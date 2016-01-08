@@ -23,7 +23,7 @@ class ProjectDirectionItem extends DirectionViewItem{
         this.addFileBtn.right = 59;
         this.addFileBtn.y = 5;
         
-        this.freshBtn = new ImageButton(RES.getRes("refresh"));
+        this.freshBtn = new ImageButton(RES.getRes("refresh"),this.fresh,this);
         this.addChild(this.freshBtn);
         this.freshBtn.right = 32;
         this.freshBtn.y = 5;
@@ -36,6 +36,11 @@ class ProjectDirectionItem extends DirectionViewItem{
         this.addEventListener(egret.TouchEvent.TOUCH_TAP,this.onClick,this);
     }
     
+    /**
+     * val 类型为 FileInfo
+     * 其中 more 为 ProjectData
+     * 其中 more2 为 ProjectDirectionData.data[key].more2 中的一项
+     */ 
     protected setData(val: any) {
         super.setData.call(this,val);
         if(this.data) {
@@ -48,7 +53,7 @@ class ProjectDirectionItem extends DirectionViewItem{
         var now = (new Date()).getTime();
         if(now - this.lastClickTime < 1000) {
             if(this.data.type == LocalFileType.FILE) {
-                //EditerData.getInstance().conteView.viewFile(this.data);
+                EditerData.getInstance().conteView.viewFile(this.data);
             }
         }
         this.lastClickTime = now;
@@ -98,5 +103,27 @@ class ProjectDirectionItem extends DirectionViewItem{
 
     private addFile(): void {
         PopManager.pop(new AddProjectFilePanel(this.data.more,this.data),true,true);
+    }
+    
+    /**
+     * 刷新文件夹
+     */ 
+    private fresh():void {
+        var project:ProjectData = this.data.more;
+        if(this.data.type == LocalFileType.DIRECTION) {
+            (new ProjectDirectionCommand(project)).freshFloder(this.data.url,this.more2.type);
+        } else if(this.data.type == LocalFileType.FILE) {
+            (new ProjectDirectionCommand(project)).freshFile(this.data.url,this.more2.type);
+        }
+    }
+    
+    private get more2():any {
+        var parent = this.data;
+        var more2 = parent.more2;
+        while(!more2) {
+            parent = parent.parent;
+            more2 = parent.more2;
+        }
+        return more2;
     }
 }

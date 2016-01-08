@@ -99,9 +99,7 @@ var DirectionViewItem = (function (_super) {
                 this.container.x += 20;
             }
             else if (val.type == LocalFileType.FILE) {
-                if (val.hasFloder) {
-                    this.container.x += 20;
-                }
+                this.container.x += 20;
                 this.btnClose.visible = this.btnOpen.visible = false;
                 var end = this.data.format;
                 if (end == LocalFileFormat.Image) {

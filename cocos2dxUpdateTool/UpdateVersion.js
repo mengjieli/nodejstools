@@ -28,7 +28,13 @@ var UpdateVersion = function (workFile, updateComplete, thisObj) {
  */
 UpdateVersion.prototype.updateVersion = function () {
     var server = this.serverList[this.updateIndex];
-    //console.log("ready to update server \"" + server.name + "\":");
+    if (server.flag == false) {
+        this.addLog("jump server update " + server.name + ".\n");
+        this.addLog("\n");
+        setTimeout(this.updateVersionComplete.bind(this), 1000);
+        return;
+    }
+    this.addLog("ready to update server \"" + server.name + "\":\n");
     this.currentUpdateSrc = true; // src svn 有版本更新
     this.currentUpdateRes = true; // res svn 有版本更新
     this.updateSrc(server);
@@ -39,8 +45,7 @@ UpdateVersion.prototype.updateVersion = function () {
  * @param server
  */
 UpdateVersion.prototype.updateSrc = function (server) {
-    this.log += "  1. update \"src\" from svn\n";
-    //console.log("  1. update \"src\" from svn");
+    this.addLog("  1. update \"src\" from svn\n");
     (new File("src")).delete();
     var svn = new SVNShell(server.svn.url + "src", this.localsrc, server.svn.user, server.svn.password);
     var _this = this;
@@ -49,8 +54,7 @@ UpdateVersion.prototype.updateSrc = function (server) {
             _this.currentUpdateSrc = server.src.last == svn.lastVersion ? false : true;
             server.src.last = svn.lastVersion;
             //jsc 工具
-            _this.log += "  2. jsc \"src\"\n";
-            //console.log("  2. jsc \"src\"");
+            _this.addLog("  2. jsc \"src\"\n");
             new ShellCommand("cocos", ["jscompile", "-s", svn.localsvndir, "-d", "src/"], function () {
                 _this.updateRes(server);
             });
@@ -63,8 +67,7 @@ UpdateVersion.prototype.updateSrc = function (server) {
  * @param server
  */
 UpdateVersion.prototype.updateRes = function (server) {
-    this.log += "  3. update \"res\" from svn\n";
-    //console.log("  3. update \"res\" from svn");
+    this.addLog("  3. update \"res\" from svn\n");
     (new File("res")).delete();
     var svn = new SVNShell(server.svn.url + "res", this.localres, server.svn.user, server.svn.password);
     var _this = this;
@@ -75,6 +78,8 @@ UpdateVersion.prototype.updateRes = function (server) {
                 var hasFile = false;
                 for (var i = 0; i < list.length; i++) {
                     if (list[i].type == SVNDifferenceType.ADD || list[i].type == SVNDifferenceType.MODIFY) {
+                        var fileName = list[i].url.split("/")[list[i].url.split("/").length - 1];
+                        if (fileName.split(".").length == 1) continue;
                         var file = new File(list[i].url);
                         var content = file.readContent("binary");
                         file.save(content, "binary", "res/" + list[i].relativeurl);
@@ -83,8 +88,7 @@ UpdateVersion.prototype.updateRes = function (server) {
                 }
                 _this.currentUpdateRes = hasFile;
                 if (!_this.currentUpdateSrc && !_this.currentUpdateRes) {
-                    _this.log += "  \"src\" and \"res\" is the latest, jump this server update." + server.res.last + "," + svn.lastVersion + "\n";
-                    //console.log("  \"src\" and \"res\" is the latest, jump this server update.", server.res.last, svn.lastVersion);
+                    _this.addLog("  \"src\" and \"res\" is the latest, jump this server update." + server.res.last + "," + svn.lastVersion + "\n");
                     _this.updateVersionComplete();
                     return;
                 }
@@ -99,8 +103,7 @@ UpdateVersion.prototype.updateRes = function (server) {
  * @param server
  */
 UpdateVersion.prototype.modifyManifest = function (server) {
-    this.log += "  4. modify manifest files\n";
-    //console.log("  4. modify manifest files");
+    this.addLog("  4. modify manifest files\n");
     var srcMax = server.version.src.key;
     var srcVersion = server.version.src.version;
     var resLastVersion = "";
@@ -127,7 +130,7 @@ UpdateVersion.prototype.modifyManifest = function (server) {
         resMax++;
         server.version.res[resMax + ""] = resNextVersion;
         server.version.svn[resMax + ""] = server.res.last;
-        this.log += "     res version : " + resNextVersion + " \n";
+        this.addLog("     res version : " + resNextVersion + " \n");
     }
 
     //保存 project.manifest
@@ -157,7 +160,7 @@ UpdateVersion.prototype.modifyManifest = function (server) {
         versionManifest.groupVersions[key] = server.version.res[key];
     }
     if (this.currentUpdateSrc) {
-        this.log += "     src version : " + srcVersion + " \n";
+        this.addLog("     src version : " + srcVersion + " \n");
         versionManifest.groupVersions[srcMax + ""] = srcVersion;
     }
 
@@ -181,9 +184,9 @@ UpdateVersion.prototype.modifyManifest = function (server) {
 }
 
 UpdateVersion.prototype.compareHistory = function (server, resMax, srcMax, versionManifest, projectManifest) {
-    this.log += "  5. compare history files\n";
+    this.addLog("  5. compare history files\n");
     var historyFile = new File(this.workFile + "history/" + server.name + "/list.json");
-    if(historyFile.isExist() == false) {
+    if (historyFile.isExist() == false) {
         historyFile.save("{}");
     }
     var history = JSON.parse(historyFile.readContent());
@@ -247,6 +250,7 @@ UpdateVersion.prototype.compareHistory = function (server, resMax, srcMax, versi
             file.save(JSON.stringify(versionManifest));
 
             (new File(_this.workFile + "history/" + server.name + "/list.json")).save(JSON.stringify(history));
+            console.log("upload file",server,resMax,srcMax);
             _this.uploadFtp(server, resMax, srcMax, ftp);
             return;
         }
@@ -300,14 +304,12 @@ UpdateVersion.prototype.compareHistory = function (server, resMax, srcMax, versi
 }
 
 UpdateVersion.prototype.uploadFtp = function (server, resMax, srcMax, ftp) {
-    this.log += "  6. upload ftp \n";
-    //console.log("  5. upload ftp ");
+    this.addLog("  6. upload ftp \n");
     var _this = this;
     var uploadComplete = function () {
         var file = new File(_this.workFile + "updateVersion.json");
         file.save(JSON.stringify(_this.config));
-        _this.log += "  update success, server \"" + server.name + "\n";
-        //console.log("  update success, server \"" + server.name);
+        _this.addLog("  update success, server \"" + server.name + "\n");
         _this.updateVersionComplete();
     }
     ftp.upload("tmp/project.manifest", server.ftp.direction + "project.manifest", function () {
@@ -349,6 +351,11 @@ UpdateVersion.prototype.updateVersionComplete = function () {
             this.updateComplete.apply(this.updateCompleteThis);
         }
     }
+}
+
+UpdateVersion.prototype.addLog = function (log) {
+    console.log(log);
+    this.log += log;
 }
 
 /**

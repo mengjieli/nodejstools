@@ -126,7 +126,11 @@ File.prototype.delete = function () {
             file = new File(this.url + "/" + list[i]);
             file.delete();
         }
-        fs.rmdirSync(this.url);
+        try {
+            fs.rmdirSync(this.url);
+        } catch(e) {
+            console.log(e);
+        }
     }
 }
 

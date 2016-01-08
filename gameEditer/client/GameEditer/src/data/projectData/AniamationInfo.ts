@@ -3,26 +3,44 @@
  * @author 
  *
  */
-class FileInfoBase {
+class FileInfoBase extends egret.EventDispatcher {
 
     protected _url: string;
-    protected name: string;
-    protected desc: string;
+    protected _name: string;
+    protected _desc: string;
+    protected _isNew: boolean = true;
 
     public constructor(url,name,desc) {
+        super();
         this._url = url;
-        this.name = name;
-        this.desc = desc;
+        this._name = name;
+        this._desc = desc;
+    }
+    
+    public update(file:FileInfoBase):void {
+        
+    }
+    
+    public get isNew():boolean {
+        return this._isNew;
     }
 
     public get url(): string {
-        return this._url + "/" + this.name + ".json";
+        return this._url + "/" + this._name + ".json";
+    }
+    
+    public get name():string {
+        return this._name;
+    }
+
+    public get desc(): string {
+        return this._desc;
     }
 
     public get fileContent(): string {
         var config = {
-            "name": this.name,
-            "desc": this.desc
+            "name": this._name,
+            "desc": this._desc
         }
         return JSON.stringify(config);
     }
@@ -34,7 +52,8 @@ class FileInfoBase {
  * @author 
  *
  */
-class AniamationInfo {
-	public constructor() {
+class AniamationInfo extends FileInfoBase{
+    public constructor(url,name,desc) {
+        super(url,name,desc);
 	}
 }

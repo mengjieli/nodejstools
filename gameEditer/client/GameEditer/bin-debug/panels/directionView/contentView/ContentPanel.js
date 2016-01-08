@@ -8,7 +8,7 @@ var ContentPanel = (function (_super) {
     function ContentPanel() {
         _super.call(this);
         this.viewList = [];
-        var exml = "<e:Skin xmlns:e = \"http://ns.egret.com/eui\" >\n                <e:Image width=\"100%\" height=\"100%\" source=\"resource/images/depthBlueBg.png\" scale9Grid=\"30,30,18,76\"/>\n                <e:TabBar id=\"tabBar\" dataProvider=\"{viewStack}\">\n                </e:TabBar>\n                <e:ViewStack y=\"30\" id=\"viewStack\" width=\"100%\" height=\"100%\">\n                </e:ViewStack>\n            </e:Skin>";
+        var exml = "<e:Skin xmlns:e = \"http://ns.egret.com/eui\" >\n                <e:Image width=\"100%\" height=\"100%\" source=\"resource/images/depthBlueBg.png\" scale9Grid=\"30,30,18,76\"/>\n                <e:TabBar id=\"tabBar\" dataProvider=\"{viewStack}\">\n                </e:TabBar>\n                <e:ViewStack y=\"25\" id=\"viewStack\" width=\"100%\" height=\"100%\">\n                </e:ViewStack>\n            </e:Skin>";
         this.skinName = exml;
         this.tabBar.itemRenderer = ViewContentTabBar;
         EditerData.getInstance().conteView.addEventListener(ContentViewEvent.VIEW_FILE, this.onViewFile, this);
@@ -24,6 +24,12 @@ var ContentPanel = (function (_super) {
             }
         }
         switch (e.file.format) {
+            case LocalFileFormat.MODEL:
+                var modelView = new ModelView(e.file);
+                this.viewList.push(modelView);
+                this.viewStack.addChild(modelView);
+                this.viewStack.selectedIndex = this.viewList.length - 1;
+                break;
             case LocalFileFormat.Image:
                 var imageView = new ImageView(e.file);
                 this.viewList.push(imageView);

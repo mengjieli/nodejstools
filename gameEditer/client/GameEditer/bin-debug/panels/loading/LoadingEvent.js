@@ -13,6 +13,7 @@ var LoadingEvent = (function (_super) {
          * 进度 0 - 1
          */
         this.progress = 0;
+        this.max = 0;
     }
     var d = __define,c=LoadingEvent;p=c.prototype;
     LoadingEvent.START = "start";

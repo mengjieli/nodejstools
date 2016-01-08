@@ -16,7 +16,7 @@ class ContentPanel extends eui.Component {
                 <e:Image width="100%" height="100%" source="resource/images/depthBlueBg.png" scale9Grid="30,30,18,76"/>
                 <e:TabBar id="tabBar" dataProvider="{viewStack}">
                 </e:TabBar>
-                <e:ViewStack y="30" id="viewStack" width="100%" height="100%">
+                <e:ViewStack y="25" id="viewStack" width="100%" height="100%">
                 </e:ViewStack>
             </e:Skin>`;
             
@@ -37,6 +37,12 @@ class ContentPanel extends eui.Component {
             }
         }
         switch(e.file.format) {
+            case LocalFileFormat.MODEL:
+                var modelView = new ModelView(e.file);
+                this.viewList.push(modelView);
+                this.viewStack.addChild(modelView);
+                this.viewStack.selectedIndex = this.viewList.length - 1;
+                break;
             case LocalFileFormat.Image:
                 var imageView = new ImageView(e.file);
                 this.viewList.push(imageView);

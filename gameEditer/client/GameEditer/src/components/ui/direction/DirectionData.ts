@@ -77,4 +77,8 @@ class DirectionData extends egret.EventDispatcher{
         }
         this.dispatchEventWith(egret.Event.COMPLETE);
     }
+    
+    public dispose() {
+        this.file.dispose();
+    }
 }

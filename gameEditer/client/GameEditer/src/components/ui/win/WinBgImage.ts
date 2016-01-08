@@ -3,7 +3,8 @@
  * @author 
  *
  */
-class WinBgImage extends eui.Image{
+class WinBgImage extends eui.Image {
+    
 	public constructor(type:number=1) {
         super();
         if(type == 1) {

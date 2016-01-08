@@ -1,0 +1,9 @@
+{
+  "1":"LoginTask",
+  "2":"LoadJSTask",
+  "3":"LoadCommandConfigTask",
+  "4":"LoadUserConfigTask",
+  "100":"ReadDirectionTask",
+  "502":"ExcuteTask",
+  "601":"HttpServerTask"
+}

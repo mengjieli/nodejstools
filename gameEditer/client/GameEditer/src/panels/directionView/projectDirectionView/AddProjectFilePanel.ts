@@ -33,7 +33,7 @@ class AddProjectFilePanel extends eui.Panel {
         button.bottom = 5;
         this.sure = button;
         this.sure.addEventListener(egret.TouchEvent.TOUCH_TAP,function(e: egret.TouchEvent): void {
-            project.addFile(fileType,data.url,input.text,input2.text);
+            (new ProjectDirectionCommand(project)).addFile(fileType,data.url,input.text,input2.text);
             this.parent.removeChild(this);
         },this);
 

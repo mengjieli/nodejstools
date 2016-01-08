@@ -9,6 +9,7 @@ class LoadingView extends eui.Component{
     private titleLabel: eui.Label;
     private progress: eui.ProgressBar;
     private tipLabel: eui.Label;
+    private completeFlag:boolean = false;
     
 	public constructor(dispatcher:egret.IEventDispatcher) {
         super();
@@ -38,14 +39,24 @@ class LoadingView extends eui.Component{
         dispatcher.addEventListener(LoadingEvent.START,this.onStart,this);
         dispatcher.addEventListener(LoadingEvent.PROGRESS,this.onProgress,this);
         dispatcher.addEventListener(LoadingEvent.COMPLETE,this.onComplete,this);
-        
-        PopManager.pop(this,true,true);
+
+        PopManager.pop(this,true,true,0);
+        this.alpha = 0;
+        var _this = this;
+        setTimeout(function(){
+            if(_this.completeFlag == false) {
+                _this.alpha = 1;
+            }
+        },500);
 	}
 	
     private onStart(e: LoadingEvent): void {
         this.titleLabel.text = e.title;
         this.tipLabel.text = e.tip;
         this.progress.value = 0;
+        if(e.max) {
+            this.progress.maximum = e.max;
+        }
     }
 	
     private onProgress(e:LoadingEvent): void {
@@ -56,9 +67,10 @@ class LoadingView extends eui.Component{
     private onComplete(e: LoadingEvent): void {
         this.progress.value = this.progress.maximum;
         var dispatcher = this.dispatcher;
-        dispatcher.addEventListener(LoadingEvent.START,this.onStart,this);
-        dispatcher.addEventListener(LoadingEvent.PROGRESS,this.onProgress,this);
-        dispatcher.addEventListener(LoadingEvent.COMPLETE,this.onComplete,this);
+        dispatcher.removeEventListener(LoadingEvent.START,this.onStart,this);
+        dispatcher.removeEventListener(LoadingEvent.PROGRESS,this.onProgress,this);
+        dispatcher.removeEventListener(LoadingEvent.COMPLETE,this.onComplete,this);
         this.parent.removeChild(this);
+        this.completeFlag = true;
     }
 }

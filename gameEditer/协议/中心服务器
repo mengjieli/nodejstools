@@ -1,0 +1,19 @@
+登录 1
+   string 类型 "local" 或 "editer"
+   string 用户名
+   string 密码
+   string 登录ip
+返回 统一错误码返回
+
+载入js 2
+   string js路径
+返回 统一错误码返回
+
+重新载入Command.json 3
+返回 统一错误码返回
+
+重新载入User.json 4
+返回 统一错误码返回
+
+重新读入账号密码 10
+返回 统一错误码返回

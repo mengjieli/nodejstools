@@ -73,6 +73,9 @@ var DirectionData = (function (_super) {
         }
         this.dispatchEventWith(egret.Event.COMPLETE);
     };
+    p.dispose = function () {
+        this.file.dispose();
+    };
     return DirectionData;
 })(egret.EventDispatcher);
 egret.registerClass(DirectionData,"DirectionData");

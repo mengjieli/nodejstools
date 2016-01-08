@@ -23,6 +23,22 @@ var ProjectData = (function (_super) {
          * 数据列表
          */
         this.datas = [];
+        /**
+         * 动画
+         */
+        this.animations = [];
+        /**
+         * SpritesSheet
+         */
+        this.spritesSheets = [];
+        /**
+         * 图片
+         */
+        this.images = [];
+        /**
+         * 电脑上的目录信息
+         */
+        //    private localDirection: DirectionData;
         this.pathDesc = {};
         this.direction = new eui.ArrayCollection();
         var list = ProjectDirectionData.data;
@@ -32,6 +48,7 @@ var ProjectData = (function (_super) {
             direction.dataList = this.direction;
             direction.more = this;
             direction.more2 = list[i]["more2" + ""];
+            direction.virtual = true;
             if (list[i].parent) {
                 direction.parent = this[list[i].parent + "Direction"];
             }
@@ -39,32 +56,42 @@ var ProjectData = (function (_super) {
         }
     }
     var d = __define,c=ProjectData;p=c.prototype;
-    p.loadConfig = function (direction) {
-        this.path = direction;
-        this.configURL = "editerProject.json";
-        this.localDirection = new DirectionData(this.path);
-        this.localDirection.flush();
-        this.localDirection.addEventListener(egret.Event.COMPLETE, this.onInitFlushLocalDirection, this);
-        var e = new LoadingEvent(LoadingEvent.START);
-        e.title = "加载项目配置";
-        e.tip = "加载项目文件夹信息";
-        this.dispatchEvent(e);
+    p.hasPath = function (url) {
+        for (var i = 0; i < this.direction.length; i++) {
+            var item = this.direction.getItemAt(i);
+            if (item.url == url) {
+                return true;
+            }
+        }
+        return false;
     };
-    p.onInitFlushLocalDirection = function (e) {
-        this.localDirection.removeEventListener(egret.Event.COMPLETE, this.onInitFlushLocalDirection, this);
-        var le = new LoadingEvent(LoadingEvent.PROGRESS);
-        le.tip = "加载主配置文件";
-        le.progress = 0.05;
-        this.dispatchEvent(le);
-        RES.getResByUrl(Config.localResourceServer + "/" + this.configURL, this.onLoadConfig, this);
+    p.getFile = function (url) {
+        for (var i = 0; i < this.direction.length; i++) {
+            var item = this.direction.getItemAt(i);
+            if (item.url == url) {
+                return item;
+            }
+        }
+        return null;
     };
-    p.onLoadConfig = function (data) {
-        var le = new LoadingEvent(LoadingEvent.PROGRESS);
-        le.tip = "加载模块信息";
-        le.progress = 0.1;
-        this.dispatchEvent(le);
-        //TODO 还有没做的
-        this.dispatchEvent(new LoadingEvent(LoadingEvent.COMPLETE));
+    p.getFileInPath = function (url) {
+        var list = [];
+        for (var i = 0; i < this.direction.length; i++) {
+            var item = this.direction.getItemAt(i);
+            if (item.url.slice(0, url.length) == url && item.url.charAt(url.length) == "/") {
+                list.push(item);
+            }
+        }
+        return list;
+    };
+    p.getLocalFile = function (url) {
+        for (var i = 0; i < this.direction.length; i++) {
+            var item = this.direction.getItemAt(i);
+            if (item.url == url) {
+                return item;
+            }
+        }
+        return null;
     };
     p.getDirection = function (key, val) {
         for (var i = 0; i < this.direction.length; i++) {
@@ -79,7 +106,7 @@ var ProjectData = (function (_super) {
         var max = 0;
         for (var i = 0; i < this.direction.length; i++) {
             var item = this.direction.getItemAt(i);
-            if (item.url == url || item.url.slice(0, url.length) && item.url.charAt(url.length) == "/") {
+            if (item.url == url || item.url.slice(0, url.length) == url && item.url.charAt(url.length) == "/") {
                 max = i + 1;
             }
         }
@@ -104,64 +131,213 @@ var ProjectData = (function (_super) {
             }
         }
     };
-    p.addFloder = function (url, name, desc, complete, thisObj) {
-        if (complete === void 0) { complete = null; }
-        if (thisObj === void 0) { thisObj = null; }
-        var file = new LocalFile(Config.workFile + url + "/" + name + "/");
-        file.addEventListener(egret.Event.COMPLETE, function (e) {
-            file.dispose();
-            var dirName = name;
-            if (desc != "") {
-                this.pathDesc[url + "/" + name] = desc;
-                dirName = desc;
-            }
-            var floder = new FileInfo(url + "/" + name, dirName, null, null, LocalFileType.DIRECTION, "close", url.split("/").length);
-            floder.parent = this.getDirection("url", url);
-            floder.hasFloder = true;
-            this.addFloderToTheSameFloderFile(url);
-            floder.dataList = this.direction;
-            floder.more = this;
-            this.direction.addItemAt(floder, this.getDirectionNewIndex(url));
-            this.addFloderToTheSameFloderFile(url);
-            this.direction.dispatchEvent(new egret.Event(eui.CollectionEventKind.UPDATE));
-            if (complete) {
-                complete.call(thisObj);
-            }
-        }, this);
-        file.makeDirection();
+    /**
+     * @param url 后面可带 / 也可不带，不是全路径，不带文件夹名称
+     */
+    p.addFloder = function (url, name, desc) {
+        if (desc === void 0) { desc = ""; }
+        if (url.charAt(url.length - 1) == "/")
+            url = url.slice(0, url.length - 1);
+        var dirName = name;
+        if (this.addPathDesc[url + "/" + name]) {
+            delete this.addPathDesc[url + "/" + name];
+        }
+        if (desc != "") {
+            this.addPathDesc(url + "/" + name, desc);
+            dirName = desc;
+        }
+        var floder = new FileInfo(url + "/" + name, dirName, null, null, LocalFileType.DIRECTION, "close", url.split("/").length);
+        floder.parent = this.getDirection("url", url);
+        floder.hasFloder = true;
+        this.addFloderToTheSameFloderFile(url);
+        floder.dataList = this.direction;
+        floder.more = this;
+        this.direction.addItemAt(floder, this.getDirectionNewIndex(url));
+        this.addFloderToTheSameFloderFile(url);
+        this.direction.dispatchEvent(new egret.Event(eui.CollectionEventKind.UPDATE));
     };
-    p.addFile = function (fileType, url, name, desc, complete, thisObj) {
-        if (complete === void 0) { complete = null; }
-        if (thisObj === void 0) { thisObj = null; }
-        var data;
-        if (fileType == "data") {
-            data = new DataInfo(url, name, desc);
+    /**
+     * @param url 全路径，带文件名和后缀
+     * @param name
+     * @param desc 如果没有传 null 或者 ""
+     * @param format 文件格式
+     * @param data 文件内容
+     */
+    p.addFile = function (url, name, desc, format, data) {
+        desc = desc || "";
+        if (url.charAt(url.length - 1) == "/")
+            url = url.slice(0, url.length - 1);
+        var dirName = name;
+        var nameEnd = "json";
+        var path = url + "/" + name + "." + nameEnd;
+        if (desc != "") {
+            dirName = desc;
         }
-        else if (fileType == "spritesSheet") {
-            data = new SpritesSheetInfo(url, name, desc);
+        if (format == "model") {
+            this.models.push(data);
         }
-        var file = new LocalFile(Config.workFile + data.url);
-        file.addEventListener(egret.Event.COMPLETE, function (e) {
-            file.dispose();
-            var dirName = name;
-            if (desc != "") {
-                this.pathDesc[data.url] = desc;
-                dirName = desc;
+        if (format == "view") {
+            this.views.push(data);
+        }
+        if (format == "data") {
+            this.datas.push(data);
+        }
+        if (format == "animation") {
+            this.animations.push(data);
+        }
+        if (format == "spritesSheet") {
+            this.spritesSheets.push(data);
+        }
+        if (format == "image") {
+            this.images.push(data);
+        }
+        var newFile = new FileInfo(path, dirName, format, "json", LocalFileType.FILE, "close", path.split("/").length - 1);
+        newFile.parent = this.getDirection("url", url);
+        newFile.hasFloder = this.hasFloderInThePath(url);
+        newFile.dataList = this.direction;
+        newFile.data = data;
+        newFile.more = this;
+        this.direction.addItemAt(newFile, this.getDirectionNewIndex(url));
+        return newFile;
+    };
+    p.updateFile = function (url, name, desc, format, data) {
+    };
+    p.delFile = function (url, format) {
+        for (var i = 0; i < this.direction.length; i++) {
+            var item = this.direction.getItemAt(i);
+            if (item.url == url) {
+                this.direction.removeItemAt(i);
+                break;
             }
-            var newFile = new FileInfo(data.url, dirName, "data", "json", LocalFileType.FILE, "close", data.url.split("/").length - 1);
-            newFile.parent = this.getDirection("url", url);
-            newFile.hasFloder = this.hasFloderInThePath(url);
-            newFile.dataList = this.direction;
-            newFile.more = this;
-            this.direction.addItemAt(newFile, this.getDirectionNewIndex(url));
-            if (complete) {
-                complete.call(thisObj);
+        }
+        delete this.pathDesc[url];
+        if (!this.delData(url, format)) {
+            throw "没有扎到对应的文件信息";
+        }
+    };
+    p.getData = function (url, format) {
+        var list;
+        if (format == "model") {
+            list = this.models;
+        }
+        if (format == "view") {
+            list = this.views;
+        }
+        if (format == "data") {
+            list = this.datas;
+        }
+        if (format == "animation") {
+            list = this.animations;
+        }
+        if (format == "spritesSheet") {
+            list = this.spritesSheets;
+        }
+        if (format == "image") {
+            list = this.images;
+        }
+        var find = false;
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].url == url) {
+                return list[i];
             }
-        }, this);
-        file.saveFile(data.fileContent);
+        }
+        return null;
+    };
+    p.delData = function (url, format) {
+        var list;
+        if (format == "model") {
+            list = this.models;
+        }
+        if (format == "view") {
+            list = this.views;
+        }
+        if (format == "data") {
+            list = this.datas;
+        }
+        if (format == "animation") {
+            list = this.animations;
+        }
+        if (format == "spritesSheet") {
+            list = this.spritesSheets;
+        }
+        if (format == "image") {
+            list = this.images;
+        }
+        var find = false;
+        for (var i = 0; i < list.length; i++) {
+            if (list[i].url == url) {
+                list.splice(i, 1);
+                return true;
+            }
+        }
+        return false;
+    };
+    p.delPath = function (url) {
+        for (var i = 0; i < this.direction.length; i++) {
+            var item = this.direction.getItemAt(i);
+            if (item.url == url) {
+                this.direction.removeItemAt(i);
+                break;
+            }
+        }
+        delete this.pathDesc[url];
+    };
+    p.addPathDesc = function (url, desc) {
+        delete this.pathDesc[url];
+        if (desc == null || desc == "") {
+            return;
+        }
+        this.pathDesc[url] = desc;
+    };
+    p.getPathDesc = function (url) {
+        return this.pathDesc[url];
     };
     p.encodeConfig = function () {
-        return {};
+        var models = [];
+        for (var i = 0; i < this.models.length; i++) {
+            models.push(this.models[i].url);
+        }
+        var datas = [];
+        for (i = 0; i < this.datas.length; i++) {
+            datas.push(this.datas[i].url);
+        }
+        var paths = [];
+        for (i = 0; i < this.direction.length; i++) {
+            if (this.direction.getItemAt(i).virtual == false && this.direction.getItemAt(i).type == LocalFileType.DIRECTION) {
+                paths.push(this.direction.getItemAt(i).url);
+            }
+        }
+        return {
+            model: models,
+            data: datas,
+            path: paths,
+            pathDesc: this.getEncodePathDesc()
+        };
+    };
+    p.getFileSaveList = function () {
+        var saveList = [];
+        for (var i = 0; i < this.models.length; i++) {
+            if (this.models[i].isNew == false) {
+                saveList.push(this.models[i]);
+            }
+        }
+        return saveList;
+    };
+    p.getEncodePathDesc = function () {
+        var cfg = {};
+        for (var key in this.pathDesc) {
+            cfg[key] = this.pathDesc[key];
+        }
+        var file;
+        for (var i = 0; i < this.direction.length; i++) {
+            file = this.direction.getItemAt(i);
+            if (file.virtual == false && file.type == LocalFileType.FILE) {
+                if (file.name != Path.getName(file.url)) {
+                    cfg[file.url] = file.name;
+                }
+            }
+        }
+        return cfg;
     };
     p.decodeConfig = function (val) {
     };

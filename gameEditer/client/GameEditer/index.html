@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Egret</title>
+    <title>GameEditer</title>
     <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="full-screen" content="true"/>
@@ -48,9 +48,14 @@
 	<script egret="game" src="bin-debug/components/ui/AlertPanel.js"></script>
 	<script egret="game" src="bin-debug/components/ui/DirectionView.js"></script>
 	<script egret="game" src="bin-debug/components/ui/DirectionViewItem.js"></script>
+	<script egret="game" src="bin-debug/components/ui/DropDownList.js"></script>
 	<script egret="game" src="bin-debug/components/ui/FileSelecteView.js"></script>
+	<script egret="game" src="bin-debug/components/ui/ScrollTip.js"></script>
 	<script egret="game" src="bin-debug/net/GameNet.js"></script>
 	<script egret="game" src="bin-debug/components/ui/direction/DirectionData.js"></script>
+	<script egret="game" src="bin-debug/components/ui/graphics/Graphics.js"></script>
+	<script egret="game" src="bin-debug/components/ui/label/Label.js"></script>
+	<script egret="game" src="bin-debug/components/ui/list/List.js"></script>
 	<script egret="game" src="bin-debug/components/ui/managers/PopManager.js"></script>
 	<script egret="game" src="bin-debug/components/ui/win/WinBgImage.js"></script>
 	<script egret="game" src="bin-debug/data/Config.js"></script>
@@ -59,12 +64,21 @@
 	<script egret="game" src="bin-debug/data/contentView/ContentViewEvent.js"></script>
 	<script egret="game" src="bin-debug/data/projectData/AniamationInfo.js"></script>
 	<script egret="game" src="bin-debug/data/projectData/DataInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/FileInfoBase.js"></script>
 	<script egret="game" src="bin-debug/data/projectData/ImageInfo.js"></script>
-	<script egret="game" src="bin-debug/data/projectData/ModelInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/ParamInfo.js"></script>
 	<script egret="game" src="bin-debug/data/projectData/ProjectData.js"></script>
 	<script egret="game" src="bin-debug/data/projectData/ProjectDirectionData.js"></script>
-	<script egret="game" src="bin-debug/data/projectdata/spritessheetinfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/SpritesSheetInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/TypeInfo.js"></script>
 	<script egret="game" src="bin-debug/data/projectData/ViewInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/config/DataConfig.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/config/LogicType.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/model/logic/ModelLogicItemInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/model/logic/ModelLogicDefine.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/model/ModelInfo.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/model/logic/ModelLogicCallAPI.js"></script>
+	<script egret="game" src="bin-debug/data/projectData/model/logic/ModelLogicInfo.js"></script>
 	<script egret="game" src="bin-debug/data/uiData/MenuData.js"></script>
 	<script egret="game" src="bin-debug/data/uiData/MenuEvent.js"></script>
 	<script egret="game" src="bin-debug/data/uiData/PanelData.js"></script>
@@ -74,21 +88,37 @@
 	<script egret="game" src="bin-debug/panels/directionView/contentView/ContentPanel.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/contentView/ViewContentTabBar.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/aniationEditer/AnimationEditer.js"></script>
-	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/ConentPanelItemBase.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelAddLogicItemPanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelAddLogicPanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelEditer.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelLogicAddItemPanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelLogicItem.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelLogicToolBar.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelLogicTypeListPanel.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/ImageView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/logicItem/LogicItemBase.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/logicItem/LogicItemNew.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/logicItem/LogicItemDefine.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/logicItem/LogicItemCallAPI.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/ModelView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/projectView/model/VarList.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/ConentPanelItemBase.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/JsonView.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/TextView.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/contentView/fileView/simpleView/XmlView.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectCommand/LoadProjectCommand.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/projectCommand/SaveProjectCommand.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/AddProjectDirectionPanel.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/AddProjectFilePanel.js"></script>
+	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/ProjectDirectionCommand.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/ProjectDirectionItem.js"></script>
 	<script egret="game" src="bin-debug/panels/directionView/projectDirectionView/ProjectDirectionView.js"></script>
 	<script egret="game" src="bin-debug/panels/loading/LoadingEvent.js"></script>
 	<script egret="game" src="bin-debug/panels/loading/LoadingView.js"></script>
 	<script egret="game" src="bin-debug/panels/main/MainPanel.js"></script>
 	<script egret="game" src="bin-debug/panels/menu/Menu.js"></script>
-	<script egret="game" src="bin-debug/data/projectdata/fileinfobase.js"></script>
+	<script egret="game" src="bin-debug/utils/Path.js"></script>
+	<script egret="game" src="bin-debug/utils/UTFChange.js"></script>
 	<!--game_files_end-->
 </head>
 <body>
@@ -103,7 +133,7 @@
          data-content-height="960"
          data-show-paint-rect="false"
          data-multi-fingered="2"
-         data-show-fps="false" data-show-log="false"
+         data-show-fps="false" data-show-log="true"
          data-log-filter="" data-show-fps-style="x:0,y:0,size:30,textColor:0x00c200,bgAlpha:0.9">
     </div>
     <script>

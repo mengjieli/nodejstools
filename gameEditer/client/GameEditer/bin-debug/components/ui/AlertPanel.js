@@ -26,10 +26,10 @@ var AlertPanel = (function (_super) {
             button.bottom = 5;
             this.sure = button;
             this.sure.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
-                this.parent.removeChild(this);
                 if (sureBack) {
                     sureBack.apply(sureThis);
                 }
+                this.parent.removeChild(this);
             }, this);
         }
         if (cancleLabel && cancleLabel != "") {
@@ -41,10 +41,10 @@ var AlertPanel = (function (_super) {
             button.bottom = 5;
             this.cancle = button;
             this.cancle.addEventListener(egret.TouchEvent.TOUCH_TAP, function (e) {
-                this.parent.removeChild(this);
                 if (cancleBack) {
                     cancleBack.apply(cancleThis);
                 }
+                this.parent.removeChild(this);
             }, this);
         }
         if (this.sure && this.cancle) {

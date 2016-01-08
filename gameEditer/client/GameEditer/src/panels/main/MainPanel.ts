@@ -13,6 +13,8 @@ class MainPanel extends eui.Component{
         EditerData.getInstance();
         this.addChild(new Menu());
         this.addChild(new ProjectView());
+        
+//        PopManager.pop(new ModelAddLogicPanel(null));
 	}
 	
     private onSaveToServer(e:egret.TouchEvent):void {

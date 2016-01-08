@@ -14,7 +14,7 @@ var TextView = (function (_super) {
         this.content.percentWidth = 100;
         this.content.wordWrap = true;
         this.content.multiline = true;
-        RES.getResByUrl(Config.localResourceServer + "/" + this.file.url, this.onGetComplete, this);
+        RES.getResByUrl(Config.getResourceURL(this.file.url), this.onGetComplete, this, RES.ResourceItem.TYPE_TEXT);
         //        request.addEventListener(egret.IOErrorEvent.IO_ERROR,this.onGetIOError,this);
         //        request.addEventListener(egret.ProgressEvent.PROGRESS,this.onGetProgress,this);
     }
