@@ -43,6 +43,7 @@ var Label = (function (_super) {
     );
     Label.create = function (params) {
         var label = new Label();
+        label.maxChars = 10000;
         for (var key in params) {
             if (key == "size") {
                 label.size = params.size;

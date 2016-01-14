@@ -366,6 +366,8 @@ var VByteArray = (function () {
     };
     p.readUTFV = function () {
         var len = this.readUIntV();
+        if (len == 0)
+            return "";
         var val = VByteArray.bytesToString(this.bytes.slice(this.position, this.position + len));
         this.position += len;
         return val;

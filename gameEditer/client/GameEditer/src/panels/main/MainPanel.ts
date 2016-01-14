@@ -18,7 +18,7 @@ class MainPanel extends eui.Component{
 	}
 	
     private onSaveToServer(e:egret.TouchEvent):void {
-        var file = new LocalFile(Config.workFile + "a.json");
+        var file = new LocalFile("a.json");
         file.addEventListener(egret.Event.COMPLETE,this.onPostComplete,this);
         file.saveFile("{\"name\":\"Upload123\"}");
     }

@@ -402,6 +402,7 @@ class VByteArray {
 
     public readUTFV(): string {
         var len: number = this.readUIntV();
+        if(len == 0) return "";
         var val: string = VByteArray.bytesToString(this.bytes.slice(this.position,this.position + len));
         this.position += len;
         return val;

@@ -43,6 +43,7 @@ var Client = (function (_super) {
                     try {
                         new cls(this.user, this, cmd, bytes);
                     } catch(e) {
+                        console.log(e);
                         this.sendFail(6,cmd,bytes,e);
                     }
                 }
@@ -75,10 +76,10 @@ var Client = (function (_super) {
     }
 
     p.checkHeart = function (time) {
-        if (time > this.checkTime) {
-            //console.log(time, this.checkTime);
-            this.close();
-        }
+        //if (time > this.checkTime) {
+        //    //console.log(time, this.checkTime);
+        //    this.close();
+        //}
     }
 
     p.receiveAnonce = function (data) {

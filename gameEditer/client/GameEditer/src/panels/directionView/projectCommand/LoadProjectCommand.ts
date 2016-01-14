@@ -16,7 +16,7 @@ class LoadProjectCommand extends egret.EventDispatcher {
     public loadConfig(direction: string): void {
         this.project.path = direction;
         this.project.configURL = "editerProject.json";
-        var localDirection = new DirectionData(this.project.path);
+        var localDirection = new DirectionData("");
         localDirection.flush();
         localDirection.addEventListener(egret.Event.COMPLETE,this.onInitFlushLocalDirection,this);
         new LoadingView(this);

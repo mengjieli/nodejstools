@@ -12,7 +12,7 @@ class Config {
     //资源服务器的端口不一定是 9501,有可能被别的占用
     public static localResourceServer = "http://localhost:";
     
-    public static workFile = "/Users/mengjieli/Documents/CocosProjects/NewPaik/res/";
+//    public static workFile = "/Users/mengjieli/Documents/CocosProjects/NewPaik/res/";
     
     public static width = 1000;
     public static height = 650;

@@ -25,7 +25,7 @@ var HttpServerTask = (function (_super) {
             HttpServerTask.httpPorts[port] = true;
             this.httpServer = httpServer;
             var msg = new VByteArray();
-            msg.writeUIntV(602);
+            msg.writeUIntV(this.cmd+1);
             msg.writeBoolean(true);
             msg.writeUIntV(port);
             this.sendData(msg);
@@ -34,7 +34,7 @@ var HttpServerTask = (function (_super) {
         }
         catch (error) {
             var msg = new VByteArray();
-            msg.writeUIntV(602);
+            msg.writeUIntV(this.cmd+1);
             msg.writeBoolean(false);
             msg.writeUIntV(port);
             this.sendData(msg);

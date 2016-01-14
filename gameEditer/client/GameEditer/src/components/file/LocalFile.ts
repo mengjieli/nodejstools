@@ -15,17 +15,17 @@ class LocalFile extends egret.EventDispatcher {
         this.rootPath = rootPath;
         this.url = "";
 
-        GameNet.registerBack(11,this.recvDirectionList,this);
-        GameNet.registerBack(21,this.recvSaveComplete,this);
-        GameNet.registerBack(23,this.recvMakeDirComplete,this);
-        GameNet.registerBack(25,this.recvExistComplete,this);
+        GameNet.registerBack(101,this.recvDirectionList,this);
+        GameNet.registerBack(121,this.recvSaveComplete,this);
+        GameNet.registerBack(123,this.recvMakeDirComplete,this);
+        GameNet.registerBack(125,this.recvExistComplete,this);
 	}
 	
 	public dispose():void {
-        GameNet.removeBack(11,this.recvDirectionList,this);
-        GameNet.removeBack(21,this.recvSaveComplete,this);
-        GameNet.removeBack(23,this.recvMakeDirComplete,this);
-        GameNet.removeBack(24,this.recvExistComplete,this);
+        GameNet.removeBack(101,this.recvDirectionList,this);
+        GameNet.removeBack(121,this.recvSaveComplete,this);
+        GameNet.removeBack(123,this.recvMakeDirComplete,this);
+        GameNet.removeBack(125,this.recvExistComplete,this);
 	}
 	
 	/**
@@ -35,7 +35,7 @@ class LocalFile extends egret.EventDispatcher {
 	 */ 
 	public saveFile(content:any,type:number=1):void {
         var bytes = new VByteArray();
-        bytes.writeUIntV(20);
+        bytes.writeUIntV(120);
         bytes.writeUTFV(this.rootPath);
         bytes.writeByte(type);
         if(type == 1) { //保存文本格式的文件
@@ -58,7 +58,7 @@ class LocalFile extends egret.EventDispatcher {
     
     public makeDirection(): void {
         var bytes = new VByteArray();
-        bytes.writeUIntV(22);
+        bytes.writeUIntV(122);
         bytes.writeUTFV(this.rootPath);
         GameNet.sendMessage(bytes);
     }
@@ -75,14 +75,14 @@ class LocalFile extends egret.EventDispatcher {
 	
 	public loadDirectionList() { 
         var bytes = new VByteArray();
-        bytes.writeUIntV(10);
+        bytes.writeUIntV(100);
         bytes.writeUTFV(this.rootPath);
         GameNet.sendMessage(bytes);
     }
 
     private recvDirectionList(cmd: number,data: VByteArray): void {
         data.position = 0;
-        data.readUIntV();
+        var cmd = data.readUIntV();
         var url = data.readUTFV();
         if(url != this.rootPath) return;
         this.list = [];
@@ -99,7 +99,7 @@ class LocalFile extends egret.EventDispatcher {
     
     public isExist(): void {
         var bytes = new VByteArray();
-        bytes.writeUIntV(24);
+        bytes.writeUIntV(124);
         bytes.writeUTFV(this.rootPath);
         GameNet.sendMessage(bytes);
     }

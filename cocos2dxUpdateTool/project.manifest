@@ -1,13 +1,10 @@
 {
-  "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/china/",
-  "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/china/project.manifest",
-  "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/china/version.manifest",
-  "version": "1.0.0",
-  "groupVersions": {
-  },
-  "engineVersion": "3.6",
-  "assets": {
-  },
-  "searchPaths": [
-  ]
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192/",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+          "version": "1.0.0",
+          "groupVersions": {},
+          "engineVersion": "3.6",
+          "assets": {},
+          "searchPaths": []
 }

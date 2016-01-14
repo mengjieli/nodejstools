@@ -23,7 +23,7 @@ var ReadDirectionTask = (function (_super) {
         var bytes = new VByteArray();
         bytes.writeUIntV(501);
         bytes.writeUIntV(this.id);
-        bytes.writeUIntV(100);
+        bytes.writeUIntV(this.cmd);
         var url = msg.readUTFV();
         bytes.writeUTFV(url);
         this.user.localClient.sendData(bytes);
@@ -31,7 +31,7 @@ var ReadDirectionTask = (function (_super) {
 
     p.excute = function(msg) {
         var bytes = new VByteArray();
-        bytes.writeUIntV(101);
+        bytes.writeUIntV(this.cmd+1);
         bytes.writeBytes(msg,msg.position,msg.length - msg.position);
         this.sendData(bytes);
         this.success();

@@ -12,7 +12,7 @@ var UTFChange = (function () {
         }
         var res = [];
         for (i = 0; i < arr.length; i++) {
-            if (arr[i] == 0)break;
+            if (arr[i] == 0) continue;
             if ((arr[i] & 128) == 0) res.push(arr[i]);				//1位
             else if ((arr[i] & 64) == 0) res.push(arr[i] % 128);		//1位
             else if ((arr[i] & 32) == 0)	//2位
@@ -32,6 +32,8 @@ var UTFChange = (function () {
                 i++;
                 i++;
                 i++;
+            } else {
+                console.log("?!!!!!!!!!!!!!!!!!!!",arr[i]);
             }
         }
         var str = "";

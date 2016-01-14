@@ -45,6 +45,7 @@ class Label extends eui.Label{
 	
     public static create(params):Label {
 	    var label = new Label();
+	    label.maxChars = 10000;
 	    for(var key in params) {
 	        if(key == "size") {
 	            label.size = params.size;

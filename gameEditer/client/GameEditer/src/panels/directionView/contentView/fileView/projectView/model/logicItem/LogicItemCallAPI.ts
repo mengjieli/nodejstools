@@ -17,7 +17,6 @@ class LogicItemCallAPI extends LogicItemBase {
 //        this.label2.textColor = 0xeeeeee;//0x60a5cd;
 //        this.label3.content = itemData.init ? itemData.init : "无初始值";
 //        this.label3.textColor = 0xbbbbbb;
-
         this.addNext(data.getLogic(this.itemData.next),itemData);
     }
 }

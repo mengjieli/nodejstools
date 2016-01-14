@@ -55,7 +55,7 @@ HttpServer.prototype.sendResource = function (request, response) {
         response.write("This request URL " + url.parse(request.url).pathname + " was not found on this server.");
         response.end();
     } else {
-        var content = (file).readContent("binary");
+        var content = file.readContent("binary");
         end = request.url.split("?")[0];
         end = end.split(".")[end.split(".").length - 1];
         response.writeHead(200, {

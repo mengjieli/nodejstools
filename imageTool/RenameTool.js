@@ -1,7 +1,7 @@
 require("./../tools/com/requirecom");
 require("./../tools/shell/requireshell");
 
-var startName = "selectArmyEffect_";
+var startName = "resouceStone_";
 var startIndex = 0;
 var maxLength = 2;
 var ends = ["png"];

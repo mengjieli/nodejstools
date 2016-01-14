@@ -10,17 +10,17 @@ var LocalFile = (function (_super) {
         this.list = [];
         this.rootPath = rootPath;
         this.url = "";
-        GameNet.registerBack(11, this.recvDirectionList, this);
-        GameNet.registerBack(21, this.recvSaveComplete, this);
-        GameNet.registerBack(23, this.recvMakeDirComplete, this);
-        GameNet.registerBack(25, this.recvExistComplete, this);
+        GameNet.registerBack(101, this.recvDirectionList, this);
+        GameNet.registerBack(121, this.recvSaveComplete, this);
+        GameNet.registerBack(123, this.recvMakeDirComplete, this);
+        GameNet.registerBack(125, this.recvExistComplete, this);
     }
     var d = __define,c=LocalFile;p=c.prototype;
     p.dispose = function () {
-        GameNet.removeBack(11, this.recvDirectionList, this);
-        GameNet.removeBack(21, this.recvSaveComplete, this);
-        GameNet.removeBack(23, this.recvMakeDirComplete, this);
-        GameNet.removeBack(24, this.recvExistComplete, this);
+        GameNet.removeBack(101, this.recvDirectionList, this);
+        GameNet.removeBack(121, this.recvSaveComplete, this);
+        GameNet.removeBack(123, this.recvMakeDirComplete, this);
+        GameNet.removeBack(125, this.recvExistComplete, this);
     };
     /**
      * @param type 文件类型
@@ -30,7 +30,7 @@ var LocalFile = (function (_super) {
     p.saveFile = function (content, type) {
         if (type === void 0) { type = 1; }
         var bytes = new VByteArray();
-        bytes.writeUIntV(20);
+        bytes.writeUIntV(120);
         bytes.writeUTFV(this.rootPath);
         bytes.writeByte(type);
         if (type == 1) {
@@ -51,7 +51,7 @@ var LocalFile = (function (_super) {
     };
     p.makeDirection = function () {
         var bytes = new VByteArray();
-        bytes.writeUIntV(22);
+        bytes.writeUIntV(122);
         bytes.writeUTFV(this.rootPath);
         GameNet.sendMessage(bytes);
     };
@@ -66,13 +66,13 @@ var LocalFile = (function (_super) {
     };
     p.loadDirectionList = function () {
         var bytes = new VByteArray();
-        bytes.writeUIntV(10);
+        bytes.writeUIntV(100);
         bytes.writeUTFV(this.rootPath);
         GameNet.sendMessage(bytes);
     };
     p.recvDirectionList = function (cmd, data) {
         data.position = 0;
-        data.readUIntV();
+        var cmd = data.readUIntV();
         var url = data.readUTFV();
         if (url != this.rootPath)
             return;
@@ -90,7 +90,7 @@ var LocalFile = (function (_super) {
     };
     p.isExist = function () {
         var bytes = new VByteArray();
-        bytes.writeUIntV(24);
+        bytes.writeUIntV(124);
         bytes.writeUTFV(this.rootPath);
         GameNet.sendMessage(bytes);
     };

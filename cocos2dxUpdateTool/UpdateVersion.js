@@ -281,9 +281,10 @@ UpdateVersion.prototype.compareHistory = function (server, resMax, srcMax, versi
                     keys.splice(keyIndex, 1);
                     checkDelList();
                 } else {
-                    keyIndex++;
                     ZipShell.compress("res/", zipFile.url, function () {
+                        console.log(keys.length,keyIndex,keys[keyIndex]);
                         ftp.upload(zipFile.url, server.ftp.direction + "update" + keys[keyIndex] + ".zip", function () {
+                            keyIndex++;
                             checkDelList();
                         });
                     });

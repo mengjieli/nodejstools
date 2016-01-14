@@ -16,7 +16,7 @@ class ProjectDirectionCommand {
      */
     public addFloder(url: string,name: string,desc: string,complete: Function = null,thisObj: any = null): void {
         var project = this.project;
-        var file = new LocalFile(Config.workFile + url + "/" + name + "/");
+        var file = new LocalFile(url + "/" + name + "/");
         file.addEventListener(egret.Event.COMPLETE,function(e: egret.Event): void {
             file.dispose();
             project.addFloder(url,name,desc);
@@ -43,7 +43,7 @@ class ProjectDirectionCommand {
         if(!data) {
             return;
         }
-        var file = new LocalFile(Config.workFile + data.url);
+        var file = new LocalFile(data.url);
         file.addEventListener(egret.Event.COMPLETE,function(e: egret.Event): void {
             file.dispose();
             project.addFile(url,name,desc,fileType,data);
@@ -64,7 +64,7 @@ class ProjectDirectionCommand {
         var start = new LoadingEvent(LoadingEvent.START);
         start.title = "刷新文件夹 " + path;
         dispather.dispatchEvent(start);
-        var file = new LocalFile(Config.workFile + path);
+        var file = new LocalFile(path);
         var _this = this;
         //1. 获取目录结构
         file.addEventListener(egret.Event.COMPLETE,function(e: egret.Event): void {
@@ -151,7 +151,7 @@ class ProjectDirectionCommand {
         var start = new LoadingEvent(LoadingEvent.START);
         start.title = "刷新文件 " + url;
         dispather.dispatchEvent(start);
-        var file = new LocalFile(Config.workFile + url);
+        var file = new LocalFile(url);
         var _this = this;
         file.addEventListener(egret.Event.COMPLETE,function(e:egret.Event):void{
             file.dispose();

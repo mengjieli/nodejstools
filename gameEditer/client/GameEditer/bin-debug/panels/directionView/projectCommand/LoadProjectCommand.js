@@ -14,7 +14,7 @@ var LoadProjectCommand = (function (_super) {
     p.loadConfig = function (direction) {
         this.project.path = direction;
         this.project.configURL = "editerProject.json";
-        var localDirection = new DirectionData(this.project.path);
+        var localDirection = new DirectionData("");
         localDirection.flush();
         localDirection.addEventListener(egret.Event.COMPLETE, this.onInitFlushLocalDirection, this);
         new LoadingView(this);

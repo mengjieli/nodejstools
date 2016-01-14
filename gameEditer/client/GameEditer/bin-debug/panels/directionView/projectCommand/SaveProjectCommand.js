@@ -16,8 +16,8 @@ var SaveProjectCommand = (function () {
         loadingEvent = new LoadingEvent(LoadingEvent.PROGRESS);
         loadingEvent.progress = 0;
         dispatcher.dispatchEvent(loadingEvent);
-        console.log("save project:", Config.workFile + "/" + data.configURL);
-        var file = new LocalFile(Config.workFile + "/" + data.configURL);
+        console.log("save project:", data.configURL);
+        var file = new LocalFile(data.configURL);
         file.saveFile(JSON.stringify(data.encodeConfig()));
         file.addEventListener(egret.Event.COMPLETE, function (e) {
             file.dispose();
@@ -35,7 +35,7 @@ var SaveProjectCommand = (function () {
             return;
         }
         var data = this.saveList[this.saveIndex];
-        var file = new LocalFile(Config.workFile + "/" + data.url);
+        var file = new LocalFile(data.url);
         file.saveFile(data.fileContent);
         file.addEventListener(egret.Event.COMPLETE, function (e) {
             file.dispose();

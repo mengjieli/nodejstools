@@ -31,6 +31,6 @@ class Menu extends eui.Component {
     }
     
     private showSelectFileView(e: egret.TouchEvent): void {
-        PopManager.pop(new FileSelecteView(Config.workFile),true);
+        PopManager.pop(new FileSelecteView(""),true);
     }
 }

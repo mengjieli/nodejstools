@@ -13,7 +13,7 @@ class ProjectView extends eui.Component {
         this.y = 30;
         this.width = Config.width;
         this.height = Config.height - this.y;
-        this.addChild(this.directionView = new ProjectDirectionView(Config.workFile));
+        this.addChild(this.directionView = new ProjectDirectionView(""));
         this.directionView.width = 300;
         this.directionView.percentHeight = 100;
         

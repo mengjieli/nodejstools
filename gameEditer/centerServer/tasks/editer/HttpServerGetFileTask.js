@@ -36,9 +36,9 @@ var HttpServerGetFileTask = (function (_super) {
     p.excute = function (msg) {
         msg.readUTFV();
         msg.readUTFV();
-        var d = msg.getData();
-        var bytes = msg.getData().slice(msg.position, msg.length);
-        this.httpServer.sendContent(this.request, this.response, bytes);
+        var data = msg.getData();
+        var array = data.slice(msg.position, msg.length);
+        this.httpServer.sendContent(this.request, this.response, (new Buffer(array)).toString());
         this.success();
     }
 

@@ -26,7 +26,7 @@ var Menu = (function (_super) {
     p.showWorkDirection = function (e) {
     };
     p.showSelectFileView = function (e) {
-        PopManager.pop(new FileSelecteView(Config.workFile), true);
+        PopManager.pop(new FileSelecteView(""), true);
     };
     return Menu;
 })(eui.Component);

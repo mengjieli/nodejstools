@@ -38,19 +38,17 @@ var Main = (function (_super) {
         }, this);
         GameNet.registerSuccessBack(1, function () {
             var bytes = new VByteArray();
-            bytes.writeUIntV(601);
+            bytes.writeUIntV(602);
             bytes.writeUIntV(Config.localResourceServerPort);
             GameNet.sendMessage(bytes);
         }, this);
-        GameNet.registerBack(602, function (cmd, data) {
+        GameNet.registerBack(603, function (cmd, data) {
             var flag = data.readBoolean();
             var port = data.readUIntV();
             Config.localResourceServer += port;
             if (flag) {
                 this.txt.parent.removeChild(this.txt);
-                RES.getResByUrl(Config.localResourceServer + "/editerProject.json", function (data) {
-                    console.log(data);
-                }, this, RES.ResourceItem.TYPE_JSON);
+                this.allReady();
             }
             else {
                 this.txt.text = "启动资源服务器失败";

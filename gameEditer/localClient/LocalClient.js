@@ -44,7 +44,7 @@ var LocalClient = (function (_super) {
         var bytes = new VByteArray();
         bytes.writeUIntV(502);
         bytes.writeUIntV(taskId);
-        console.log("[Task]",cmd);
+        console.log("[Task]", cmd);
         switch (cmd) {
             case 100: //读取文件夹文件列表
                 this.readWorkDirection(msg, bytes);
@@ -62,45 +62,61 @@ var LocalClient = (function (_super) {
                 this.isFileExist(msg, bytes);
                 break;
         }
-        if(bytes) {
+        if (bytes) {
             this.sendData(bytes);
         }
     }
 
     p.readWorkDirection = function (msg, bytes) {
         var url = msg.readUTFV();
-        url = this.config.direction + url;
-        var list = (new File(url)).readDirectionList();
-        for (var i = 0; i < list.length; i++) {
-            var file = list[i];
-            if (file.url == url) {
-                list.splice(i, 1);
-                i--;
-            }
-        }
         bytes.writeUTFV(url);
-        bytes.writeUIntV(list.length);
-        console.log("read dir", url, list.length);
-        for (var i = 0; i < list.length; i++) {
-            var file = list[i];
-            if (file.url == url) continue;
-            if (file.type == FileType.DIRECTION) {
-                bytes.writeByte(0);
-            } else {
-                bytes.writeByte(1);
+        if(url.charAt(0) == "/") {
+            url = url.slice(1,url.length);
+        }
+        url = this.config.direction + url;
+        var file = new File(url);
+        if (file.isExist() == false) {
+            bytes.writeUIntV(0);
+        } else {
+            var list = file.readDirectionList();
+            for (var i = 0; i < list.length; i++) {
+                var file = list[i];
+                if (file.url == url) {
+                    list.splice(i, 1);
+                    i--;
+                }
             }
-            bytes.writeUTFV(file.url);
+            bytes.writeUIntV(list.length);
+            for (var i = 0; i < list.length; i++) {
+                var file = list[i];
+                if (file.url == url) continue;
+                if (file.type == FileType.DIRECTION) {
+                    bytes.writeByte(0);
+                } else {
+                    bytes.writeByte(1);
+                }
+                bytes.writeUTFV(file.url);
+            }
         }
     }
 
     p.readFile = function (msg, bytes) {
         var url = msg.readUTFV();
         bytes.writeUTFV(url);
+        if(url.charAt(0) == "/") {
+            url = url.slice(1,url.length);
+        }
         url = this.config.direction + url;
         var format = msg.readByte();
         if (format == 0) {
             bytes.writeUTFV("");
-            bytes.writeByteArray(UTFChange.stringToBytes((new File(url)).readContent()));
+            var list = (new File(url)).readContent("binary");
+            var buffer = new Buffer(list);
+            var array = [];
+            for(var i = 0; i < buffer.length; i++) {
+                array[i] = buffer[i];
+            }
+            bytes.writeByteArray(array);
         } else if (format == 1) {
             bytes.writeUTFV((new File(url)).readContent());
         }
@@ -108,26 +124,43 @@ var LocalClient = (function (_super) {
 
     p.saveFile = function (msg, bytes) {
         var url = msg.readUTFV();
+        bytes.writeUTFV(url);
+        if(url.charAt(0) == "/") {
+            url = url.slice(1,url.length);
+        }
+        url = this.config.direction + url;
         var type = msg.readByte();
         var content;
-        if (type == 1) {
+        if (type == 0) { //保存二进制内容
+            content = msg.readUTFV();
+            (new File(url)).save(new Buffer(content), "binary");
+            bytes.writeByte(0);
+        }
+        else if (type == 1) { //保存为 utf-8
             content = msg.readUTFV();
             (new File(url)).save(content);
-            bytes.writeUTFV(url);
             bytes.writeByte(0);
         }
     }
 
     p.makeDirection = function (msg, bytes) {
-        var path = msg.readUTFV();
-        File.mkdirsSync(path);
-        bytes.writeUTFV(path);
+        var url = msg.readUTFV();
+        bytes.writeUTFV(url);
+        if(url.charAt(0) == "/") {
+            url = url.slice(1,url.length);
+        }
+        url = this.config.direction + url;
+        File.mkdirsSync(url);
     }
 
     p.isFileExist = function (msg, bytes) {
-        var path = msg.readUTFV();
-        bytes.writeUTFV(path);
-        bytes.writeBoolean((new File(path)).isExist());
+        var url = msg.readUTFV();
+        bytes.writeUTFV(url);
+        if(url.charAt(0) == "/") {
+            url = url.slice(1,url.length);
+        }
+        url = this.config.direction + url;
+        bytes.writeBoolean((new File(url)).isExist());
     }
 
     p.onConnect = function (connection) {
@@ -142,6 +175,15 @@ var LocalClient = (function (_super) {
         bytes.writeUTFV(cfg.password);
         bytes.writeUTFV(System.IP);
         this.sendData(bytes);
+        var _this = this;
+        setTimeout(function(){
+            var bytes = new VByteArray();
+            bytes.writeByte(0);
+            bytes.writeByte(0);
+            bytes.writeByte(0);
+            bytes.writeByte(0);
+            _this.sendData(bytes);
+        },10000);
     }
 
     p.sendData = function (bytes) {

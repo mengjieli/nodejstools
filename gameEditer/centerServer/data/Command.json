@@ -3,7 +3,12 @@
   "2":"LoadJSTask",
   "3":"LoadCommandConfigTask",
   "4":"LoadUserConfigTask",
+
   "100":"ReadDirectionTask",
+  "120":"SaveFileTask",
+  "122":"CreateDirectionTask",
+  "124":"IsFileExistTask",
+
   "502":"ExcuteTask",
-  "601":"HttpServerTask"
+  "602":"HttpServerTask"
 }

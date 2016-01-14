@@ -57,12 +57,24 @@ File.prototype.isExist = function () {
  * @param format
  * @returns {*}
  */
-File.prototype.readContent = function (format) {
+File.prototype.readContent = function (format, backFormat) {
     format = format || "utf-8";
     if (this.type == global.FileType.DIRECTION) {
         return null;
     }
-    return fs.readFileSync(this.url, format);
+    var content = fs.readFileSync(this.url, format);
+    if (backFormat == "Buffer" || backFormat == "Array") {
+        var array = [];
+        for (var i = 0; i < content.length; i++) {
+            array.push(content.charCodeAt(i));
+        }
+        if (backFormat == "Array") {
+            return array;
+        } else if (backFormat == "Buffer") {
+            return new Buffer(array);
+        }
+    }
+    return content;
 }
 
 /**
@@ -128,7 +140,7 @@ File.prototype.delete = function () {
         }
         try {
             fs.rmdirSync(this.url);
-        } catch(e) {
+        } catch (e) {
             console.log(e);
         }
     }
@@ -142,7 +154,7 @@ File.mkdirsSync = function (dirpath, mode) {
     if (!fs.existsSync(dirpath)) {
         var pathtmp;
         dirpath.split(path.sep).forEach(function (dirname) {
-            if(dirname == "") {
+            if (dirname == "") {
                 pathtmp = "/"
                 return;
             }

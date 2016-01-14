@@ -10,8 +10,11 @@ var ModelLogicAddItemPanel = (function (_super) {
         this.type = type;
         this.data = data;
         this.parentLogic = parentLogic;
-        if (type == "define") {
+        if (type == LogicType.DEFINE) {
             this.define();
+        }
+        else if (type == LogicType.CALL_API) {
+            this.callAPI();
         }
     }
     var d = __define,c=ModelLogicAddItemPanel;p=c.prototype;
@@ -63,6 +66,28 @@ var ModelLogicAddItemPanel = (function (_super) {
             }
             data.addLogic(logic);
         };
+    };
+    p.callAPI = function () {
+        this.width = 600;
+        this.height = 500;
+        var label = Label.create({
+            "text": "API",
+            "x": 20,
+            "y": 50,
+            "size": 14,
+            "color": 0
+        });
+        this.addChild(label);
+        var apis = new List();
+        this.addChild(apis);
+        apis.width = 300;
+        apis.height = 350;
+        apis.x = 20;
+        apis.y = 80;
+        var c = new eui.ArrayCollection();
+        for (var i = 0; i < 25; i++)
+            c.addItem({ "label": "main.load" });
+        apis.dataProvider = c;
     };
     p.clickSure = function () {
         if (this.sureBack) {
