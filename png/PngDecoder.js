@@ -221,7 +221,7 @@ var PNGEncoder = (function (_super) {
             }
         }
         var buffer = new Buffer(IDAT.getData());
-        buffer = zlib.gzipSync(buffer);
+        buffer = zlib.deflateSync(buffer);
         var array = [];
         for (var i = 0; i < buffer.length; i++) {
             array[i] = buffer[i];
@@ -234,7 +234,6 @@ var PNGEncoder = (function (_super) {
     }
 
     return PNGEncoder;
-
 })
 (ByteArray);
 
@@ -251,29 +250,111 @@ global.PNGEncoder = PNGEncoder;
  console.log(data);*/
 
 /*var list = [0x78, 0xDA, 0x63, 0xF8, 0x0F, 0x04, 0x0C, 0x0C, 0x0C, 0xFF, 0x19, 0x1A, 0x1A, 0x1A, 0x40, 0x0C, 0x06, 0x00, 0x57, 0x45, 0x07, 0x7B];
-var list = [0x78, 0xDA, 0x63, 0xF8, 0x0F, 0x04, 0x0C, 0x0C, 0x0C, 0xFF, 0x19, 0x1A, 0x1A, 0x1A, 0x40, 0x0C, 0x06, 0x00, 0x57, 0x45, 0x07, 0x7B];
-var buffer = new Buffer(list);
-console.log(buffer);
-buffer = zlib.unzipSync(buffer);
-console.log(buffer);
-buffer = zlib.gzipSync(buffer);
-console.log(buffer);
-buffer = zlib.unzipSync(buffer);
-console.log(buffer);
+ var list = [0x78, 0xDA, 0x63, 0xF8, 0x0F, 0x04, 0x0C, 0x0C, 0x0C, 0xFF, 0x19, 0x1A, 0x1A, 0x1A, 0x40, 0x0C, 0x06, 0x00, 0x57, 0x45, 0x07, 0x7B];
+ var buffer = new Buffer(list);
+ console.log(buffer);
+ buffer = zlib.unzipSync(buffer);
+ console.log(buffer);
+ buffer = zlib.gzipSync(buffer);
+ console.log(buffer);
+ buffer = zlib.unzipSync(buffer);
+ console.log(buffer);
 
-return;*/
+ return;*/
+
+//for (var key in zlib) {
+//    console.log(key);
+//}
+
+///*
 var encoder = new PNGEncoder();
-encoder.encode(
-    [[0xFFFFFFFF, 0xFFFF0000],
-        [0xFF00FF00, 0xFF0000FF]],
-    6
-);
-var buffer = new Buffer(encoder.getData());
-file = new File("a.png");
-file.save(buffer, "binary");
+ encoder.encode(
+ [[0xFFFFFFFF, 0xFFFF0000],
+ [0xFF00FF00, 0xFF0000FF]],
+ 6
+ );
+ var buffer = new Buffer(encoder.getData());
+ file = new File("a.png");
+ file.save(buffer, "binary");
+ //console.log(buffer);
+ var str = "";
+ for (var i = 0; i < buffer.length; i++) {
+ str += NumberDo.to16(buffer[i],2) + (i&&(i+1)%16==0?"\n":" ");
+ }
+ console.log(str);
+ //*/
+
+/*
+ Zlib
+ Z_NO_FLUSH
+ Z_PARTIAL_FLUSH
+ Z_SYNC_FLUSH
+ Z_FULL_FLUSH
+ Z_FINISH
+ Z_BLOCK
+ Z_OK
+ Z_STREAM_END
+ Z_NEED_DICT
+ Z_ERRNO
+ Z_STREAM_ERROR
+ Z_DATA_ERROR
+ Z_MEM_ERROR
+ Z_BUF_ERROR
+ Z_VERSION_ERROR
+ Z_NO_COMPRESSION
+ Z_BEST_SPEED
+ Z_BEST_COMPRESSION
+ Z_DEFAULT_COMPRESSION
+ Z_FILTERED
+ Z_HUFFMAN_ONLY
+ Z_RLE
+ Z_FIXED
+ Z_DEFAULT_STRATEGY
+ ZLIB_VERNUM
+ ZLIB_VERSION
+
+ windowBits
+ Z_MIN_WINDOWBITS
+ Z_MAX_WINDOWBITS
+ Z_DEFAULT_WINDOWBITS
+
+ chunkSize
+ Z_MIN_CHUNK
+ Z_MAX_CHUNK
+ Z_DEFAULT_CHUNK
+
+ memlevel
+ Z_MIN_MEMLEVEL
+ Z_MAX_MEMLEVEL
+ Z_DEFAULT_MEMLEVEL
+
+
+ level
+ Z_MIN_LEVEL
+ Z_MAX_LEVEL
+ Z_DEFAULT_LEVEL
+ */
+
+//<Buffer 1f 8b 08 00 00 00 00 00 00 03 63 00 00 8d ef 02 d2 01 00 00 00>
+//<Buffer 1f 8b 08 00 00 00 00 00 00 03 03 00 00 00 00 00 00 00 00 00>
+
+
+
+var list = [0x00];
+//var list = [0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0xFF];
+var buffer = new Buffer("");
 //console.log(buffer);
-var str = "";
-for (var i = 0; i < buffer.length; i++) {
-    str += NumberDo.to16(buffer[i],2) + (i&&(i+1)%16==0?"\n":" ");
-}
-console.log(str);
+console.log(zlib.deflateSync(buffer));
+return;
+buffer = new Buffer([0x78,0xDA,0x63,0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0xFF]);
+console.log(zlib.gzipSync(buffer));
+
+//buffer = new Buffer([0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0x00, 0xFF, 0x00, 0x00, 0xFF, 0xFF]);
+//console.log(zlib.gzipSync(buffer));
+//return;
+
+/*console.log(buffer);
+ buffer = new Buffer([0x78,0xDA,0x63,0xF8,0x0F,0x02,0x0C,0x0C,0x60,0x04,0x22,0xFE,0x03,0x00,0x63,0xAE,0x09,0xF7]);
+ console.log(buffer);
+ buffer = zlib.unzipSync(buffer);
+ console.log(buffer);*/

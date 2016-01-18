@@ -1,0 +1,142 @@
+{
+  "desc": "版本更新配置",
+  "list": [
+    {
+      "name": "192",
+      "flag": false,
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/ParkerEmpire/",
+        "user": "limengjie",
+        "password": "lmj111111"
+      },
+      "ftp": {
+        "ip": "121.40.18.57",
+        "user": "nihaowalk",
+        "password": "walkwest-98",
+        "direction": "ParkerEmpire/192/"
+      },
+      "src": {
+        "init": 2718,
+        "last": 2804
+      },
+      "res": {
+        "init": 2718,
+        "last": 2804
+      },
+      "version": {
+        "src": {
+          "key": 1000019,
+          "version": "10000.1.9"
+        },
+        "res": {
+          "1": "1.0.1",
+          "2": "1.0.2",
+          "3": "1.0.3",
+          "4": "1.0.4",
+          "5": "1.0.5",
+          "6": "1.0.6",
+          "7": "1.0.7",
+          "8": "1.0.8",
+          "9": "1.0.9"
+        },
+        "svn": {
+          "1": 2725,
+          "2": 2727,
+          "3": 2736,
+          "4": 2741,
+          "5": 2746,
+          "6": 2759,
+          "7": 2766,
+          "8": 2769,
+          "9": 2794
+        }
+      },
+      "projectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      },
+      "versionManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "version": "1.0.0",
+        "engineVersion": "3.6",
+        "groupVersions": {}
+      },
+      "resProjectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192/",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      }
+    },
+    {
+      "name": "guangzhou",
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/ParkerEmpire/",
+        "user": "limengjie",
+        "password": "lmj111111"
+      },
+      "ftp": {
+        "ip": "121.40.18.57",
+        "user": "nihaowalk",
+        "password": "walkwest-98",
+        "direction": "ParkerEmpire/guangzhou/"
+      },
+      "src": {
+        "init": 2887,
+        "last": 2899
+      },
+      "res": {
+        "init": 2887,
+        "last": 2887
+      },
+      "version": {
+        "src": {
+          "key": 1000003,
+          "version": "10000.0.3"
+        },
+        "res": {},
+        "svn": {}
+      },
+      "projectManifest": {
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      },
+      "versionManifest": {
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest",
+        "version": "1.0.0",
+        "engineVersion": "3.6",
+        "groupVersions": {}
+      },
+      "resProjectManifest": {
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      }
+    }
+  ]
+}
