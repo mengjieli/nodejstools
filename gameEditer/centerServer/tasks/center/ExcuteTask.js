@@ -16,7 +16,18 @@ var ExcuteTask = (function (_super) {
      */
     p.startTask = function (cmd, msg) {
         var taskId = msg.readUIntV();
-        this.user.excuteTask(taskId,msg);
+        //console.log("excute task back",taskId);
+        if(this.user) {
+            this.user.excuteTask(taskId,msg);
+        } else {
+            var list = User.list;
+            for(var i = 0; i < list.length; i++) {
+                var user = list[i];
+                if(user.excuteTask(taskId,msg) == true) {
+                    break;
+                }
+            }
+        }
         this.success();
     }
 

@@ -9,4 +9,7 @@ server/tmp/
 gameServer/tmp/
 tsc/
 test/
-imageTool/
+imageTool/modifyColor/out/
+imageTool/modifyColor/src/
+imageTool/rename/out/
+imageTool/rename/src/

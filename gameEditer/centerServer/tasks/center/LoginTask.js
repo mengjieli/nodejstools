@@ -69,8 +69,48 @@ var LoginTask = (function (_super) {
             } else {
                 this.fail(name != "admin"?1:2);
             }
+        } else if(type == "client") { //Flash 客户端
+            var name = msg.readUTFV();
+            var password = msg.readUTFV();
+            var ip = msg.readUTFV();
+            var user = Config.getUser(name);
+            if (!user) {
+                this.fail(1);
+            } else {
+                var code = user.isvalid(name, password, ip);
+                if (code == 0) {
+                    code = user.loginFlashClient(this.client);
+                    if(code == 0) {
+                        this.client.hasLogin = true;
+                        this.client.user = user;
+                        this.success();
+                        this.flashClientLoginNotify(user);
+                    } else {
+                        this.fail(code);
+                    }
+                } else {
+                    this.fail(code);
+                }
+            }
+        }  else if(type == "game") { //游戏客户端
+            var gameName = this.client.ip;//msg.readUTFV();
+            var gameClient = GameClient.addClient(this.client,gameName);
+            this.client.hasLogin = true;
+            this.client.gameClient = gameClient;
+            this.success();
         } else {
             this.fail(4);
+        }
+    }
+
+    p.flashClientLoginNotify = function(user) {
+        if(user.gameClient) {
+            var notify = new VByteArray();
+            notify.writeUIntV(2007);
+            notify.writeUIntV(0);
+            notify.writeUIntV(user.gameClient.id);
+            notify.writeUTFV(user.gameClient.localClient.ip);
+            this.sendData(notify);
         }
     }
 

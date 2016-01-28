@@ -4,6 +4,9 @@ var Client = (function (_super) {
 
     function Client(connection, big) {
         _super.call(this, connection, big);
+        this.type = "binary";
+        //console.log(connection.remoteAddress);
+        this.ip = connection.remoteAddress.split(":")[connection.remoteAddress.split(":").length-1];
     }
 
     var d = __define, c = Client;
@@ -15,41 +18,46 @@ var Client = (function (_super) {
         this.id = id;
         this.hasLogin = false;
         this.user = null;
+        this.gameClient = null;
         this.checkTime = (new Date()).getTime() + 30000;
     }
 
     p.receiveData = function (message) {
-        if (message.type == "binary") {
+        var data;
+        if(message.type == "utf8") {
+            this.type = "utf8";
+            data = JSON.parse(message.utf8Data);
+        }
+        else if (message.type == "binary") {
             var data = message.binaryData;
-            var bytes = new VByteArray();
-            bytes.readFromArray(data);
-            var cmd = bytes.readUIntV();
-            switch (cmd) {
-                case 0:
-                    this.receiveHeart(bytes);
-                    return;
-            }
-            //console.log("[receive cmd]",cmd,this.hasLogin);
-            if (this.hasLogin == false && (cmd != 0 && cmd != 1)) {
-                this.sendFail(10,cmd,bytes);
-                this.close();
+        }
+        var bytes = new VByteArray();
+        bytes.readFromArray(data);
+        var cmd = bytes.readUIntV();
+        switch (cmd) {
+            case 0:
+                this.receiveHeart(bytes);
                 return;
-            }
-            if (Config.cmds[cmd]) {
-                var cls = global[Config.cmds[cmd]];
-                if (cls == null) {
-                    this.sendFail(5,cmd,bytes);
-                } else {
-                    try {
-                        new cls(this.user, this, cmd, bytes);
-                    } catch(e) {
-                        console.log(e);
-                        this.sendFail(6,cmd,bytes,e);
-                    }
-                }
-            } else {
+        }
+        if (this.hasLogin == false && (cmd != 0 && cmd != 1)) {
+            this.sendFail(10,cmd,bytes);
+            this.close();
+            return;
+        }
+        if (Config.cmds[cmd]) {
+            var cls = global[Config.cmds[cmd]];
+            if (cls == null) {
                 this.sendFail(5,cmd,bytes);
+            } else {
+                try {
+                    new cls(this.user, this, cmd, bytes);
+                } catch(e) {
+                    console.log(e);
+                    this.sendFail(6,cmd,bytes,e);
+                }
             }
+        } else {
+            this.sendFail(5,cmd,bytes);
         }
     }
 
@@ -102,17 +110,26 @@ var Client = (function (_super) {
     }
 
     p.sendData = function (bytes) {
-        this.connection.sendBytes(new Buffer(bytes.data));
+        if(this.type == "binary") {
+            this.connection.sendBytes(new Buffer(bytes.data));
+        } else if(this.type == "utf8") {
+            var str = "[";
+            var array = bytes.data;
+            for(var i = 0; i < array.length; i++) {
+                str += array[i] + (i<array.length-1?",":"");
+            }
+            str += "]";
+            this.connection.sendUTF(str);
+        }
     }
 
     p.close = function () {
         this.connection.close();
     }
 
-    p.onClose = function () {
-        this.dispatchEvent(new Event(Event.CLOSE));
-        _super.prototype.onClose.call(this);
-    }
+    //p.onClose = function () {
+    //    _super.prototype.onClose.call(this);
+    //}
 
     return Client;
 })(WebSocketServerClient);

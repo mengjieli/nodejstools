@@ -8,7 +8,7 @@ var game_file_list = [
 	"libs/modules/res/res.js",
 	"libs/modules/socket/socket.js",
 	"bin-debug/LoadingUI.js",
-	"bin-debug/main.js",
+	"bin-debug/Main.js",
 	"bin-debug/PreLoadingPanel.js",
 	"bin-debug/components/ImageButton.js",
 	"bin-debug/components/file/FileInfo.js",

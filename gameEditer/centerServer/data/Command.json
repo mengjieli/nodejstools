@@ -10,5 +10,11 @@
   "124":"IsFileExistTask",
 
   "502":"ExcuteTask",
-  "602":"HttpServerTask"
+  "602":"HttpServerTask",
+
+  "1002":"GameLogTask",
+  "1004":"LinkClient",
+
+  "2002":"GetGameClientListTask",
+  "2004":"ConnectGameClientTask"
 }

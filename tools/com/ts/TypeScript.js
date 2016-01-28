@@ -4,7 +4,7 @@ var __define = this.__define || function (o, p, g, s) {
 
 function __extends(d, b) {
     if (b == null) {
-        trace("bug !!", arguments.callee.caller);
+        console.log("bug !!", arguments.callee.caller);
     }
     for (var p in b)
         if (b.hasOwnProperty(p))

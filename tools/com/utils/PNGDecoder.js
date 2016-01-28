@@ -60,7 +60,7 @@ var PNGDecoder = (function (_super) {
             var len = this.readInt();
             var type = this.readUTFBytes(4);
             var position = this.position;
-            console.log("type = ", type, len);
+            //console.log("type = ", type, len);
             if (this["decode" + type]) {
                 this["decode" + type](len, data);
             }
@@ -138,8 +138,7 @@ var PNGDecoder = (function (_super) {
 
     p.decodePLTE = function (len, data) {
         var list = this.getData();
-        console.log(new Buffer(list.slice(this.position, this.position + len)));
-        //获取 IDAT 内容，并用 lz77 解压缩
+        //console.log(new Buffer(list.slice(this.position, this.position + len)));
         var i = 0;
         data.plte = [];
         while (i + 3 < len) {
@@ -151,6 +150,8 @@ var PNGDecoder = (function (_super) {
     }
 
     p.decodetRNS = function (len, data) {
+        var list = this.getData();
+        //console.log(new Buffer(list.slice(this.position, this.position + len)));
         switch (data.colorType) {
             case 3:
                 for (var i = 0; i < len; i++) {
@@ -165,6 +166,8 @@ var PNGDecoder = (function (_super) {
     }
 
     p.decodeIDAT = function (len, data) {
+        var list = this.getData();
+        //console.log(new Buffer(list.slice(this.position, this.position + len)));
         var lineLength = data.pixelWidth * data.width; //每行图像占用多少位
         var lines = [];
         var prev = null;

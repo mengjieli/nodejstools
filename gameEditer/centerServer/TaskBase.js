@@ -5,10 +5,14 @@ var TaskBase = (function () {
         this.user = user;
         this.client = client;
         this.cmd = cmd;
+        this.remoteId = 0;
         if(msg) {
             this.msg = msg;
             this.msg.position = 0;
             this.msg.readUIntV();
+            if(cmd >= 2000 && cmd < 3000) {
+                this.remoteId = this.msg.readUIntV();
+            }
         }
         if(this.user) {
             this.user.addTask(this);
@@ -54,7 +58,7 @@ var TaskBase = (function () {
             this.client.sendData(msg);
         }
         if(this.user) {
-            this.user.delTask(this);
+            this.user.delTask(this.id);
         }
     }
 
@@ -70,7 +74,7 @@ var TaskBase = (function () {
             this.client.sendData(msg);
         }
         if(this.user) {
-            this.user.delTask(this);
+            this.user.delTask(this.id);
         }
     }
 

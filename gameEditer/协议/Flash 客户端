@@ -1,0 +1,28 @@
+获取登录的游戏客户端 2002
+    uint remoteId
+返回(或通知) 2003
+    uint remoteId
+    Array 客户端数组
+        uint 游戏客户端 id
+        string 游戏客户端Ip
+
+请求链接游戏客户端 2004
+    uint remoteId
+返回 2005
+    uint remoteId
+    boolean 请求链接结果
+
+通知 已链上游戏客户端 2007
+    uint remoteId
+    uint 游戏客户端 id
+    string 游戏客户端Ip
+
+通知 游戏服务器断开链接 2009
+    uint remoteId
+    uint 游戏客户端 id
+
+通知 游戏客户端日志 2011
+    uint remoteId
+    Array 打印日志
+        string 日志信息
+
