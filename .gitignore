@@ -11,5 +11,6 @@ tsc/
 test/
 imageTool/modifyColor/out/
 imageTool/modifyColor/src/
+imageTool/modifyColor/assets/
 imageTool/rename/out/
 imageTool/rename/src/

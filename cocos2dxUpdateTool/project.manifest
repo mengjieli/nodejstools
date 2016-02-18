@@ -1,7 +1,7 @@
 {
-        "packageUrl": "http://121.40.18.57/ParkerEmpire/192/",
-        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
-        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/qa/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/qa/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/qa/version.manifest",
           "version": "1.0.0",
           "groupVersions": {},
           "engineVersion": "3.6",

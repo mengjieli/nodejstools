@@ -16,10 +16,18 @@ function File(url) {
             this.direction = this.url.slice(0, this.url.length - this.end.length - 1 - this.name.length);
         }
     } catch (e) {
+        console.log("File Error",e);
         this.state = null;
         this.type = global.FileType.NONE;
         this.end = null;
     }
+}
+
+/**
+ *
+ */
+File.prototype.isDirection = function() {
+    return this.type==global.FileType.DIRECTION?true:false;
 }
 
 /**

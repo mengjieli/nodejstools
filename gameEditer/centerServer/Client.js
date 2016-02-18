@@ -124,6 +124,7 @@ var Client = (function (_super) {
     }
 
     p.close = function () {
+        console.log("close connection!");
         this.connection.close();
     }
 

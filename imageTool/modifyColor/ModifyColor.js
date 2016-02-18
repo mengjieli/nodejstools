@@ -3,7 +3,9 @@ require("./../../tools/com/requirecom");
 var list = (new File("./src")).readFilesWidthEnd("*");
 for(var i = 0; i < list.length; i++) {
     var file = list[i];
-    console.log(i+1,"/",list.length,file.url);
+    if(file.isDirection()) {
+        continue;
+    }
     var decoder = new PNGDecoder();
     var buffer = file.readContent("binary", "Buffer");
     try {
@@ -32,7 +34,7 @@ for(var i = 0; i < list.length; i++) {
     var encoder = new PNGEncoder();
     encoder.encode(
         data.colors,
-        6
+        3
     );
     var buffer = new Buffer(encoder.getData());
     file = new File(file.url.replace("src","out"));
