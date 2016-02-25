@@ -188,5 +188,8 @@ var FileFormat = {
 }
 
 global.FileFormat = FileFormat;
-
 global.File = File;
+
+File.mkdirsSync("$$$tmpFileType$$$");
+FileType.DIRECTION = fs.statSync("$$$tmpFileType$$$").mode;
+(new File("$$$tmpFileType$$$")).delete();
