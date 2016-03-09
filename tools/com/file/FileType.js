@@ -3,7 +3,7 @@
  * @type {{DIRECTION: number, FILE: number}}
  */
 var FileType = {
-    "DIRECTION": global.System.platform == global.System.WINDOWS ? 16822 : 16877,
+    "DIRECTION": null,
     "NONE": 0
 }
 

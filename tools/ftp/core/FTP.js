@@ -93,6 +93,90 @@ global.FTP.prototype.del = function (ftpurl, complete, thisObj) {
     });
 }
 
+global.FTP.prototype.list = function(ftpurl,complete,thisObj) {
+    if (!this.isconnect) {
+        this.connect(this.list, this, arguments);
+        return;
+    }
+    var client = this.client;
+    var _this = this;
+    client.list(ftpurl, function (code,list) {
+        complete.call(thisObj,list);
+    });
+}
+
+global.FTP.prototype.mkdir = function(ftpurl,complete,thisObj) {
+    if (!this.isconnect) {
+        this.connect(this.isExist, this, arguments);
+        return;
+    }
+    while(ftpurl.charAt(ftpurl.length-1) == "/") {
+        ftpurl = ftpurl.slice(0,ftpurl.length-1);
+    }
+    var client = this.client;
+    var _this = this;
+    var urlArray = ftpurl.split("/");
+    var url = "";
+    var index = 0;
+    var func = function(list){
+        var find = false;
+        for(var i = 0; i < list.length; i++) {
+            if(list[i].name == urlArray[index]) {
+                find = true;
+                break;
+            }
+        }
+        if(find == false) {
+            client.mkdir();
+            return;
+        }
+        url += urlArray[index];
+        index++;
+        if(index == urlArray.length) {
+            complete.call(thisObj);
+            return;
+        }
+        _this.list(url,func);
+    };
+    this.list(url,func);
+}
+
+global.FTP.prototype.isExist = function(ftpurl,complete,thisObj) {
+    if (!this.isconnect) {
+        this.connect(this.isExist, this, arguments);
+        return;
+    }
+    while(ftpurl.charAt(ftpurl.length-1) == "/") {
+        ftpurl = ftpurl.slice(0,ftpurl.length-1);
+    }
+    var client = this.client;
+    var _this = this;
+    var urlArray = ftpurl.split("/");
+    var url = "";
+    var index = 0;
+    var func = function(list){
+        var find = false;
+        for(var i = 0; i < list.length; i++) {
+            if(list[i].name == urlArray[index]) {
+                find = true;
+                break;
+            }
+        }
+        if(find == false) {
+            complete.call(thisObj,false);
+            return false;
+        }
+        url += urlArray[index];
+        index++;
+        if(index == urlArray.length) {
+            complete.call(thisObj,true);
+            return true;
+        }
+        _this.list(url,func);
+    };
+    this.list(url,func);
+}
+
 global.FTP.prototype.printAPI = function () {
     if (!this.isconnect) {
         this.connect(this.printAPI, this, arguments);
