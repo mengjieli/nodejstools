@@ -80,6 +80,8 @@ global.FTP.prototype.upload = function (file, ftpurl, complete, thisObj) {
         _this.close();
         if (err) {
             console.log(err);
+            console.log(ftpurl);
+            console.log(file);
             throw err;
         } else {
             if (complete) {
