@@ -44,6 +44,24 @@ global.FTP.prototype.connect = function (connectBack, thisObj, args) {
     });
 }
 
+global.FTP.prototype.uploadExist = function (file, ftpurl, upload, thisObj) {
+    if (!this.isconnect) {
+        this.connect(this.uploadExist, this, arguments);
+        return;
+    }
+    var _this = this;
+    _this.isExist(ftpurl,function(bool){
+        //console.log("bool>>>>>>>>"+bool);
+        if(bool) {
+            _this.del(ftpurl,function(){
+                _this.upload(file,ftpurl,upload,thisObj);
+            });
+        }else{
+            _this.upload(file,ftpurl,upload,thisObj);
+        }
+    });
+
+}
 /**
  * 上传文件
  * @param file 本地文件

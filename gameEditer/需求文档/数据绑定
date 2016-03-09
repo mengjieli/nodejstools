@@ -1,0 +1,56 @@
+例如 txt.setTextBinding("玩家名称:{mainData.playerData.nick}"); 玩家名称:C
+需要分析成
+
+
+var changeList = [mainData.playerData.nick];
+var val0 = mainData.playerData.nick;
+var text = "玩家名称:" + val0;
+
+ccui.Text.property.setTextBinding = function(str){
+
+}
+
+
+例如 setTextBinding("玩家名称:{mainData.playerData.nick},地图:{mainData.serverData.name}");
+
+var changeList = [mainData.playerData.nick,mainData.serverData.name];
+var val0 = mainData.playerData.nick;
+var val1 = mainData.serverData.name;
+var text = "玩家名称:" + val0 + ",地图:" + val1;
+
+
+例如 setTextBinding("玩家名称:{mainData.playerData.nick + mainData.serverData.name}");
+
+var changeList = [mainData.playerData.nick,mainData.serverData.name];
+
+mainData.playerData.addListener("nick",function(){
+    var val0 = mainData.playerData.nick + mainData.serverData.name;
+    var text = "玩家名称:" + val0;
+    _this.setText(text);
+});
+
+
+txt.delAllBindings绑定(数据监听)
+}
+
+
+可以容许的语法为
+表达式
+if语句
+
+
+mainData.inMap==true?mainData.playerData.nick:mainData.serverData.name
+
+
+属性 {}
+多个属性 {} {}
++  {... + ...}
+-  {... - ...}
+*
+/
+&&
+||
+?: {true?}
+
+
+if(expr)expr else

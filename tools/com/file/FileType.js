@@ -7,4 +7,8 @@ var FileType = {
     "NONE": 0
 }
 
+File.mkdirsSync("$$$tmpFileType$$$");
+FileType.DIRECTION = fs.statSync("$$$tmpFileType$$$").mode;
+(new File("$$$tmpFileType$$$")).delete();
+
 global.FileType = FileType;

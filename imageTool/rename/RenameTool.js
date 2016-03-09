@@ -1,9 +1,9 @@
-require("./../tools/com/requirecom");
-require("./../tools/shell/requireshell");
+require("./../../tools/com/requirecom");
+require("./../../tools/shell/requireshell");
 
-var startName = "buildCastle_";
-var startIndex = 0;
-var maxLength = 2;
+var startName = "1204001_";
+var startIndex = 36;
+var maxLength = 3;
 var ends = ["png"];
 var file = new File("src/");
 var fileList = file.readFilesWidthEnd(ends);
