@@ -8,9 +8,6 @@ var UpdateVersion = function (workFile, updateComplete, thisObj) {
     this.updateComplete = updateComplete;
     this.updateCompleteThis = thisObj;
 
-    this.localsrc = this.workFile + "svnsrc";
-    this.localres = this.workFile + "svnres";
-
     this.log = "";
 
     var file = new File(this.workFile + "updateVersion.json");
@@ -45,6 +42,8 @@ UpdateVersion.prototype.updateVersion = function () {
  * @param server
  */
 UpdateVersion.prototype.updateSrc = function (server) {
+    this.localsrc = this.workFile + server.name + "/svnsrc";
+    this.localres = this.workFile + server.name + "/svnres";
     this.addLog("  1. update \"src\" from svn\n");
     (new File("src")).delete();
     var svn = new SVNShell(server.svn.url + "src", this.localsrc, server.svn.user, server.svn.password);

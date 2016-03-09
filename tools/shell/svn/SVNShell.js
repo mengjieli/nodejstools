@@ -24,6 +24,7 @@ SVNShell.prototype.getReady = function (complete, thisObj) {
 }
 
 SVNShell.prototype.getReadyCreateSVNComplete = function () {
+    console.log("startSVN");
     this.startSVNServer();
     if (!this.hasCheckOut()) {
         this.checkOut(this.getReadyCheckOut, this);
@@ -53,6 +54,10 @@ SVNShell.prototype.isExist = function () {
  */
 SVNShell.prototype.createLocalSVN = function (complete, thisObj) {
     var _this = this;
+    var file = new File(this.localdir);
+    if(!file.isExist()) {
+        File.mkdirsSync(this.localdir);
+    }
     new ShellCommand("svnadmin", ["create", this.localdir], function () {
         _this.createLocalSVNComplete();
         if (complete) {
@@ -67,8 +72,6 @@ SVNShell.prototype.createLocalSVN = function (complete, thisObj) {
 SVNShell.prototype.createLocalSVNComplete = function () {
     //console.log("创建本地 svn 目录完毕，" + this.localdir + " -> " + this.svnurl);
     //console.log("初始化 svn 配置");
-
-    //console.log("修改 conf/svnserve.conf");
     var file = new File(this.localdir + "conf/svnserve.conf");
     var content = file.readContent();
     var index, str;
@@ -80,13 +83,13 @@ SVNShell.prototype.createLocalSVNComplete = function () {
     }
     file.save(content);
 
-    //console.log("写入用户名信息 conf/passwd");
+    console.log("写入用户名信息 conf/passwd");
     file = new File(this.localdir + "conf/passwd");
     content = file.readContent();
     content += "\n" + this.user + "=" + this.password;
     file.save(content);
 
-    //console.log("修改用户权限 conf/authz");
+    console.log("修改用户权限 conf/authz");
     file = new File(this.localdir + "conf/authz");
     content = file.readContent();
     content += "\n[/]\n" + this.user + "=rw";
@@ -117,13 +120,19 @@ SVNShell.prototype.hasCheckOut = function () {
  * checkOut 目录
  */
 SVNShell.prototype.checkOut = function (complete, thisObj) {
+    console.log("check out");
     new ShellCommand("svn", ["checkout", this.svnurl,
         "--username=" + this.user, "--password=" + this.password, this.projectdir], function () {
         //console.log("check out complete !");
         if (complete) {
             complete.apply(thisObj);
         }
-    }, null);
+    }, null,function(d){
+        console.log(d);
+
+    },null,function(e){
+        console.log(e);
+    },null);
 }
 
 /**

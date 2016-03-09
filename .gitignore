@@ -2,6 +2,9 @@
 .idea/
 .idea/workspace.xml
 cocos2dxUpdateTool/history/
+cocos2dxUpdateTool/192/
+cocos2dxUpdateTool/10241/
+cocos2dxUpdateTool/guangzhou/
 cocos2dxUpdateTool/svnsrc/
 cocos2dxUpdateTool/svnres/
 jscTool/
@@ -13,3 +16,5 @@ imageTool/modifyColor/out/
 imageTool/modifyColor/src/
 imageTool/rename/out/
 imageTool/rename/src/
+node_modules/
+gameServer/
