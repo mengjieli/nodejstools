@@ -44,7 +44,7 @@ global.FTP.prototype.connect = function (connectBack, thisObj, args) {
     });
 }
 
-global.FTP.prototype.uploadExist = function (file, ftpurl, upload, thisObj) {
+global.FTP.prototype.uploadExist  = function (file, ftpurl, upload, thisObj) {
     if (!this.isconnect) {
         this.connect(this.uploadExist, this, arguments);
         return;
