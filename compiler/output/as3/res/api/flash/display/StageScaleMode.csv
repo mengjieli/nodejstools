@@ -1,0 +1,7 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+flash.display.StageScaleMode,,,,,,,egret.StageScaleMode,,,,,,1,,
+flash.display.StageScaleMode,,1,EXACT_FIT,,,,egret.StageScaleMode,1,egret.StageScaleMode.EXACT_FIT,,,,1,,
+flash.display.StageScaleMode,,1,NO_BORDER,,,,egret.StageScaleMode,1,egret.StageScaleMode.NO_BORDER,,,,1,,
+flash.display.StageScaleMode,,1,NO_SCALE,,,,egret.StageScaleMode,1,egret.StageScaleMode.NO_SCALE,,,,1,,
+flash.display.StageScaleMode,,1,SHOW_ALL,,,,egret.StageScaleMode,1,egret.StageScaleMode.SHOW_ALL,,,,1,,

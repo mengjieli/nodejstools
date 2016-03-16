@@ -1,0 +1,93 @@
+文件夹 PATH 列表
+卷序列号为 00000048 5468:A1F4
+C:.
+│  1.txt
+│  
+├─accessibility
+│      AccessibilityProperties.ts
+│      
+├─display
+│      Bitmap.ts
+│      BitmapData.ts
+│      BitmapDataInfo.ts
+│      Display.ts
+│      DisplayObject.ts
+│      DisplayObjectContainer.ts
+│      Graphics.ts
+│      Loader.ts
+│      LoaderInfo.ts
+│      Scene.ts
+│      Shape.ts
+│      Sprite.ts
+│      Stage.ts
+│      SWFVersion.ts
+│      
+├─errors
+│      Error.ts
+│      IllegalOperationError.ts
+│      
+├─events
+│      Event.ts
+│      EventDispatcher.ts
+│      Events.js
+│      Events.js.map
+│      Events.ts
+│      EventType.ts
+│      HTTPStatusEvent.ts
+│      IOErrorEvent.ts
+│      MouseEvent.ts
+│      ProgressEvent.ts
+│      SecurityErrorEvent.ts
+│      TimerEvent.ts
+│      
+├─filters
+│      BevelFilter.ts
+│      BitmapFilter.ts
+│      BlurFilter.ts
+│      ColorMatrixFilter.ts
+│      DropShadowFilter.ts
+│      GlowFilter.ts
+│      
+├─geom
+│      ColorTransform.ts
+│      Geom.ts
+│      Matrix.ts
+│      Matrix3D.ts
+│      Transform.ts
+│      
+├─media
+│      ID3Info.ts
+│      Sound.ts
+│      SoundChannel.ts
+│      SoundLoaderContext.ts
+│      SoundTransform.ts
+│      
+├─net
+│      LocalConnection.ts
+│      URLLoader.ts
+│      URLRequest.ts
+│      URLStream.ts
+│      URLVariables.ts
+│      
+├─system
+│      ApplicationDomain.ts
+│      Capabilities.ts
+│      LoaderContext.ts
+│      SecurityDomain.ts
+│      
+├─text
+│      AntiAliasType.ts
+│      Font.ts
+│      TextField.ts
+│      TextFieldAutoSize.ts
+│      TextFieldType.ts
+│      TextFormat.ts
+│      TextFormatAlign.ts
+│      TextLineMetrics.ts
+│      
+└─utils
+        ByteArray.ts
+        Endian.ts
+        Timer.ts
+        Utils.ts
+        

@@ -1,0 +1,51 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+XML,,,,,,,as3.XML,,,,,,0,,
+XML,,1,ignoreComments,,,Boolean,as3.XML,1,as3.XML.ignoreComments,,,,0,,
+XML,,1,ignoreProcessingInstructions,,,Boolean,as3.XML,1,as3.XML.ignoreProcessingInstructions,,,,0,,
+XML,,1,ignoreWhitespace,,,Boolean,as3.XML,1,as3.XML.ignoreWhitespace,,,,0,,
+XML,,1,prettyIndent,,,int,as3.XML,1,as3.XML.prettyIndent,,,,0,,
+XML,,1,prettyPrinting,,,Boolean,as3.XML,1,as3.XML.prettyPrinting,,,,0,,
+XML,,,,,addNamespace,XML,as3.XML,,,,,,0,,
+XML,,,,,appendChild,XML,as3.XML,,,,,,1,,1
+XML,,,,,attribute,XMLList ,as3.XML,,,,,,1,?xmllist????????????,1
+XML,,,,,attributes,XMLList ,as3.XML,,,,,,1,,1
+XML,,,,,child,XMLList ,as3.XML,,,,,,1,,1
+XML,,,,,childIndex,int,as3.XML,,,,,,0,,
+XML,,,,,children,XMLList ,as3.XML,,,,,,1,,1
+XML,,,,,comments,XMLList,as3.XML,,,,,,0,,
+XML,,,,,contains,Boolean ,as3.XML,,,,,,1,?????string???????????,1
+XML,,,,,copy,XML,as3.XML,,,,,,1,,1
+XML,,,,,defaultSettings,Object ,as3.XML,,,,,,0,,
+XML,,,,,descendants,XMLList,as3.XML,,,,,,1,,1
+XML,,,,,elements,XMLList,as3.XML,,,,,,1,?????children ????,1
+XML,,,,,hasComplexContent,Boolean,as3.XML,,,,,,1,,1
+XML,,,,,hasOwnProperty,Boolean,as3.XML,,,,,,1,,1
+XML,,,,,hasSimpleContent,Boolean,as3.XML,,,,,,1,,1
+XML,,,,,inScopeNamespaces,Array ,as3.XML,,,,,,0,,
+XML,,,,,insertChildAfter,*,as3.XML,,,,,,0,,
+XML,,,,,insertChildBefore,*,as3.XML,,,,,,0,,
+XML,,,,,length,int,as3.XML,,,,,,1,,1
+XML,,,,,localName,Object,as3.XML,,,,,,1,,1
+XML,,,,,name,Object,as3.XML,,,,,,1,,1
+XML,,,,,namespace,*,as3.XML,,,,,,1,,
+XML,,,,,namespaceDeclarations,Array,as3.XML,,,,,,0,,
+XML,,,,,nodeKind,String ,as3.XML,,,,,,0,,
+XML,,,,,normalize,XML,as3.XML,,,,,,0,,
+XML,,,,,parent,*,as3.XML,,,,,,1,,1
+XML,,,,,prependChild,XML ,as3.XML,,,,,,1,,1
+XML,,,,,processingInstructions,XMLList ,as3.XML,,,,,,0,,
+XML,,,,,propertyIsEnumerable,Boolean,as3.XML,,,,,,0,,
+XML,,,,,removeNamespace,XML ,as3.XML,,,,,,0,,
+XML,,,,,replace,XML ,as3.XML,,,,,,0,,
+XML,,,,,setChildren,XML,as3.XML,,,,,,0,,
+XML,,,,,setLocalName,void,as3.XML,,,,,,0,,
+XML,,,,,setNamespace,void,as3.XML,,,,,,0,,
+XML,,,,,setSettings,void,as3.XML,,,,,,0,,
+XML,,,,,settings,Object ,as3.XML,,,,,,0,,
+XML,,,,,text,XMLList,as3.XML,,,,,,0,,
+XML,,,,,toString,String ,as3.XML,,,,,,1,,1
+XML,,,,,toXMLString,String,as3.XML,,,,,,1,,1
+XML,,,,,valueOf,XML,as3.XML,,,,,,1,,1
+XML,,,,,setLocalName,void,as3.XML,,,,,,1,,
+XML,,,,,setName,void,as3.XML,,,,,,1,,1
