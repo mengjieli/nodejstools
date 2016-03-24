@@ -1,0 +1,107 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+flash.text.TextField,flash.display.DisplayObject,,,,,,as3.TextField,,,,,,1,,
+flash.text.TextField,,,alwaysShowSelection,,,Boolean,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,antiAliasType,,,String,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,autoSize,,,String,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,background,,,Boolean,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,backgroundColor,,,uint,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,border,,,Boolean ,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,borderColor ,,,uint,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,bottomScrollV,1,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,caretIndex,1,,int ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,condenseWhite,,,Boolean,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,defaultTextFormat,,,TextFormat,as3.TextField,,,,,,1,,
+flash.text.TextField,,,displayAsPassword,,,Boolean,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,embedFonts ,,,Boolean,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,gridFitType ,,,String,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,htmlText,,,String,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,length ,1,,int ,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,maxChars ,,,int,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,maxScrollH,1,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,maxScrollV ,1,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,mouseWheelEnabled ,,,Boolean ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,multiline ,,,Boolean ,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,numLines,1,,int,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,restrict,,,String,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,scrollH,,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,scrollV,,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,selectable,,,Boolean ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,selectionBeginIndex ,1,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,selectionEndIndex,1,,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,sharpness,,,Number ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,styleSheet,,,StyleSheet,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,text,,,String,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,textColor,,,uint,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,textHeight ,1,,Number ,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,textWidth ,1,,Number ,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,thickness,,,Number ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,type,,,String,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,useRichTextClipboard,,,Boolean ,as3.TextField,,,,,,1,,1
+flash.text.TextField,,,wordWrap,,,Boolean ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,appendText,void,as3.TextField,,,,,,1,,
+flash.text.TextField,,,,,getCharBoundaries ,Rectangle,as3.TextField,,,,,,0,,
+flash.text.TextField,,,,,getCharIndexAtPoint,int,as3.TextField,,,,,,0,,
+flash.text.TextField,,,,,getFirstCharInParagraph,int,as3.TextField,,,,,,0,,0
+flash.text.TextField,,,,,getImageReference,DisplayObject,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getLineIndexAtPoint,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getLineIndexOfChar,int,as3.TextField,,,,,,1,,
+flash.text.TextField,,,,,getLineLength,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getLineMetrics,TextLineMetrics ,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getLineOffset,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getLineText,String,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getParagraphLength,int,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,getTextFormat,TextFormat,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,replaceSelectedText,void,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,replaceText,void,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,setSelection,void,as3.TextField,,,,,,1,,0
+flash.text.TextField,,,,,setTextFormat,void,as3.TextField,,,,,,1,,1
+flash.text.TextFieldAutoSize,,,,,,,as3.TextFieldAutoSize,,,,,,1,,1
+flash.text.TextFieldAutoSize,,1,CENTER,,,String,as3.TextFieldAutoSize,1,as3.TextFieldAutoSize.CENTER,,,,1,,1
+flash.text.TextFieldAutoSize,,1,LEFT,,,String,as3.TextFieldAutoSize,1,as3.TextFieldAutoSize.LEFT,,,,1,,1
+flash.text.TextFieldAutoSize,,1,NONE,,,String,as3.TextFieldAutoSize,1,as3.TextFieldAutoSize.NONE,,,,1,,1
+flash.text.TextFieldAutoSize,,1,RIGHT,,,String,as3.TextFieldAutoSize,1,as3.TextFieldAutoSize.RIGHT,,,,1,,
+flash.text.TextFieldType,,,,,,,as3.TextFieldType,,,,,,1,,1
+flash.text.TextFieldType,,1,DYNAMIC,,,String,as3.TextFieldType,1,as3.TextFieldType.DYNAMIC,,,,1,,
+flash.text.TextFieldType,,1,INPUT,,,String,as3.TextFieldType,1,as3.TextFieldType.INPUT,,,,1,,
+flash.text.TextFormatAlign,,,,,,,as3.TextFormatAlign,,,,,,1,,
+flash.text.TextFormatAlign,,1,CENTER,,,String,as3.TextFormatAlign,1,as3.TextFormatAlign.CENTER,,,,1,,1
+flash.text.TextFormatAlign,,1,JUSTIFY,,,String,as3.TextFormatAlign,1,as3.TextFormatAlign.JUSTIFY,,,,1,,1
+flash.text.TextFormatAlign,,1,LEFT,,,String,as3.TextFormatAlign,1,as3.TextFormatAlign.LEFT,,,,1,,1
+flash.text.TextFormatAlign,,1,RIGHT,,,String,as3.TextFormatAlign,1,as3.TextFormatAlign.RIGHT,,,,1,,
+flash.text.Font,,,,,,,as3.Font,,,,,,1,,
+flash.text.Font,,,fontName,1,,String,as3.Font,,,,,,1,,
+flash.text.Font,,,fontStyle,1,,String,as3.Font,,,,,,1,,
+flash.text.Font,,,fontType,1,,String,as3.Font,,,,,,1,,
+flash.text.Font,,1,,,enumerateFonts,Array ,,1,as3.Font.enumerateFonts,,,,1,,
+flash.text.Font,,,,,hasGlyphs,Boolean,as3.Font,,,,,,1,,
+flash.text.Font,,1,,,registerFont,void,,1,as3.Font.registerFont,,,,1,,
+flash.text.TextLineMetrics,,,,,,,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextLineMetrics,,,ascent,,,Number ,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextLineMetrics,,,descent,,,Number ,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextLineMetrics,,,height,,,Number ,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextLineMetrics,,,leading,,,Number ,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextLineMetrics,,,width,,,Number ,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextLineMetrics,,,x,,,Number ,as3.TextLineMetrics,,,,,,1,,
+flash.text.TextFormat,,,,,,String ,as3.TextFormat,,,,,,1,,
+flash.text.TextFormat,,,align,,,Object ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,blockIndent,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,bold,,,Object ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,bullet ,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,color,,,Object ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,font,,,String ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,indent ,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,italic,,,Object ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,kerning ,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,leading,,,Object ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,leftMargin,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,letterSpacing,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,rightMargin,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,size,,,Object ,as3.TextFormat,,,,,,1,,1
+flash.text.TextFormat,,,tabStops,,,Array ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,target ,,,String ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,underline ,,,Object ,as3.TextFormat,,,,,,1,,0
+flash.text.TextFormat,,,url,,,String,as3.TextFormat,,,,,,1,,0
+flash.text.AntiAliasType,,,,,,,as3.AntiAliasType,,,,,,1,,
+flash.text.AntiAliasType,,1,ADVANCED,,,String,as3.AntiAliasType,1,as3.AntiAliasType.ADVANCED,,,,1,,0
+flash.text.AntiAliasType,,1,NORMAL,,,String,as3.AntiAliasType,1,as3.AntiAliasType.NORMAL,,,,1,,0

@@ -1,0 +1,12 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+RegExp,,,,,,,RegExp,,,,,,1,,
+RegExp,,,dotall,1,,Boolean,RegExp,,,,,,0,,
+RegExp,,,extended,1,,Boolean,RegExp,,,,,,0,,
+RegExp,,,global,1,,Boolean,RegExp,,,,,,1,,
+RegExp,,,ignoreCase ,1,,Boolean,RegExp,,,,,,1,,
+RegExp,,,lastIndex,,,Number,RegExp,,,,,,1,,
+RegExp,,,multiline,1,,Boolean,RegExp,,,,,,1,,
+RegExp,,,source,1,,String,RegExp,,,,,,1,,
+RegExp,,,,,exec,String,RegExp,,,,,,1,,
+RegExp,,,,,test,String,RegExp,,,,,,1,,

@@ -27,7 +27,10 @@ var CenterServer = (function (_super) {
         txt = (new File("./data/Command.json")).readContent();
         Config.cmds = JSON.parse(txt);
 
-        setInterval(this.checkClient.bind(this), 30000);
+        //启动更新服务器
+        var updateServer = new UpdateServer(Config.updateServerPort);
+        Server.updateServer = updateServer;
+        //setInterval(this.checkClient.bind(this), 30000);
     }
 
     var d = __define, c = CenterServer;

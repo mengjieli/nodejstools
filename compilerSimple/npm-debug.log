@@ -1,0 +1,210 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'profiler' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 silly cache add args [ 'profiler', null ]
+6 verbose cache add spec profiler
+7 silly cache add parsed spec { raw: 'profiler',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'profiler',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed profiler@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'profiler', range: '*', hasData: false }
+12 silly mapToRegistry name profiler
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/profiler
+16 verbose addNameRange registry:https://registry.npmjs.org/profiler not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/profiler
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 08:08:33
+20 verbose request id a3f580e43092837d
+21 verbose etag "4PF2OTRAUBIDO5K24W168ZN70"
+22 http request GET https://registry.npmjs.org/profiler
+23 http 304 https://registry.npmjs.org/profiler
+24 silly get cb [ 304,
+24 silly get   { date: 'Fri, 17 Apr 2015 00:08:14 GMT',
+24 silly get     server: 'Apache',
+24 silly get     via: '1.1 varnish',
+24 silly get     'last-modified': 'Fri, 17 Apr 2015 00:08:14 GMT',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     etag: '"4PF2OTRAUBIDO5K24W168ZN70"',
+24 silly get     age: '0',
+24 silly get     'x-served-by': 'cache-nrt6120-NRT',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1429229294.420230,VS0,VE450',
+24 silly get     vary: 'Accept',
+24 silly get     'content-length': '0',
+24 silly get     'keep-alive': 'timeout=10, max=50',
+24 silly get     connection: 'Keep-Alive' } ]
+25 verbose etag https://registry.npmjs.org/profiler from cache
+26 verbose get saving profiler to C:\Users\mengj_000\AppData\Roaming\npm-cache\registry.npmjs.org\profiler\.cache.json
+27 silly addNameRange number 2 { name: 'profiler', range: '*', hasData: true }
+28 silly addNameRange versions [ 'profiler',
+28 silly addNameRange   [ '1.0.0', '1.0.1', '1.1.0', '1.2.0', '1.2.1', '1.2.2', '1.2.3' ] ]
+29 verbose addNamed profiler@1.2.3
+30 silly addNamed semver.valid 1.2.3
+31 silly addNamed semver.validRange 1.2.3
+32 silly cache afterAdd profiler@1.2.3
+33 verbose afterAdd C:\Users\mengj_000\AppData\Roaming\npm-cache\profiler\1.2.3\package\package.json not in flight; writing
+34 verbose afterAdd C:\Users\mengj_000\AppData\Roaming\npm-cache\profiler\1.2.3\package\package.json written
+35 silly install resolved [ { name: 'profiler',
+35 silly install resolved     version: '1.2.3',
+35 silly install resolved     description: 'Access the V8 profiler from node.js',
+35 silly install resolved     keywords: [ 'profiler', 'profiling' ],
+35 silly install resolved     homepage: 'https://github.com/bnoordhuis/node-profiler',
+35 silly install resolved     main: 'build/Release/profiler.node',
+35 silly install resolved     author:
+35 silly install resolved      { name: 'Ben Noordhuis',
+35 silly install resolved        email: 'info@bnoordhuis.nl',
+35 silly install resolved        url: 'http://bnoordhuis.nl/' },
+35 silly install resolved     repository:
+35 silly install resolved      { type: 'git',
+35 silly install resolved        url: 'git://github.com/bnoordhuis/node-profiler.git' },
+35 silly install resolved     bin: { nprof: 'nprof' },
+35 silly install resolved     scripts:
+35 silly install resolved      { prepublish: 'sh tools/build-nprof',
+35 silly install resolved        install: 'node-gyp rebuild' },
+35 silly install resolved     engines: { node: '>=0.8.0' },
+35 silly install resolved     gypfile: true,
+35 silly install resolved     bugs: { url: 'https://github.com/bnoordhuis/node-profiler/issues' },
+35 silly install resolved     _id: 'profiler@1.2.3',
+35 silly install resolved     dist:
+35 silly install resolved      { shasum: '81f52d91ca3b072c4172444c562ec9d7189ee25b',
+35 silly install resolved        tarball: 'http://registry.npmjs.org/profiler/-/profiler-1.2.3.tgz' },
+35 silly install resolved     _from: 'profiler@*',
+35 silly install resolved     _npmVersion: '1.4.6',
+35 silly install resolved     _npmUser: { name: 'bnoordhuis', email: 'info@bnoordhuis.nl' },
+35 silly install resolved     maintainers: [ [Object] ],
+35 silly install resolved     directories: {},
+35 silly install resolved     _shasum: '81f52d91ca3b072c4172444c562ec9d7189ee25b',
+35 silly install resolved     _resolved: 'https://registry.npmjs.org/profiler/-/profiler-1.2.3.tgz',
+35 silly install resolved     readme: 'ERROR: No README data found!' } ]
+36 info install profiler@1.2.3 into E:\nodejs\lex
+37 info installOne profiler@1.2.3
+38 verbose installOne of profiler to E:\nodejs\lex not in flight; installing
+39 verbose lock using C:\Users\mengj_000\AppData\Roaming\npm-cache\_locks\profiler-afe2e34691b1b616.lock for E:\nodejs\lex\node_modules\profiler
+40 silly install write writing profiler 1.2.3 to E:\nodejs\lex\node_modules\profiler
+41 silly cache addNamed cb profiler@1.2.3
+42 verbose unbuild node_modules\profiler
+43 silly gentlyRm E:\nodejs\lex\node_modules\profiler is being purged from base E:\nodejs\lex
+44 verbose gentlyRm don't care about contents; nuking E:\nodejs\lex\node_modules\profiler
+45 verbose tar unpack C:\Users\mengj_000\AppData\Roaming\npm-cache\profiler\1.2.3\package.tgz
+46 verbose tar unpacking to E:\nodejs\lex\node_modules\profiler
+47 silly gentlyRm E:\nodejs\lex\node_modules\profiler is being purged
+48 verbose gentlyRm don't care about contents; nuking E:\nodejs\lex\node_modules\profiler
+49 silly gunzTarPerm modes [ '777', '666' ]
+50 silly gunzTarPerm extractEntry package.json
+51 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+52 silly gunzTarPerm extractEntry .npmignore
+53 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+54 silly gunzTarPerm extractEntry README.md
+55 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+56 silly gunzTarPerm extractEntry LICENSE
+57 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+58 silly gunzTarPerm extractEntry binding.gyp
+59 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 438 ]
+60 silly gunzTarPerm extractEntry nprof
+61 silly gunzTarPerm modified mode [ 'nprof', 493, 511 ]
+62 silly gunzTarPerm extractEntry profiler.cc
+63 silly gunzTarPerm modified mode [ 'profiler.cc', 420, 438 ]
+64 silly gunzTarPerm extractEntry tools/nprof-stub.js
+65 silly gunzTarPerm modified mode [ 'tools/nprof-stub.js', 420, 438 ]
+66 silly gunzTarPerm extractEntry tools/build-nprof
+67 silly gunzTarPerm modified mode [ 'tools/build-nprof', 493, 511 ]
+68 silly gunzTarPerm extractEntry tools/v8/LICENSE
+69 silly gunzTarPerm modified mode [ 'tools/v8/LICENSE', 420, 438 ]
+70 silly gunzTarPerm extractEntry tools/v8/codemap.js
+71 silly gunzTarPerm modified mode [ 'tools/v8/codemap.js', 420, 438 ]
+72 silly gunzTarPerm extractEntry tools/v8/consarray.js
+73 silly gunzTarPerm modified mode [ 'tools/v8/consarray.js', 420, 438 ]
+74 silly gunzTarPerm extractEntry tools/v8/csvparser.js
+75 silly gunzTarPerm modified mode [ 'tools/v8/csvparser.js', 420, 438 ]
+76 silly gunzTarPerm extractEntry tools/v8/logreader.js
+77 silly gunzTarPerm modified mode [ 'tools/v8/logreader.js', 420, 438 ]
+78 silly gunzTarPerm extractEntry tools/v8/profile.js
+79 silly gunzTarPerm modified mode [ 'tools/v8/profile.js', 420, 438 ]
+80 silly gunzTarPerm extractEntry tools/v8/profile_view.js
+81 silly gunzTarPerm modified mode [ 'tools/v8/profile_view.js', 420, 438 ]
+82 silly gunzTarPerm extractEntry tools/v8/splaytree.js
+83 silly gunzTarPerm modified mode [ 'tools/v8/splaytree.js', 420, 438 ]
+84 silly gunzTarPerm extractEntry tools/v8/tickprocessor-driver.js
+85 silly gunzTarPerm modified mode [ 'tools/v8/tickprocessor-driver.js', 420, 438 ]
+86 silly gunzTarPerm extractEntry tools/v8/tickprocessor.js
+87 silly gunzTarPerm modified mode [ 'tools/v8/tickprocessor.js', 420, 438 ]
+88 info preinstall profiler@1.2.3
+89 silly install resolved []
+90 verbose about to build E:\nodejs\lex\node_modules\profiler
+91 info build E:\nodejs\lex\node_modules\profiler
+92 verbose linkStuff [ false, false, false, 'E:\\nodejs\\lex\\node_modules' ]
+93 info linkStuff profiler@1.2.3
+94 verbose linkBins profiler@1.2.3
+95 verbose link bins [ { nprof: 'nprof' },
+95 verbose link bins   'E:\\nodejs\\lex\\node_modules\\.bin',
+95 verbose link bins   false ]
+96 verbose linkMans profiler@1.2.3
+97 verbose rebuildBundles profiler@1.2.3
+98 info install profiler@1.2.3
+99 verbose unsafe-perm in lifecycle true
+100 info profiler@1.2.3 Failed to exec install script
+101 verbose unlock done using C:\Users\mengj_000\AppData\Roaming\npm-cache\_locks\profiler-afe2e34691b1b616.lock for E:\nodejs\lex\node_modules\profiler
+102 verbose stack Error: profiler@1.2.3 install: `node-gyp rebuild`
+102 verbose stack Exit status 1
+102 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:213:16)
+102 verbose stack     at EventEmitter.emit (events.js:110:17)
+102 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:14:12)
+102 verbose stack     at ChildProcess.emit (events.js:110:17)
+102 verbose stack     at maybeClose (child_process.js:1015:16)
+102 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+103 verbose pkgid profiler@1.2.3
+104 verbose cwd E:\nodejs\lex
+105 error Windows_NT 6.3.9600
+106 error argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "profiler"
+107 error node v0.12.2
+108 error npm  v2.7.4
+109 error code ELIFECYCLE
+110 error profiler@1.2.3 install: `node-gyp rebuild`
+110 error Exit status 1
+111 error Failed at the profiler@1.2.3 install script 'node-gyp rebuild'.
+111 error This is most likely a problem with the profiler package,
+111 error not with npm itself.
+111 error Tell the author that this fails on your system:
+111 error     node-gyp rebuild
+111 error You can get their info via:
+111 error     npm owner ls profiler
+111 error There is likely additional logging output above.
+112 verbose exit [ 1, true ]
+113 verbose unbuild node_modules\profiler
+114 info preuninstall profiler@1.2.3
+115 info uninstall profiler@1.2.3
+116 verbose unbuild rmStuff profiler@1.2.3 from E:\nodejs\lex\node_modules
+117 silly gentlyRm E:\nodejs\lex\node_modules\.bin\nprof.cmd is being gently removed
+118 silly gentlyRm verifying E:\nodejs\lex is an npm working directory
+119 silly gentlyRm containing path E:\nodejs\lex is under npm's control, in E:\nodejs\lex
+120 silly gentlyRm deletion target E:\nodejs\lex\node_modules\.bin\nprof.cmd is under E:\nodejs\lex
+121 verbose gentlyRm vacuuming from E:\nodejs\lex\node_modules\.bin\nprof.cmd up to E:\nodejs\lex
+122 silly vacuum-fs removing E:\nodejs\lex\node_modules\.bin\nprof.cmd
+123 silly vacuum-fs quitting because other entries in E:\nodejs\lex\node_modules\.bin
+124 silly gentlyRm E:\nodejs\lex\node_modules\.bin\nprof is being gently removed
+125 silly gentlyRm verifying E:\nodejs\lex is an npm working directory
+126 silly gentlyRm containing path E:\nodejs\lex is under npm's control, in E:\nodejs\lex
+127 silly gentlyRm deletion target E:\nodejs\lex\node_modules\.bin\nprof is under E:\nodejs\lex
+128 verbose gentlyRm vacuuming from E:\nodejs\lex\node_modules\.bin\nprof up to E:\nodejs\lex
+129 silly vacuum-fs removing E:\nodejs\lex\node_modules\.bin\nprof
+130 silly vacuum-fs removing E:\nodejs\lex\node_modules\.bin
+131 silly vacuum-fs quitting because other entries in E:\nodejs\lex\node_modules
+132 info postuninstall profiler@1.2.3
+133 silly gentlyRm E:\nodejs\lex\node_modules\profiler is being purged from base E:\nodejs\lex
+134 verbose gentlyRm don't care about contents; nuking E:\nodejs\lex\node_modules\profiler
+135 silly vacuum-fs purging E:\nodejs\lex\node_modules\profiler
+136 silly vacuum-fs removing E:\nodejs\lex\node_modules
+137 silly vacuum-fs finished vacuuming up to E:\nodejs\lex

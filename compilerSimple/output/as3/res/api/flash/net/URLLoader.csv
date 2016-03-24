@@ -1,0 +1,10 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+flash.net.URLLoader,flash.events.EventDispatcher,,,,,,as3.URLLoader,,,,,,1,,
+flash.net.URLLoader,,,data,,,*,as3.URLLoader,,data,,,,1,,
+flash.net.URLLoader,,,dataFormat,,,String,as3.URLLoader,,dataFormat,,,,1,,
+flash.net.URLLoader,,,,,load,String,as3.URLLoader,,,,load,,1,,
+flash.net.URLLoaderDataFormat,,1,BINARY,,,String,egret.URLLoaderDataFormat,,BINARY,,,,1,,
+flash.net.URLLoaderDataFormat,,1,TEXT,,,String,egret.URLLoaderDataFormat,,TEXT,,,,1,,
+flash.net.URLLoaderDataFormat,,1,VARIABLES,,,String,egret.URLLoaderDataFormat,,VARIABLES,,,,1,,
+flash.net.URLRequest,,,,,,,as3.URLRequest,,,,,,1,,

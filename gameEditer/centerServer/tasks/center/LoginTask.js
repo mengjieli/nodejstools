@@ -93,11 +93,13 @@ var LoginTask = (function (_super) {
                 }
             }
         }  else if(type == "game") { //游戏客户端
-            var gameName = this.client.ip;//msg.readUTFV();
-            var gameClient = GameClient.addClient(this.client,gameName);
+            var userName = msg.readUTFV();
+            var gameName = this.client.ip;
+            var gameClient = GameClient.addClient(this.client,gameName,userName);
             this.client.hasLogin = true;
             this.client.gameClient = gameClient;
-            this.success();
+            //之后必须再开启 HttpServer 才能返回成功
+            Server.updateServer.startHttpServer(userName,this.client.ip,this);
         } else {
             this.fail(4);
         }

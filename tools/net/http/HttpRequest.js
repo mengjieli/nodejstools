@@ -27,25 +27,27 @@ var HttpRequest = (function (_super) {
     var d = __define, c = HttpRequest;
     p = c.prototype;
 
-    p.get = function (data) {
+    p.get = function (data,method) {
         data = data || {};
         var content = querystring.stringify(data);
         var options = {
             hostname: this.serverIp,
             port: this.port,
             path: this.path,
-            method: 'GET'
+            method: method||'GET'
         };
         var req = http.request(options, this.onConnect.bind(this));
         req.on("error", this.onError.bind(this));
         req.on("end",this.onComplete.bind(this));
         req.on("close",this.onClose.bind(this));
         req.end();
+        this.req = req;
     }
 
     p.onConnect = function (request) {
         request.setEncoding(this.encoding);
         request.on("data", this.onData.bind(this));
+        this.request = request;
     }
 
     p.onData = function (data) {

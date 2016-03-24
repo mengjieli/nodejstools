@@ -31,4 +31,7 @@ Config.getUser = function (name) {
 
 Config.cmds = {};
 
+//所有的客户端更新都从这里开始
+Config.updateServerPort = 9800;
+
 global.Config = Config;
