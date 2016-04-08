@@ -1,24 +1,23 @@
 /**
  更新服务器 httpServer
  **/
+var fork = require('child_process').fork;
 
 function UpdateServer(port) {
-    var fork = require('child_process').fork;
     this.main = fork('./updateServer/CenterHttpServer.js', [port]);
     this.main.on('message', this.onReceiveMessageFromMain.bind(this));
     this.user = {};
-
-    this.startClientHttpServer("limengjie",
-        5553,
-        "/Users/mengjieli/Documents/GameTools/gameEditer/centerServer/data/user/limengjie/update/",
-        "::1");
+    UpdateServer.prototype.port = this.port + 1;
+    //this.startHttpServer("limengjie", "::1");
+    //this.startHttpServer("limengjie", "::ffff:192.168.0.112");
 }
 
-UpdateServer.prototype.startHttpServer = function (user, ip, task) {
+UpdateServer.prototype.startHttpServer = function (user, ip, port, task) {
     if (!this.user[user]) {
-        var port = UpdateServer.prototype.port++;
-        this.user[user] = {"port": port, "gameIPs": []};
-        this.startClientHttpServer(user, port, "./data/user/" + user + "/");
+        port = port || UpdateServer.prototype.port++;
+        this.user[user] = {"port": port, "gameIPs": [], thread: null};
+        var file = new File("./");
+        this.user[user].thread = this.startClientHttpServer(user, port, "./data/user/" + user + "/update/");
     }
     var ips = this.user[user].gameIPs;
     var find = false;
@@ -37,7 +36,21 @@ UpdateServer.prototype.startHttpServer = function (user, ip, task) {
             "task": task
         });
     } else {
-        task.success();
+        if (task) {
+            task.success();
+        }
+    }
+}
+
+UpdateServer.prototype.hasUserHttpServer = function (user) {
+    var thread = this.user[user];
+}
+
+UpdateServer.prototype.closeUserHttpServer = function (user) {
+    var thread = this.user[user];
+    if (thread) {
+        thread.send({"type": "close"});
+        delete this.user[user];
     }
 }
 
@@ -47,7 +60,9 @@ UpdateServer.prototype.startHttpServer = function (user, ip, task) {
  */
 UpdateServer.prototype.onReceiveMessageFromMain = function (msg) {
     if (msg.type == "setTransIPOK") {
-        msg.task.success();
+        if (msg.tastk) {
+            msg.task.success();
+        }
     }
 }
 
@@ -58,9 +73,8 @@ UpdateServer.prototype.onReceiveMessageFromMain = function (msg) {
  * @param dir
  */
 UpdateServer.prototype.startClientHttpServer = function (user, port, dir) {
-    this.user[user].push(fromIP);
-    var fork = require('child_process').fork;
-    var sub = fork('./updateServer/TransHttpServer.js', [port, dir]);
+    console.log("Start http server ",port,dir);
+    return fork('./updateServer/TransHttpServer.js', [port, dir]);
 }
 
 UpdateServer.prototype.port = 9810;

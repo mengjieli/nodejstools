@@ -1,7 +1,9 @@
-require("./../../tools/com/requirecom");
-require("./../../tools/shell/requireshell");
-require("./../../tools/ftp/requireftp");
-require("./../../tools/net/requirenet");
+require("./../../../tools/com/requirecom");
+require("./../../../tools/shell/requireshell");
+require("./../../../tools/ftp/requireftp");
+require("./../../../tools/net/requirenet");
+
+require("./FileSyncClient")
 
 function getArg(index) {
     if (process.argv.length > index) {
@@ -10,40 +12,34 @@ function getArg(index) {
     return null;
 }
 
-var name = getArg(2);
-var port = getArg(3);
-
-console.log(name,port);
-
 var FileSyncServer = (function (_super) {
-    __extends(CenterServer, _super);
+    __extends(FileSyncServer, _super);
 
-    function CenterServer() {
-        _super.call(this, Client);
+    function FileSyncServer() {
+        _super.call(this, FileSyncClient);
 
         this.id = 0;
 
-        //读取配置文件
-        var txt = (new File("./data/User.json")).readContent();
-        Config.initUsers(JSON.parse(txt));
-        txt = (new File("./data/Command.json")).readContent();
-        Config.cmds = JSON.parse(txt);
-
-        setInterval(this.checkClient.bind(this), 30000);
     }
 
-    var d = __define, c = CenterServer;
+    var d = __define, c = FileSyncServer;
     var p = c.prototype;
 
     p.connectClient = function (request) {
         var client = _super.prototype.connectClient.call(this, request);
-        client.init(this, this.id);
-        this.id += 1;
+        //console.log("clients:",this.clients.length);
+        if (false && this.clients.length > 1) {
+            client.close();
+        } else {
+            client.init(this, this.id);
+            this.id += 1;
+        }
         //console.log("client connect");
     }
 
     p.closeClient = function (event) {
         var client = _super.prototype.closeClient.call(this, event);
+        //console.log("close client:", this.clients.length);
     }
 
     p.checkClient = function () {
@@ -60,16 +56,23 @@ var FileSyncServer = (function (_super) {
         }
     }
 
-    return CenterServer;
+    return FileSyncServer;
 
 })(WebSocketServer);
 
+process.on('message', function (m) {
 
-process.on('message', function(m) {
-    console.log('got message from parent: ', m);
 });
 
+var port = getArg(2);
+var dir = getArg(3);
+var userName = getArg(4);
+var httpServerPort = parseInt(getArg(5));
+global.httpServerPort = httpServerPort;
+var file = new File(dir);
+var server = new FileSyncServer();
+server.start(port);
+
+global.name = userName;
 // process 存在 send 方法，用于向父进程发送消息
 process.send({type: 'start'});
-
-var

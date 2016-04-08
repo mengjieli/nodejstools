@@ -15,7 +15,7 @@ var port = getArg(2);
 var server = new HttpServer(port, "");
 server.start();
 
-//console.log("start httpserver",port);
+console.log("start center httpserver",port);
 
 process.on('message', function (msg) {
     if (msg.type == "setTransIP") {

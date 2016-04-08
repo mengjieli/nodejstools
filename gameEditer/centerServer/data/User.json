@@ -8,5 +8,17 @@
     "name":"fengchaopin",
     "password":"111111",
     "ip":"*"
+  },
+  {
+    "name":"192",
+    "password":"*",
+    "ip":"*",
+    "fileSyncServer":{
+      "start":true,
+      "port":11000
+    },
+    "httpServer":{
+      "port":"11001"
+    }
   }
 ]

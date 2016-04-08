@@ -26,3 +26,7 @@
     Array 打印日志
         string 日志信息
 
+通知 文件同步服务器开启 2013
+    uint remoteId
+    string 服务器 ip
+    uint 服务器端口

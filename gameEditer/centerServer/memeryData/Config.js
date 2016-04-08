@@ -20,6 +20,12 @@ Config.initUsers = function (list) {
     }
 }
 
+Config.start = function() {
+    for(var i = 0; i < users.length; i++) {
+        users[i].start();
+    }
+}
+
 Config.getUser = function (name) {
     for (var i = 0; i < users.length; i++) {
         if (users[i].name == name) {
@@ -31,7 +37,11 @@ Config.getUser = function (name) {
 
 Config.cmds = {};
 
-//所有的客户端更新都从这里开始
-Config.updateServerPort = 9800;
+//总服务器的端口号
+Config.socketPort = 16501;
+//更新服务器的端口号从 16600 开始追加
+Config.fileSocketPort = 16606;
+//所有的客户端更新都从这里开始，子更新 http-server 的 port 从 17611 开始追加
+Config.updateServerPort = 17610;
 
 global.Config = Config;

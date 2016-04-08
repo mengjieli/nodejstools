@@ -21,7 +21,7 @@ As3BlockStmt.prototype.printTS = function(before,cls,isFunction,addStmts)
         }
     }
     //console.log(isFunction,cls.currentFunction.name,cls.name,cls.extendClassName);
-    if(isFunction == true && cls.currentFunction && cls.currentFunction.name == cls.name && cls.extendClassName != "")
+    if(!this.isValue && isFunction == true && cls.currentFunction && cls.currentFunction.name == cls.name && cls.extendClassName != "")
     {
         var hasSuper = this.stmts==null?false:this.stmts.hasSuperFunction(cls);
         if(hasSuper == false)

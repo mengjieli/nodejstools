@@ -1,11 +1,11 @@
 {
-        "packageUrl": "http://localhost:5000/",
-        "remoteManifestUrl": "http://localhost:5000/project.manifest",
-        "remoteVersionUrl": "http://localhost:5000/version.manifest",
-  "version": "1.0.0",
-  "engineVersion": "3.6",
-  "groupVersions": {
-    "1": "1.0.1",
-    "1000000": "10000.0.00"
-  }
+	"packageUrl": "http://121.40.18.57/ParkerEmpire/192",
+	"remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+	"remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+	"version": "1.0.0",
+	"engineVersion": "3.6",
+	"groupVersions": {
+		"1": "1.0.1",
+		"1000000": "10000.0.0"
+	}
 }

@@ -131,8 +131,8 @@ As3Function.prototype.printTS = function(before,cls) {
     if (!cls.interfaceFlag) str += "\r\n";
     if(this.params && this.params.list.length && this.params.list[this.params.list.length-1].type.type == 4)
     {
-        cls.currentFunctionMoreArgument = this.params.list[this.params.list.length-1].name;
-        cls.currentFunctionArgumenLength = this.params.list.length - 1;
+        //cls.currentFunctionMoreArgument = this.params.list[this.params.list.length-1].name;
+        //cls.currentFunctionArgumenLength = this.params.list.length - 1;
     }
     var addInit = "";
     if(this.params)

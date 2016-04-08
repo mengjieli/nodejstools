@@ -17,4 +17,10 @@ var dir = getArg(3);
 var server = new HttpServer(port, dir);
 server.start();
 
+process.on('message', function (msg) {
+    if (msg.type == "close") {
+        server.close();
+    }
+});
+
 //console.log("start httpserver",port,dir);

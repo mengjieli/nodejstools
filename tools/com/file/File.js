@@ -166,6 +166,31 @@ global.__define(File.prototype, "size",
     }
 );
 
+global.__define(File.prototype, "changeTime",
+    function () {
+        return this.state.ctime.getTime();
+    },
+    function (val) {
+    }
+);
+
+global.__define(File.prototype, "modifyTime",
+    function () {
+        return this.state.mtime.getTime();
+    },
+    function (val) {
+    }
+);
+
+global.__define(File.prototype, "createTime",
+    function () {
+        return this.state.birthtime.getTime();
+    },
+    function (val) {
+    }
+);
+
+
 File.mkdirsSync = function (dirpath, mode) {
     if (!fs.existsSync(dirpath)) {
         var pathtmp;
