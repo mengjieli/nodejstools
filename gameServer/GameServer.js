@@ -49,5 +49,6 @@ var GameServer = (function (_super) {
 
 var server = new GameServer();
 server.start(9001);
+console.log("start on 9001");
 
 //http://www.linuxidc.com/Linux/2012-05/59457.htm

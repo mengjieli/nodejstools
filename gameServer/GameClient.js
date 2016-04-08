@@ -1,3 +1,6 @@
+
+var fork = require('child_process').fork;
+
 var GameClient = (function (_super) {
     __extends(GameClient, _super);
     function GameClient(connection, big) {
@@ -45,13 +48,19 @@ var GameClient = (function (_super) {
                     } else {
                         this.sendAllAnonce("正在升级版本中...");
                         GameClient.isWorking = true;
+
                         var _this = this;
-                        var updateVersion = new UpdateVersion("../cocos2dxUpdateTool/", function () {
-                            GameClient.isWorking = false;
-                            console.log("updateVersion", updateVersion);
-                            var back = "update game complete:\n" + updateVersion.log;
-                            _this.sendAllAnonce(back);
+                        this.zip = fork("./../gameEditer/flashClient/Start192Update.js",["./../gameEditer/flashClient"]);
+                        this.zip.on('message', function (msg) {
+                            if (msg.type == "complete") {
+                                GameClient.isWorking = false;
+                                console.log(msg.message);
+                                _this.sendAllAnonce(msg.message);
+                            }
                         });
+                        //var updateVersion = new UpdateVersion("../cocos2dxUpdateTool/", function () {
+
+                        //});
                     }
                     break;
             }

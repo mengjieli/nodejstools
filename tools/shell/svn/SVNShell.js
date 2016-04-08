@@ -55,7 +55,7 @@ SVNShell.prototype.isExist = function () {
 SVNShell.prototype.createLocalSVN = function (complete, thisObj) {
     var _this = this;
     var file = new File(this.localdir);
-    if(!file.isExist()) {
+    if (!file.isExist()) {
         File.mkdirsSync(this.localdir);
     }
     new ShellCommand("svnadmin", ["create", this.localdir], function () {
@@ -127,12 +127,12 @@ SVNShell.prototype.checkOut = function (complete, thisObj) {
         if (complete) {
             complete.apply(thisObj);
         }
-    }, null,function(d){
+    }, null, function (d) {
         console.log(d);
 
-    },null,function(e){
+    }, null, function (e) {
         console.log(e);
-    },null);
+    }, null);
 }
 
 /**
@@ -147,12 +147,19 @@ SVNShell.prototype.update = function (complete, thisObj) {
         var start = StringDo.findString(content, "revision ", 0) + "revision ".length;
         var end = StringDo.findString(content, ".", start);
         _this.lastVersion = parseInt(content.slice(start, end));
+        console.log("update content:", content);
         if (complete) {
             complete.apply(thisObj);
         }
     }, null, function (data) {
         content += data;
-    }, null);
+    }, null, function (data) {
+        console.log("[svn update error]",data);
+        //如果出错 cleanUp
+        new ShellCommand("svn", ["cleanup", this.projectdir], function () {
+            _this.update(complete, thisObj);
+        });
+    });
 }
 
 /**

@@ -28,7 +28,6 @@ function getArg(index) {
  * @constructor
  */
 
-
 var direction = path.resolve(process.cwd(), getArg(2));
 if (direction.charAt(direction.length - 1) != "/") {
     direction += "/";
@@ -59,7 +58,7 @@ var FileClient = (function (_super) {
             var bytes = new VByteArray();
             bytes.readFromArray(data);
             var cmd = bytes.readUIntV();
-            console.log("cmd:",cmd);
+            //console.log("cmd:",cmd);
             switch (cmd) {
                 case 0:
                     var cmd = bytes.readUIntV();
@@ -82,7 +81,6 @@ var FileClient = (function (_super) {
                     this.sendFileToServer(bytes);
                     break;
                 case 13:
-                    console.log("save version file");
                     saveVersionFile();
                     updateTime--;
                     if(updateTime <= 0) {
@@ -105,6 +103,11 @@ var FileClient = (function (_super) {
             this.sendData(bytes);
             firstCheck = false;
         } else {
+            updateTime--;
+            if(updateTime <= 0) {
+                this.close();
+                return;
+            }
             //发送版本信息到服务器
             var bytes = new VByteArray();
             bytes.writeUIntV(10);
@@ -185,13 +188,11 @@ var FileClient = (function (_super) {
     }
 
     p.close = function () {
-        console.log("close??!!!");
         this.connection.close();
     }
 
     p.onClose = function () {
         _super.prototype.onClose.call(this);
-        console.log("close!!,send to flash");
     }
 
     p.print = function (type, msg) {
