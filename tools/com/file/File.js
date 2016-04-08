@@ -18,7 +18,7 @@ function File(url) {
     } catch (e) {
         //console.log("File Error",e);
         this.state = null;
-        this.type = global.FileType.NONE;
+        this.type = 0;
         this.end = null;
     }
 }

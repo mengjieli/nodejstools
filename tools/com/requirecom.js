@@ -12,7 +12,6 @@ require("./utils/UTFChange");
 require("./utils/DelayCall");
 require("./utils/MD5");
 
-require("./file/FileType");
 require("./file/File");
 
 require("./event/Event");
