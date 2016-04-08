@@ -6,6 +6,8 @@ var User = (function () {
         this.name = cfg.name;
         this.password = cfg.password;
         this.ip = cfg.ip;
+        this.fileSyncServerConfig = cfg.fileSyncServer;
+        this.httpServerConfig = cfg.httpServer;
         //本地客户端
         this.localClient = null;
         //flash 客户端
@@ -18,6 +20,13 @@ var User = (function () {
         this.statisticsClient = null;
         //gm 客户端
         this.gmClient = null;
+        //同步文件服务器
+        this.updateServer = {
+            "thread": null, //进程
+            "ip": null,
+            "port": null,
+            "ready": false
+        };
 
         //正在执行的任务
         this.tasks = [];
@@ -25,6 +34,15 @@ var User = (function () {
 
     var d = __define, c = User;
     p = c.prototype;
+
+    p.start = function () {
+        if (this.fileSyncServerConfig && this.fileSyncServerConfig.start) {
+            this.checkFileUpdateServer();
+        }
+        if (this.httpServerConfig) {
+            Server.updateServer.startHttpServer(this.name, "", this.httpServerConfig.port || 0, null);
+        }
+    }
 
     /**
      * 验证用户登录信息
@@ -68,7 +86,7 @@ var User = (function () {
         return 0;
     }
 
-    p.loginGameClient = function(gameClient) {
+    p.loginGameClient = function (gameClient) {
         if (this.gameClient) return 23;
         this.gameClient = gameClient;
         gameClient.localClient.addEventListener(Event.CLOSE, function () {
@@ -82,8 +100,8 @@ var User = (function () {
         return 0;
     }
 
-    p.notifyLinkClient = function(bytes) {
-        if(this.flashClient) {
+    p.notifyLinkClient = function (bytes) {
+        if (this.flashClient) {
             this.flashClient.sendData(bytes);
         }
     }
@@ -116,10 +134,48 @@ var User = (function () {
         return true;
     }
 
-    User.getUserByName = function(name) {
+    p.sendFileServerToFlash = function () {
+        if (this.flashClient && this.updateServer.ready) {
+            var msg = new VByteArray();
+            msg.writeUIntV(2013);
+            msg.writeUIntV(0);
+            msg.writeUTFV(this.updateServer.ip);
+            msg.writeUIntV(this.updateServer.port);
+            this.flashClient.sendData(msg);
+        }
+    }
+
+    p.checkFileUpdateServer = function () {
+        var updateServer = this.updateServer;
+        var thread = updateServer.thread;
+        if (!thread) {
+            var ip = "localhost";
+            var port = this.fileSyncServerConfig && this.fileSyncServerConfig.port ? this.fileSyncServerConfig.port : Config.fileSocketPort++;
+            updateServer.ip = ip;
+            updateServer.port = port;
+            var fork = require('child_process').fork;
+            updateServer.thread = thread = fork('./fileSyncServer/FileSyncServer.js',
+                [updateServer.port, "./data/user/" + this.name + "/update/", this.name,this.httpServerConfig?this.httpServerConfig.port:Config.updateServerPort]);
+            updateServer.ready = false;
+            var _this = this;
+            thread.on('message', function (msg) {
+                if (msg.type == "start") {
+                    updateServer.ready = true;
+                    _this.sendFileServerToFlash();
+                }
+            });
+            thread.on("exit", function () {
+                updateServer.thread = null;
+                updateServer.ready = false;
+                _this.checkFileUpdateServer();
+            });
+        }
+    }
+
+    User.getUserByName = function (name) {
         var list = User.list;
-        for(var i = 0,len = list.length; i < len; i++) {
-            if(list[i].name == name) {
+        for (var i = 0, len = list.length; i < len; i++) {
+            if (list[i].name == name) {
                 return list[i];
             }
         }

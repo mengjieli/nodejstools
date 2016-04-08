@@ -16,7 +16,7 @@ function File(url) {
             this.direction = this.url.slice(0, this.url.length - this.end.length - 1 - this.name.length);
         }
     } catch (e) {
-        console.log("File Error",e);
+        //console.log("File Error",e);
         this.state = null;
         this.type = global.FileType.NONE;
         this.end = null;
@@ -158,6 +158,39 @@ File.prototype.print = function () {
     console.log(this.name);
 }
 
+global.__define(File.prototype, "size",
+    function () {
+        return this.state.size;
+    },
+    function (val) {
+    }
+);
+
+global.__define(File.prototype, "changeTime",
+    function () {
+        return this.state.ctime.getTime();
+    },
+    function (val) {
+    }
+);
+
+global.__define(File.prototype, "modifyTime",
+    function () {
+        return this.state.mtime.getTime();
+    },
+    function (val) {
+    }
+);
+
+global.__define(File.prototype, "createTime",
+    function () {
+        return this.state.birthtime.getTime();
+    },
+    function (val) {
+    }
+);
+
+
 File.mkdirsSync = function (dirpath, mode) {
     if (!fs.existsSync(dirpath)) {
         var pathtmp;
@@ -189,7 +222,7 @@ var FileFormat = {
 
 File.mkdirsSync("$$$tmpFileType$$$");
 FileType.DIRECTION = fs.statSync("$$$tmpFileType$$$").mode;
-(new File("$$$tmpFileType$$$")).delete();
+//(new File("$$$tmpFileType$$$")).delete();
 
 global.FileFormat = FileFormat;
 global.File = File;

@@ -1,0 +1,9 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+flash.display.BitmapData,flash.display.DisplayObjectContainer,,,,,,as3.BitmapData,,,,,,1,,
+flash.display.BitmapData,,,width,1,,,as3.BitmapData,,,,,,1,,
+flash.display.BitmapData,,,height,1,,,as3.BitmapData,,,,,,1,,
+flash.display.BitmapData,,,,,lock,void,as3.BitmapData,,,,,,1,,
+flash.display.BitmapData,,,,,unlock,void,as3.BitmapData,,,,,,1,,
+flash.display.BitmapData,,,,,clone,flash.display.BitmapData,as3.BitmapData,,,,,,1,,
+flash.display.BitmapData,,,,,copyPixels,void,as3.BitmapData,,,,,,1,,

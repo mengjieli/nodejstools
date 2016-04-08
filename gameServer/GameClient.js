@@ -1,3 +1,6 @@
+
+var fork = require('child_process').fork;
+
 var GameClient = (function (_super) {
     __extends(GameClient, _super);
     function GameClient(connection, big) {
@@ -16,7 +19,6 @@ var GameClient = (function (_super) {
         bytes.writeUIntV(id);
         bytes.writeUTFV("你的 id 是" + id);
         this.sendData(new Buffer(bytes.data));
-        setInterval(this.update.bind(this));
     }
 
     p.sendData = function (buffer) {
@@ -42,33 +44,26 @@ var GameClient = (function (_super) {
                     break;
                 case 105:
                     if (GameClient.isWorking) {
-                        this.sendAnonce("正在升级版本中... \n如果卡住了多等一会(ftp上传超时),更新程序会自动重试的,耐心等一会");
+                        this.sendAnonce("正在升级版本中...");
                     } else {
-                        this.sendAllAnonce("正在升级版本中... \n如果卡住了多等一会(ftp上传超时),更新程序会自动重试的,耐心等一会");
+                        this.sendAllAnonce("正在升级版本中...");
                         GameClient.isWorking = true;
+
                         var _this = this;
-                        var updateVersion = new UpdateVersion("../cocos2dxUpdateTool/", function () {
-                            GameClient.isWorking = false;
-                            console.log("updateVersion", updateVersion);
-                            var back = "update game complete:\n" + updateVersion.log;
-                            _this.sendAllAnonce(back);
+                        this.zip = fork("./../gameEditer/flashClient/Start192Update.js",["./../gameEditer/flashClient"]);
+                        this.zip.on('message', function (msg) {
+                            if (msg.type == "complete") {
+                                GameClient.isWorking = false;
+                                console.log(msg.message);
+                                _this.sendAllAnonce(msg.message);
+                            }
                         });
-                        GameClient.updateTime = (new Date()).getTime();
+                        //var updateVersion = new UpdateVersion("../cocos2dxUpdateTool/", function () {
+
+                        //});
                     }
                     break;
             }
-        }
-    }
-
-    p.update = function() {
-        if(GameClient.isWorking) {
-            var now = (new Date()).getTime();
-            var gap = Math.floor((now - GameClient.updateTime)/1000);
-            var hour = gap>3600?Math.floor(gap/3600):0;
-            var minute = Math.floor((gap%3600)/60);
-            var second = gap%60;
-            var content = (hour?hour+"小时":"") + (minute<10?"0":"") + minute + "分" + (second<10?"0":"") + second + "秒";
-            this.sendAllAnonce("正在升级版本中... \n如果卡住了多等一会(ftp上传超时),更新程序会自动重试的,耐心等一会\n已用时:" + content);
         }
     }
 

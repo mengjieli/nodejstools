@@ -19,7 +19,9 @@ ZipShell.compress = function (files, outzip, complete, thisObj) {
     });
 }
 
-global.ZipShell = ZipShell;var ZipShell = function () {
+global.ZipShell = ZipShell;
+
+var ZipShell = function () {
 
 }
 
@@ -31,7 +33,7 @@ global.ZipShell = ZipShell;var ZipShell = function () {
  * @param thisObj
  */
 ZipShell.compress = function (files, outzip, complete, thisObj) {
-    var args = ["-r", outzip];
+    var args = [ outzip];
     args = args.concat(files);
     new ShellCommand("zip", args, function () {
         if (complete) {

@@ -1,0 +1,125 @@
+[
+  {
+    "url": "data",
+    "desc": "数据结构",
+    "initLoad": {
+      "name": "Data",
+      "api": "refreshDataResource"
+    },
+    "quickMenu": [
+      {
+        "icon": "assets/ui/button/add.png",
+        "toolTip": "添加数据",
+        "click": {
+          "name": "Data",
+          "api": "addData"
+        }
+      }
+    ],
+    "menu": [
+      {
+        "name": "添加模块",
+        "click": {
+          "name": "Data",
+          "api": "addData"
+        }
+      }
+    ]
+  },
+  {
+    "url": "config",
+    "desc": "配置文件"
+  },
+  {
+    "url": "model",
+    "desc": "模块",
+    "openIcon": "assets/directionView/folder_src_open.png",
+    "closeIcon": "assets/directionView/folder_src.png"
+  },
+  {
+    "url": "model/helpFunc",
+    "desc": "辅助函数"
+  },
+  {
+    "url": "model/game",
+    "desc": "游戏模板"
+  },
+  {
+    "url": "art",
+    "desc": "美术资源"
+  },
+  {
+    "url": "art/image",
+    "desc": "图片"
+  },
+  {
+    "url": "art/image/spriteSheet",
+    "desc": "SpriteSheet"
+  },
+  {
+    "url": "art/image/uisource",
+    "desc": "控件原图"
+  },
+  {
+    "url": "art/image/uisource/panelbg",
+    "desc": "面板底框"
+  },
+  {
+    "url": "art/image/uisource/button",
+    "desc": "按钮",
+    "initLoad": {
+      "name": "Image",
+      "api": "refreshUISource"
+    },
+    "quickMenu": [
+      {
+        "icon": "assets/ui/button/refresh.png",
+        "toolTip": "刷新",
+        "click": {
+          "name": "Image",
+          "api": "refreshUISource"
+        }
+      }
+    ]
+  },
+  {
+    "url": "view",
+    "desc": "视图",
+    "initLoad": {
+      "name": "View",
+      "api": "refreshDirection"
+    },
+    "quickMenu": [
+      {
+        "icon": "assets/ui/button/add.png",
+        "toolTip": "添加视图",
+        "click": {
+          "name": "View",
+          "api": "add"
+        }
+      }
+    ]
+  },
+  {
+    "url": "view/uiskin",
+    "desc": "控件样式"
+  },
+  {
+    "url":"view/uiskin/button",
+    "desc":"按钮",
+    "initLoad": {
+      "name": "ButtonStyle",
+      "api": "refreshDirection"
+    },
+    "quickMenu": [
+      {
+        "icon": "assets/ui/button/add.png",
+        "toolTip": "添加按钮样式",
+        "click": {
+          "name": "ButtonStyle",
+          "api": "add"
+        }
+      }
+    ]
+  }
+]

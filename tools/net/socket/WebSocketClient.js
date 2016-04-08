@@ -18,7 +18,7 @@ var WebScoektClient = (function () {
     }
 
     p.onConnect = function(connection){
-        console.log('[connect]',"ws://" + this.ip + ":" + this.port + "/");
+        //console.log('[connect]',"ws://" + this.ip + ":" + this.port + "/");
         this.connection = connection;
         connection.on('error',this.onError.bind(this));
         connection.on('close',this.onClose.bind(this));

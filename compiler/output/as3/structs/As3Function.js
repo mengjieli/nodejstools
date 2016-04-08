@@ -106,8 +106,9 @@ As3Function.prototype.printTS = function(before,cls) {
         }[(this.public)] + " ";
         if(this.static) str += "static ";
     }
-    if (!cls.interfaceFlag)
+    if (!cls.interfaceFlag) {
         str += this.get || this.set ? (this.get ? "get " : "set ") : "";
+    }
     if (!cls.interfaceFlag || (cls.interfaceFlag && !this.set  && !this.get))
     {
         str += (cls.name == this.name ? "constructor" : (this.namespace!=""?this.namespace+"_":"") + this.name) + "(";
@@ -120,14 +121,18 @@ As3Function.prototype.printTS = function(before,cls) {
     }
     else
     {
+        if(cls.interfaceSetGet[this.name]) {
+            return "";
+        }
+        cls.interfaceSetGet[this.name] = true;
         if(this.set) str += (this.namespace!=""?this.namespace+"_":"") + this.name + ":" + this.params.list[0].type.printTS("",cls);
         else str += (this.namespace!=""?this.namespace+"_":"") + this.name + ":" + this.returnType.printTS("",cls);
     }
     if (!cls.interfaceFlag) str += "\r\n";
     if(this.params && this.params.list.length && this.params.list[this.params.list.length-1].type.type == 4)
     {
-        cls.currentFunctionMoreArgument = this.params.list[this.params.list.length-1].name;
-        cls.currentFunctionArgumenLength = this.params.list.length - 1;
+        //cls.currentFunctionMoreArgument = this.params.list[this.params.list.length-1].name;
+        //cls.currentFunctionArgumenLength = this.params.list.length - 1;
     }
     var addInit = "";
     if(this.params)

@@ -1,0 +1,11 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+flash.display.Sprite,flash.display.DisplayObjectContainer,,,,,,as3.Sprite,,,,,,1,,
+flash.display.Sprite,,,buttonMode,,,Boolean,as3.Sprite,,,,,,1,,
+flash.display.Sprite,,,dropTarget,,,flash.display.DisplayObject,as3.Sprite,,,,,,0,,
+flash.display.Sprite,,,graphics,,,flash.display.Graphics,as3.Sprite,,,,,,1,,
+flash.display.Sprite,,,hitArea,,,flash.display.Sprite,as3.Sprite,,,,,,0,,
+flash.display.Sprite,,,soundTransform,,,flash.media.SoundTransform,as3.Sprite,,,,,,0,,
+flash.display.Sprite,,,useHandCursor,,,Boolean,as3.Sprite,,,,,,0,,
+flash.display.Sprite,,,,,startDrag,void,,1,,,as3.startDrag,b0,1,,
+flash.display.Sprite,,,,,stopDrag,void,,1,,,as3.stopDrag,b0,1,,

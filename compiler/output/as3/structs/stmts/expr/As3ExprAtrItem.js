@@ -348,8 +348,10 @@ As3ExprAtrItem.prototype.printTS = function(before,cls,info,start,atr)
                 }
                 else
                 {
-                    if(info.last && info.last.subType == "var") info.str = info.str + ".apply(null,[" + this.val.printTS("",cls) + "])";
-                    else info.str = info.str + "(" + this.val.printTS("",cls) + ")";
+                    if(info.last && info.last.subType == "var")
+                        info.str = info.str + ".apply(null,[" + this.val.printTS("",cls) + "])";
+                    else
+                        info.str = info.str + "(" + this.val.printTS("",cls) + ")";
                 }
             }
         }

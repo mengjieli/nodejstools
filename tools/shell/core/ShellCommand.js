@@ -10,7 +10,7 @@ var spawn = require('child_process').spawn;
  * @param stdoutThisObj
  * @constructor
  */
-var ShellCommand = function (cmd, params, exitBack, exitThisObj, stdoutBack, stdoutThisObj,stderrBack,stderrThisObj) {
+var ShellCommand = function (cmd, params, exitBack, exitThisObj, stdoutBack, stdoutThisObj, stderrBack, stderrThisObj) {
     free = spawn(cmd, params);
 
     // 捕获标准输出并将其打印到控制台
@@ -30,11 +30,12 @@ var ShellCommand = function (cmd, params, exitBack, exitThisObj, stdoutBack, std
 
     // 注册子进程关闭事件
     free.on('exit', function (code, signal) {
-        if(exitBack) {
-            exitBack.apply(exitThisObj, [code]);
+        if (exitBack) {
+            exitBack.apply(exitThisObj, [code, free]);
         }
         //console.log('shell eixt ,exit: ' + code);
     });
+    return free;
 }
 
 global.ShellCommand = ShellCommand;

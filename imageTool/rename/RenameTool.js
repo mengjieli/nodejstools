@@ -1,8 +1,8 @@
 require("./../../tools/com/requirecom");
 require("./../../tools/shell/requireshell");
 
-var startName = "1204001_";
-var startIndex = 36;
+var startName = "dieEft_";
+var startIndex = 0;
 var maxLength = 3;
 var ends = ["png"];
 var file = new File("src/");

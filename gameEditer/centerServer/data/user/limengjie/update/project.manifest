@@ -1,0 +1,26 @@
+{
+	"packageUrl": "http://d.yo9yo9.com/ParkerEmpire/qa/",
+	"remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/qa/project.manifest",
+	"remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/qa/version.manifest",
+	"version": "1.0.0",
+	"groupVersions": {
+		"1": "1.0.1",
+		"1000000": "10000.0.0"
+	},
+	"engineVersion": "3.6",
+	"assets": {
+		"update1": {
+			"path": "update1.zip",
+			"md5": "",
+			"compressed": true,
+			"group": "1"
+		},
+		"update1000000": {
+			"path": "update1000000.zip",
+			"md5": "",
+			"compressed": true,
+			"group": "1000000"
+		}
+	},
+	"searchPaths": []
+}

@@ -169,4 +169,27 @@ StringDo.jumpPackage = function (content, start) {
     return index;
 }
 
+
+//替换某些字符串为指定的字符串
+StringDo.replaceString = function (str, findStr, tstr) {
+    for (var i = 0; i < str.length; i++) {
+        if (StringDo.hasStringAt(str, [findStr], i)) {
+            str = str.slice(0, i) + tstr + str.slice(i + findStr.length, str.length);
+            i--;
+        }
+    }
+    return str;
+}
+
+//某个位置是否含有指定字符串之一
+StringDo.hasStringAt = function (str, hstrs, pos) {
+    for (var i = 0; i < hstrs.length; i++) {
+        var hstr = hstrs[i];
+        if (str.length - pos >= hstr.length && str.slice(pos, pos + hstr.length) == hstr) {
+            return true;
+        }
+    }
+    return false;
+}
+
 global.StringDo = StringDo;

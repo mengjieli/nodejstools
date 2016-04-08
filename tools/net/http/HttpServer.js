@@ -1,5 +1,5 @@
 var http = require("http");
-var url = require('url');
+var URL = require('url');
 var query = require("querystring");    //解析POST请求
 
 var mine = {
@@ -12,6 +12,7 @@ var mine = {
     "js": "text/javascript",
     "json": "application/json",
     "pdf": "application/pdf",
+    "zip": "application/x-zip-compressed",
     "png": "image/png",
     "svg": "image/svg+xml",
     "swf": "application/x-shockwave-flash",
@@ -24,6 +25,7 @@ var mine = {
 };
 
 var HttpServer = function (port, root) {
+    this.trans = {};
     this.port = port;
     this.root = root || ".";
     if (this.root.charAt(this.root.length - 1) == "/") {
@@ -31,39 +33,121 @@ var HttpServer = function (port, root) {
     }
 }
 
+HttpServer.prototype.getRequestIP = function (req) {
+    return req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress;
+};
+
 HttpServer.prototype.onReciveRequest = function (request, response) {
-    if (request.method == "GET") {
-        this.sendResource(request, response);
+    if (request.method == "GET" || request.method == "HEAD") {
+        var ip = this.getRequestIP(request);
+        if (this.trans[ip]) {
+            this.sendResourceFrom(request, response, this.trans[ip].server, this.trans[ip].port);
+        } else {
+            this.sendResource(request, response);
+        }
     } else if (request.method == "POST") {
         this.receivePost(request, response);
+    } else {
     }
 }
 
+/**
+ * 设置中转服务器，如果是这个 ip 来的请求就转到另外一个服务器
+ * @param ip
+ * @param toServer
+ * @param toPort
+ */
+HttpServer.prototype.setTransIP = function (ip, toServer, toPort) {
+    this.trans[ip] = {
+        server: toServer,
+        port: toPort
+    }
+}
+
+/**
+ * 从其他服务器请求资源之后再转发
+ * @param request
+ * @param response
+ * @param server
+ * @param port
+ */
+HttpServer.prototype.sendResourceFrom = function (request, response, server, port) {
+    var url = request.url;
+    url = url.split("?")[0];
+    var httpRequest = new HttpRequest(server, port, url);
+    httpRequest.localRequest = request;
+    httpRequest.localResponse = response;
+    httpRequest.encoding = "binary";
+    var _this = this;
+    httpRequest.addEventListener(Event.CLOSE, function (event) {
+        _this.sendResourceWidthData(event.currentTarget.localRequest, event.currentTarget.localResponse, event.currentTarget.data.lenth == 0 ? null : event.currentTarget.data);
+    });
+    httpRequest.get(null, request.method);
+}
+
 HttpServer.prototype.start = function () {
-    http.createServer(this.onReciveRequest.bind(this)).listen(this.port);
+    this.server = http.createServer(this.onReciveRequest.bind(this));
+    this.server.listen(this.port);
 }
 
 HttpServer.prototype.sendResource = function (request, response) {
     var url = request.url;
     url = url.split("?")[0];
     var file = new File(this.root + url);
-    console.log("[http-server]", this.root + url, file.isExist());
     if (!file.isExist()) {
+        //console.log("[http-server]", this.root + url, " [Error File not exist!]" + "from :" + this.getRequestIP(request));
         response.writeHead(404, {
             'Content-Type': 'text/plain'
         });
-        response.write("This request URL " + url.parse(request.url).pathname + " was not found on this server.");
+        response.write("This request URL " + URL.parse(request.url).pathname + " was not found on this server. from \"" + this.getRequestIP(request) + "\"");
         response.end();
     } else {
         var content = file.readContent("binary");
         end = request.url.split("?")[0];
         end = end.split(".")[end.split(".").length - 1];
         response.writeHead(200, {
-            'Content-Type': mine[end],
+            "Content-Length": file.size,
+            "Content-Type": mine[end],
+            //"Access-Control-Allow-Origin": "*",
+            "Accept-Ranges": "bytes",
+            "Last-Modified":file.state.mtime.toString()
+        });
+        if (request.method != "HEAD") {
+            response.write(content, "binary");
+        }
+        response.end();
+    }
+}
+
+HttpServer.prototype.sendResourceWidthData = function (request, response, data) {
+    var url = request.url;
+    url = url.split("?")[0];
+    if (request.method == "GET" && !data) {
+        console.log("[http-server]", this.root + url, " [Error File not exist!]");
+        response.writeHead(404, {
+            'Content-Type': 'text/plain'
+        });
+        response.write("This request URL " + URL.parse(request.url).pathname + " was not found on this server.");
+        response.end();
+    } else {
+        end = request.url.split("?")[0];
+        end = end.split(".")[end.split(".").length - 1];
+        var type = mine[end];
+        if(type == undefined) {
+            type = "application/x-ms-" + end;
+        }
+        response.writeHead(200, {
+            "Content-Type": type,
             "Access-Control-Allow-Origin": "*",
+            "Content-Length": data.length,
             "Accept-Ranges": "bytes"
         });
-        response.write(content, "binary");
+        if (request.method != "HEAD") {
+            response.write(data, "binary");
+        }
         response.end();
     }
 }
@@ -73,14 +157,20 @@ HttpServer.prototype.sendContent = function (request, response, content) {
         response.writeHead(404, {
             'Content-Type': 'text/plain'
         });
-        response.write("This request URL " + url.parse(request.url).pathname + " was not found on this server.");
+        response.write("This request URL " + URL.parse(request.url).pathname + " was not found on this server.");
         response.end();
     } else {
         end = request.url.split("?")[0];
         end = end.split(".")[end.split(".").length - 1];
+        var type = mine[end];
+        if(type == undefined) {
+            type = "application/x-ms-" + end;
+        }
+        type = "text/html";
         response.writeHead(200, {
-            'Content-Type': mine[end],
+            "Content-Type": type,
             "Access-Control-Allow-Origin": "*",
+            "Content-Length": data.length,
             "Accept-Ranges": "bytes"
         });
         response.write(content, "binary");
@@ -111,6 +201,11 @@ HttpServer.prototype.sendMessage = function (response, message) {
     });
     response.write(message);
     response.end();
+}
+
+HttpServer.prototype.close = function () {
+    this.server.removeAllListeners();
+    this.server.close();
 }
 
 global.HttpServer = HttpServer;

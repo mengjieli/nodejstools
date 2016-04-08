@@ -11,7 +11,6 @@ for(var i = 0; i < list.length; i++) {
     url = url.slice(0,url.length - 3);
     require(url);
 }
-var socketPort = 9500;
 
 var CenterServer = (function (_super) {
     __extends(CenterServer, _super);
@@ -27,7 +26,12 @@ var CenterServer = (function (_super) {
         txt = (new File("./data/Command.json")).readContent();
         Config.cmds = JSON.parse(txt);
 
-        setInterval(this.checkClient.bind(this), 30000);
+        //启动更新服务器
+        var updateServer = new UpdateServer(Config.updateServerPort);
+        Server.updateServer = updateServer;
+        //setInterval(this.checkClient.bind(this), 30000);
+
+        Config.start();
     }
 
     var d = __define, c = CenterServer;
@@ -63,4 +67,5 @@ var CenterServer = (function (_super) {
 })(WebSocketServer);
 
 var server = new CenterServer();
-server.start(socketPort);
+console.log("Center Server on " + Config.socketPort);
+server.start(Config.socketPort);

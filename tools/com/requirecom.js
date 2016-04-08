@@ -10,6 +10,7 @@ require("./utils/PNGDecoder");
 require("./utils/PNGEncoder");
 require("./utils/UTFChange");
 require("./utils/DelayCall");
+require("./utils/MD5");
 
 require("./file/FileType");
 require("./file/File");

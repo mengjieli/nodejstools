@@ -27,7 +27,7 @@ var LoginTask = (function (_super) {
                 var code = user.isvalid(name, password, ip);
                 if (code == 0) {
                     code = user.loginLocal(this.client);
-                    if(code == 0) {
+                    if (code == 0) {
                         this.client.hasLogin = true;
                         this.client.user = user;
                         this.success();
@@ -49,7 +49,7 @@ var LoginTask = (function (_super) {
                 var code = user.isvalid(name, password, ip);
                 if (code == 0) {
                     code = user.loginEditer(this.client);
-                    if(code == 0) {
+                    if (code == 0) {
                         this.client.hasLogin = true;
                         this.client.user = user;
                         this.success();
@@ -67,9 +67,9 @@ var LoginTask = (function (_super) {
                 this.client.hasLogin = true;
                 this.success();
             } else {
-                this.fail(name != "admin"?1:2);
+                this.fail(name != "admin" ? 1 : 2);
             }
-        } else if(type == "client") { //Flash 客户端
+        } else if (type == "client") { //Flash 客户端
             var name = msg.readUTFV();
             var password = msg.readUTFV();
             var ip = msg.readUTFV();
@@ -80,10 +80,12 @@ var LoginTask = (function (_super) {
                 var code = user.isvalid(name, password, ip);
                 if (code == 0) {
                     code = user.loginFlashClient(this.client);
-                    if(code == 0) {
+                    if (code == 0) {
                         this.client.hasLogin = true;
                         this.client.user = user;
                         this.success();
+                        user.checkFileUpdateServer();
+                        user.sendFileServerToFlash();
                         this.flashClientLoginNotify(user);
                     } else {
                         this.fail(code);
@@ -92,19 +94,21 @@ var LoginTask = (function (_super) {
                     this.fail(code);
                 }
             }
-        }  else if(type == "game") { //游戏客户端
-            var gameName = this.client.ip;//msg.readUTFV();
-            var gameClient = GameClient.addClient(this.client,gameName);
+        } else if (type == "game") { //游戏客户端
+            var userName = msg.readUTFV();
+            var gameName = this.client.ip;
+            var gameClient = GameClient.addClient(this.client, gameName, userName);
             this.client.hasLogin = true;
             this.client.gameClient = gameClient;
-            this.success();
+            //之后必须再开启 HttpServer 才能返回成功
+            Server.updateServer.startHttpServer(userName, this.client.ip, 0, this);
         } else {
             this.fail(4);
         }
     }
 
-    p.flashClientLoginNotify = function(user) {
-        if(user.gameClient) {
+    p.flashClientLoginNotify = function (user) {
+        if (user.gameClient) {
             var notify = new VByteArray();
             notify.writeUIntV(2007);
             notify.writeUIntV(0);

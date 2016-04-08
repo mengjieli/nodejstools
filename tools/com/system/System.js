@@ -16,10 +16,14 @@ for(var key in network) {
         netKey = key;
     }
 }
-for (var i = 0; i < os.networkInterfaces()[netKey].length; i++) {
-    if (os.networkInterfaces()[netKey][i].family == 'IPv4') {
-        IPv4 = os.networkInterfaces()[netKey][i].address;
+try {
+    for (var i = 0; i < os.networkInterfaces()[netKey].length; i++) {
+        if (os.networkInterfaces()[netKey][i].family == 'IPv4') {
+            IPv4 = os.networkInterfaces()[netKey][i].address;
+        }
     }
+} catch(e) {
+
 }
 System.platform = os.platform().slice(0, 3) == "win" ? System.WINDOWS : System.MACOS;
 System.hostName = hostName;

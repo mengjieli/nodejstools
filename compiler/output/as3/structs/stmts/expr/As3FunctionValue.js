@@ -87,6 +87,7 @@ As3FunctionValue.prototype.printTS = function(before,cls,info,start)
         cls.currentFunctionMoreArgument = this.params.list[this.params.list.length-1].name;
         cls.currentFunctionArgumenLength = this.params.list.length - 1;
     }
+    this.block.isValue = true;
     str += this.block.printTS(before,cls,true);
     cls.functionStack.pop();
     cls.currentFunctionMoreArgument = null;
@@ -94,6 +95,9 @@ As3FunctionValue.prototype.printTS = function(before,cls,info,start)
     info.str = str;
     info.type = new As3Type(0,"Function");
     info.last = new FunctionData(false,false,this.name,this.returnType);
+    while(str.charAt(str.length-1) == "\n" || str.charAt(str.length-1) == "\r") {
+        str = str.slice(0,str.length-1);
+    }
     return str;
 }
 

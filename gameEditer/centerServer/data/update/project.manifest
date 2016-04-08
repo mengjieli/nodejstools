@@ -1,0 +1,10 @@
+{
+            "packageUrl": "http://{$ip}:{$port}/",
+            "remoteManifestUrl": "http://{$ip}:{$port}/project.manifest",
+            "remoteVersionUrl": "http://{$ip}:{$port}/version.manifest",
+            "version": "1.0.0",
+            "groupVersions": {},
+            "engineVersion": "3.6",
+            "assets": {},
+            "searchPaths": []
+        }

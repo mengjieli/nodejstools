@@ -37,9 +37,10 @@ As3Params.prototype.printTS = function(before,cls,initFlag)
     {
         if(this.list[i].type.type == 4)
         {
-            continue;
+            str += ",..." + this.list[i].name;
+        } else {
+            str += this.list[i].printTS(before,cls,initFlag) + (i<this.list.length-(this.list[this.list.length-1].type.type==4?2:1)?",":"");
         }
-        str += this.list[i].printTS(before,cls,initFlag) + (i<this.list.length-(this.list[this.list.length-1].type.type==4?2:1)?",":"");
     }
     return str;
 }

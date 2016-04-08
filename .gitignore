@@ -19,3 +19,6 @@ imageTool/rename/out/
 imageTool/rename/src/
 node_modules/
 gameServer/
+gameEditer/centerServer/data/user/192/
+gameEditer/centerServer/data/user/limengjie/
+gameEditer/flashClient/svn/

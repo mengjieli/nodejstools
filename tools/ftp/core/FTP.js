@@ -36,10 +36,6 @@ global.FTP.prototype.connect = function (connectBack, thisObj, args) {
     if (!this.client) {
         this.client = new Client();
         var _this = this;
-        //console.log(this.client.options)
-        //for(var key in this.client) {
-        //    console.log("[client] ",key);
-        //}
         this.client.on("ready", function () {
             _this.isconnect = true;
             if (connectBack) {
@@ -51,7 +47,6 @@ global.FTP.prototype.connect = function (connectBack, thisObj, args) {
         host: this.host,
         user: this.user,
         password: this.password
-
     });
 }
 
@@ -119,25 +114,19 @@ global.FTP.prototype.upload = function (file, ftpurl, complete, thisObj, tryTime
             }
         };
         var putTimeOut = function () {
-            console.log("upload time out :", ftpurl);
-            if(delayCall) {
+            if (delayCall) {
                 delayCall.dispose();
                 delayCall = null;
             }
-            _this.abort(function(){
+            _this.abort(function () {
                 retryPut();
             });
-            client.logout(function(){
+            client.logout(function () {
                 retryPut();
             });
-            //retryPut();
-            //client.logout(retryPut);
-            //retryPut();
-            //client.logout(retryPut);
-            //delayCall = new DelayCall(3000, putTimeOut);
         }
         var retryPut = function () {
-            if(delayCall) {
+            if (delayCall) {
                 delayCall.dispose();
                 delayCall = null;
             }
@@ -152,7 +141,7 @@ global.FTP.prototype.upload = function (file, ftpurl, complete, thisObj, tryTime
             _this.upload(file, ftpurl, complete, thisObj, tryTime);
         }
         var delayCall;// = new DelayCall(3000, putTimeOut);
-        client.put(file, ftpurl, putComplete,retryPut);
+        client.put(file, ftpurl, putComplete, retryPut);
     }, this);
 }
 
@@ -297,16 +286,16 @@ global.FTP.prototype.printAPI = function () {
     }
 }
 
-global.FTP.prototype.abort = function(func,thisObj) {
-    if(!this.isconnect) {
-        if(func) {
+global.FTP.prototype.abort = function (func, thisObj) {
+    if (!this.isconnect) {
+        if (func) {
             func.apply(thisObj);
         }
         return;
     }
     var client = this.client;
-    client.abort(function(){
-        if(func) {
+    client.abort(function () {
+        if (func) {
             func.apply(thisObj);
         }
     });

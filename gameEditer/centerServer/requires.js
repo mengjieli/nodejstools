@@ -1,5 +1,7 @@
-require("./Config");
-require("./User");
+require("./memeryData/Config");
+require("./memeryData/User");
+require("./memeryData/Server");
 require("./Client");
 require("./GameClient");
-require("./TaskBase");
+require("./tasks/TaskBase");
+require("./updateServer/UpdateServer");

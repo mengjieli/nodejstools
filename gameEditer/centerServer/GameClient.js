@@ -1,9 +1,10 @@
 var GameClient = (function () {
 
-    function GameClient(id, client, gameName) {
+    function GameClient(id, client, gameName,userName) {
         this.id = id;
         this.client = client;
         this.gameName = gameName;
+        this.userName = userName;
         this.client.addEventListener(Event.CLOSE, this.onClientClose, this);
 
         console.log("new game client ", gameName, this.id);
@@ -53,8 +54,8 @@ var GameClient = (function () {
      * @param gameName
      * @returns {GameClient}
      */
-    GameClient.addClient = function (client, gameName) {
-        var client = new GameClient(GameClient.id++, client, gameName);
+    GameClient.addClient = function (client, gameName,userName) {
+        var client = new GameClient(GameClient.id++, client, gameName,userName);
         GameClient.clients.push(client);
         return client;
     }

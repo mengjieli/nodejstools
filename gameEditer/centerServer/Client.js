@@ -6,7 +6,7 @@ var Client = (function (_super) {
         _super.call(this, connection, big);
         this.type = "binary";
         //console.log(connection.remoteAddress);
-        this.ip = connection.remoteAddress.split(":")[connection.remoteAddress.split(":").length-1];
+        this.ip = connection.remoteAddress;//.split(":")[connection.remoteAddress.split(":").length-1];
     }
 
     var d = __define, c = Client;

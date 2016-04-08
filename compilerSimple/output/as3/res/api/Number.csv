@@ -1,0 +1,13 @@
+﻿类,继承类,静态,属性,属性get/set,函数,类型(属性类型或者函数返回类型),转换类,是否需要删前缀,转换属性,转换属性格式,转换函数,转换函数参数,转换是否实现,错误提示,测试
+v1.0,,,,,,,,,,,,,,,
+Number,,,,,,,Number,,,,,,1,,
+Number,,,,,    toExponential,String,Number,,,,,,1,,
+Number,,,,,    toFixed,String,Number,,,,,,1,,
+Number,,,,,    toPrecision,String,Number,,,,,,1,,
+Number,,,,,    toString,String,Number,,,,,,1,,
+Number,,,,,    valueOf,Number,Number,,,,,,0,,
+Number,,1,MAX_VALUE,,,Number,Number,1,Number.MAX_VALUE,,,,1,,
+Number,,1,MIN_VALUE,,,Number,Number,1,Number.MIN_VALUE,,,,1,,
+Number,,1,NaN,,,Number,Number,1,Number.NaN,,,,1,,
+Number,,1,NEGATIVE_INFINITY ,,,Number,Number,1,Number.NEGATIVE_INFINITY ,,,,1,,
+Number,,1,POSITIVE_INFINITY,,,Number,Number,1,Number.POSITIVE_INFINITY,,,,1,,
