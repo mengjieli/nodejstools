@@ -33,6 +33,9 @@ is {return TokenType.Type["is"];}
 true {return TokenType.Type["true"];}
 false {return TokenType.Type["false"];}
 
+"{" {this.commonInfo.tokenValue = content;return TokenType.Type["op"];}
+"}" {this.commonInfo.tokenValue = content;return TokenType.Type["op"];}
+
 "\(" {this.commonInfo.tokenValue = content;return TokenType.Type["op"];}
 "\)" {this.commonInfo.tokenValue = content;return TokenType.Type["op"];}
 "\+" {this.commonInfo.tokenValue = content;return TokenType.Type["op"];}

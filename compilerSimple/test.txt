@@ -1,0 +1,156 @@
+mengjielideimac:compilerSimple mengjieli$ node MakeYacc.js as3.y
+解析lex程序...
+line :  %left OBJBLOCK
+line :  %left STMTBLOCK
+line :  %left ';'
+line :  %left ','
+line :  %right '=' '*=' '/=' '%=' '+=' '-=' '||=' '<<=' '>>=' '&=' '^=' '|='
+line :  %right '?:'
+line :  %left '||'
+line :  %left '&&'
+line :  %left 'as' 'is' 'in'
+line :  %left IN
+line :  %left '|'
+line :  %left '^'
+line :  %left '&'
+line :  %left '!==' '===' '==' '!='
+line :  %left '>' '<' '>=' '<='
+line :  %left '<<' '>>' '<<<' '>>>'
+line :  %left '+' '-'
+line :  %left '*' '/' '%'
+line :  %right UMINUS ADD '!' '&' '~'
+line :  %right FADD FUMINUS
+line :  %left EUMINUS EADD
+line :  %left '[]' '()' '.'
+line :  %left '.<>()'
+levels
+{ OBJBLOCK: { type: 'left', level: 0 },
+  STMTBLOCK: { type: 'left', level: 1 },
+  ';': { type: 'left', level: 2 },
+  ',': { type: 'left', level: 3 },
+  '=': { type: 'right', level: 4 },
+  '*=': { type: 'right', level: 4 },
+  '/=': { type: 'right', level: 4 },
+  '%=': { type: 'right', level: 4 },
+  '+=': { type: 'right', level: 4 },
+  '-=': { type: 'right', level: 4 },
+  '||=': { type: 'right', level: 4 },
+  '<<=': { type: 'right', level: 4 },
+  '>>=': { type: 'right', level: 4 },
+  '&=': { type: 'right', level: 4 },
+  '^=': { type: 'right', level: 4 },
+  '|=': { type: 'right', level: 4 },
+  '?:': { type: 'right', level: 5 },
+  '||': { type: 'left', level: 6 },
+  '&&': { type: 'left', level: 7 },
+  as: { type: 'left', level: 8 },
+  is: { type: 'left', level: 8 },
+  in: { type: 'left', level: 8 },
+  IN: { type: 'left', level: 9 },
+  '|': { type: 'left', level: 10 },
+  '^': { type: 'left', level: 11 },
+  '&': { type: 'right', level: 18 },
+  '!==': { type: 'left', level: 13 },
+  '===': { type: 'left', level: 13 },
+  '==': { type: 'left', level: 13 },
+  '!=': { type: 'left', level: 13 },
+  '>': { type: 'left', level: 14 },
+  '<': { type: 'left', level: 14 },
+  '>=': { type: 'left', level: 14 },
+  '<=': { type: 'left', level: 14 },
+  '<<': { type: 'left', level: 15 },
+  '>>': { type: 'left', level: 15 },
+  '<<<': { type: 'left', level: 15 },
+  '>>>': { type: 'left', level: 15 },
+  '+': { type: 'left', level: 16 },
+  '-': { type: 'left', level: 16 },
+  '*': { type: 'left', level: 17 },
+  '/': { type: 'left', level: 17 },
+  '%': { type: 'left', level: 17 },
+  UMINUS: { type: 'right', level: 18 },
+  ADD: { type: 'right', level: 18 },
+  '!': { type: 'right', level: 18 },
+  '~': { type: 'right', level: 18 },
+  FADD: { type: 'right', level: 19 },
+  FUMINUS: { type: 'right', level: 19 },
+  EUMINUS: { type: 'left', level: 20 },
+  EADD: { type: 'left', level: 20 },
+  '[]': { type: 'left', level: 21 },
+  '()': { type: 'left', level: 21 },
+  '.': { type: 'left', level: 21 },
+  '.<>()': { type: 'left', level: 22 } }
+{ ';': true,
+  ',': true,
+  '=': true,
+  '*': true,
+  '/': true,
+  '%': true,
+  '+': true,
+  '-': true,
+  '|': true,
+  '<': true,
+  '>': true,
+  '&': true,
+  '^': true,
+  '?': true,
+  ':': true,
+  a: true,
+  s: true,
+  i: true,
+  n: true,
+  '!': true,
+  '~': true,
+  '[': true,
+  ']': true,
+  '(': true,
+  ')': true,
+  '.': true }
+levels End
+创建LR0核心
+空串： callParams
+空串： device
+1 ' -> ' 'stmt' ' goto ' 2
+1 ' -> ' 'expr' ' goto ' 3
+1 ' -> ' ';' ' -> ' 4
+1 ' -> ' 'atr' ' goto ' 5
+1 ' -> ' '(' ' -> ' 6
+1 ' -> ' 'CString' ' -> ' 7
+1 ' -> ' 'id' ' -> ' 8
+1 ' -> ' 'start' ' goto ' 9
+3 ' -> ' 'device' ' goto ' 10
+3 ' -> ' ';' ' -> ' 11
+3 ' -> ' ',' ' -> ' 12
+5 ' -> ' '(' ' -> ' 13
+5 ' -> ' '.' ' -> ' 14
+5 ' -> ' 'funcCallEnd' ' goto ' 15
+6 ' -> ' 'expr' ' goto ' 16
+6 ' -> ' 'atr' ' goto ' 5
+6 ' -> ' '(' ' -> ' 6
+6 ' -> ' 'CString' ' -> ' 7
+6 ' -> ' 'id' ' -> ' 8
+13 ' -> ' 'expr' ' goto ' 17
+13 ' -> ' 'atr' ' goto ' 5
+13 ' -> ' '(' ' -> ' 6
+13 ' -> ' ')' ' -> ' 18
+13 ' -> ' 'CString' ' -> ' 7
+13 ' -> ' 'id' ' -> ' 8
+13 ' -> ' 'callParams' ' goto ' 19
+14 ' -> ' 'id' ' -> ' 20
+16 ' -> ' ')' ' -> ' 21
+17 ' -> ' ',' ' -> ' 22
+19 ' -> ' ')' ' -> ' 23
+22 ' -> ' 'expr' ' goto ' 24
+22 ' -> ' 'atr' ' goto ' 5
+22 ' -> ' '(' ' -> ' 6
+22 ' -> ' 'CString' ' -> ' 7
+22 ' -> ' 'id' ' -> ' 8
+22 ' -> ' 'callParams' ' goto ' 25
+24 ' -> ' ',' ' -> ' 22
+创建LR0核心完毕
+{ callParams: true, device: true }
+
+
+
+耗时： 12
+生成语法扫描文件./output/as3/core/Parser.js
+mengjielideimac:compilerSimple mengjieli$ 
