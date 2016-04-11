@@ -1,0 +1,6 @@
+1. 进入 gameServer
+   1) node GameServer.js
+   2) 进入 gameServer/client
+   3) http-server -p 9002
+2. 进入 gameEditer/centerServer
+   1) node CenterServer.js
