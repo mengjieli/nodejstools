@@ -6,7 +6,7 @@ require("./../../tools/com/requirecom");
 require("./../../tools/net/requirenet");
 
 var srcEnd = ["js"];
-var resEnd = ["png", "jpg", "json", "csv", "txt", "html","plist"];
+var resEnd = ["png", "jpg", "json", "xml", "csv", "txt", "html","plist"];
 
 var fs = require("fs"),
     path = require("path");
