@@ -8,17 +8,17 @@ function File(url) {
     this.url = url;
     try {
         this.state = fs.statSync(this.url);
-        this.type = this.state.mode;
-        this.end = this.type != global.FileType.DIRECTION ? (this.url.split(".")[this.url.split(".").length ? this.url.split(".").length - 1 : 0]) : "";
+        //this.type = this.state.mode;
+        this.end = !this.isDirection() ? (this.url.split(".")[this.url.split(".").length ? this.url.split(".").length - 1 : 0]) : "";
         this.name = this.url.split("/")[this.url.split("/").length ? this.url.split("/").length - 1 : 0];
         this.name = this.name.split(".")[this.name.split(".").length ? this.name.split(".").length - 2 : 0];
-        if (this.type != FileType.DIRECTION) {
+        if (!this.isDirection()) {
             this.direction = this.url.slice(0, this.url.length - this.end.length - 1 - this.name.length);
         }
     } catch (e) {
         //console.log("File Error",e);
         this.state = null;
-        this.type = global.FileType.NONE;
+        this.type = 0;
         this.end = null;
     }
 }
@@ -27,7 +27,7 @@ function File(url) {
  *
  */
 File.prototype.isDirection = function() {
-    return this.type==global.FileType.DIRECTION?true:false;
+    return this.state.isDirectory()//this.type==global.FileType.DIRECTION?true:false;
 }
 
 /**
@@ -67,7 +67,7 @@ File.prototype.isExist = function () {
  */
 File.prototype.readContent = function (format, backFormat) {
     format = format || "utf-8";
-    if (this.type == global.FileType.DIRECTION) {
+    if (this.isDirection()) {
         return null;
     }
     var content = fs.readFileSync(this.url, format);
@@ -95,14 +95,14 @@ File.prototype.readFilesWidthEnd = function (ends) {
         ends = [ends];
     }
     var files = [];
-    if (this.type != global.FileType.DIRECTION) {
+    if (!this.isDirection()) {
         for (var i = 0; i < ends.length; i++) {
             var end = ends[i];
             if (end == "*" || end == this.end) {
                 files.push(this);
             }
         }
-    } else if (this.type == global.FileType.DIRECTION) {
+    } else if (this.isDirection()) {
         var list = fs.readdirSync(this.url);
         for (var i = 0; i < list.length; i++) {
             file = new File(this.url + "/" + list[i]);
@@ -118,9 +118,9 @@ File.prototype.readFilesWidthEnd = function (ends) {
  */
 File.prototype.readDirectionList = function () {
     var files = [];
-    if (this.type != global.FileType.DIRECTION) {
+    if (!this.isDirection()) {
         files.push(this);
-    } else if (this.type == global.FileType.DIRECTION) {
+    } else if (this.isDirection()) {
         files.push(this);
         var list = fs.readdirSync(this.url);
         for (var i = 0; i < list.length; i++) {
@@ -138,9 +138,9 @@ File.prototype.delete = function () {
     if (this.isExist() == false) {
         return;
     }
-    if (this.type != global.FileType.DIRECTION) {
+    if (!this.isDirection()) {
         fs.unlinkSync(this.url);
-    } else if (this.type == global.FileType.DIRECTION) {
+    } else if (this.isDirection()) {
         var list = fs.readdirSync(this.url);
         for (var i = 0; i < list.length; i++) {
             file = new File(this.url + "/" + list[i]);
@@ -220,8 +220,8 @@ var FileFormat = {
     "BINARY": "binary"
 }
 
-File.mkdirsSync("$$$tmpFileType$$$");
-FileType.DIRECTION = fs.statSync("$$$tmpFileType$$$").mode;
+//File.mkdirsSync("$$$tmpFileType$$$");
+//FileType.DIRECTION = fs.statSync("$$$tmpFileType$$$").mode;
 //(new File("$$$tmpFileType$$$")).delete();
 
 global.FileFormat = FileFormat;

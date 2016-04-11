@@ -10,7 +10,7 @@ var mine = {
     "jpeg": "image/jpeg",
     "jpg": "image/jpeg",
     "js": "text/javascript",
-    "json": "application/json",
+    "json": "text/plain",
     "pdf": "application/pdf",
     "zip": "application/x-zip-compressed",
     "png": "image/png",
@@ -111,7 +111,7 @@ HttpServer.prototype.sendResource = function (request, response) {
         response.writeHead(200, {
             "Content-Length": file.size,
             "Content-Type": mine[end],
-            //"Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "*",
             "Accept-Ranges": "bytes",
             "Last-Modified":file.state.mtime.toString()
         });
@@ -135,15 +135,12 @@ HttpServer.prototype.sendResourceWidthData = function (request, response, data) 
     } else {
         end = request.url.split("?")[0];
         end = end.split(".")[end.split(".").length - 1];
-        var type = mine[end];
-        if(type == undefined) {
-            type = "application/x-ms-" + end;
-        }
         response.writeHead(200, {
-            "Content-Type": type,
+            "Content-Length": file.size,
+            "Content-Type": mine[end],
             "Access-Control-Allow-Origin": "*",
-            "Content-Length": data.length,
-            "Accept-Ranges": "bytes"
+            "Accept-Ranges": "bytes",
+            "Last-Modified":file.state.mtime.toString()
         });
         if (request.method != "HEAD") {
             response.write(data, "binary");
@@ -162,16 +159,12 @@ HttpServer.prototype.sendContent = function (request, response, content) {
     } else {
         end = request.url.split("?")[0];
         end = end.split(".")[end.split(".").length - 1];
-        var type = mine[end];
-        if(type == undefined) {
-            type = "application/x-ms-" + end;
-        }
-        type = "text/html";
         response.writeHead(200, {
-            "Content-Type": type,
+            "Content-Length": file.size,
+            "Content-Type": mine[end],
             "Access-Control-Allow-Origin": "*",
-            "Content-Length": data.length,
-            "Accept-Ranges": "bytes"
+            "Accept-Ranges": "bytes",
+            "Last-Modified":file.state.mtime.toString()
         });
         response.write(content, "binary");
         response.end();
