@@ -3,6 +3,7 @@
   "2":"LoadJSTask",
   "3":"LoadCommandConfigTask",
   "4":"LoadUserConfigTask",
+  "20":"SendMessageToClientTask",
 
   "100":"ReadDirectionTask",
   "120":"SaveFileTask",

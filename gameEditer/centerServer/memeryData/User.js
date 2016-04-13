@@ -28,6 +28,8 @@ var User = (function () {
             "ready": false
         };
 
+        this.clients = {};
+
         //正在执行的任务
         this.tasks = [];
     }
@@ -42,6 +44,10 @@ var User = (function () {
         if (this.httpServerConfig) {
             Server.updateServer.startHttpServer(this.name, "", this.httpServerConfig.port || 0, null);
         }
+    }
+
+    p.getClientByType = function(type) {
+        return this.clients[type];
     }
 
     /**
@@ -155,7 +161,7 @@ var User = (function () {
             updateServer.port = port;
             var fork = require('child_process').fork;
             updateServer.thread = thread = fork('./fileSyncServer/FileSyncServer.js',
-                [updateServer.port, "./data/user/" + this.name + "/update/", this.name,this.httpServerConfig?this.httpServerConfig.port:Config.updateServerPort]);
+                [updateServer.port, "./data/user/" + this.name + "/update/", this.name, this.httpServerConfig ? this.httpServerConfig.port : Config.updateServerPort]);
             updateServer.ready = false;
             var _this = this;
             thread.on('message', function (msg) {

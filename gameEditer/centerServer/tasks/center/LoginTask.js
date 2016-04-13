@@ -103,7 +103,30 @@ var LoginTask = (function (_super) {
             //之后必须再开启 HttpServer 才能返回成功
             Server.updateServer.startHttpServer(userName, this.client.ip, 0, this);
         } else {
-            this.fail(4);
+            this.client.clientType = type;
+            var userName = msg.readUTFV();
+            var password = msg.readUTFV();
+            var user = Config.getUser(userName);
+            if (!user) {
+                this.fail(1);
+            } else {
+                //var code = user.isvalid(userName, password, "*");
+                //if (code == 0) {
+                //} else {
+                //    this.fail(code);
+                //}
+                this.client.hasLogin = true;
+                this.client.user = user;
+                user.clients[type] = this.client;
+
+                var abc = new VByteArray();
+                abc.writeUIntV(10000);
+                this.client.sendData(abc);
+
+                this.success();
+
+                console.log("login complete",type,user.name);
+            }
         }
     }
 

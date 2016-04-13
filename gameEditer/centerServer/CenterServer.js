@@ -10,6 +10,7 @@ for(var i = 0; i < list.length; i++) {
     var url = list[i].url;
     url = url.slice(0,url.length - 3);
     require(url);
+    console.log(url);
 }
 
 var CenterServer = (function (_super) {
@@ -39,8 +40,7 @@ var CenterServer = (function (_super) {
 
     p.connectClient = function (request) {
         var client = _super.prototype.connectClient.call(this, request);
-        client.init(this, this.id);
-        this.id += 1;
+        client.init(this, this.id++);
         //console.log("client connect");
     }
 

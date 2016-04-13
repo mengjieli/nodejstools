@@ -5,7 +5,7 @@ var Client = (function (_super) {
     function Client(connection, big) {
         _super.call(this, connection, big);
         this.type = "binary";
-        //console.log(connection.remoteAddress);
+        //console.log("new connection",connection.remoteAddress);
         this.ip = connection.remoteAddress;//.split(":")[connection.remoteAddress.split(":").length-1];
     }
 
@@ -24,7 +24,7 @@ var Client = (function (_super) {
 
     p.receiveData = function (message) {
         var data;
-        if(message.type == "utf8") {
+        if (message.type == "utf8") {
             this.type = "utf8";
             data = JSON.parse(message.utf8Data);
         }
@@ -40,29 +40,30 @@ var Client = (function (_super) {
                 return;
         }
         if (this.hasLogin == false && (cmd != 0 && cmd != 1)) {
-            this.sendFail(10,cmd,bytes);
+            this.sendFail(10, cmd, bytes);
             this.close();
             return;
         }
         if (Config.cmds[cmd]) {
+            console.log("[cmd]",cmd);
             var cls = global[Config.cmds[cmd]];
             if (cls == null) {
-                this.sendFail(5,cmd,bytes);
+                this.sendFail(5, cmd, bytes);
             } else {
                 try {
                     new cls(this.user, this, cmd, bytes);
-                } catch(e) {
+                } catch (e) {
                     console.log(e);
-                    this.sendFail(6,cmd,bytes,e);
+                    this.sendFail(6, cmd, bytes, e);
                 }
             }
         } else {
-            this.sendFail(5,cmd,bytes);
+            this.sendFail(5, cmd, bytes);
         }
     }
 
-    p.sendFail = function (errorCode, cmd, bytes,message) {
-        message = message||"";
+    p.sendFail = function (errorCode, cmd, bytes, message) {
+        message = message || "";
         var msg = new VByteArray();
         msg.writeUIntV(0);
         msg.writeUIntV(cmd);
@@ -110,13 +111,13 @@ var Client = (function (_super) {
     }
 
     p.sendData = function (bytes) {
-        if(this.type == "binary") {
+        if (this.type == "binary") {
             this.connection.sendBytes(new Buffer(bytes.data));
-        } else if(this.type == "utf8") {
+        } else if (this.type == "utf8") {
             var str = "[";
             var array = bytes.data;
-            for(var i = 0; i < array.length; i++) {
-                str += array[i] + (i<array.length-1?",":"");
+            for (var i = 0; i < array.length; i++) {
+                str += array[i] + (i < array.length - 1 ? "," : "");
             }
             str += "]";
             this.connection.sendUTF(str);

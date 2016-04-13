@@ -220,9 +220,5 @@ var FileFormat = {
     "BINARY": "binary"
 }
 
-//File.mkdirsSync("$$$tmpFileType$$$");
-//FileType.DIRECTION = fs.statSync("$$$tmpFileType$$$").mode;
-//(new File("$$$tmpFileType$$$")).delete();
-
 global.FileFormat = FileFormat;
 global.File = File;
