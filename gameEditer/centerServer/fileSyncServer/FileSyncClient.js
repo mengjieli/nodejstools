@@ -354,7 +354,8 @@ var FileSyncClient = (function (_super) {
             list.splice(checkIndex, 1);
             (new File(this.root + "file/history/" + checkItem.index + "/")).delete();
         }
-        if (change && files.length) {
+        //if (change && files.length) {
+        if (files.length) {
             //压缩最新的 res
             var file = new File(this.root + "update/" + checkItem.index + ".zip");
             file.delete();
