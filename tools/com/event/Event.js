@@ -1,6 +1,7 @@
 var Event = (function () {
-    function Event(type) {
+    function Event(type,data) {
         this.type = type;
+        this.data = data;
     }
 
     var d = __define, c = Event;

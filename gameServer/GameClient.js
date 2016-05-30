@@ -1,4 +1,3 @@
-
 var fork = require('child_process').fork;
 
 var GameClient = (function (_super) {
@@ -50,7 +49,7 @@ var GameClient = (function (_super) {
                         GameClient.isWorking = true;
 
                         var _this = this;
-                        this.zip = fork("./../gameEditer/flashClient/Start192Update.js",["./../gameEditer/flashClient"]);
+                        this.zip = fork("./../gameEditer/flashClient/Start192Update.js", ["./../gameEditer/flashClient"]);
                         this.zip.on('message', function (msg) {
                             if (msg.type == "complete") {
                                 GameClient.isWorking = false;
@@ -77,10 +76,10 @@ var GameClient = (function (_super) {
     }
 
     p.checkHeart = function (time) {
-        if (time > this.checkTime) {
-            console.log(time, this.checkTime);
-            this.close();
-        }
+        //if (time > this.checkTime) {
+        //    console.log(time, this.checkTime);
+        //    this.close();
+        //}
     }
 
     p.receiveAnonce = function (data) {
