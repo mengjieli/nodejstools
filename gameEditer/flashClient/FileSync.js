@@ -97,20 +97,20 @@ var FileClient = (function (_super) {
         if (changeLength || firstCheck) {
             //发送版本信息到服务器
             var content = getVersionFileContent();
-            var len = Math.ceil(content.length / 5000);
+            var len = Math.ceil(content.length / 500);
             var ind = 0;
             var sendFunc = function () {
                 var bytes = new VByteArray();
                 bytes.writeUIntV(10);
                 bytes.writeUIntV(len);
                 bytes.writeUIntV(ind);
-                bytes.writeUTFV(content.slice(ind * 5000, (ind + 1) * 5000 > content.length ? content.length : (ind + 1) * 5000));
+                bytes.writeUTFV(content.slice(ind * 500, (ind + 1) * 500 > content.length ? content.length : (ind + 1) * 500));
                 this.sendData(bytes);
                 ind++;
                 if (ind == len) {
                     firstCheck = false;
                 } else {
-                    setTimeout(sendFunc, 1);
+                    setTimeout(sendFunc, 50);
                 }
             }.bind(this);
             sendFunc();
