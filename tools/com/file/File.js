@@ -9,24 +9,31 @@ function File(url) {
     try {
         this.state = fs.statSync(this.url);
         //this.type = this.state.mode;
-        this.end = !this.isDirection() ? (this.url.split(".")[this.url.split(".").length ? this.url.split(".").length - 1 : 0]) : "";
-        this.name = this.url.split("/")[this.url.split("/").length ? this.url.split("/").length - 1 : 0];
-        this.name = this.name.split(".")[this.name.split(".").length ? this.name.split(".").length - 2 : 0];
+        this.name = this.url;
+        if (this.url.split("/").length > 1) {
+            this.name = this.url.split("/")[this.url.split("/").length - 1];
+        }
+        this.end = "";
+        if (!this.isDirection() && this.name.split(".").length > 1) {
+            this.end = this.name.split(".")[this.name.split(".").length - 1];
+            this.name = this.name.slice(0, this.name.length - this.end.length);
+        }
         if (!this.isDirection()) {
             this.direction = this.url.slice(0, this.url.length - this.end.length - 1 - this.name.length);
         }
     } catch (e) {
-        //console.log("File Error",e);
+        //console.log("File Error", e);
         this.state = null;
         this.type = 0;
         this.end = null;
     }
+    //console.log("[New File]", this.url, "\nThe file is " + (this.state != null ? "exist" : "not exist") + "\n", "The path is " + process.cwd() + "\n");
 }
 
 /**
  *
  */
-File.prototype.isDirection = function() {
+File.prototype.isDirection = function () {
     return this.state.isDirectory();//this.type==global.FileType.DIRECTION?true:false;
 }
 
@@ -57,12 +64,7 @@ File.prototype.save = function (data, format, url) {
 }
 
 File.prototype.isExist = function () {
-    try {
-        this.state.isDirection();
-        return true;
-    } catch(e) {
-        return false;
-    }
+    return this.state==null?false:true;
 }
 
 /**

@@ -6,7 +6,7 @@ require("./../../tools/com/requirecom");
 require("./../../tools/net/requirenet");
 
 var srcEnd = ["js"];
-var resEnd = ["png", "jpg", "json", "xml", "csv", "txt", "html","plist"];
+var resEnd = ["png", "jpg", "json", "xml", "csv", "txt", "html", "plist"];
 
 var fs = require("fs"),
     path = require("path");
@@ -36,7 +36,7 @@ var serverIp = getArg(3);
 var serverPort = getArg(4);
 var user = getArg(5);
 //更新次数
-var updateTime = parseInt(getArg(6))||100000000;
+var updateTime = parseInt(getArg(6)) || 100000000;
 var updateType = 1;
 var firstCheck = true;
 
@@ -58,7 +58,7 @@ var FileClient = (function (_super) {
             var bytes = new VByteArray();
             bytes.readFromArray(data);
             var cmd = bytes.readUIntV();
-            //console.log("cmd:",cmd);
+            console.log("[client receive]", cmd);
             switch (cmd) {
                 case 0:
                     var cmd = bytes.readUIntV();
@@ -83,7 +83,7 @@ var FileClient = (function (_super) {
                 case 13:
                     saveVersionFile();
                     updateTime--;
-                    if(updateTime <= 0) {
+                    if (updateTime <= 0) {
                         this.close();
                     }
                     break;
@@ -94,17 +94,29 @@ var FileClient = (function (_super) {
     //开始检查客户端的文件信息
     p.startCheckDirection = function (bytes) {
         var changeLength = checkDirection();
-        //console.log("[Check] change len = ",changeLength);
         if (changeLength || firstCheck) {
             //发送版本信息到服务器
-            var bytes = new VByteArray();
-            bytes.writeUIntV(10);
-            bytes.writeUTFV(getVersionFileContent());
-            this.sendData(bytes);
-            firstCheck = false;
+            var content = getVersionFileContent();
+            var len = Math.ceil(content.length / 5000);
+            var ind = 0;
+            var sendFunc = function () {
+                var bytes = new VByteArray();
+                bytes.writeUIntV(10);
+                bytes.writeUIntV(len);
+                bytes.writeUIntV(ind);
+                bytes.writeUTFV(content.slice(ind * 5000, (ind + 1) * 5000 > content.length ? content.length : (ind + 1) * 5000));
+                this.sendData(bytes);
+                ind++;
+                if (ind == len) {
+                    firstCheck = false;
+                } else {
+                    setTimeout(sendFunc, 1);
+                }
+            }.bind(this);
+            sendFunc();
         } else {
             updateTime--;
-            if(updateTime <= 0) {
+            if (updateTime <= 0) {
                 this.close();
                 return;
             }
@@ -167,31 +179,37 @@ var FileClient = (function (_super) {
         this.sendData(bytes);
         var _this = this;
         setTimeout(function () {
-            var bytes = new VByteArray();
-            bytes.writeByte(0);
-            bytes.writeByte(0);
-            bytes.writeByte(0);
-            bytes.writeByte(0);
-            _this.sendData(bytes);
+            //var bytes = new VByteArray();
+            //bytes.writeByte(0);
+            //bytes.writeByte(0);
+            //bytes.writeByte(0);
+            //bytes.writeByte(0);
+            //_this.sendData(bytes);
         }, 10000);
     }
 
     p.success = function (cmd) {
         if (cmd == 1) {
-            //console.log("login complete");
+            console.log("login complete");
             //登录成功
+        } else {
+            console.log("login fail!");
         }
     }
 
     p.sendData = function (bytes) {
+        bytes.position = 0;
+        console.log("[send to server]", bytes.readUIntV(), "  len=", bytes.length);
         this.connection.sendBytes(new Buffer(bytes.data));
     }
 
     p.close = function () {
+        //console.log("I want close ,why?", arguments.callee.caller);
         this.connection.close();
     }
 
     p.onClose = function () {
+        console.log("close?!", arguments);
         _super.prototype.onClose.call(this);
     }
 
@@ -224,6 +242,7 @@ var getVersionFileContent = function () {
 
 var localFileList;
 var versionFile = new File(direction + "version.json");
+console.log("version file:", direction + "version.json", "   path=", process.cwd(), versionFile.isExist() ? "true" : "false");
 if (versionFile.isExist()) {
     try {
         localFileList = JSON.parse(versionFile.readContent());
@@ -251,7 +270,7 @@ server.connect(serverIp, serverPort);
  */
 var checkDirection = function () {
     //updateList = [];
-    //console.log("\n", "start check direction");
+    console.log("\n", "start check direction");
     var list = [];
     var file;
     if (updateType == 1 || updateType == 2) {
@@ -265,7 +284,7 @@ var checkDirection = function () {
         fileList = file.readFilesWidthEnd(resEnd);
         list = list.concat(fileList);
     }
-    //console.log("localFileList",localFileList.length,list.length);
+    console.log("localFileList", localFileList.length, list.length);
     var vfile;
     var changeFileCount = 0;
     for (var i = 0; i < localFileList.length; i++) {

@@ -45,6 +45,7 @@ var FileSyncClient = (function (_super) {
         var bytes = new VByteArray();
         bytes.readFromArray(data);
         var cmd = bytes.readUIntV();
+        console.log("[Receive]", cmd);
         switch (cmd) {
             case 0:
                 return;
@@ -63,7 +64,7 @@ var FileSyncClient = (function (_super) {
 
     p.login = function (bytes) {
         var name = bytes.readUTFV();
-        //console.log(global.name, ":", name, name == global.name);
+        console.log(global.name, ":", name, name == global.name);
         if (name == global.name) {
             this.root = "./data/user/" + global.name + "/";
             this.success(1);
@@ -82,9 +83,21 @@ var FileSyncClient = (function (_super) {
         }
     }
 
+
     //收到整个目录的文件列表信息
     p.receiveDirectionList = function (bytes) {
+        var msgLen = bytes.readUIntV();
+        var msgInd = bytes.readUIntV();
         var content = bytes.readUTFV();
+        if (msgInd == 0) {
+            this.msg10 = "";
+        }
+        this.msg10 += content;
+        if (msgInd == msgLen - 1) {
+            content = this.msg10;
+        } else {
+            return;
+        }
         if (content == "no") {
             var _this = this;
             setTimeout(this.requestCheckDirection.bind(this), checkGap);
@@ -357,7 +370,7 @@ var FileSyncClient = (function (_super) {
         //if (change && files.length) {
         if (files.length) {
             //压缩最新的 res
-            var file = new File(this.root + "update/" + checkItem.index + ".zip");
+            var file = new File(this.root + "update/update" + checkItem.index + ".zip");
             file.delete();
             this.zip.send({
                 type: "zip",
@@ -454,6 +467,7 @@ var FileSyncClient = (function (_super) {
         var msg = new VByteArray();
         msg.writeUIntV(9);
         this.sendData(msg);
+        console.log("Request client check files.");
     }
 
     p.success = function (cmd) {
@@ -465,6 +479,8 @@ var FileSyncClient = (function (_super) {
     }
 
     p.sendData = function (bytes) {
+        bytes.position = 0;
+        console.log("[send to client]", bytes.readUIntV(), "  len=", bytes.length);
         if (this.type == "binary") {
             this.connection.sendBytes(new Buffer(bytes.data));
         } else if (this.type == "utf8") {
@@ -479,13 +495,14 @@ var FileSyncClient = (function (_super) {
     }
 
     p.close = function () {
+        console.log("close client!", arguments.callee.caller);
         this.connection.close();
     }
 
-    //p.onClose = function () {
-    //    console.log("链接关闭了 ！");
-    //    _super.prototype.onClose.call(this);
-    //}
+    p.onClose = function (e) {
+        console.log("client close !", arguments);
+        _super.prototype.onClose.call(this);
+    }
 
     return FileSyncClient;
 })(WebSocketServerClient);

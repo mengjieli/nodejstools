@@ -1,1 +1,229 @@
-{"desc":"版本更新配置","list":[{"name":"192","flag":true,"svn":{"url":"https://192.168.1.253/svn/paike/paike_client/ParkerEmpire/","user":"limengjie","password":"lmj111111"},"ftp":{"ip":"121.40.18.57","user":"nihaowalk","password":"walkwest-98","direction":"ParkerEmpire/192/"},"src":{"init":2900,"last":3908},"res":{"init":2900,"last":3908},"version":{"src":{"key":1000129,"version":"10001.2.9"},"res":{"1":"1.0.1","4":"1.0.4","6":"1.0.6","7":"1.0.7","8":"1.0.8","9":"1.0.9","10":"1.1.0","11":"1.1.1","12":"1.1.2","13":"1.1.3","16":"1.1.6","17":"1.1.7","18":"1.1.8","20":"1.2.0","22":"1.2.2","24":"1.2.4","27":"1.2.7","28":"1.2.8","36":"1.3.6","37":"1.3.7","39":"1.3.9","40":"1.4.0","42":"1.4.2","45":"1.4.5","46":"1.4.6","47":"1.4.7","48":"1.4.8","50":"1.5.0","52":"1.5.2","53":"1.5.3","56":"1.5.6","57":"1.5.7","58":"1.5.8","60":"1.6.0","61":"1.6.1","62":"1.6.2","63":"1.6.3","64":"1.6.4","65":"1.6.5","66":"1.6.6","67":"1.6.7","68":"1.6.8","69":"1.6.9","70":"1.7.0","72":"1.7.2","73":"1.7.3","74":"1.7.4","75":"1.7.5","77":"1.7.7","78":"1.7.8","79":"1.7.9","80":"1.8.0","81":"1.8.1","82":"1.8.2","83":"1.8.3","84":"1.8.4"},"svn":{"1":2913,"2":2926,"3":2931,"4":2939,"5":2947,"6":2958,"7":3045,"8":3072,"9":3090,"10":3112,"11":3116,"12":3122,"13":3130,"14":3137,"15":3141,"16":3143,"17":3145,"18":3149,"19":3156,"20":3157,"21":3163,"22":3170,"23":3174,"24":3175,"25":3184,"26":3189,"27":3200,"28":3201,"29":3203,"30":3206,"31":3210,"32":3229,"33":3236,"34":3238,"35":3241,"36":3267,"37":3275,"38":3278,"39":3296,"40":3297,"41":3301,"42":3303,"43":3306,"44":3312,"45":3375,"46":3430,"47":3432,"48":3458,"49":3464,"50":3473,"51":3478,"52":3485,"53":3487,"54":3493,"55":3500,"56":3548,"57":3551,"58":3605,"59":3606,"60":3622,"61":3625,"62":3653,"63":3666,"64":3670,"65":3694,"66":3699,"67":3701,"68":3713,"69":3731,"70":3732,"71":3736,"72":3754,"73":3775,"74":3786,"75":3793,"76":3796,"77":3802,"78":3808,"79":3831,"80":3846,"81":3847,"82":3880,"83":3890,"84":3908}},"projectManifest":{"packageUrl":"http://121.40.18.57/ParkerEmpire/192","remoteManifestUrl":"http://121.40.18.57/ParkerEmpire/192/project.manifest","remoteVersionUrl":"http://121.40.18.57/ParkerEmpire/192/version.manifest","version":"1.0.0","groupVersions":{},"engineVersion":"3.6","assets":{},"searchPaths":[]},"versionManifest":{"packageUrl":"http://121.40.18.57/ParkerEmpire/192","remoteManifestUrl":"http://121.40.18.57/ParkerEmpire/192/project.manifest","remoteVersionUrl":"http://121.40.18.57/ParkerEmpire/192/version.manifest","version":"1.0.0","engineVersion":"3.6","groupVersions":{}},"resProjectManifest":{"packageUrl":"http://121.40.18.57/ParkerEmpire/192/","remoteManifestUrl":"http://121.40.18.57/ParkerEmpire/192/project.manifest","remoteVersionUrl":"http://121.40.18.57/ParkerEmpire/192/version.manifest","version":"1.0.0","groupVersions":{},"engineVersion":"3.6","assets":{},"searchPaths":[]}},{"name":"10241","flag":false,"svn":{"url":"https://192.168.1.253/svn/paike/paike_client/CN1.0.24.0/","user":"limengjie","password":"lmj111111"},"ftp":{"ip":"121.40.18.57","user":"nihaowalk","password":"walkwest-98","direction":"ParkerEmpire/10241/"},"src":{"init":3375,"last":3383},"res":{"init":3375,"last":3383},"version":{"src":{"key":1000002,"version":"10000.0.2"},"res":{"1":"1.0.1","2":"1.0.2"},"svn":{"1":3381,"2":3383}},"projectManifest":{"packageUrl":"http://121.40.18.57/ParkerEmpire/10241","remoteManifestUrl":"http://121.40.18.57/ParkerEmpire/10241/project.manifest","remoteVersionUrl":"http://121.40.18.57/ParkerEmpire/10241/version.manifest","version":"1.0.0","groupVersions":{},"engineVersion":"3.6","assets":{},"searchPaths":[]},"versionManifest":{"packageUrl":"http://121.40.18.57/ParkerEmpire/10241","remoteManifestUrl":"http://121.40.18.57/ParkerEmpire/10241/project.manifest","remoteVersionUrl":"http://121.40.18.57/ParkerEmpire/10241/version.manifest","version":"1.0.0","engineVersion":"3.6","groupVersions":{}},"resProjectManifest":{"packageUrl":"http://121.40.18.57/ParkerEmpire/10241/","remoteManifestUrl":"http://121.40.18.57/ParkerEmpire/10241/project.manifest","remoteVersionUrl":"http://121.40.18.57/ParkerEmpire/10241/version.manifest","version":"1.0.0","groupVersions":{},"engineVersion":"3.6","assets":{},"searchPaths":[]}},{"name":"guangzhou","flag":false,"svn":{"url":"https://192.168.1.253/svn/paike/paike_client/CN1.0.24.0/","user":"limengjie","password":"lmj111111"},"ftp":{"ip":"121.40.18.57","user":"nihaowalk","password":"walkwest-98","direction":"ParkerEmpire/guangzhou/"},"src":{"init":2887,"last":3654},"res":{"init":2887,"last":3654},"record":{"svn":{"url":"https://192.168.1.253/svn/paike/paike_client/guangzhou/"},"src":{"last":3280},"res":{"last":3280}},"version":{"src":{"key":1000019,"version":"10000.1.9"},"res":{"1":"1.0.1","2":"1.0.2","3":"1.0.3","4":"1.0.4","6":"1.0.6","7":"1.0.7","8":"1.0.8","9":"1.0.9","10":"1.1.0","12":"1.1.2"},"svn":{"1":2941,"2":2961,"3":3164,"4":3184,"5":3189,"6":3229,"7":3242,"8":3267,"9":3280,"10":3387,"11":3391,"12":3518}},"projectManifest":{"packageUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/","remoteManifestUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest","remoteVersionUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest","version":"1.0.0","groupVersions":{},"engineVersion":"3.6","assets":{},"searchPaths":[]},"versionManifest":{"packageUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/","remoteManifestUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest","remoteVersionUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest","version":"1.0.0","engineVersion":"3.6","groupVersions":{}},"resProjectManifest":{"packageUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/","remoteManifestUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest","remoteVersionUrl":"http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest","version":"1.0.0","groupVersions":{},"engineVersion":"3.6","assets":{},"searchPaths":[]}}]}
+{
+  "desc": "版本更新配置",
+  "list": [
+    {
+      "name": "192",
+      "flag": true,
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/ParkerEmpire/",
+        "user": "limengjie",
+        "password": "lmj111111"
+      },
+      "ftp": {
+        "ip": "121.40.18.57",
+        "user": "nihaowalk",
+        "password": "walkwest-98",
+        "direction": "ParkerEmpire/192/"
+      },
+      "src": {
+        "init": 4729,
+        "last": 4729
+      },
+      "res": {
+        "init": 4729,
+        "last": 4729
+      },
+      "version": {
+        "src": {
+        },
+        "res": {
+        },
+        "svn": {
+        }
+      },
+      "projectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      },
+      "versionManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "version": "1.0.0",
+        "engineVersion": "3.6",
+        "groupVersions": {}
+      },
+      "resProjectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/192/",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/192/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/192/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      }
+    },
+    {
+      "name": "10241",
+      "flag": false,
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/CN1.0.24.0/",
+        "user": "limengjie",
+        "password": "lmj111111"
+      },
+      "ftp": {
+        "ip": "121.40.18.57",
+        "user": "nihaowalk",
+        "password": "walkwest-98",
+        "direction": "ParkerEmpire/10241/"
+      },
+      "src": {
+        "init": 3375,
+        "last": 3383
+      },
+      "res": {
+        "init": 3375,
+        "last": 3383
+      },
+      "version": {
+        "src": {
+          "key": 1000002,
+          "version": "10000.0.2"
+        },
+        "res": {
+          "1": "1.0.1",
+          "2": "1.0.2"
+        },
+        "svn": {
+          "1": 3381,
+          "2": 3383
+        }
+      },
+      "projectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/10241",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/10241/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/10241/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      },
+      "versionManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/10241",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/10241/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/10241/version.manifest",
+        "version": "1.0.0",
+        "engineVersion": "3.6",
+        "groupVersions": {}
+      },
+      "resProjectManifest": {
+        "packageUrl": "http://121.40.18.57/ParkerEmpire/10241/",
+        "remoteManifestUrl": "http://121.40.18.57/ParkerEmpire/10241/project.manifest",
+        "remoteVersionUrl": "http://121.40.18.57/ParkerEmpire/10241/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      }
+    },
+    {
+      "name": "guangzhou",
+      "flag": false,
+      "svn": {
+        "url": "https://192.168.1.253/svn/paike/paike_client/CN1.1.1.0/",
+        "user": "limengjie",
+        "password": "lmj111111"
+      },
+      "ftp": {
+        "ip": "121.40.18.57",
+        "user": "nihaowalk",
+        "password": "walkwest-98",
+        "direction": "ParkerEmpire/guangzhou/"
+      },
+      "src": {
+        "init": 2887,
+        "last": 4563
+      },
+      "res": {
+        "init": 2887,
+        "last": 4563
+      },
+      "record": {
+        "svn": {
+          "url": "https://192.168.1.253/svn/paike/paike_client/guangzhou/"
+        },
+        "src": {
+          "last": 4545
+        },
+        "res": {
+          "last": 4545
+        }
+      },
+      "version": {
+        "src": {
+          "key": 1000032,
+          "version": "10000.3.2"
+        },
+        "res": {
+          "1": "1.0.1",
+          "3": "1.0.3",
+          "6": "1.0.6",
+          "8": "1.0.8",
+          "23": "1.2.3"
+        },
+        "svn": {
+          "1": 2941,
+          "2": 2961,
+          "3": 3164,
+          "4": 3184,
+          "5": 3189,
+          "6": 3229,
+          "7": 3242,
+          "8": 3267,
+          "9": 3280,
+          "10": 3387,
+          "11": 3391,
+          "12": 3518,
+          "13": 4035,
+          "14": 4041,
+          "15": 4091,
+          "16": 4093,
+          "17": 4283,
+          "18": 4295,
+          "19": 4297,
+          "20": 4303,
+          "21": 4318,
+          "22": 4328,
+          "23": 4545
+        }
+      },
+      "projectManifest": {
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      },
+      "versionManifest": {
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest",
+        "version": "1.0.0",
+        "engineVersion": "3.6",
+        "groupVersions": {}
+      },
+      "resProjectManifest": {
+        "packageUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/",
+        "remoteManifestUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/project.manifest",
+        "remoteVersionUrl": "http://d.yo9yo9.com/ParkerEmpire/guangzhou/version.manifest",
+        "version": "1.0.0",
+        "groupVersions": {},
+        "engineVersion": "3.6",
+        "assets": {},
+        "searchPaths": []
+      }
+    }
+  ]
+}

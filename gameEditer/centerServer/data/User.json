@@ -20,5 +20,17 @@
     "httpServer":{
       "port":"11001"
     }
+  },
+  {
+    "name":"paik",
+    "password":"*",
+    "ip":"*",
+    "fileSyncServer":{
+      "start":true,
+      "port":11010
+    },
+    "httpServer":{
+      "port":"11011"
+    }
   }
 ]
