@@ -1,3 +1,9 @@
+
+
+
+
+
+
 var fork = require('child_process').fork;
 
 var GameClient = (function (_super) {
@@ -49,7 +55,7 @@ var GameClient = (function (_super) {
                         GameClient.isWorking = true;
 
                         var _this = this;
-                        this.zip = fork("./../gameEditer/flashClient/Start192Update.js", ["./../gameEditer/flashClient"]);
+                        this.zip = fork("./../gameEditer/flashClient/Start192Update.js",["./../gameEditer/flashClient"]);
                         this.zip.on('message', function (msg) {
                             if (msg.type == "complete") {
                                 GameClient.isWorking = false;

@@ -23,4 +23,4 @@ process.on('message', function (msg) {
     }
 });
 
-//console.log("start httpserver",port,dir);
+console.log("start httpserver",port,dir,process.cwd());
