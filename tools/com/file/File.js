@@ -58,8 +58,7 @@ File.prototype.save = function (data, format, url) {
 
 File.prototype.isExist = function () {
     try {
-        this.state.isDirection();
-        return true;
+        return this.state ? true : false;
     } catch(e) {
         return false;
     }
